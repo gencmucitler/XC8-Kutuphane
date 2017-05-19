@@ -1,1 +1,4 @@
-# XC8-Kutuphane
+# XC8-Kutuphanesi
+
+Microchip XC8 derleyicisi için kütüphaneleri
+
