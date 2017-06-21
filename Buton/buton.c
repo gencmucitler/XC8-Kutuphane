@@ -3,20 +3,24 @@
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 18 Haziran 2017                                             *
- * Versiyon      : 0.1                                                         *
+ * Düzenleme     : 22 Haziran 2017                                             *
+ * Versiyon      : 0.2                                                         *
  *                                                                             *
  * Butonlarýn kontak sýçrama durumlarýnýda dikkate alarak buton durumunu okur. *
  * Bu fonksiyon ile butona basýlma, býrakýlma, uzun basýlma,basýlý tutulma     *
  * durumlarý kolayca okunabilmektedir.                                         * 
  ******************************************************************************/
+// v0.2 Basýlý Tutuluyor kodu sonuna return butonNo eklendi.
+//      Çift týklama ve Kýsa Basma durumlarý eklendi.
+// v0.1 ilk düzenleme.
 
 #include "mcc_generated_files/mcc.h"
 #include "buton.h"
 #include "zaman.h"
 
-unsigned long butonSure;
-char butonNo,oncekiButon;
-bit uzunBasildi;
+unsigned long butonSure,ciftTiklamaSure;
+char butonNo,butonNo_kayit,oncekiButonNo;
+bit uzunBasildi,kisaBasildi;
 
 //Basýlan butonun numarasýný döndürür. Hiç bir butona basýlmadý ise 0x00 döner.
 char buton_oku(void)
@@ -26,8 +30,8 @@ char buton_oku(void)
     //basýlý olan butonu bul.
     if(!buton1)
         butonNo=1;
-    else if(!buton2)
-        butonNo=2;
+//    else if(!buton2)
+//        butonNo=2;
 //    else if(!buton3)
 //        butonNo=3;
                 
@@ -41,16 +45,18 @@ char buton_kontrol(void)
     switch(butonDurumu)
     {
         case SERBEST:   //ilk defa basýldýðýnda 
-            if(butonNo>0) 
+            if(butonNo) 
             {
                 butonSure = miliSaniye();
                 butonDurumu = DEBOUNCE;
-                oncekiButon = butonNo;
+                butonNo_kayit = butonNo;    //ButonNo yu kaydet, sürekli butona 
+                                            //basýlýyor mu diye kontrol edilecek
                 uzunBasildi=0;
+                kisaBasildi=0;
             }
             else
             {
-                oncekiButon=0;
+                butonNo_kayit=0;
                 return 0x00;
             }
             break;
@@ -58,9 +64,9 @@ char buton_kontrol(void)
         case DEBOUNCE:
             //ayný butona basýlmaya devam mý ediliyor?
             //kontak sýçramasýný atla
-            if(butonNo>0) 
+            if(butonNo) 
             {
-                if (butonNo == oncekiButon) 
+                if (butonNo == butonNo_kayit) 
                 {
                     if (miliSaniye() - butonSure > debounce_suresi) 
                     {
@@ -72,7 +78,7 @@ char buton_kontrol(void)
                 else
                 {
                     //farklý butona basýlmýþ.
-                    oncekiButon=butonNo;
+                    butonNo_kayit=butonNo;
                     butonSure=miliSaniye();
                 }
             }
@@ -84,7 +90,7 @@ char buton_kontrol(void)
             break; 
             //------------------------------------------------------------------
         case BASILDI:   
-            if(butonNo>0)
+            if(butonNo)
             {
                 butonDurumu=BASILI_TUTULUYOR;
                 butonSure=miliSaniye();
@@ -93,10 +99,19 @@ char buton_kontrol(void)
             break;
             //------------------------------------------------------------------
         case BASILI_TUTULUYOR:
-            if(butonNo>0)
+            if(butonNo)
             {
-                if(butonNo==oncekiButon)
+                if(butonNo==butonNo_kayit)
                 {
+                    if(kisaBasildi==0)
+                    {
+                        if(miliSaniye()-butonSure >kisa_basma_suresi)
+                        {
+                            kisaBasildi=1;
+                            butonDurumu=KISA_BASILDI;
+                            return butonNo;
+                        }
+                    }
                     if (uzunBasildi==0)
                     {
                         if(miliSaniye()-butonSure > uzun_basma_suresi)
@@ -106,6 +121,8 @@ char buton_kontrol(void)
                             return butonNo;
                         }
                     }
+                    
+                    return butonNo;
                 }                
             }
             else
@@ -114,9 +131,10 @@ char buton_kontrol(void)
                 butonDurumu=DEBOUNCE2;
             }
             break;
-            //------------------------------------------------------------------
+            //------------------------------------------------------------------            
+        case KISA_BASILDI:
         case UZUN_BASILDI:
-            if(butonNo>0)
+            if(butonNo)
             {
                 butonDurumu=BASILI_TUTULUYOR;
                 return butonNo;
@@ -131,7 +149,7 @@ char buton_kontrol(void)
                 if (miliSaniye() - butonSure > debounce_suresi) 
                 {
                     butonDurumu = BIRAKILDI;        //bir defalýk pals üret.            
-                    return oncekiButon;
+                    return butonNo_kayit;
                 }                
             }
             else
@@ -140,9 +158,27 @@ char buton_kontrol(void)
             }
             break; 
             //------------------------------------------------------------------
+        case CIFT_TIKLAMA:
+            butonDurumu = SERBEST;
+            return butonNo_kayit;     
+            break;
+            //------------------------------------------------------------------
         case BIRAKILDI:
+
+            //çift týklamada kullanýlacak kodlar
+            //önceden de ayný butona mý basýldý? Ýki kere butona basma süresi 
+            //istenildiði süre kadar kýsa mý?
+            if(butonNo_kayit==oncekiButonNo && miliSaniye()-ciftTiklamaSure<cift_tiklama_suresi)
+            {
+                butonDurumu=CIFT_TIKLAMA;
+                return butonNo_kayit;
+            }
+            //bir sonraki týklama için kaydet
+            oncekiButonNo=butonNo_kayit;
+            ciftTiklamaSure=miliSaniye();
+            
             butonDurumu=SERBEST;
-            return oncekiButon;
+            return butonNo_kayit;
             break;    
             //------------------------------------------------------------------
     }
