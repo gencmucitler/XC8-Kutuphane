@@ -1,0 +1,18 @@
+
+# 1 "zaman.c"
+
+# 12
+static unsigned long _msaniye=0;
+
+
+
+void _miliSaat(void)
+{
+_msaniye++;
+}
+
+
+unsigned long miliSaniye(void)
+{
+return _msaniye;
+}
