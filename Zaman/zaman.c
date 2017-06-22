@@ -9,7 +9,7 @@
  * sıfırlanır.                                                                 * 
  ******************************************************************************/
 
-static unsigned long _msaniye=0;
+volatile unsigned long _msaniye=0;
 
 //her milisaniyede bir artacak. maksimum 50 güne kadar sayabiliyor.
 //2^32 /1000 = x saniye  x/60/60/24 =49,71 gün
