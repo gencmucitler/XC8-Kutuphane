@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Kütüphane     : Geliþmiþ Buton Okuma Fonksiyonu                             *
+ * Kütüphane     : 4x4 Tuþ Takýmý Okuma Kütüphanesi                            *
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 18 Haziran 2017                                             *
