@@ -1,0 +1,38 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"12 zaman.c
+[v __msaniye `Vul ~T0 @X0 1 e ]
+[i __msaniye
+-> -> -> 0 `i `l `ul
+]
+[; ;zaman.c: 12: volatile unsigned long _msaniye=0;
+"16
+[v __miliSaat `(v ~T0 @X0 1 ef ]
+"17
+{
+[; ;zaman.c: 16: void _miliSaat(void)
+[; ;zaman.c: 17: {
+[e :U __miliSaat ]
+[f ]
+[; ;zaman.c: 18: _msaniye++;
+"18
+[e ++ __msaniye -> -> -> 1 `i `l `ul ]
+[; ;zaman.c: 19: }
+"19
+[e :UE 1 ]
+}
+"22
+[v _miliSaniye `(ul ~T0 @X0 1 ef ]
+"23
+{
+[; ;zaman.c: 22: unsigned long miliSaniye(void)
+[; ;zaman.c: 23: {
+[e :U _miliSaniye ]
+[f ]
+[; ;zaman.c: 24: return _msaniye;
+"24
+[e ) __msaniye ]
+[e $UE 2  ]
+[; ;zaman.c: 25: }
+"25
+[e :UE 2 ]
+}

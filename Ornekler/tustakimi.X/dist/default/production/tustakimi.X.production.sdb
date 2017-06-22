@@ -1,0 +1,376 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PIC14E SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1827 ]
+[d frameptr 6 ]
+"53 D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.h
+[e E2884 _buton_durum_e `uc
+SERBEST 0
+DEBOUNCE 1
+BASILDI 2
+BASILI_TUTULUYOR 3
+CIFT_TIKLAMA 4
+KISA_BASILDI 5
+UZUN_BASILDI 6
+DEBOUNCE2 7
+BIRAKILDI 8
+]
+[e E2832 _buton_durum_e `uc
+SERBEST 0
+DEBOUNCE 1
+BASILDI 2
+BASILI_TUTULUYOR 3
+CIFT_TIKLAMA 4
+KISA_BASILDI 5
+UZUN_BASILDI 6
+DEBOUNCE2 7
+BIRAKILDI 8
+]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"55 D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+[v _lcd_baslat lcd_baslat `(v  1 e 1 0 ]
+"96
+[v _lcd_git lcd_git `(v  1 e 1 0 ]
+"120
+[v _lcd_mesajyaz lcd_mesajyaz `(v  1 e 1 0 ]
+"200
+[v _lcd_mesgulmu lcd_mesgulmu `(v  1 e 1 0 ]
+"227
+[v _lcd_harfyaz lcd_harfyaz `(v  1 e 1 0 ]
+"354
+[v _lcd_komut lcd_komut `(v  1 e 1 0 ]
+"414
+[v _lcd_sil lcd_sil `(v  1 e 1 0 ]
+"421
+[v _lcd_satirbasi lcd_satirbasi `(v  1 e 1 0 ]
+"58 D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+[v _tusbilgilerini_yaz tusbilgilerini_yaz `(v  1 e 1 0 ]
+"64
+[v _main main `(v  1 e 1 0 ]
+"51 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"69 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"78
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"90
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"51 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"63 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+[v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
+"89
+[v _TMR6_StartTimer TMR6_StartTimer `(v  1 e 1 0 ]
+"121
+[v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
+"134
+[v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
+"138
+[v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
+"26 D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+[v _tustakimi_oku tustakimi_oku `(uc  1 e 1 0 ]
+"103
+[v _buton_kontrol buton_kontrol `(uc  1 e 1 0 ]
+"16 D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+[v __miliSaat _miliSaat `(v  1 e 1 0 ]
+"22
+[v _miliSaniye miliSaniye `(ul  1 e 4 0 ]
+[s S94 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"372 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f1827.h
+[s S103 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S108 . 1 `S94 1 . 1 0 `S103 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES108  1 e 1 @11 ]
+[s S442 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"506
+[u S451 . 1 `S442 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES451  1 e 1 @13 ]
+[s S143 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR4IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR6IF 1 0 :1:3 
+`uc 1 CCP3IF 1 0 :1:4 
+`uc 1 CCP4IF 1 0 :1:5 
+]
+"679
+[u S150 . 1 `S143 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES150  1 e 1 @19 ]
+"1150
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1212
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S126 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR4IE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR6IE 1 0 :1:3 
+`uc 1 CCP3IE 1 0 :1:4 
+`uc 1 CCP4IE 1 0 :1:5 
+]
+"1402
+[u S133 . 1 `S126 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES133  1 e 1 @147 ]
+[s S50 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1476
+[s S59 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S64 . 1 `S50 1 . 1 0 `S59 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES64  1 e 1 @149 ]
+"1587
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1646
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1704
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2037
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2094
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S421 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2111
+[u S430 . 1 `S421 1 . 1 0 ]
+[v _LATBbits LATBbits `VES430  1 e 1 @269 ]
+"2777
+[v _APFCON0 APFCON0 `VEuc  1 e 1 @285 ]
+"2839
+[v _APFCON1 APFCON1 `VEuc  1 e 1 @286 ]
+"2859
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2911
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3485
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3514
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"6421
+[v _TMR6 TMR6 `VEuc  1 e 1 @1052 ]
+"6441
+[v _PR6 PR6 `VEuc  1 e 1 @1053 ]
+"6461
+[v _T6CON T6CON `VEuc  1 e 1 @1054 ]
+[s S227 . 1 `uc 1 T6CKPS0 1 0 :1:0 
+`uc 1 T6CKPS1 1 0 :1:1 
+`uc 1 TMR6ON 1 0 :1:2 
+`uc 1 T6OUTPS0 1 0 :1:3 
+`uc 1 T6OUTPS1 1 0 :1:4 
+`uc 1 T6OUTPS2 1 0 :1:5 
+`uc 1 T6OUTPS3 1 0 :1:6 
+]
+"6482
+[s S235 . 1 `uc 1 T6CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T6OUTPS 1 0 :4:3 
+]
+[u S239 . 1 `S227 1 . 1 0 `S235 1 . 1 0 ]
+[v _T6CONbits T6CONbits `VES239  1 e 1 @1054 ]
+"7193
+[v _LATA6 LATA6 `VEb  1 e 0 @2150 ]
+"7195
+[v _LATA7 LATA7 `VEb  1 e 0 @2151 ]
+"7329
+[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+"7611
+[v _TRISA6 TRISA6 `VEb  1 e 0 @1126 ]
+"7613
+[v _TRISA7 TRISA7 `VEb  1 e 0 @1127 ]
+"52 D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+[v _tusno tusno `uc  1 e 1 0 ]
+"57 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+[v _TMR6_InterruptHandler TMR6_InterruptHandler `*.37(v  1 e 2 0 ]
+"19 D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+[v _butonSure butonSure `ul  1 e 4 0 ]
+[v _ciftTiklamaSure ciftTiklamaSure `ul  1 e 4 0 ]
+"20
+[v _butonNo butonNo `uc  1 e 1 0 ]
+[v _butonNo_kayit butonNo_kayit `uc  1 e 1 0 ]
+[v _oncekiButonNo oncekiButonNo `uc  1 e 1 0 ]
+"21
+[v _uzunBasildi uzunBasildi `b  1 e 0 0 ]
+[v _kisaBasildi kisaBasildi `b  1 e 0 0 ]
+"22
+[v _satirno satirno `uc  1 e 1 0 ]
+[v _sutunno sutunno `uc  1 e 1 0 ]
+"27 D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.h
+[v _tuslar tuslar `DCC[16]uc  1 e 16 0 ]
+"53
+[v _butonDurumu butonDurumu `E2884  1 e 1 0 ]
+"12 D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+[v __msaniye _msaniye `VEul  1 e 4 0 ]
+"64 D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"143
+} 0
+"26 D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+[v _tustakimi_oku tustakimi_oku `(uc  1 e 1 0 ]
+{
+"99
+} 0
+"103
+[v _buton_kontrol buton_kontrol `(uc  1 e 1 0 ]
+{
+"222
+} 0
+"22 D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+[v _miliSaniye miliSaniye `(ul  1 e 4 0 ]
+{
+"25
+} 0
+"58 D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+[v _tusbilgilerini_yaz tusbilgilerini_yaz `(v  1 e 1 0 ]
+{
+"63
+} 0
+"120 D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+[v _lcd_mesajyaz lcd_mesajyaz `(v  1 e 1 0 ]
+{
+[v lcd_mesajyaz@satir satir `uc  1 a 1 wreg ]
+[v lcd_mesajyaz@satir satir `uc  1 a 1 wreg ]
+[v lcd_mesajyaz@sutun sutun `uc  1 p 1 5 ]
+[v lcd_mesajyaz@mesaj mesaj `*.25DCCuc  1 p 2 6 ]
+[v lcd_mesajyaz@satir satir `uc  1 a 1 9 ]
+"125
+} 0
+"227
+[v _lcd_harfyaz lcd_harfyaz `(v  1 e 1 0 ]
+{
+[v lcd_harfyaz@harf harf `uc  1 a 1 wreg ]
+[v lcd_harfyaz@harf harf `uc  1 a 1 wreg ]
+[v lcd_harfyaz@harf harf `uc  1 a 1 1 ]
+"253
+} 0
+"96
+[v _lcd_git lcd_git `(v  1 e 1 0 ]
+{
+[v lcd_git@satir satir `uc  1 a 1 wreg ]
+"97
+[v lcd_git@temp temp `uc  1 a 1 4 ]
+"96
+[v lcd_git@satir satir `uc  1 a 1 wreg ]
+[v lcd_git@sutun sutun `uc  1 p 1 2 ]
+[v lcd_git@satir satir `uc  1 a 1 3 ]
+"114
+} 0
+"414
+[v _lcd_sil lcd_sil `(v  1 e 1 0 ]
+{
+"416
+} 0
+"55
+[v _lcd_baslat lcd_baslat `(v  1 e 1 0 ]
+{
+"89
+} 0
+"354
+[v _lcd_komut lcd_komut `(v  1 e 1 0 ]
+{
+[v lcd_komut@komut komut `uc  1 a 1 wreg ]
+[v lcd_komut@komut komut `uc  1 a 1 wreg ]
+[v lcd_komut@komut komut `uc  1 a 1 1 ]
+"380
+} 0
+"200
+[v _lcd_mesgulmu lcd_mesgulmu `(v  1 e 1 0 ]
+{
+"202
+} 0
+"69 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"76
+} 0
+"90
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"63 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+[v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"89
+[v _TMR6_StartTimer TMR6_StartTimer `(v  1 e 1 0 ]
+{
+"93
+} 0
+"134
+[v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37v  1 p 2 0 ]
+"136
+} 0
+"51 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"78 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"51 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"62
+} 0
+"121 D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+[v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
+{
+"131
+} 0
+"138
+[v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"141
+} 0
+"16 D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+[v __miliSaat _miliSaat `(v  1 e 1 0 ]
+{
+"19
+} 0

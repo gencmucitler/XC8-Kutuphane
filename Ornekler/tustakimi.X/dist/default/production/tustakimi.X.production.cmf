@@ -1,0 +1,838 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\ABD\AppData\Local\Temp\siu4.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 12 12 2 2
+config CONFIG 0 8007 8007 2 2
+$dist/default/production\tustakimi.X.production.obj
+cinit CODE 0 14 14 30A 2
+text20 CODE 0 386 386 B 2
+text21 CODE 0 3A8 3A8 1 2
+text22 CODE 0 39B 39B 7 2
+cstackCOMMON COMMON 1 70 70 E 1
+stringtext1 STRCODE 0 31E 31E 20 2
+stringtext2 STRCODE 0 350 350 F 2
+stringtext3 STRCODE 0 35F 35F D 2
+stringtext4 STRCODE 0 36C 36C D 2
+stringtext5 STRCODE 0 379 379 D 2
+stringtext6 STRCODE 0 391 391 A 2
+bitbssBANK0 BANK0 1 1A8 35 2 1
+intentry CODE 0 4 4 E 2
+bssBANK0 BANK0 1 20 20 15 1
+swtext1 CONST 0 33E 33E 12 2
+clrtext CODE 0 3A2 3A2 6 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 36-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+RAM 1A0-1EF 1
+RAM 220-24F 1
+BANK0 36-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-24F 1
+CONST 2-3 2
+CONST 3A9-FFF 2
+ENTRY 2-3 2
+ENTRY 3A9-FFF 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+STACK 2016-216F 1
+CODE 2-3 2
+CODE 3A9-FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-2EF 1
+SFR6 300-36F 1
+SFR7 380-3EF 1
+SFR8 400-46F 1
+SFR9 480-4EF 1
+BIGRAM 2000-216F 1
+EEDATA F000-F0FF 2
+STRCODE 2-3 2
+STRCODE 3A9-FFF 2
+STRING 2-3 2
+STRING 3A9-FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\tustakimi.X.production.obj
+14 cinit CODE >2516:C:\Users\ABD\AppData\Local\Temp\siu4.
+14 cinit CODE >2519:C:\Users\ABD\AppData\Local\Temp\siu4.
+14 cinit CODE >2586:C:\Users\ABD\AppData\Local\Temp\siu4.
+15 cinit CODE >2582:C:\Users\ABD\AppData\Local\Temp\siu4.
+16 cinit CODE >2587:C:\Users\ABD\AppData\Local\Temp\siu4.
+17 cinit CODE >2588:C:\Users\ABD\AppData\Local\Temp\siu4.
+18 cinit CODE >2589:C:\Users\ABD\AppData\Local\Temp\siu4.
+19 cinit CODE >2590:C:\Users\ABD\AppData\Local\Temp\siu4.
+1A cinit CODE >2591:C:\Users\ABD\AppData\Local\Temp\siu4.
+1D cinit CODE >2597:C:\Users\ABD\AppData\Local\Temp\siu4.
+1D cinit CODE >2599:C:\Users\ABD\AppData\Local\Temp\siu4.
+1E cinit CODE >2600:C:\Users\ABD\AppData\Local\Temp\siu4.
+1F cinit CODE >2601:C:\Users\ABD\AppData\Local\Temp\siu4.
+20 cinit CODE >64:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+20 cinit CODE >67:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+22 cinit CODE >69:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+28 cinit CODE >71:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+2A cinit CODE >72:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+2C cinit CODE >78:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+2D cinit CODE >81:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+2E cinit CODE >89:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+37 cinit CODE >94:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+3A cinit CODE >97:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+3E cinit CODE >105:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+40 cinit CODE >106:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+46 cinit CODE >113:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+48 cinit CODE >114:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+4E cinit CODE >117:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+50 cinit CODE >118:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+56 cinit CODE >121:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+58 cinit CODE >122:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+5E cinit CODE >125:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+60 cinit CODE >126:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+68 cinit CODE >102:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+7C cinit CODE >129:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+7D cinit CODE >58:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+7D cinit CODE >59:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+86 cinit CODE >60:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+8B cinit CODE >61:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+8F cinit CODE >62:D:\abd\Documents\MPLABX Projeler\tustakimi.X\main.c
+91 cinit CODE >120:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+92 cinit CODE >121:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+97 cinit CODE >122:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+97 cinit CODE >123:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+A1 cinit CODE >124:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+A9 cinit CODE >227:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+AA cinit CODE >228:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+AC cinit CODE >229:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+AE cinit CODE >237:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+B6 cinit CODE >240:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+BA cinit CODE >241:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+BC cinit CODE >242:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+C3 cinit CODE >247:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+C9 cinit CODE >250:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+CD cinit CODE >251:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+CF cinit CODE >252:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+D6 cinit CODE >253:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+D7 cinit CODE >96:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+D8 cinit CODE >98:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+D9 cinit CODE >100:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+DC cinit CODE >103:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+DF cinit CODE >106:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+E2 cinit CODE >109:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+E5 cinit CODE >110:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+E6 cinit CODE >98:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+F4 cinit CODE >112:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+F7 cinit CODE >113:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+FB cinit CODE >114:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+FC cinit CODE >55:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+FC cinit CODE >60:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+FF cinit CODE >63:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+100 cinit CODE >64:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+101 cinit CODE >70:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+108 cinit CODE >71:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+10A cinit CODE >72:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+10B cinit CODE >77:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+10F cinit CODE >79:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+110 cinit CODE >80:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+114 cinit CODE >81:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+116 cinit CODE >82:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+11D cinit CODE >83:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+120 cinit CODE >84:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+124 cinit CODE >85:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+127 cinit CODE >86:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+12B cinit CODE >87:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+12E cinit CODE >88:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+136 cinit CODE >89:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+137 cinit CODE >354:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+138 cinit CODE >355:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+13A cinit CODE >356:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+13C cinit CODE >364:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+144 cinit CODE >367:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+148 cinit CODE >368:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+14A cinit CODE >369:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+151 cinit CODE >374:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+157 cinit CODE >377:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+15B cinit CODE >378:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+15D cinit CODE >379:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+164 cinit CODE >380:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+165 cinit CODE >200:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+165 cinit CODE >201:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+169 cinit CODE >202:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+16A cinit CODE >134:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+16A cinit CODE >135:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+16F cinit CODE >136:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+170 cinit CODE >69:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+170 cinit CODE >72:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+172 cinit CODE >73:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+174 cinit CODE >74:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+176 cinit CODE >75:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+177 cinit CODE >78:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+177 cinit CODE >81:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+17A cinit CODE >83:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+17B cinit CODE >85:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+17B cinit CODE >87:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+17E cinit CODE >51:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+17E cinit CODE >56:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+180 cinit CODE >57:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+181 cinit CODE >62:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+184 cinit CODE >63:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+186 cinit CODE >68:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+188 cinit CODE >69:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+18A cinit CODE >74:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+18D cinit CODE >75:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+18F cinit CODE >76:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+191 cinit CODE >82:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+193 cinit CODE >83:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+194 cinit CODE >88:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/pin_manager.c
+195 cinit CODE >414:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+195 cinit CODE >415:D:\abd\Documents\MPLABX Projeler\tustakimi.X\lcd.c
+197 cinit CODE >26:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+197 cinit CODE >28:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+199 cinit CODE >29:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+19A cinit CODE >30:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+19B cinit CODE >31:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+19C cinit CODE >33:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+19E cinit CODE >34:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+19F cinit CODE >36:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1A1 cinit CODE >37:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1A4 cinit CODE >38:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1A6 cinit CODE >39:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1A8 cinit CODE >40:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1AA cinit CODE >41:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1AC cinit CODE >42:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1AE cinit CODE >43:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1B0 cinit CODE >46:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1B3 cinit CODE >47:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1B6 cinit CODE >49:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1B6 cinit CODE >50:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1B8 cinit CODE >51:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1BA cinit CODE >55:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1BA cinit CODE >56:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1BC cinit CODE >57:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1BD cinit CODE >58:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1BF cinit CODE >61:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1BF cinit CODE >62:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C1 cinit CODE >63:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C2 cinit CODE >64:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C3 cinit CODE >65:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C4 cinit CODE >66:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C5 cinit CODE >67:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C5 cinit CODE >68:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C7 cinit CODE >69:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C8 cinit CODE >70:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1C9 cinit CODE >71:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1CA cinit CODE >72:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1CB cinit CODE >48:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1D9 cinit CODE >73:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1D9 cinit CODE >76:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1DB cinit CODE >78:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1DD cinit CODE >80:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1DE cinit CODE >82:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1E0 cinit CODE >47:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1E5 cinit CODE >90:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+1EB cinit CODE >92:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+205 cinit CODE >93:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+206 cinit CODE >96:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+207 cinit CODE >98:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+208 cinit CODE >63:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+208 cinit CODE >68:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+20B cinit CODE >71:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+20D cinit CODE >74:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+20E cinit CODE >77:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+210 cinit CODE >80:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+212 cinit CODE >83:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+218 cinit CODE >86:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+219 cinit CODE >90:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+219 cinit CODE >93:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+21B cinit CODE >94:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+21C cinit CODE >89:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+21C cinit CODE >92:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+21E cinit CODE >93:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+21F cinit CODE >103:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+21F cinit CODE >104:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+220 cinit CODE >106:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+223 cinit CODE >107:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+226 cinit CODE >108:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+228 cinit CODE >109:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+22A cinit CODE >111:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+22B cinit CODE >112:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+22C cinit CODE >113:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+22D cinit CODE >114:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+22E cinit CODE >122:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+22F cinit CODE >123:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+233 cinit CODE >124:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+243 cinit CODE >125:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+245 cinit CODE >126:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+248 cinit CODE >127:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+24A cinit CODE >132:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+24C cinit CODE >133:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+24F cinit CODE >115:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+250 cinit CODE >122:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+253 cinit CODE >137:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+255 cinit CODE >142:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+258 cinit CODE >143:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+25A cinit CODE >150:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+25D cinit CODE >151:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+261 cinit CODE >152:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+263 cinit CODE >153:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+272 cinit CODE >154:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+272 cinit CODE >155:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+273 cinit CODE >154:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+274 cinit CODE >155:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+275 cinit CODE >156:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+277 cinit CODE >158:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+277 cinit CODE >159:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+279 cinit CODE >160:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+288 cinit CODE >161:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+288 cinit CODE >162:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+289 cinit CODE >161:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+28A cinit CODE >162:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+28B cinit CODE >163:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+28D cinit CODE >170:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+291 cinit CODE >171:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+293 cinit CODE >177:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+296 cinit CODE >178:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+298 cinit CODE >179:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+29A cinit CODE >186:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+29D cinit CODE >187:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2AD cinit CODE >188:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2AF cinit CODE >189:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2B1 cinit CODE >192:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2B4 cinit CODE >197:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2B5 cinit CODE >198:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2B7 cinit CODE >206:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2D6 cinit CODE >207:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2D8 cinit CODE >208:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2DA cinit CODE >211:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2DC cinit CODE >212:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2E7 cinit CODE >104:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2F1 cinit CODE >222:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+2F2 cinit CODE >22:D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+2F2 cinit CODE >24:D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+2FA cinit CODE >25:D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+4 intentry CODE >51:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/interrupt_manager.c
+4 intentry CODE >88:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/mcc.c
+6 intentry CODE >54:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/interrupt_manager.c
+E intentry CODE >56:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/interrupt_manager.c
+10 intentry CODE >62:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/interrupt_manager.c
+39B text22 CODE >16:D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+39B text22 CODE >18:D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+3A1 text22 CODE >19:D:\abd\Documents\MPLABX Projeler\tustakimi.X\zaman.c
+3A8 text21 CODE >138:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+3A8 text21 CODE >141:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+386 text20 CODE >121:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+386 text20 CODE >125:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+387 text20 CODE >127:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+38B text20 CODE >129:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+390 text20 CODE >131:D:\abd\Documents\MPLABX Projeler\tustakimi.X\mcc_generated_files/tmr6.c
+33E swtext1 CONST >104:D:\abd\Documents\MPLABX Projeler\tustakimi.X\tustakimi.c
+3A2 clrtext CODE >2571:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A2 clrtext CODE >2572:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A3 clrtext CODE >2573:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A3 clrtext CODE >2574:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A4 clrtext CODE >2575:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A5 clrtext CODE >2576:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A6 clrtext CODE >2577:C:\Users\ABD\AppData\Local\Temp\siu4.
+3A7 clrtext CODE >2578:C:\Users\ABD\AppData\Local\Temp\siu4.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 1 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Hspace_0 8009 0 ABS 0 - -
+__Hspace_1 1AA 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__size_of_lcd_git 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_lcd_sil 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+PL2 5F6 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+PL4 612 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+PL6 624 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+PL8 630 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__size_of_lcd_mesajyaz 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_lcd_mesgulmu 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_WDT_Initialize 438 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+_LATA 10C 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_LATB 10D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_PLLR 4D6 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_TMR6 41C 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_WPUA 20C 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_WPUB 20D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ABD\AppData\Local\Temp\siu4.obj
+_main 40 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of__miliSaat 744 0 CODE 0 text22 dist/default/production\tustakimi.X.production.obj
+start 24 0 CODE 0 init C:\Users\ABD\AppData\Local\Temp\siu4.obj
+__size_of_TMR6_Initialize 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_TMR6_StartTimer 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_miliSaniye 5F6 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_lcd_baslat 26E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__size_of__miliSaat 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+lcd_git@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+_OPTION_REGbits 95 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_lcd_harfyaz 1AE 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__end_of_lcd_mesajyaz 152 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_of_lcd_mesgulmu 2D4 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__size_of_buton_kontrol 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__miliSaat 736 0 CODE 0 text22 dist/default/production\tustakimi.X.production.obj
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_lcd_komut 2CA 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+lcd_komut@komut 71 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\ABD\AppData\Local\Temp\siu4.obj
+intlevel1 0 0 CODE 0 functab C:\Users\ABD\AppData\Local\Temp\siu4.obj
+intlevel2 0 0 CODE 0 functab C:\Users\ABD\AppData\Local\Temp\siu4.obj
+intlevel3 0 0 CODE 0 functab C:\Users\ABD\AppData\Local\Temp\siu4.obj
+intlevel4 0 0 CODE 0 functab C:\Users\ABD\AppData\Local\Temp\siu4.obj
+intlevel5 0 0 CODE 0 functab C:\Users\ABD\AppData\Local\Temp\siu4.obj
+__size_of_lcd_komut 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Hfunctab 0 0 CODE 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+_lcd_komut 26E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_oncekiButonNo 30 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+__end_of_buton_kontrol 5E4 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_ANSELA 18C 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_ANSELB 18D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_lcd_git 1F8 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_of_lcd_sil 32E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_butonSure 28 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+__end_of_INTERRUPT_InterruptManager 24 0 CODE 0 intentry dist/default/production\tustakimi.X.production.obj
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+lcd_harfyaz@harf 71 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+_TMR6_DefaultInterruptHandler 750 0 CODE 0 text21 dist/default/production\tustakimi.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
+_butonNo_kayit 31 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_PIN_MANAGER_Initialize 2FC 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+start_initialization 28 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_OSCCON 99 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_ofPL2 612 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_ofPL4 624 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_ofPL6 630 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_ofPL8 63C 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_of_SYSTEM_Initialize 2EE 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+clear_ram0 744 0 CODE 0 clrtext dist/default/production\tustakimi.X.production.obj
+_butonDurumu 34 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+_TRISA6 466 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_TRISA7 467 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_lcd_harfyaz 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_miliSaniye 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_lcd_baslat 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_tusbilgilerini_yaz 122 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_WDTCON 97 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ABD\AppData\Local\Temp\siu4.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hbank4 0 0 ABS 0 bank4 -
+__Hbank5 0 0 BANK5 1 bank5 -
+__Hbank6 0 0 BANK6 1 bank6 -
+__Hbank7 0 0 BANK7 1 bank7 -
+__Hbank8 0 0 BANK8 1 bank8 -
+__Hbank9 0 0 BANK9 1 bank9 -
+__Hcinit 63C 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+?_miliSaniye 70 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hstack 0 0 STACK 2 stack -
+__Hbank10 0 0 BANK10 1 bank10 -
+__Hbank11 0 0 BANK11 1 bank11 -
+__Hbank12 0 0 BANK12 1 bank12 -
+__Hbank13 0 0 BANK13 1 bank13 -
+__Hbank14 0 0 BANK14 1 bank14 -
+__Hbank15 0 0 BANK15 1 bank15 -
+__Hbank16 0 0 BANK16 1 bank16 -
+__Hbank17 0 0 BANK17 1 bank17 -
+__Hbank18 0 0 BANK18 1 bank18 -
+__Hbank19 0 0 BANK19 1 bank19 -
+__Hbank20 0 0 BANK20 1 bank20 -
+__Hbank21 0 0 BANK21 1 bank21 -
+__Hbank22 0 0 BANK22 1 bank22 -
+__Hbank23 0 0 BANK23 1 bank23 -
+__Hbank24 0 0 BANK24 1 bank24 -
+__Hbank25 0 0 BANK25 1 bank25 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Hbank28 0 0 BANK28 1 bank28 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank31 0 0 BANK31 1 bank31 -
+__end_of_tuslar 65C 0 STRCODE 0 stringtext1 dist/default/production\tustakimi.X.production.obj
+__Hbigram 0 0 ABS 0 bigram -
+__Hmaintext 0 0 ABS 0 maintext -
+__CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 10012 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lbank4 0 0 ABS 0 bank4 -
+__Lbank5 0 0 BANK5 1 bank5 -
+__Lbank6 0 0 BANK6 1 bank6 -
+__Lbank7 0 0 BANK7 1 bank7 -
+__Lbank8 0 0 BANK8 1 bank8 -
+__Lbank9 0 0 BANK9 1 bank9 -
+__Lcinit 28 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lstack 0 0 STACK 2 stack -
+_APFCON0 11D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_APFCON1 11E 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_PORTBbits D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_INTCONbits B 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 24 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 24 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+__Ltext 0 0 ABS 0 text -
+__pstringtext1 63C 0 STRCODE 0 stringtext1 dist/default/production\tustakimi.X.production.obj
+__pstringtext2 6A0 0 STRCODE 0 stringtext2 dist/default/production\tustakimi.X.production.obj
+__pstringtext3 6BE 0 STRCODE 0 stringtext3 dist/default/production\tustakimi.X.production.obj
+__pstringtext4 6D8 0 STRCODE 0 stringtext4 dist/default/production\tustakimi.X.production.obj
+__pstringtext5 6F2 0 STRCODE 0 stringtext5 dist/default/production\tustakimi.X.production.obj
+__pstringtext6 722 0 STRCODE 0 stringtext6 dist/default/production\tustakimi.X.production.obj
+__pstringtext7 0 0 STRCODE 0 stringtext7 dist/default/production\tustakimi.X.production.obj
+_tusbilgilerini_yaz FA 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+int$flags 7E 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_ciftTiklamaSure 24 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+_PR6 41D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__S0 8009 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__pbitbssBANK0 1A8 -173 BANK0 1 bitbssBANK0 dist/default/production\tustakimi.X.production.obj
+__size_of_TMR6_ISR 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_kisaBasildi 1A8 -173 BANK0 1 bitbssBANK0 dist/default/production\tustakimi.X.production.obj
+__size_of_TMR6_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_SYSTEM_Initialize 2E0 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_of_TMR6_DefaultInterruptHandler 752 0 CODE 0 text21 dist/default/production\tustakimi.X.production.obj
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Lintentry 8 0 CODE 0 intentry -
+_TMR6_SetInterruptHandler 2D4 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_lcd_git 1AE 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_lcd_sil 32A 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ABD\AppData\Local\Temp\siu4.obj
+lcd_mesajyaz@mesaj 76 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+lcd_mesajyaz@satir 79 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+lcd_mesajyaz@sutun 75 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lstringtext2 0 0 ABS 0 stringtext2 -
+__Lstringtext3 0 0 ABS 0 stringtext3 -
+__Lstringtext4 0 0 ABS 0 stringtext4 -
+__Lstringtext5 0 0 ABS 0 stringtext5 -
+__Lstringtext6 0 0 ABS 0 stringtext6 -
+__Lstringtext7 0 0 ABS 0 stringtext7 -
+_INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production\tustakimi.X.production.obj
+_tustakimi_oku 32E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_PIE3bits 93 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__LbitbssBANK0 0 0 ABS 0 bitbssBANK0 -
+__ptext10 26E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext11 2CA 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext12 2E0 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext13 432 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext14 410 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext15 438 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext16 2D4 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext17 2FC 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext18 2EE 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext20 70C 0 CODE 0 text20 dist/default/production\tustakimi.X.production.obj
+__ptext21 750 0 CODE 0 text21 dist/default/production\tustakimi.X.production.obj
+__ptext22 736 0 CODE 0 text22 dist/default/production\tustakimi.X.production.obj
+_TMR6_ISR 70C 0 CODE 0 text20 dist/default/production\tustakimi.X.production.obj
+__end_of_PIN_MANAGER_Initialize 32A 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__Lbank10 0 0 BANK10 1 bank10 -
+__Lbank11 0 0 BANK11 1 bank11 -
+__Lbank12 0 0 BANK12 1 bank12 -
+__Lbank13 0 0 BANK13 1 bank13 -
+__Lbank14 0 0 BANK14 1 bank14 -
+__Lbank15 0 0 BANK15 1 bank15 -
+__Lbank16 0 0 BANK16 1 bank16 -
+__Lbank17 0 0 BANK17 1 bank17 -
+__Lbank18 0 0 BANK18 1 bank18 -
+__Lbank19 0 0 BANK19 1 bank19 -
+__Lbank20 0 0 BANK20 1 bank20 -
+__Lbank21 0 0 BANK21 1 bank21 -
+__Lbank22 0 0 BANK22 1 bank22 -
+__Lbank23 0 0 BANK23 1 bank23 -
+__Lbank24 0 0 BANK24 1 bank24 -
+__Lbank25 0 0 BANK25 1 bank25 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__pmaintext 40 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__Lbigram 0 0 ABS 0 bigram -
+__CFG_BORV$LO 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 1000E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__CFG_IESO$ON 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_TMR6_ISR 722 0 CODE 0 text20 dist/default/production\tustakimi.X.production.obj
+_LATBbits 10D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_TMR6_InterruptHandler 2C 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+_satirno 2F 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+_T6CONbits 41E 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_tuslar 63C 0 STRCODE 0 stringtext1 dist/default/production\tustakimi.X.production.obj
+stackhi 216F 0 ABS 0 - C:\Users\ABD\AppData\Local\Temp\siu4.obj
+stacklo 2016 0 ABS 0 - C:\Users\ABD\AppData\Local\Temp\siu4.obj
+_OSCTUNE 98 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__msaniye 20 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+_lcd_harfyaz 152 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+lcd_git@satir 73 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+lcd_git@sutun 72 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+_PIR3bits 13 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Lend_init 24 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_butonNo 32 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+end_of_initialization 3A 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__Hintentry 24 0 CODE 0 intentry -
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 4 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__end_of_TMR6_Initialize 432 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_of_TMR6_StartTimer 43E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext1 32E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext2 43E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext3 5E4 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext4 FA 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext5 122 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext6 152 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext7 1AE 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext8 32A 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__ptext9 1F8 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__size_of_tustakimi_oku 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_TMR6_SetInterruptHandler 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__Hstringtext1 0 0 ABS 0 stringtext1 -
+__Hstringtext2 0 0 ABS 0 stringtext2 -
+__Hstringtext3 0 0 ABS 0 stringtext3 -
+__Hstringtext4 0 0 ABS 0 stringtext4 -
+__Hstringtext5 0 0 ABS 0 stringtext5 -
+__Hstringtext6 0 0 ABS 0 stringtext6 -
+__Hstringtext7 0 0 ABS 0 stringtext7 -
+__CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__size_of_tusbilgilerini_yaz 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_sutunno 2E 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+__HbitbssBANK0 0 0 ABS 0 bitbssBANK0 -
+__end_of__initialization 3A 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__Lfunctab 0 0 CODE 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+__end_of_tustakimi_oku 410 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_TMR6_Initialize 410 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_TMR6_StartTimer 438 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+__Hend_init 28 0 CODE 0 end_init -
+TMR6_SetInterruptHandler@InterruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\tustakimi.X.production.obj
+_uzunBasildi 1A9 -173 BANK0 1 bitbssBANK0 dist/default/production\tustakimi.X.production.obj
+__end_of_main FA 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_buton_kontrol 43E 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_LATA6 866 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_LATA7 867 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_T6CON 41E 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_TRISA 8C 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_TRISB 8D 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_tusno 33 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+_WDT_Initialize 432 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_miliSaniye 5E4 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\tustakimi.X.production.obj
+_lcd_baslat 1F8 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__end_of_OSCILLATOR_Initialize 2FC 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_lcd_mesajyaz 122 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+_lcd_mesgulmu 2CA 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__initialization 28 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\tustakimi.X.production.obj
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\tustakimi.X.production.obj
+__end_of_TMR6_SetInterruptHandler 2E0 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+__pswtext1 67C 0 CONST 0 swtext1 dist/default/production\tustakimi.X.production.obj
+_OSCILLATOR_Initialize 2EE 0 CODE 0 cinit dist/default/production\tustakimi.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text20 0 386 70C B 2
+text22 0 39B 736 E 2
+cstackCOMMON 1 70 70 E 1
+stringtext1 0 31E 63C 20 2
+stringtext2 0 350 6A0 36 2
+stringtext6 0 391 722 A 2
+intentry 0 4 8 31A 2
+reset_vec 0 0 0 2 2
+bssBANK0 1 20 20 16 1
+swtext1 0 33E 67C 12 2
+config 0 8007 1000E 2 2
