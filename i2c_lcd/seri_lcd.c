@@ -3,7 +3,7 @@
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 05 Temmuz 2017                                              *
- * Versiyon      : 0.1                                                         *
+ * Versiyon      : 0.2                                                         *
  *                                                                             *
  * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
  ******************************************************************************/
@@ -45,33 +45,59 @@ typedef union
 
 
 _PCF_PORT pcf_port;
+
+/*******************************************************************************
+ *  PCF8574 üzerinden veriyi gönderdikten sonra enable pinini high-low yapar.  *
+ *******************************************************************************/
+void pcf8574_yaz_wEnable() {
+
+    I2C1_MESSAGE_STATUS status;
+    uint8_t writeBuffer[3];
+    uint16_t timeOut;
+
+    writeBuffer[0] = lcd_data;
+    pcf_port.lcd.E = 1;
+    writeBuffer[1] = lcd_data;
+    pcf_port.lcd.E = 0;
+    writeBuffer[2] = lcd_data;
+    
+    timeOut = 0;
+    while (status != I2C1_MESSAGE_FAIL) {
+        
+        //3 byte gönder
+        I2C1_MasterWrite(writeBuffer,
+                3,
+                pcf_adres,
+                &status);
+
+        // veri gönderilene kadar bekle.
+        while (status == I2C1_MESSAGE_PENDING);
+
+        //baþarýlý olarak gönderildi isi çýk
+        if (status == I2C1_MESSAGE_COMPLETE)
+            break;
+
+        //Veri gönderilmediyse tekrar gönder.
+        //Baþarýsýz tekrar sayýsýna ulaþýldýysa da çýk.
+        if (timeOut == pcf_tekrar)
+            break;
+        else
+            timeOut++;
+    }
+
+}
+
 /*******************************************************************************
  *  LCD ekraný çalýþtýrýr. Ýlk önce bu fonksiyon çalýþtýrýlmalýdýr.             *
  *******************************************************************************/
-
 void lcd_baslat(void) {
 
     pcf8574_yaz(0x00);
-    
-    pcf_port.port=0x00;
-    
-    pcf_port.lcd.E=0;
-    pcf_port.lcd.RS=0;
-    pcf_port.lcd.RW=0;
+    lcd_data=0x00;
 
-
-#ifdef LCDustpin
     lcd_data = 0x20 | (lcd_data & 0x0f); //4 bit mod
-#endif
-#ifdef LCDaltpin
-    lcd_data = 0x02 | (lcd_data & 0xf0); //4 bit mod
-#endif
-    pcf8574_yaz(pcf_port.port);    
-    lcd_e = 1;
-    pcf8574_yaz(pcf_port.port);    
-    __delay_us(1);
-    lcd_e = 0;
-    pcf8574_yaz(pcf_port.port);    
+
+    pcf8574_yaz_wEnable();
     __delay_ms(5);
     
     lcd_komut(0x28);
@@ -80,6 +106,9 @@ void lcd_baslat(void) {
     __delay_us(40);
     lcd_komut(0x06); //cursor ileri
     __delay_ms(2);
+        
+    lcd_sil();
+    lcd_aydinlatma_ac();
 }
 
 
@@ -132,259 +161,43 @@ void lcd_mesajyaz_cp(const char *mesaj) {
  * Lcd meþgul olduðu sürece bu fonksiyon içinde bekler..                        *
  * Lcd_komut ve lcd_harfyaz fonksiyonlarý bu fonksiyonu kullanýr.               *
  *******************************************************************************/
-#ifdef lcd_rw_aktif
-
-#ifdef LCDBIT8
-
-void lcd_mesgulmu(void) {
-    char temp;
-    lcd_rs = 0;
-    lcd_rw = 1;
-    lcd_tris = 0xff;
-    do {
-        __delay_us(1);
-        lcd_e = 1;
-        __delay_us(1);
-        lcd_e = 0;
-        temp = lcd_read & 0x80;
-    } while (temp);
-    lcd_tris = 0x00;
-}
-#endif
-
-#ifdef LCDBIT4
-
-void lcd_mesgulmu(void) {
-    char temp, temp2;
-    lcd_rs = 0;
-    lcd_rw = 1;
-#ifdef LCDustpin
-    lcd_tris = 0xf0 | lcd_tris;
-#endif
-#ifdef LCDaltpin
-    lcd_tris = 0x0f | lcd_tris;
-#endif
-    do {
-        __delay_us(1);
-        lcd_e = 1;
-        __delay_us(1);
-        lcd_e = 0; //high byte oku
-#ifdef LCDustpin
-        temp = lcd_read & 0x80;
-#endif
-#ifdef LCDaltpin
-        temp = lcd_read & 0x08;
-#endif
-        __delay_us(1);
-        lcd_e = 1;
-        __delay_us(1);
-        lcd_e = 0; //low byte oku, ama herhangi bir deðiþkene kaydetmeye gerek yok.
-    } while (temp);
-#ifdef LCDustpin
-    lcd_tris = lcd_tris & 0x0f;
-#endif
-#ifdef LCDaltpin
-    lcd_tris = lcd_tris & 0xf0;
-#endif
-}
-#endif
-
-#else
-
 void lcd_mesgulmu(void) {
     __delay_us(100); //bekle.
 }
-#endif
 
 /*******************************************************************************
  * Lcd ekrana tek bir harf yazar.                                               *
  * Örnek : lcd_harfyaz('A');                                                    *
  *******************************************************************************/
-#ifdef LCDBIT8
-
 void lcd_harfyaz(char harf) {
     lcd_mesgulmu();
-    lcd_rs = 1;
-#ifdef lcd_rw_aktif
-    lcd_rw = 0;
-#endif
-    lcd_data = harf;
-    lcd_e = 1;
-    __delay_us(1);
-    lcd_e = 0;
-    __delay_us(200);
-}
-#endif
+    lcd_rs = 1;     //harf
 
-#ifdef LCDBIT4
-
-void lcd_harfyaz(char harf) {
-    lcd_mesgulmu();
-    lcd_rs = 1;
-#ifdef lcd_rw_aktif
-    lcd_rw = 0;
-#endif
-#ifdef LCDustpin
     lcd_data = (lcd_data & 0x0f) | (harf & 0xf0); //high verisini gönder.
-#endif
-#ifdef LCDaltpin
-    lcd_data = (lcd_data & 0xf0) | (harf >> 4);
-#endif
-        pcf8574_yaz(pcf_port.port);    
-    lcd_e = 1;
-        pcf8574_yaz(pcf_port.port);    
-    __delay_us(1);
-    lcd_e = 0;
-        pcf8574_yaz(pcf_port.port);    
+    pcf8574_yaz_wEnable();
     __delay_us(200);
-#ifdef LCDustpin
+
     lcd_data = (lcd_data & 0x0f) | (harf << 4); //low verisini gönder.
-#endif
-#ifdef LCDaltpin
-    lcd_data = (lcd_data & 0xf0) | (harf & 0x0f);
-#endif
-        pcf8574_yaz(pcf_port.port);    
-    lcd_e = 1;
-        pcf8574_yaz(pcf_port.port);    
-    __delay_us(1);
-    lcd_e = 0;
-        pcf8574_yaz(pcf_port.port);    
+    pcf8574_yaz_wEnable();
     __delay_us(200);
 }
-#endif
 
-/*******************************************************************************
- * Lcd ekrandan tek bir harf okur                                               *
- *******************************************************************************/
-#ifdef lcd_rw_aktif
-
-#ifdef LCDBIT8
-
-char lcd_harfoku(void) {
-    char temp;
-    lcd_mesgulmu();
-    lcd_rs = 1;
-    lcd_rw = 1;
-
-    lcd_tris = 0xff;
-    lcd_e = 1;
-    __delay_us(1);
-    temp = lcd_read;
-    lcd_e = 0;
-    __delay_us(1);
-    lcd_tris = 0x00;
-    return temp;
-}
-#endif
-
-#ifdef LCDBIT4
-//task: yazýlacak
-
-char lcd_harfoku(void) {
-    char temp, harf1, harf2;
-
-    lcd_mesgulmu();
-#ifdef LCDustpin
-    lcd_tris = 0xf0 | lcd_tris;
-#endif
-#ifdef LCDaltpin
-    lcd_tris = 0x0f | lcd_tris;
-#endif
-
-    lcd_rs = 1;
-    lcd_rw = 1;
-
-    lcd_e = 1;
-    __delay_us(1);
-#ifdef LCDustpin
-    harf1 = (lcd_read & 0xf0); //high verisini al.
-#endif
-#ifdef LCDaltpin
-    harf1 = (lcd_read & 0x0f) << 4;
-#endif
-    lcd_e = 0;
-    __delay_us(1);
-
-    lcd_e = 1;
-    __delay_us(1);
-#ifdef LCDustpin
-    harf2 = (lcd_read & 0xf0) >> 4; //low verisini al.
-#endif
-#ifdef LCDaltpin
-    harf2 = (lcd_read & 0x0f);
-#endif
-    lcd_e = 0;
-    __delay_us(1);
-
-    temp = harf1 | harf2; //üst ve alt veriyi birleþtir.
-
-#ifdef LCDustpin
-    lcd_tris = lcd_tris & 0x0f;
-#endif
-#ifdef LCDaltpin
-    lcd_tris = lcd_tris & 0xf0;
-#endif
-    return temp;
-}
-#endif
-
-#endif
 
 /*******************************************************************************
  * Lcd komutlarýný gönderir.                                                    *
  *******************************************************************************/
-#ifdef LCDBIT8
-
 void lcd_komut(char komut) {
     lcd_mesgulmu();
-    lcd_rs = 0;
-#ifdef lcd_rw_aktif
-    lcd_rw = 0;
-#endif
-    lcd_data = komut;
-    lcd_e = 1;
-    __delay_us(1);
-    lcd_e = 0;
-    __delay_ms(5);
-}
-#endif
+    lcd_rs = 0;     //komut
 
-#ifdef LCDBIT4
-
-void lcd_komut(char komut) {
-    lcd_mesgulmu();
-    lcd_rs = 0;
-#ifdef lcd_rw_aktif
-    lcd_rw = 0;
-#endif
-#ifdef LCDustpin
     lcd_data = (lcd_data & 0x0f) | (komut & 0xf0); //high verisini gönder.
-#endif
-#ifdef LCDaltpin
-    lcd_data = (lcd_data & 0xf0) | (komut >> 4);
-#endif
-        pcf8574_yaz(pcf_port.port);    
-    lcd_e = 1;
-        pcf8574_yaz(pcf_port.port);    
-    __delay_us(1);
-    lcd_e = 0;
-        pcf8574_yaz(pcf_port.port);    
+    pcf8574_yaz_wEnable();
     __delay_ms(5);
-#ifdef LCDustpin
+    
     lcd_data = (lcd_data & 0x0f) | (komut << 4); //low verisini gönder.
-#endif
-#ifdef LCDaltpin
-    lcd_data = (lcd_data & 0xf0) | (komut & 0x0f);
-#endif
-        pcf8574_yaz(pcf_port.port);    
-    lcd_e = 1;
-        pcf8574_yaz(pcf_port.port);    
-    __delay_us(1);
-    lcd_e = 0;
-        pcf8574_yaz(pcf_port.port);    
+    pcf8574_yaz_wEnable();
     __delay_ms(5);
 }
-#endif
 
 /*******************************************************************************
  * Lcd ekranda özel karakter oluþturur.                                         *
@@ -529,12 +342,18 @@ void putch(unsigned char byte) {
 }
 #endif
 
+/*******************************************************************************
+ * LCD arkaplan aydýnlatmayý aç                                                *
+ *******************************************************************************/
 void lcd_aydinlatma_ac(void)
 {
     pcf_port.lcd.LED=1;
     pcf8574_yaz(pcf_port.port);
 }
 
+/*******************************************************************************
+ * LCD arkaplan aydýnlatmayý kapat                                             *
+ *******************************************************************************/
 void lcd_aydinlatma_kapat(void)
 {
     pcf_port.lcd.LED=0;

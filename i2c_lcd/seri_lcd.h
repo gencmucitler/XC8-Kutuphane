@@ -3,7 +3,7 @@
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 05 Temmuz 2017                                              *
- * Versiyon      : 0.1                                                         *
+ * Versiyon      : 0.2                                                         *
  *                                                                             *
  * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
  ******************************************************************************/
@@ -26,46 +26,25 @@
  * P7: D7
  */
 
-#define pcf_adres   0x3F    //i2c entegrenin adresi
-
-//#define LCDBIT8    //lcd ekrana 8bit mi eriþilecek
-#define LCDBIT4    //yoksa 4 bit mi?
-
-#ifdef LCDBIT4
-#define LCDustpin     //4bit eriþilecekse hangi pinler kullanýlacak
-//#define LCDaltpin
-#endif
-
-//RW pini PIC'e mi yoksa Topraða mý baðlý
-//#define lcd_rw_aktif
+#define pcf_adres   0x3F    //i2c entegresinin adresi
 
 //printf fonksiyonu lcd'ye yazacak mý?
 #define lcdprintf_aktif
 
 // kullanýlacak lcd ayaklar?
 #define lcd_data	pcf_port.port
-#define lcd_read    pcf_port.port
-//#define lcd_tris	TRISB
 
 #define lcd_rs          pcf_port.lcd.RS
-//#define lcd_tris_rs     TRISA6
 #define lcd_e           pcf_port.lcd.E
-//#define lcd_tris_e      TRISA7
-
-#ifdef lcd_rw_aktif
 #define lcd_rw           pcf_port.lcd.RW
-//#define lcd_tris_rw     TRISA1
-#endif
+
 
 //fonksiyon prototipleri
 void lcd_baslat(void);
 void lcd_git(char satir, char sutun);
 void lcd_mesajyaz(char satir, char sutun, const char *mesaj);
 void lcd_mesajyaz_cp(const char *mesaj);
-#ifdef lcd_rw_aktif
-    void lcd_mesgulmu(void);
-    char lcd_harfoku(void);
-#endif
+void lcd_mesgulmu(void);
 void lcd_harfyaz(char harf);
 void lcd_ozelkarakter(char karakterno,char patern[8]);
 void lcd_komut(char komut);
