@@ -1,0 +1,2015 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.42 build -159332390 
+                                                                                               Sun Jul 09 19:00:26 2017
+
+Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130522
+     1                           	processor	12F675
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	strings,global,class=STRING,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2
+    17                           	psect	text8,local,class=CODE,merge=1,delta=2
+    18                           	psect	text9,local,class=CODE,merge=1,delta=2
+    19                           	psect	text10,local,class=CODE,merge=1,delta=2
+    20                           	psect	text11,local,class=CODE,merge=1,delta=2
+    21                           	psect	text12,local,class=CODE,merge=1,delta=2
+    22                           	psect	text13,local,class=CODE,merge=1,delta=2
+    23                           	psect	text14,local,class=CODE,merge=1,delta=2
+    24                           	dabs	1,0x5E,2
+    25  0000                     
+    26                           ; Version 1.42
+    27                           ; Generated 13/04/2017 GMT
+    28                           ; 
+    29                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    30                           ; All rights reserved.
+    31                           ; 
+    32                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    33                           ; 
+    34                           ; Redistribution and use in source and binary forms, with or without modification, are
+    35                           ; permitted provided that the following conditions are met:
+    36                           ; 
+    37                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    38                           ;        conditions and the following disclaimer.
+    39                           ; 
+    40                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    41                           ;        of conditions and the following disclaimer in the documentation and/or other
+    42                           ;        materials provided with the distribution.
+    43                           ; 
+    44                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    45                           ;        software without specific prior written permission.
+    46                           ; 
+    47                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    48                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    49                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    50                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    51                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    52                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    53                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    54                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    55                           ; 
+    56                           ; 
+    57                           ; Code-generator required, PIC12F675 Definitions
+    58                           ; 
+    59                           ; SFR Addresses
+    60  0000                     	;# 
+    61  0001                     	;# 
+    62  0002                     	;# 
+    63  0003                     	;# 
+    64  0004                     	;# 
+    65  0005                     	;# 
+    66  000A                     	;# 
+    67  000B                     	;# 
+    68  000C                     	;# 
+    69  000E                     	;# 
+    70  000E                     	;# 
+    71  000F                     	;# 
+    72  0010                     	;# 
+    73  0019                     	;# 
+    74  001E                     	;# 
+    75  001F                     	;# 
+    76  0081                     	;# 
+    77  0085                     	;# 
+    78  008C                     	;# 
+    79  008E                     	;# 
+    80  0090                     	;# 
+    81  0095                     	;# 
+    82  0096                     	;# 
+    83  0096                     	;# 
+    84  0099                     	;# 
+    85  009A                     	;# 
+    86  009A                     	;# 
+    87  009B                     	;# 
+    88  009C                     	;# 
+    89  009D                     	;# 
+    90  009E                     	;# 
+    91  009F                     	;# 
+    92  0000                     	;# 
+    93  0001                     	;# 
+    94  0002                     	;# 
+    95  0003                     	;# 
+    96  0004                     	;# 
+    97  0005                     	;# 
+    98  000A                     	;# 
+    99  000B                     	;# 
+   100  000C                     	;# 
+   101  000E                     	;# 
+   102  000E                     	;# 
+   103  000F                     	;# 
+   104  0010                     	;# 
+   105  0019                     	;# 
+   106  001E                     	;# 
+   107  001F                     	;# 
+   108  0081                     	;# 
+   109  0085                     	;# 
+   110  008C                     	;# 
+   111  008E                     	;# 
+   112  0090                     	;# 
+   113  0095                     	;# 
+   114  0096                     	;# 
+   115  0096                     	;# 
+   116  0099                     	;# 
+   117  009A                     	;# 
+   118  009A                     	;# 
+   119  009B                     	;# 
+   120  009C                     	;# 
+   121  009D                     	;# 
+   122  009E                     	;# 
+   123  009F                     	;# 
+   124  0000                     	;# 
+   125  0001                     	;# 
+   126  0002                     	;# 
+   127  0003                     	;# 
+   128  0004                     	;# 
+   129  0005                     	;# 
+   130  000A                     	;# 
+   131  000B                     	;# 
+   132  000C                     	;# 
+   133  000E                     	;# 
+   134  000E                     	;# 
+   135  000F                     	;# 
+   136  0010                     	;# 
+   137  0019                     	;# 
+   138  001E                     	;# 
+   139  001F                     	;# 
+   140  0081                     	;# 
+   141  0085                     	;# 
+   142  008C                     	;# 
+   143  008E                     	;# 
+   144  0090                     	;# 
+   145  0095                     	;# 
+   146  0096                     	;# 
+   147  0096                     	;# 
+   148  0099                     	;# 
+   149  009A                     	;# 
+   150  009A                     	;# 
+   151  009B                     	;# 
+   152  009C                     	;# 
+   153  009D                     	;# 
+   154  009E                     	;# 
+   155  009F                     	;# 
+   156  0000                     	;# 
+   157  0001                     	;# 
+   158  0002                     	;# 
+   159  0003                     	;# 
+   160  0004                     	;# 
+   161  0005                     	;# 
+   162  000A                     	;# 
+   163  000B                     	;# 
+   164  000C                     	;# 
+   165  000E                     	;# 
+   166  000E                     	;# 
+   167  000F                     	;# 
+   168  0010                     	;# 
+   169  0019                     	;# 
+   170  001E                     	;# 
+   171  001F                     	;# 
+   172  0081                     	;# 
+   173  0085                     	;# 
+   174  008C                     	;# 
+   175  008E                     	;# 
+   176  0090                     	;# 
+   177  0095                     	;# 
+   178  0096                     	;# 
+   179  0096                     	;# 
+   180  0099                     	;# 
+   181  009A                     	;# 
+   182  009A                     	;# 
+   183  009B                     	;# 
+   184  009C                     	;# 
+   185  009D                     	;# 
+   186  009E                     	;# 
+   187  009F                     	;# 
+   188  0005                     _GPIObits	set	5
+   189  0019                     _CMCON	set	25
+   190  0018                     _CARRY	set	24
+   191  002C                     _GPIO4	set	44
+   192  002D                     _GPIO5	set	45
+   193  0085                     _TRISIObits	set	133
+   194  009F                     _ANSEL	set	159
+   195  0090                     _OSCCAL	set	144
+   196  042C                     _TRISIO4	set	1068
+   197  042D                     _TRISIO5	set	1069
+   198                           
+   199                           	psect	strings
+   200  0001                     __pstrings:	
+   201  0001                     stringtab:	
+   202  0001                     __stringtab:	
+   203  0001                     stringcode:	
+   204                           ;	String table - string pointers are 1 byte each
+   205                           
+   206  0001                     stringdir:	
+   207  0001  3000               	movlw	high stringdir
+   208  0002  008A               	movwf	10
+   209  0003  0804               	movf	4,w
+   210  0004  0A84               	incf	4,f
+   211  0005  0782               	addwf	2,f
+   212  0006                     __stringbase:	
+   213  0006  3400               	retlw	0
+   214  0007                     __end_of__stringtab:	
+   215  0007                     STR_2:	
+   216  0007  3450               	retlw	80	;'P'
+   217  0008  3449               	retlw	73	;'I'
+   218  0009  3443               	retlw	67	;'C'
+   219  000A  3431               	retlw	49	;'1'
+   220  000B  3432               	retlw	50	;'2'
+   221  000C  3446               	retlw	70	;'F'
+   222  000D  3436               	retlw	54	;'6'
+   223  000E  3437               	retlw	55	;'7'
+   224  000F  3435               	retlw	53	;'5'
+   225  0010  3420               	retlw	32	;' '
+   226  0011  3473               	retlw	115	;'s'
+   227  0012  346F               	retlw	111	;'o'
+   228  0013  3466               	retlw	102	;'f'
+   229  0014  3474               	retlw	116	;'t'
+   230  0015  3449               	retlw	73	;'I'
+   231  0016  3432               	retlw	50	;'2'
+   232  0017  3443               	retlw	67	;'C'
+   233  0018  3400               	retlw	0
+   234  0019                     STR_1:	
+   235  0019  3453               	retlw	83	;'S'
+   236  001A  3465               	retlw	101	;'e'
+   237  001B  346C               	retlw	108	;'l'
+   238  001C  3461               	retlw	97	;'a'
+   239  001D  346D               	retlw	109	;'m'
+   240  001E  3420               	retlw	32	;' '
+   241  001F  344D               	retlw	77	;'M'
+   242  0020  3469               	retlw	105	;'i'
+   243  0021  346C               	retlw	108	;'l'
+   244  0022  346C               	retlw	108	;'l'
+   245  0023  3465               	retlw	101	;'e'
+   246  0024  3474               	retlw	116	;'t'
+   247  0025  3400               	retlw	0
+   248                           
+   249                           ; #config settings
+   250  0000                     
+   251                           	psect	cinit
+   252  03FA                     start_initialization:	
+   253  03FA                     __initialization:	
+   254                           
+   255                           ; Clear objects allocated to BANK0
+   256  03FA  1283               	bcf	3,5	;RP0=0, select bank0
+   257  03FB  01B3               	clrf	__pbssBANK0& (0+127)
+   258  03FC  01B4               	clrf	(__pbssBANK0+1)& (0+127)
+   259  03FD                     end_of_initialization:	
+   260                           ;End of C runtime variable initialization code
+   261                           
+   262  03FD                     __end_of__initialization:	
+   263  03FD  0183               	clrf	3
+   264  03FE  2BB0               	ljmp	_main	;jump to C main() function
+   265                           
+   266                           	psect	bssBANK0
+   267  0033                     __pbssBANK0:	
+   268  0033                     _display_kursor_blink:	
+   269  0033                     	ds	1
+   270  0034                     _pcf_port:	
+   271  0034                     	ds	1
+   272                           
+   273                           	psect	cstackCOMMON
+   274  0000                     __pcstackCOMMON:	
+   275  0000                     ??___osccal_val:	
+   276  0000                     ??_softi2c_kur:	
+   277                           ; 1 bytes @ 0x0
+   278                           
+   279  0000                     ??_softi2c_baslat:	
+   280                           ; 1 bytes @ 0x0
+   281                           
+   282  0000                     ??_softi2c_durdur:	
+   283                           ; 1 bytes @ 0x0
+   284                           
+   285  0000                     ??_lcd_sil:	
+   286                           ; 1 bytes @ 0x0
+   287                           
+   288  0000                     ??_lcd_aydinlatma_ac:	
+   289                           ; 1 bytes @ 0x0
+   290                           
+   291  0000                     ??_pcf8574_yaz:	
+   292                           ; 1 bytes @ 0x0
+   293                           
+   294  0000                     ??_pcf8574_yaz_wEnable:	
+   295                           ; 1 bytes @ 0x0
+   296                           
+   297                           
+   298                           	psect	cstackBANK0
+   299  0020                     __pcstackBANK0:	
+   300                           ; 1 bytes @ 0x0
+   301                           
+   302  0020                     ?___osccal_val:	
+   303  0020                     ?_softi2c_kur:	
+   304                           ; 1 bytes @ 0x0
+   305                           
+   306  0020                     ?_lcd_baslat:	
+   307                           ; 1 bytes @ 0x0
+   308                           
+   309  0020                     ?_softi2c_baslat:	
+   310                           ; 1 bytes @ 0x0
+   311                           
+   312  0020                     ?_softi2c_yaz:	
+   313                           ; 1 bytes @ 0x0
+   314                           
+   315  0020                     ??_softi2c_yaz:	
+   316                           ; 1 bytes @ 0x0
+   317                           
+   318  0020                     ?_softi2c_durdur:	
+   319                           ; 1 bytes @ 0x0
+   320                           
+   321  0020                     ?_lcd_komut:	
+   322                           ; 1 bytes @ 0x0
+   323                           
+   324  0020                     ?_lcd_sil:	
+   325                           ; 1 bytes @ 0x0
+   326                           
+   327  0020                     ?_lcd_aydinlatma_ac:	
+   328                           ; 1 bytes @ 0x0
+   329                           
+   330  0020                     ?_lcd_harfyaz:	
+   331                           ; 1 bytes @ 0x0
+   332                           
+   333  0020                     ?_main:	
+   334                           ; 1 bytes @ 0x0
+   335                           
+   336  0020                     ?_pcf8574_yaz:	
+   337                           ; 1 bytes @ 0x0
+   338                           
+   339  0020                     ?_pcf8574_yaz_wEnable:	
+   340                           ; 1 bytes @ 0x0
+   341                           
+   342  0020                     ?_lcd_mesgulmu:	
+   343                           ; 1 bytes @ 0x0
+   344                           
+   345  0020                     ??_lcd_mesgulmu:	
+   346                           ; 1 bytes @ 0x0
+   347                           
+   348                           
+   349                           ; 1 bytes @ 0x0
+   350  0020                     	ds	2
+   351  0022                     softi2c_yaz@temp:	
+   352                           
+   353                           ; 1 bytes @ 0x2
+   354  0022                     	ds	1
+   355  0023                     softi2c_yaz@veri:	
+   356                           
+   357                           ; 1 bytes @ 0x3
+   358  0023                     	ds	1
+   359  0024                     softi2c_yaz@i:	
+   360                           
+   361                           ; 1 bytes @ 0x4
+   362  0024                     	ds	1
+   363  0025                     ??_lcd_komut:	
+   364  0025                     ??_lcd_harfyaz:	
+   365                           ; 1 bytes @ 0x5
+   366                           
+   367  0025                     pcf8574_yaz@veri:	
+   368                           ; 1 bytes @ 0x5
+   369                           
+   370                           
+   371                           ; 1 bytes @ 0x5
+   372  0025                     	ds	2
+   373  0027                     lcd_harfyaz@harf:	
+   374  0027                     lcd_komut@komut:	
+   375                           ; 1 bytes @ 0x7
+   376                           
+   377                           
+   378                           ; 1 bytes @ 0x7
+   379  0027                     	ds	1
+   380  0028                     ??_lcd_baslat:	
+   381  0028                     ?_lcd_git:	
+   382                           ; 1 bytes @ 0x8
+   383                           
+   384  0028                     lcd_git@sutun:	
+   385                           ; 1 bytes @ 0x8
+   386                           
+   387                           
+   388                           ; 1 bytes @ 0x8
+   389  0028                     	ds	1
+   390  0029                     ??_lcd_git:	
+   391                           
+   392                           ; 1 bytes @ 0x9
+   393  0029                     	ds	1
+   394  002A                     lcd_git@satir:	
+   395                           
+   396                           ; 1 bytes @ 0xA
+   397  002A                     	ds	1
+   398  002B                     lcd_git@temp:	
+   399                           
+   400                           ; 1 bytes @ 0xB
+   401  002B                     	ds	1
+   402  002C                     ?_lcd_mesajyaz:	
+   403  002C                     lcd_mesajyaz@sutun:	
+   404                           ; 1 bytes @ 0xC
+   405                           
+   406                           
+   407                           ; 1 bytes @ 0xC
+   408  002C                     	ds	1
+   409  002D                     lcd_mesajyaz@mesaj:	
+   410                           
+   411                           ; 1 bytes @ 0xD
+   412  002D                     	ds	1
+   413  002E                     ??_lcd_mesajyaz:	
+   414                           
+   415                           ; 1 bytes @ 0xE
+   416  002E                     	ds	1
+   417  002F                     lcd_mesajyaz@satir:	
+   418                           
+   419                           ; 1 bytes @ 0xF
+   420  002F                     	ds	1
+   421  0030                     ??_main:	
+   422                           
+   423                           ; 1 bytes @ 0x10
+   424  0030                     	ds	3
+   425                           
+   426                           	psect	maintext
+   427  03B0                     __pmaintext:	
+   428 ;;
+   429 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   430 ;;
+   431 ;; *************** function _main *****************
+   432 ;; Defined at:
+   433 ;;		line 24 in file "main.c"
+   434 ;; Parameters:    Size  Location     Type
+   435 ;;		None
+   436 ;; Auto vars:     Size  Location     Type
+   437 ;;		None
+   438 ;; Return value:  Size  Location     Type
+   439 ;;                  1    wreg      void 
+   440 ;; Registers used:
+   441 ;;		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, status,2, status,0, btemp+1, pclath, cstack
+   442 ;; Tracked objects:
+   443 ;;		On entry : B00/0
+   444 ;;		On exit  : 0/0
+   445 ;;		Unchanged: 0/0
+   446 ;; Data sizes:     COMMON   BANK0
+   447 ;;      Params:         0       0
+   448 ;;      Locals:         0       0
+   449 ;;      Temps:          0       3
+   450 ;;      Totals:         0       3
+   451 ;;Total ram usage:        3 bytes
+   452 ;; Hardware stack levels required when called:    5
+   453 ;; This function calls:
+   454 ;;		___osccal_val
+   455 ;;		_lcd_baslat
+   456 ;;		_lcd_mesajyaz
+   457 ;;		_softi2c_kur
+   458 ;; This function is called by:
+   459 ;;		Startup code after reset
+   460 ;; This function uses a non-reentrant model
+   461 ;;
+   462                           
+   463                           
+   464                           ;psect for function _main
+   465  03B0                     _main:	
+   466                           
+   467                           ;main.c: 26: OSCCAL=__osccal_val();
+   468                           
+   469                           ;incstack = 0
+   470                           ; Regs used in _main: [allreg]
+   471  03B0  23FF               	fcall	___osccal_val
+   472  03B1  1683               	bsf	3,5	;RP0=1, select bank1
+   473  03B2  0090               	movwf	16	;volatile
+   474                           
+   475                           ;main.c: 28: CMCON=0x07;
+   476  03B3  3007               	movlw	7
+   477  03B4  1283               	bcf	3,5	;RP0=0, select bank0
+   478  03B5  0099               	movwf	25	;volatile
+   479                           
+   480                           ;main.c: 29: ANSEL=0x00;
+   481  03B6  1683               	bsf	3,5	;RP0=1, select bank1
+   482  03B7  019F               	clrf	31	;volatile
+   483                           
+   484                           ;main.c: 30: TRISIObits.TRISIO2=0;
+   485  03B8  1105               	bcf	5,2	;volatile
+   486                           
+   487                           ;main.c: 32: softi2c_kur();
+   488  03B9  226F               	fcall	_softi2c_kur
+   489                           
+   490                           ;main.c: 34: _delay((unsigned long)((500)*(4000000/4000.0)));
+   491  03BA  3003               	movlw	3
+   492  03BB  1283               	bcf	3,5	;RP0=0, select bank0
+   493  03BC  00B2               	movwf	??_main+2
+   494  03BD  308A               	movlw	138
+   495  03BE  00B1               	movwf	??_main+1
+   496  03BF  3055               	movlw	85
+   497  03C0  00B0               	movwf	??_main
+   498  03C1                     u257:	
+   499  03C1  0BB0               	decfsz	??_main,f
+   500  03C2  2BC1               	goto	u257
+   501  03C3  0BB1               	decfsz	??_main+1,f
+   502  03C4  2BC1               	goto	u257
+   503  03C5  0BB2               	decfsz	??_main+2,f
+   504  03C6  2BC1               	goto	u257
+   505  03C7  2BC8               	nop2
+   506                           
+   507                           ;main.c: 35: lcd_baslat();
+   508  03C8  2318               	fcall	_lcd_baslat
+   509                           
+   510                           ;main.c: 36: lcd_mesajyaz(1,1,"Selam Millet");
+   511  03C9  1283               	bcf	3,5	;RP0=0, select bank0
+   512  03CA  01AC               	clrf	lcd_mesajyaz@sutun
+   513  03CB  0AAC               	incf	lcd_mesajyaz@sutun,f
+   514  03CC  3013               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
+   515  03CD  00B0               	movwf	??_main
+   516  03CE  0830               	movf	??_main,w
+   517  03CF  00AD               	movwf	lcd_mesajyaz@mesaj
+   518  03D0  3001               	movlw	1
+   519  03D1  22AB               	fcall	_lcd_mesajyaz
+   520                           
+   521                           ;main.c: 37: lcd_mesajyaz(2,1,"PIC12F675 softI2C");
+   522  03D2  1283               	bcf	3,5	;RP0=0, select bank0
+   523  03D3  01AC               	clrf	lcd_mesajyaz@sutun
+   524  03D4  0AAC               	incf	lcd_mesajyaz@sutun,f
+   525  03D5  3001               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
+   526  03D6  00B0               	movwf	??_main
+   527  03D7  0830               	movf	??_main,w
+   528  03D8  00AD               	movwf	lcd_mesajyaz@mesaj
+   529  03D9  3002               	movlw	2
+   530  03DA  22AB               	fcall	_lcd_mesajyaz
+   531  03DB                     l1062:	
+   532                           ;main.c: 40: while(1)
+   533                           
+   534                           
+   535                           ;main.c: 41: {
+   536                           ;main.c: 42: GPIObits.GP2=1;
+   537  03DB  1283               	bcf	3,5	;RP0=0, select bank0
+   538  03DC  1505               	bsf	5,2	;volatile
+   539                           
+   540                           ;main.c: 43: _delay((unsigned long)((500)*(4000000/4000.0)));
+   541  03DD  3003               	movlw	3
+   542  03DE  00B2               	movwf	??_main+2
+   543  03DF  308A               	movlw	138
+   544  03E0  00B1               	movwf	??_main+1
+   545  03E1  3055               	movlw	85
+   546  03E2  00B0               	movwf	??_main
+   547  03E3                     u267:	
+   548  03E3  0BB0               	decfsz	??_main,f
+   549  03E4  2BE3               	goto	u267
+   550  03E5  0BB1               	decfsz	??_main+1,f
+   551  03E6  2BE3               	goto	u267
+   552  03E7  0BB2               	decfsz	??_main+2,f
+   553  03E8  2BE3               	goto	u267
+   554  03E9  2BEA               	nop2
+   555                           
+   556                           ;main.c: 44: GPIObits.GP2=0;
+   557  03EA  1283               	bcf	3,5	;RP0=0, select bank0
+   558  03EB  1105               	bcf	5,2	;volatile
+   559                           
+   560                           ;main.c: 45: _delay((unsigned long)((500)*(4000000/4000.0)));
+   561  03EC  3003               	movlw	3
+   562  03ED  00B2               	movwf	??_main+2
+   563  03EE  308A               	movlw	138
+   564  03EF  00B1               	movwf	??_main+1
+   565  03F0  3055               	movlw	85
+   566  03F1  00B0               	movwf	??_main
+   567  03F2                     u277:	
+   568  03F2  0BB0               	decfsz	??_main,f
+   569  03F3  2BF2               	goto	u277
+   570  03F4  0BB1               	decfsz	??_main+1,f
+   571  03F5  2BF2               	goto	u277
+   572  03F6  0BB2               	decfsz	??_main+2,f
+   573  03F7  2BF2               	goto	u277
+   574  03F8  2BF9               	nop2
+   575  03F9  2BDB               	goto	l1062
+   576  03FA                     __end_of_main:	
+   577                           
+   578                           	psect	text1
+   579  026F                     __ptext1:	
+   580 ;; *************** function _softi2c_kur *****************
+   581 ;; Defined at:
+   582 ;;		line 16 in file "softi2c.c"
+   583 ;; Parameters:    Size  Location     Type
+   584 ;;		None
+   585 ;; Auto vars:     Size  Location     Type
+   586 ;;		None
+   587 ;; Return value:  Size  Location     Type
+   588 ;;                  1    wreg      void 
+   589 ;; Registers used:
+   590 ;;		None
+   591 ;; Tracked objects:
+   592 ;;		On entry : 0/0
+   593 ;;		On exit  : 0/0
+   594 ;;		Unchanged: 0/0
+   595 ;; Data sizes:     COMMON   BANK0
+   596 ;;      Params:         0       0
+   597 ;;      Locals:         0       0
+   598 ;;      Temps:          0       0
+   599 ;;      Totals:         0       0
+   600 ;;Total ram usage:        0 bytes
+   601 ;; Hardware stack levels used:    1
+   602 ;; This function calls:
+   603 ;;		Nothing
+   604 ;; This function is called by:
+   605 ;;		_main
+   606 ;; This function uses a non-reentrant model
+   607 ;;
+   608                           
+   609                           
+   610                           ;psect for function _softi2c_kur
+   611  026F                     _softi2c_kur:	
+   612                           
+   613                           ;softi2c.c: 18: GPIO5=1;
+   614                           
+   615                           ;incstack = 0
+   616                           ; Regs used in _softi2c_kur: []
+   617  026F  1283               	bcf	3,5	;RP0=0, select bank0
+   618  0270  1685               	bsf	5,5	;volatile
+   619                           
+   620                           ;softi2c.c: 19: GPIO4=1;
+   621  0271  1605               	bsf	5,4	;volatile
+   622                           
+   623                           ;softi2c.c: 20: TRISIO5=0;
+   624  0272  1683               	bsf	3,5	;RP0=1, select bank1
+   625  0273  1285               	bcf	5,5	;volatile
+   626                           
+   627                           ;softi2c.c: 21: TRISIO4=1;
+   628  0274  1605               	bsf	5,4	;volatile
+   629  0275  0008               	return
+   630  0276                     __end_of_softi2c_kur:	
+   631                           
+   632                           	psect	text2
+   633  02AB                     __ptext2:	
+   634 ;; *************** function _lcd_mesajyaz *****************
+   635 ;; Defined at:
+   636 ;;		line 167 in file "seri_lcd.c"
+   637 ;; Parameters:    Size  Location     Type
+   638 ;;  satir           1    wreg     unsigned char 
+   639 ;;  sutun           1   12[BANK0 ] unsigned char 
+   640 ;;  mesaj           1   13[BANK0 ] PTR const unsigned char 
+   641 ;;		 -> STR_2(18), STR_1(13), 
+   642 ;; Auto vars:     Size  Location     Type
+   643 ;;  satir           1   15[BANK0 ] unsigned char 
+   644 ;; Return value:  Size  Location     Type
+   645 ;;                  1    wreg      void 
+   646 ;; Registers used:
+   647 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   648 ;; Tracked objects:
+   649 ;;		On entry : 0/0
+   650 ;;		On exit  : 0/0
+   651 ;;		Unchanged: 0/0
+   652 ;; Data sizes:     COMMON   BANK0
+   653 ;;      Params:         0       2
+   654 ;;      Locals:         0       1
+   655 ;;      Temps:          0       1
+   656 ;;      Totals:         0       4
+   657 ;;Total ram usage:        4 bytes
+   658 ;; Hardware stack levels used:    1
+   659 ;; Hardware stack levels required when called:    4
+   660 ;; This function calls:
+   661 ;;		_lcd_git
+   662 ;;		_lcd_harfyaz
+   663 ;; This function is called by:
+   664 ;;		_main
+   665 ;; This function uses a non-reentrant model
+   666 ;;
+   667                           
+   668                           
+   669                           ;psect for function _lcd_mesajyaz
+   670  02AB                     _lcd_mesajyaz:	
+   671                           
+   672                           ;incstack = 0
+   673                           ; Regs used in _lcd_mesajyaz: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   674                           ;lcd_mesajyaz@satir stored from wreg
+   675  02AB  1283               	bcf	3,5	;RP0=0, select bank0
+   676  02AC  00AF               	movwf	lcd_mesajyaz@satir
+   677                           
+   678                           ;seri_lcd.c: 168: lcd_git(satir, sutun);
+   679  02AD  082C               	movf	lcd_mesajyaz@sutun,w
+   680  02AE  00AE               	movwf	??_lcd_mesajyaz
+   681  02AF  082E               	movf	??_lcd_mesajyaz,w
+   682  02B0  00A8               	movwf	lcd_git@sutun
+   683  02B1  082F               	movf	lcd_mesajyaz@satir,w
+   684  02B2  22C4               	fcall	_lcd_git
+   685  02B3                     l79:	
+   686                           ;seri_lcd.c: 169: do {
+   687                           
+   688                           
+   689                           ;seri_lcd.c: 170: lcd_harfyaz(*mesaj++);
+   690  02B3  1283               	bcf	3,5	;RP0=0, select bank0
+   691  02B4  082D               	movf	lcd_mesajyaz@mesaj,w
+   692  02B5  0084               	movwf	4
+   693  02B6  2001               	fcall	stringdir
+   694  02B7  22EC               	fcall	_lcd_harfyaz
+   695  02B8  3001               	movlw	1
+   696  02B9  1283               	bcf	3,5	;RP0=0, select bank0
+   697  02BA  00AE               	movwf	??_lcd_mesajyaz
+   698  02BB  082E               	movf	??_lcd_mesajyaz,w
+   699  02BC  07AD               	addwf	lcd_mesajyaz@mesaj,f
+   700                           
+   701                           ;seri_lcd.c: 171: } while (*mesaj);
+   702  02BD  082D               	movf	lcd_mesajyaz@mesaj,w
+   703  02BE  0084               	movwf	4
+   704  02BF  2001               	fcall	stringdir
+   705  02C0  3A00               	xorlw	0
+   706  02C1  1903               	btfsc	3,2
+   707  02C2  0008               	return
+   708  02C3  2AB3               	goto	l79
+   709  02C4                     __end_of_lcd_mesajyaz:	
+   710                           
+   711                           	psect	text3
+   712  02EC                     __ptext3:	
+   713 ;; *************** function _lcd_harfyaz *****************
+   714 ;; Defined at:
+   715 ;;		line 196 in file "seri_lcd.c"
+   716 ;; Parameters:    Size  Location     Type
+   717 ;;  harf            1    wreg     unsigned char 
+   718 ;; Auto vars:     Size  Location     Type
+   719 ;;  harf            1    7[BANK0 ] unsigned char 
+   720 ;; Return value:  Size  Location     Type
+   721 ;;                  1    wreg      void 
+   722 ;; Registers used:
+   723 ;;		wreg, status,2, status,0, pclath, cstack
+   724 ;; Tracked objects:
+   725 ;;		On entry : 0/0
+   726 ;;		On exit  : 0/0
+   727 ;;		Unchanged: 0/0
+   728 ;; Data sizes:     COMMON   BANK0
+   729 ;;      Params:         0       0
+   730 ;;      Locals:         0       1
+   731 ;;      Temps:          0       2
+   732 ;;      Totals:         0       3
+   733 ;;Total ram usage:        3 bytes
+   734 ;; Hardware stack levels used:    1
+   735 ;; Hardware stack levels required when called:    2
+   736 ;; This function calls:
+   737 ;;		_lcd_mesgulmu
+   738 ;;		_pcf8574_yaz_wEnable
+   739 ;; This function is called by:
+   740 ;;		_lcd_mesajyaz
+   741 ;;		_lcd_mesajyaz_cp
+   742 ;;		_lcd_ozelkarakter
+   743 ;;		_putch
+   744 ;; This function uses a non-reentrant model
+   745 ;;
+   746                           
+   747                           
+   748                           ;psect for function _lcd_harfyaz
+   749  02EC                     _lcd_harfyaz:	
+   750                           
+   751                           ;incstack = 0
+   752                           ; Regs used in _lcd_harfyaz: [wreg+status,2+status,0+pclath+cstack]
+   753                           ;lcd_harfyaz@harf stored from wreg
+   754  02EC  1283               	bcf	3,5	;RP0=0, select bank0
+   755  02ED  00A7               	movwf	lcd_harfyaz@harf
+   756                           
+   757                           ;seri_lcd.c: 197: lcd_mesgulmu();
+   758  02EE  2269               	fcall	_lcd_mesgulmu
+   759                           
+   760                           ;seri_lcd.c: 198: pcf_port.lcd.RS = 1;
+   761  02EF  1283               	bcf	3,5	;RP0=0, select bank0
+   762  02F0  1434               	bsf	_pcf_port,0
+   763                           
+   764                           ;seri_lcd.c: 200: pcf_port.port = (pcf_port.port & 0x0f) | (harf & 0xf0);
+   765  02F1  30F0               	movlw	240
+   766  02F2  0527               	andwf	lcd_harfyaz@harf,w
+   767  02F3  00A5               	movwf	??_lcd_harfyaz
+   768  02F4  0834               	movf	_pcf_port,w
+   769  02F5  390F               	andlw	15
+   770  02F6  0425               	iorwf	??_lcd_harfyaz,w
+   771  02F7  00A6               	movwf	??_lcd_harfyaz+1
+   772  02F8  0826               	movf	??_lcd_harfyaz+1,w
+   773  02F9  00B4               	movwf	_pcf_port
+   774                           
+   775                           ;seri_lcd.c: 201: pcf8574_yaz_wEnable();
+   776  02FA  229B               	fcall	_pcf8574_yaz_wEnable
+   777                           
+   778                           ;seri_lcd.c: 202: _delay((unsigned long)((200)*(4000000/4000000.0)));
+   779  02FB  3042               	movlw	66
+   780  02FC  1283               	bcf	3,5	;RP0=0, select bank0
+   781  02FD  00A5               	movwf	??_lcd_harfyaz
+   782  02FE                     u287:	
+   783  02FE  0BA5               	decfsz	??_lcd_harfyaz,f
+   784  02FF  2AFE               	goto	u287
+   785  0300  0000               	nop
+   786                           
+   787                           ;seri_lcd.c: 204: pcf_port.port = (pcf_port.port & 0x0f) | (harf << 4);
+   788  0301  1283               	bcf	3,5	;RP0=0, select bank0
+   789  0302  0827               	movf	lcd_harfyaz@harf,w
+   790  0303  00A5               	movwf	??_lcd_harfyaz
+   791  0304  3004               	movlw	4
+   792  0305                     u195:	
+   793  0305  1003               	clrc
+   794  0306  0DA5               	rlf	??_lcd_harfyaz,f
+   795  0307  3EFF               	addlw	-1
+   796  0308  1D03               	skipz
+   797  0309  2B05               	goto	u195
+   798  030A  0834               	movf	_pcf_port,w
+   799  030B  390F               	andlw	15
+   800  030C  0425               	iorwf	??_lcd_harfyaz,w
+   801  030D  00A6               	movwf	??_lcd_harfyaz+1
+   802  030E  0826               	movf	??_lcd_harfyaz+1,w
+   803  030F  00B4               	movwf	_pcf_port
+   804                           
+   805                           ;seri_lcd.c: 205: pcf8574_yaz_wEnable();
+   806  0310  229B               	fcall	_pcf8574_yaz_wEnable
+   807                           
+   808                           ;seri_lcd.c: 206: _delay((unsigned long)((200)*(4000000/4000000.0)));
+   809  0311  3042               	movlw	66
+   810  0312  1283               	bcf	3,5	;RP0=0, select bank0
+   811  0313  00A5               	movwf	??_lcd_harfyaz
+   812  0314                     u297:	
+   813  0314  0BA5               	decfsz	??_lcd_harfyaz,f
+   814  0315  2B14               	goto	u297
+   815  0316  0000               	nop
+   816  0317  0008               	return
+   817  0318                     __end_of_lcd_harfyaz:	
+   818                           
+   819                           	psect	text4
+   820  02C4                     __ptext4:	
+   821 ;; *************** function _lcd_git *****************
+   822 ;; Defined at:
+   823 ;;		line 143 in file "seri_lcd.c"
+   824 ;; Parameters:    Size  Location     Type
+   825 ;;  satir           1    wreg     unsigned char 
+   826 ;;  sutun           1    8[BANK0 ] unsigned char 
+   827 ;; Auto vars:     Size  Location     Type
+   828 ;;  satir           1   10[BANK0 ] unsigned char 
+   829 ;;  temp            1   11[BANK0 ] unsigned char 
+   830 ;; Return value:  Size  Location     Type
+   831 ;;                  1    wreg      void 
+   832 ;; Registers used:
+   833 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   834 ;; Tracked objects:
+   835 ;;		On entry : 0/0
+   836 ;;		On exit  : 0/0
+   837 ;;		Unchanged: 0/0
+   838 ;; Data sizes:     COMMON   BANK0
+   839 ;;      Params:         0       1
+   840 ;;      Locals:         0       2
+   841 ;;      Temps:          0       1
+   842 ;;      Totals:         0       4
+   843 ;;Total ram usage:        4 bytes
+   844 ;; Hardware stack levels used:    1
+   845 ;; Hardware stack levels required when called:    3
+   846 ;; This function calls:
+   847 ;;		_lcd_komut
+   848 ;; This function is called by:
+   849 ;;		_lcd_mesajyaz
+   850 ;; This function uses a non-reentrant model
+   851 ;;
+   852                           
+   853                           
+   854                           ;psect for function _lcd_git
+   855  02C4                     _lcd_git:	
+   856                           
+   857                           ;incstack = 0
+   858                           ; Regs used in _lcd_git: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   859                           ;lcd_git@satir stored from wreg
+   860  02C4  1283               	bcf	3,5	;RP0=0, select bank0
+   861  02C5  00AA               	movwf	lcd_git@satir
+   862                           
+   863                           ;seri_lcd.c: 144: char temp;
+   864                           ;seri_lcd.c: 145: switch (satir) {
+   865  02C6  2AD6               	goto	l994
+   866  02C7                     l984:	
+   867                           ;seri_lcd.c: 146: case 1:
+   868                           
+   869                           
+   870                           ;seri_lcd.c: 147: temp = sutun - 1 + 0x80;
+   871  02C7  0828               	movf	lcd_git@sutun,w
+   872  02C8  3E7F               	addlw	127
+   873  02C9  2AD2               	goto	L3
+   874  02CA                     l986:	
+   875                           ;seri_lcd.c: 149: case 2:
+   876                           
+   877                           ;seri_lcd.c: 148: break;
+   878                           
+   879                           
+   880                           ;seri_lcd.c: 150: temp = sutun - 1 + 0xc0;
+   881  02CA  0828               	movf	lcd_git@sutun,w
+   882  02CB  3EBF               	addlw	191
+   883  02CC  2AD2               	goto	L3
+   884  02CD                     l988:	
+   885                           ;seri_lcd.c: 152: case 3:
+   886                           
+   887                           ;seri_lcd.c: 151: break;
+   888                           
+   889                           
+   890                           ;seri_lcd.c: 153: temp = (sutun - 1 + 0x94);
+   891  02CD  0828               	movf	lcd_git@sutun,w
+   892  02CE  3E93               	addlw	147
+   893  02CF  2AD2               	goto	L3
+   894  02D0                     l990:	
+   895                           ;seri_lcd.c: 155: case 4:
+   896                           
+   897                           ;seri_lcd.c: 154: break;
+   898                           
+   899                           
+   900                           ;seri_lcd.c: 156: temp = (sutun - 1 + 0xd4);
+   901  02D0  0828               	movf	lcd_git@sutun,w
+   902  02D1  3ED3               	addlw	211
+   903  02D2                     L3:	
+   904  02D2  00A9               	movwf	??_lcd_git
+   905  02D3  0829               	movf	??_lcd_git,w
+   906  02D4  00AB               	movwf	lcd_git@temp
+   907                           
+   908                           ;seri_lcd.c: 158: }
+   909                           
+   910                           ;seri_lcd.c: 157: break;
+   911  02D5  2AE4               	goto	l996
+   912  02D6                     l994:	
+   913  02D6  082A               	movf	lcd_git@satir,w
+   914                           
+   915                           ; Switch size 1, requested type "space"
+   916                           ; Number of cases is 4, Range of values is 1 to 4
+   917                           ; switch strategies available:
+   918                           ; Name         Instructions Cycles
+   919                           ; simple_byte           13     7 (average)
+   920                           ; direct_byte           13     9 (fixed)
+   921                           ; jumptable            263     9 (fixed)
+   922                           ;	Chosen strategy is simple_byte
+   923  02D7  3A01               	xorlw	1	; case 1
+   924  02D8  1903               	skipnz
+   925  02D9  2AC7               	goto	l984
+   926  02DA  3A03               	xorlw	3	; case 2
+   927  02DB  1903               	skipnz
+   928  02DC  2ACA               	goto	l986
+   929  02DD  3A01               	xorlw	1	; case 3
+   930  02DE  1903               	skipnz
+   931  02DF  2ACD               	goto	l988
+   932  02E0  3A07               	xorlw	7	; case 4
+   933  02E1  1903               	skipnz
+   934  02E2  2AD0               	goto	l990
+   935  02E3  2AE4               	goto	l996
+   936  02E4                     l996:	
+   937                           
+   938                           ;seri_lcd.c: 159: lcd_komut(temp);
+   939  02E4  082B               	movf	lcd_git@temp,w
+   940  02E5  2349               	fcall	_lcd_komut
+   941                           
+   942                           ;seri_lcd.c: 160: _delay((unsigned long)((100)*(4000000/4000000.0)));
+   943  02E6  3021               	movlw	33
+   944  02E7  1283               	bcf	3,5	;RP0=0, select bank0
+   945  02E8  00A9               	movwf	??_lcd_git
+   946  02E9                     u307:	
+   947  02E9  0BA9               	decfsz	??_lcd_git,f
+   948  02EA  2AE9               	goto	u307
+   949  02EB  0008               	return
+   950  02EC                     __end_of_lcd_git:	
+   951                           
+   952                           	psect	text5
+   953  0318                     __ptext5:	
+   954 ;; *************** function _lcd_baslat *****************
+   955 ;; Defined at:
+   956 ;;		line 117 in file "seri_lcd.c"
+   957 ;; Parameters:    Size  Location     Type
+   958 ;;		None
+   959 ;; Auto vars:     Size  Location     Type
+   960 ;;		None
+   961 ;; Return value:  Size  Location     Type
+   962 ;;                  1    wreg      void 
+   963 ;; Registers used:
+   964 ;;		wreg, status,2, status,0, pclath, cstack
+   965 ;; Tracked objects:
+   966 ;;		On entry : 0/0
+   967 ;;		On exit  : 0/0
+   968 ;;		Unchanged: 0/0
+   969 ;; Data sizes:     COMMON   BANK0
+   970 ;;      Params:         0       0
+   971 ;;      Locals:         0       0
+   972 ;;      Temps:          0       2
+   973 ;;      Totals:         0       2
+   974 ;;Total ram usage:        2 bytes
+   975 ;; Hardware stack levels used:    1
+   976 ;; Hardware stack levels required when called:    4
+   977 ;; This function calls:
+   978 ;;		_lcd_aydinlatma_ac
+   979 ;;		_lcd_komut
+   980 ;;		_lcd_sil
+   981 ;;		_pcf8574_yaz
+   982 ;;		_pcf8574_yaz_wEnable
+   983 ;; This function is called by:
+   984 ;;		_main
+   985 ;; This function uses a non-reentrant model
+   986 ;;
+   987                           
+   988                           
+   989                           ;psect for function _lcd_baslat
+   990  0318                     _lcd_baslat:	
+   991                           
+   992                           ;seri_lcd.c: 119: pcf8574_yaz(0x00);
+   993                           
+   994                           ;incstack = 0
+   995                           ; Regs used in _lcd_baslat: [wreg+status,2+status,0+pclath+cstack]
+   996  0318  3000               	movlw	0
+   997  0319  2276               	fcall	_pcf8574_yaz
+   998                           
+   999                           ;seri_lcd.c: 120: pcf_port.port=0x00;
+  1000  031A  1283               	bcf	3,5	;RP0=0, select bank0
+  1001  031B  01B4               	clrf	_pcf_port
+  1002                           
+  1003                           ;seri_lcd.c: 122: pcf_port.port = 0x20 | (pcf_port.port & 0x0f);
+  1004  031C  0834               	movf	_pcf_port,w
+  1005  031D  390F               	andlw	15
+  1006  031E  3820               	iorlw	32
+  1007  031F  00A8               	movwf	??_lcd_baslat
+  1008  0320  0828               	movf	??_lcd_baslat,w
+  1009  0321  00B4               	movwf	_pcf_port
+  1010                           
+  1011                           ;seri_lcd.c: 124: pcf8574_yaz_wEnable();
+  1012  0322  229B               	fcall	_pcf8574_yaz_wEnable
+  1013                           
+  1014                           ;seri_lcd.c: 125: _delay((unsigned long)((5)*(4000000/4000.0)));
+  1015  0323  3007               	movlw	7
+  1016  0324  1283               	bcf	3,5	;RP0=0, select bank0
+  1017  0325  00A9               	movwf	??_lcd_baslat+1
+  1018  0326  307D               	movlw	125
+  1019  0327  00A8               	movwf	??_lcd_baslat
+  1020  0328                     u317:	
+  1021  0328  0BA8               	decfsz	??_lcd_baslat,f
+  1022  0329  2B28               	goto	u317
+  1023  032A  0BA9               	decfsz	??_lcd_baslat+1,f
+  1024  032B  2B28               	goto	u317
+  1025                           
+  1026                           ;seri_lcd.c: 127: lcd_komut(0x28);
+  1027  032C  3028               	movlw	40
+  1028  032D  2349               	fcall	_lcd_komut
+  1029                           
+  1030                           ;seri_lcd.c: 128: _delay((unsigned long)((40)*(4000000/4000000.0)));
+  1031  032E  300D               	movlw	13
+  1032  032F  1283               	bcf	3,5	;RP0=0, select bank0
+  1033  0330  00A8               	movwf	??_lcd_baslat
+  1034  0331                     u327:	
+  1035  0331  0BA8               	decfsz	??_lcd_baslat,f
+  1036  0332  2B31               	goto	u327
+  1037                           
+  1038                           ;seri_lcd.c: 129: lcd_komut(0x0C);
+  1039  0333  300C               	movlw	12
+  1040  0334  2349               	fcall	_lcd_komut
+  1041                           
+  1042                           ;seri_lcd.c: 130: _delay((unsigned long)((40)*(4000000/4000000.0)));
+  1043  0335  300D               	movlw	13
+  1044  0336  1283               	bcf	3,5	;RP0=0, select bank0
+  1045  0337  00A8               	movwf	??_lcd_baslat
+  1046  0338                     u337:	
+  1047  0338  0BA8               	decfsz	??_lcd_baslat,f
+  1048  0339  2B38               	goto	u337
+  1049                           
+  1050                           ;seri_lcd.c: 131: lcd_komut(0x06);
+  1051  033A  3006               	movlw	6
+  1052  033B  2349               	fcall	_lcd_komut
+  1053                           
+  1054                           ;seri_lcd.c: 132: _delay((unsigned long)((2)*(4000000/4000.0)));
+  1055  033C  3003               	movlw	3
+  1056  033D  1283               	bcf	3,5	;RP0=0, select bank0
+  1057  033E  00A9               	movwf	??_lcd_baslat+1
+  1058  033F  3097               	movlw	151
+  1059  0340  00A8               	movwf	??_lcd_baslat
+  1060  0341                     u347:	
+  1061  0341  0BA8               	decfsz	??_lcd_baslat,f
+  1062  0342  2B41               	goto	u347
+  1063  0343  0BA9               	decfsz	??_lcd_baslat+1,f
+  1064  0344  2B41               	goto	u347
+  1065  0345  2B46               	nop2
+  1066                           
+  1067                           ;seri_lcd.c: 134: lcd_sil();
+  1068  0346  2261               	fcall	_lcd_sil
+  1069                           
+  1070                           ;seri_lcd.c: 135: lcd_aydinlatma_ac();
+  1071  0347  2264               	fcall	_lcd_aydinlatma_ac
+  1072  0348  0008               	return
+  1073  0349                     __end_of_lcd_baslat:	
+  1074                           
+  1075                           	psect	text6
+  1076  0261                     __ptext6:	
+  1077 ;; *************** function _lcd_sil *****************
+  1078 ;; Defined at:
+  1079 ;;		line 257 in file "seri_lcd.c"
+  1080 ;; Parameters:    Size  Location     Type
+  1081 ;;		None
+  1082 ;; Auto vars:     Size  Location     Type
+  1083 ;;		None
+  1084 ;; Return value:  Size  Location     Type
+  1085 ;;                  1    wreg      void 
+  1086 ;; Registers used:
+  1087 ;;		wreg, status,2, status,0, pclath, cstack
+  1088 ;; Tracked objects:
+  1089 ;;		On entry : 0/0
+  1090 ;;		On exit  : 0/0
+  1091 ;;		Unchanged: 0/0
+  1092 ;; Data sizes:     COMMON   BANK0
+  1093 ;;      Params:         0       0
+  1094 ;;      Locals:         0       0
+  1095 ;;      Temps:          0       0
+  1096 ;;      Totals:         0       0
+  1097 ;;Total ram usage:        0 bytes
+  1098 ;; Hardware stack levels used:    1
+  1099 ;; Hardware stack levels required when called:    3
+  1100 ;; This function calls:
+  1101 ;;		_lcd_komut
+  1102 ;; This function is called by:
+  1103 ;;		_lcd_baslat
+  1104 ;; This function uses a non-reentrant model
+  1105 ;;
+  1106                           
+  1107                           
+  1108                           ;psect for function _lcd_sil
+  1109  0261                     _lcd_sil:	
+  1110                           
+  1111                           ;seri_lcd.c: 258: lcd_komut(0x01);
+  1112                           
+  1113                           ;incstack = 0
+  1114                           ; Regs used in _lcd_sil: [wreg+status,2+status,0+pclath+cstack]
+  1115  0261  3001               	movlw	1
+  1116  0262  2349               	fcall	_lcd_komut
+  1117  0263  0008               	return
+  1118  0264                     __end_of_lcd_sil:	
+  1119                           
+  1120                           	psect	text7
+  1121  0349                     __ptext7:	
+  1122 ;; *************** function _lcd_komut *****************
+  1123 ;; Defined at:
+  1124 ;;		line 213 in file "seri_lcd.c"
+  1125 ;; Parameters:    Size  Location     Type
+  1126 ;;  komut           1    wreg     unsigned char 
+  1127 ;; Auto vars:     Size  Location     Type
+  1128 ;;  komut           1    7[BANK0 ] unsigned char 
+  1129 ;; Return value:  Size  Location     Type
+  1130 ;;                  1    wreg      void 
+  1131 ;; Registers used:
+  1132 ;;		wreg, status,2, status,0, pclath, cstack
+  1133 ;; Tracked objects:
+  1134 ;;		On entry : 0/0
+  1135 ;;		On exit  : 0/0
+  1136 ;;		Unchanged: 0/0
+  1137 ;; Data sizes:     COMMON   BANK0
+  1138 ;;      Params:         0       0
+  1139 ;;      Locals:         0       1
+  1140 ;;      Temps:          0       2
+  1141 ;;      Totals:         0       3
+  1142 ;;Total ram usage:        3 bytes
+  1143 ;; Hardware stack levels used:    1
+  1144 ;; Hardware stack levels required when called:    2
+  1145 ;; This function calls:
+  1146 ;;		_lcd_mesgulmu
+  1147 ;;		_pcf8574_yaz_wEnable
+  1148 ;; This function is called by:
+  1149 ;;		_lcd_baslat
+  1150 ;;		_lcd_git
+  1151 ;;		_lcd_sil
+  1152 ;;		_lcd_ozelkarakter
+  1153 ;;		_lcd_satirbasi
+  1154 ;;		_lcd_kursor_ac
+  1155 ;;		_lcd_kursor_kapat
+  1156 ;;		_lcd_display_ac
+  1157 ;;		_lcd_display_kapat
+  1158 ;;		_lcd_blink_ac
+  1159 ;;		_lcd_blink_kapat
+  1160 ;;		_lcd_sola_kaydir
+  1161 ;;		_lcd_saga_kaydir
+  1162 ;;		_lcd_satir1
+  1163 ;;		_lcd_satir2
+  1164 ;;		_lcd_satir3
+  1165 ;;		_lcd_satir4
+  1166 ;; This function uses a non-reentrant model
+  1167 ;;
+  1168                           
+  1169                           
+  1170                           ;psect for function _lcd_komut
+  1171  0349                     _lcd_komut:	
+  1172                           
+  1173                           ;incstack = 0
+  1174                           ; Regs used in _lcd_komut: [wreg+status,2+status,0+pclath+cstack]
+  1175                           ;lcd_komut@komut stored from wreg
+  1176  0349  1283               	bcf	3,5	;RP0=0, select bank0
+  1177  034A  00A7               	movwf	lcd_komut@komut
+  1178                           
+  1179                           ;seri_lcd.c: 214: lcd_mesgulmu();
+  1180  034B  2269               	fcall	_lcd_mesgulmu
+  1181                           
+  1182                           ;seri_lcd.c: 215: pcf_port.lcd.RS = 0;
+  1183  034C  1283               	bcf	3,5	;RP0=0, select bank0
+  1184  034D  1034               	bcf	_pcf_port,0
+  1185                           
+  1186                           ;seri_lcd.c: 217: pcf_port.port = (pcf_port.port & 0x0f) | (komut & 0xf0);
+  1187  034E  30F0               	movlw	240
+  1188  034F  0527               	andwf	lcd_komut@komut,w
+  1189  0350  00A5               	movwf	??_lcd_komut
+  1190  0351  0834               	movf	_pcf_port,w
+  1191  0352  390F               	andlw	15
+  1192  0353  0425               	iorwf	??_lcd_komut,w
+  1193  0354  00A6               	movwf	??_lcd_komut+1
+  1194  0355  0826               	movf	??_lcd_komut+1,w
+  1195  0356  00B4               	movwf	_pcf_port
+  1196                           
+  1197                           ;seri_lcd.c: 218: pcf8574_yaz_wEnable();
+  1198  0357  229B               	fcall	_pcf8574_yaz_wEnable
+  1199                           
+  1200                           ;seri_lcd.c: 219: _delay((unsigned long)((5)*(4000000/4000.0)));
+  1201  0358  3007               	movlw	7
+  1202  0359  1283               	bcf	3,5	;RP0=0, select bank0
+  1203  035A  00A6               	movwf	??_lcd_komut+1
+  1204  035B  307D               	movlw	125
+  1205  035C  00A5               	movwf	??_lcd_komut
+  1206  035D                     u357:	
+  1207  035D  0BA5               	decfsz	??_lcd_komut,f
+  1208  035E  2B5D               	goto	u357
+  1209  035F  0BA6               	decfsz	??_lcd_komut+1,f
+  1210  0360  2B5D               	goto	u357
+  1211                           
+  1212                           ;seri_lcd.c: 221: pcf_port.port = (pcf_port.port & 0x0f) | (komut << 4);
+  1213  0361  1283               	bcf	3,5	;RP0=0, select bank0
+  1214  0362  0827               	movf	lcd_komut@komut,w
+  1215  0363  00A5               	movwf	??_lcd_komut
+  1216  0364  3004               	movlw	4
+  1217  0365                     u185:	
+  1218  0365  1003               	clrc
+  1219  0366  0DA5               	rlf	??_lcd_komut,f
+  1220  0367  3EFF               	addlw	-1
+  1221  0368  1D03               	skipz
+  1222  0369  2B65               	goto	u185
+  1223  036A  0834               	movf	_pcf_port,w
+  1224  036B  390F               	andlw	15
+  1225  036C  0425               	iorwf	??_lcd_komut,w
+  1226  036D  00A6               	movwf	??_lcd_komut+1
+  1227  036E  0826               	movf	??_lcd_komut+1,w
+  1228  036F  00B4               	movwf	_pcf_port
+  1229                           
+  1230                           ;seri_lcd.c: 222: pcf8574_yaz_wEnable();
+  1231  0370  229B               	fcall	_pcf8574_yaz_wEnable
+  1232                           
+  1233                           ;seri_lcd.c: 223: _delay((unsigned long)((5)*(4000000/4000.0)));
+  1234  0371  3007               	movlw	7
+  1235  0372  1283               	bcf	3,5	;RP0=0, select bank0
+  1236  0373  00A6               	movwf	??_lcd_komut+1
+  1237  0374  307D               	movlw	125
+  1238  0375  00A5               	movwf	??_lcd_komut
+  1239  0376                     u367:	
+  1240  0376  0BA5               	decfsz	??_lcd_komut,f
+  1241  0377  2B76               	goto	u367
+  1242  0378  0BA6               	decfsz	??_lcd_komut+1,f
+  1243  0379  2B76               	goto	u367
+  1244  037A  0008               	return
+  1245  037B                     __end_of_lcd_komut:	
+  1246                           
+  1247                           	psect	text8
+  1248  029B                     __ptext8:	
+  1249 ;; *************** function _pcf8574_yaz_wEnable *****************
+  1250 ;; Defined at:
+  1251 ;;		line 62 in file "seri_lcd.c"
+  1252 ;; Parameters:    Size  Location     Type
+  1253 ;;		None
+  1254 ;; Auto vars:     Size  Location     Type
+  1255 ;;		None
+  1256 ;; Return value:  Size  Location     Type
+  1257 ;;                  1    wreg      void 
+  1258 ;; Registers used:
+  1259 ;;		wreg, status,2, status,0, pclath, cstack
+  1260 ;; Tracked objects:
+  1261 ;;		On entry : 0/0
+  1262 ;;		On exit  : 0/0
+  1263 ;;		Unchanged: 0/0
+  1264 ;; Data sizes:     COMMON   BANK0
+  1265 ;;      Params:         0       0
+  1266 ;;      Locals:         0       0
+  1267 ;;      Temps:          0       0
+  1268 ;;      Totals:         0       0
+  1269 ;;Total ram usage:        0 bytes
+  1270 ;; Hardware stack levels used:    1
+  1271 ;; Hardware stack levels required when called:    1
+  1272 ;; This function calls:
+  1273 ;;		_softi2c_baslat
+  1274 ;;		_softi2c_durdur
+  1275 ;;		_softi2c_yaz
+  1276 ;; This function is called by:
+  1277 ;;		_lcd_baslat
+  1278 ;;		_lcd_harfyaz
+  1279 ;;		_lcd_komut
+  1280 ;; This function uses a non-reentrant model
+  1281 ;;
+  1282                           
+  1283                           
+  1284                           ;psect for function _pcf8574_yaz_wEnable
+  1285  029B                     _pcf8574_yaz_wEnable:	
+  1286                           
+  1287                           ;seri_lcd.c: 66: softi2c_baslat();
+  1288                           
+  1289                           ;incstack = 0
+  1290                           ; Regs used in _pcf8574_yaz_wEnable: [wreg+status,2+status,0+pclath+cstack]
+  1291  029B  228C               	fcall	_softi2c_baslat
+  1292                           
+  1293                           ;seri_lcd.c: 67: softi2c_yaz(0x3F <<1);
+  1294  029C  307E               	movlw	126
+  1295  029D  237B               	fcall	_softi2c_yaz
+  1296                           
+  1297                           ;seri_lcd.c: 68: softi2c_yaz(pcf_port.port);
+  1298  029E  1283               	bcf	3,5	;RP0=0, select bank0
+  1299  029F  0834               	movf	_pcf_port,w
+  1300  02A0  237B               	fcall	_softi2c_yaz
+  1301                           
+  1302                           ;seri_lcd.c: 69: pcf_port.lcd.E=1;
+  1303  02A1  1283               	bcf	3,5	;RP0=0, select bank0
+  1304  02A2  1534               	bsf	_pcf_port,2
+  1305                           
+  1306                           ;seri_lcd.c: 70: softi2c_yaz(pcf_port.port);
+  1307  02A3  0834               	movf	_pcf_port,w
+  1308  02A4  237B               	fcall	_softi2c_yaz
+  1309                           
+  1310                           ;seri_lcd.c: 71: pcf_port.lcd.E=0;
+  1311  02A5  1283               	bcf	3,5	;RP0=0, select bank0
+  1312  02A6  1134               	bcf	_pcf_port,2
+  1313                           
+  1314                           ;seri_lcd.c: 72: softi2c_yaz(pcf_port.port);
+  1315  02A7  0834               	movf	_pcf_port,w
+  1316  02A8  237B               	fcall	_softi2c_yaz
+  1317                           
+  1318                           ;seri_lcd.c: 73: softi2c_durdur();
+  1319  02A9  2280               	fcall	_softi2c_durdur
+  1320  02AA  0008               	return
+  1321  02AB                     __end_of_pcf8574_yaz_wEnable:	
+  1322                           
+  1323                           	psect	text9
+  1324  0269                     __ptext9:	
+  1325 ;; *************** function _lcd_mesgulmu *****************
+  1326 ;; Defined at:
+  1327 ;;		line 188 in file "seri_lcd.c"
+  1328 ;; Parameters:    Size  Location     Type
+  1329 ;;		None
+  1330 ;; Auto vars:     Size  Location     Type
+  1331 ;;		None
+  1332 ;; Return value:  Size  Location     Type
+  1333 ;;                  1    wreg      void 
+  1334 ;; Registers used:
+  1335 ;;		wreg
+  1336 ;; Tracked objects:
+  1337 ;;		On entry : 0/0
+  1338 ;;		On exit  : 0/0
+  1339 ;;		Unchanged: 0/0
+  1340 ;; Data sizes:     COMMON   BANK0
+  1341 ;;      Params:         0       0
+  1342 ;;      Locals:         0       0
+  1343 ;;      Temps:          0       1
+  1344 ;;      Totals:         0       1
+  1345 ;;Total ram usage:        1 bytes
+  1346 ;; Hardware stack levels used:    1
+  1347 ;; This function calls:
+  1348 ;;		Nothing
+  1349 ;; This function is called by:
+  1350 ;;		_lcd_harfyaz
+  1351 ;;		_lcd_komut
+  1352 ;; This function uses a non-reentrant model
+  1353 ;;
+  1354                           
+  1355                           
+  1356                           ;psect for function _lcd_mesgulmu
+  1357  0269                     _lcd_mesgulmu:	
+  1358                           
+  1359                           ;seri_lcd.c: 189: _delay((unsigned long)((100)*(4000000/4000000.0)));
+  1360                           
+  1361                           ;incstack = 0
+  1362                           ; Regs used in _lcd_mesgulmu: [wreg]
+  1363  0269  3021               	movlw	33
+  1364  026A  1283               	bcf	3,5	;RP0=0, select bank0
+  1365  026B  00A0               	movwf	??_lcd_mesgulmu
+  1366  026C                     u377:	
+  1367  026C  0BA0               	decfsz	??_lcd_mesgulmu,f
+  1368  026D  2A6C               	goto	u377
+  1369  026E  0008               	return
+  1370  026F                     __end_of_lcd_mesgulmu:	
+  1371                           
+  1372                           	psect	text10
+  1373  0264                     __ptext10:	
+  1374 ;; *************** function _lcd_aydinlatma_ac *****************
+  1375 ;; Defined at:
+  1376 ;;		line 372 in file "seri_lcd.c"
+  1377 ;; Parameters:    Size  Location     Type
+  1378 ;;		None
+  1379 ;; Auto vars:     Size  Location     Type
+  1380 ;;		None
+  1381 ;; Return value:  Size  Location     Type
+  1382 ;;                  1    wreg      void 
+  1383 ;; Registers used:
+  1384 ;;		wreg, status,2, status,0, pclath, cstack
+  1385 ;; Tracked objects:
+  1386 ;;		On entry : 0/0
+  1387 ;;		On exit  : 0/0
+  1388 ;;		Unchanged: 0/0
+  1389 ;; Data sizes:     COMMON   BANK0
+  1390 ;;      Params:         0       0
+  1391 ;;      Locals:         0       0
+  1392 ;;      Temps:          0       0
+  1393 ;;      Totals:         0       0
+  1394 ;;Total ram usage:        0 bytes
+  1395 ;; Hardware stack levels used:    1
+  1396 ;; Hardware stack levels required when called:    2
+  1397 ;; This function calls:
+  1398 ;;		_pcf8574_yaz
+  1399 ;; This function is called by:
+  1400 ;;		_lcd_baslat
+  1401 ;; This function uses a non-reentrant model
+  1402 ;;
+  1403                           
+  1404                           
+  1405                           ;psect for function _lcd_aydinlatma_ac
+  1406  0264                     _lcd_aydinlatma_ac:	
+  1407                           
+  1408                           ;seri_lcd.c: 374: pcf_port.lcd.LED=1;
+  1409                           
+  1410                           ;incstack = 0
+  1411                           ; Regs used in _lcd_aydinlatma_ac: [wreg+status,2+status,0+pclath+cstack]
+  1412  0264  1283               	bcf	3,5	;RP0=0, select bank0
+  1413  0265  15B4               	bsf	_pcf_port,3
+  1414                           
+  1415                           ;seri_lcd.c: 375: pcf8574_yaz(pcf_port.port);
+  1416  0266  0834               	movf	_pcf_port,w
+  1417  0267  2276               	fcall	_pcf8574_yaz
+  1418  0268  0008               	return
+  1419  0269                     __end_of_lcd_aydinlatma_ac:	
+  1420                           
+  1421                           	psect	text11
+  1422  0276                     __ptext11:	
+  1423 ;; *************** function _pcf8574_yaz *****************
+  1424 ;; Defined at:
+  1425 ;;		line 26 in file "pcf8574.c"
+  1426 ;; Parameters:    Size  Location     Type
+  1427 ;;  veri            1    wreg     unsigned char 
+  1428 ;; Auto vars:     Size  Location     Type
+  1429 ;;  veri            1    5[BANK0 ] unsigned char 
+  1430 ;; Return value:  Size  Location     Type
+  1431 ;;                  1    wreg      void 
+  1432 ;; Registers used:
+  1433 ;;		wreg, status,2, status,0, pclath, cstack
+  1434 ;; Tracked objects:
+  1435 ;;		On entry : 0/0
+  1436 ;;		On exit  : 0/0
+  1437 ;;		Unchanged: 0/0
+  1438 ;; Data sizes:     COMMON   BANK0
+  1439 ;;      Params:         0       0
+  1440 ;;      Locals:         0       1
+  1441 ;;      Temps:          0       0
+  1442 ;;      Totals:         0       1
+  1443 ;;Total ram usage:        1 bytes
+  1444 ;; Hardware stack levels used:    1
+  1445 ;; Hardware stack levels required when called:    1
+  1446 ;; This function calls:
+  1447 ;;		_softi2c_baslat
+  1448 ;;		_softi2c_durdur
+  1449 ;;		_softi2c_yaz
+  1450 ;; This function is called by:
+  1451 ;;		_lcd_baslat
+  1452 ;;		_lcd_aydinlatma_ac
+  1453 ;;		_lcd_aydinlatma_kapat
+  1454 ;; This function uses a non-reentrant model
+  1455 ;;
+  1456                           
+  1457                           
+  1458                           ;psect for function _pcf8574_yaz
+  1459  0276                     _pcf8574_yaz:	
+  1460                           
+  1461                           ;incstack = 0
+  1462                           ; Regs used in _pcf8574_yaz: [wreg+status,2+status,0+pclath+cstack]
+  1463                           ;pcf8574_yaz@veri stored from wreg
+  1464  0276  1283               	bcf	3,5	;RP0=0, select bank0
+  1465  0277  00A5               	movwf	pcf8574_yaz@veri
+  1466                           
+  1467                           ;pcf8574.c: 30: softi2c_baslat();
+  1468  0278  228C               	fcall	_softi2c_baslat
+  1469                           
+  1470                           ;pcf8574.c: 31: softi2c_yaz(0x3F <<1);
+  1471  0279  307E               	movlw	126
+  1472  027A  237B               	fcall	_softi2c_yaz
+  1473                           
+  1474                           ;pcf8574.c: 32: softi2c_yaz(veri);
+  1475  027B  1283               	bcf	3,5	;RP0=0, select bank0
+  1476  027C  0825               	movf	pcf8574_yaz@veri,w
+  1477  027D  237B               	fcall	_softi2c_yaz
+  1478                           
+  1479                           ;pcf8574.c: 33: softi2c_durdur();
+  1480  027E  2280               	fcall	_softi2c_durdur
+  1481  027F  0008               	return
+  1482  0280                     __end_of_pcf8574_yaz:	
+  1483                           
+  1484                           	psect	text12
+  1485  037B                     __ptext12:	
+  1486 ;; *************** function _softi2c_yaz *****************
+  1487 ;; Defined at:
+  1488 ;;		line 60 in file "softi2c.c"
+  1489 ;; Parameters:    Size  Location     Type
+  1490 ;;  veri            1    wreg     unsigned char 
+  1491 ;; Auto vars:     Size  Location     Type
+  1492 ;;  veri            1    3[BANK0 ] unsigned char 
+  1493 ;;  i               1    4[BANK0 ] unsigned char 
+  1494 ;;  temp            1    2[BANK0 ] unsigned char 
+  1495 ;; Return value:  Size  Location     Type
+  1496 ;;                  1    wreg      unsigned char 
+  1497 ;; Registers used:
+  1498 ;;		wreg, status,2, status,0
+  1499 ;; Tracked objects:
+  1500 ;;		On entry : 0/0
+  1501 ;;		On exit  : 0/0
+  1502 ;;		Unchanged: 0/0
+  1503 ;; Data sizes:     COMMON   BANK0
+  1504 ;;      Params:         0       0
+  1505 ;;      Locals:         0       3
+  1506 ;;      Temps:          0       2
+  1507 ;;      Totals:         0       5
+  1508 ;;Total ram usage:        5 bytes
+  1509 ;; Hardware stack levels used:    1
+  1510 ;; This function calls:
+  1511 ;;		Nothing
+  1512 ;; This function is called by:
+  1513 ;;		_pcf8574_yaz
+  1514 ;;		_pcf8574_yaz_wEnable
+  1515 ;; This function uses a non-reentrant model
+  1516 ;;
+  1517                           
+  1518                           
+  1519                           ;psect for function _softi2c_yaz
+  1520  037B                     _softi2c_yaz:	
+  1521                           
+  1522                           ;incstack = 0
+  1523                           ; Regs used in _softi2c_yaz: [wreg+status,2+status,0]
+  1524                           ;softi2c_yaz@veri stored from wreg
+  1525  037B  1283               	bcf	3,5	;RP0=0, select bank0
+  1526  037C  00A3               	movwf	softi2c_yaz@veri
+  1527                           
+  1528                           ;softi2c.c: 62: char i,temp;
+  1529                           ;softi2c.c: 63: GPIO5=0;
+  1530  037D  1285               	bcf	5,5	;volatile
+  1531                           
+  1532                           ;softi2c.c: 64: for(i=8;i>0;i--)
+  1533  037E  3008               	movlw	8
+  1534  037F  00A0               	movwf	??_softi2c_yaz
+  1535  0380  0820               	movf	??_softi2c_yaz,w
+  1536  0381  00A4               	movwf	softi2c_yaz@i
+  1537  0382  0824               	movf	softi2c_yaz@i,w
+  1538  0383  1903               	btfsc	3,2
+  1539  0384  2BA3               	goto	l179
+  1540  0385                     l922:	
+  1541                           
+  1542                           ;softi2c.c: 65: {
+  1543                           ;softi2c.c: 66: veri=veri<<1;
+  1544  0385  0823               	movf	softi2c_yaz@veri,w
+  1545  0386  00A0               	movwf	??_softi2c_yaz
+  1546  0387  0720               	addwf	??_softi2c_yaz,w
+  1547  0388  00A1               	movwf	??_softi2c_yaz+1
+  1548  0389  0821               	movf	??_softi2c_yaz+1,w
+  1549  038A  00A3               	movwf	softi2c_yaz@veri
+  1550                           
+  1551                           ;softi2c.c: 67: if(CARRY==0)
+  1552  038B  1803               	btfsc	3,0	;volatile
+  1553  038C  2B92               	goto	l180
+  1554                           
+  1555                           ;softi2c.c: 68: {
+  1556                           ;softi2c.c: 69: TRISIO4=0;
+  1557  038D  1683               	bsf	3,5	;RP0=1, select bank1
+  1558  038E  1205               	bcf	5,4	;volatile
+  1559                           
+  1560                           ;softi2c.c: 70: GPIO4=0;
+  1561  038F  1283               	bcf	3,5	;RP0=0, select bank0
+  1562  0390  1205               	bcf	5,4	;volatile
+  1563                           
+  1564                           ;softi2c.c: 71: }
+  1565  0391  2B96               	goto	l181
+  1566  0392                     l180:	
+  1567                           
+  1568                           ;softi2c.c: 72: else
+  1569                           ;softi2c.c: 73: {
+  1570                           ;softi2c.c: 74: TRISIO4=1;
+  1571  0392  1683               	bsf	3,5	;RP0=1, select bank1
+  1572  0393  1605               	bsf	5,4	;volatile
+  1573                           
+  1574                           ;softi2c.c: 75: GPIO4=1;
+  1575  0394  1283               	bcf	3,5	;RP0=0, select bank0
+  1576  0395  1605               	bsf	5,4	;volatile
+  1577  0396                     l181:	
+  1578                           
+  1579                           ;softi2c.c: 76: }
+  1580                           ;softi2c.c: 77: GPIO5=1;
+  1581  0396  1685               	bsf	5,5	;volatile
+  1582                           
+  1583                           ;softi2c.c: 78: _delay((unsigned long)((4)*(4000000/4000000.0)));
+  1584  0397  2B98               	nop2	;2 cycle nop
+  1585  0398  2B99               	nop2	;2 cycle nop
+  1586                           
+  1587                           ;softi2c.c: 79: GPIO5=0;
+  1588  0399  1283               	bcf	3,5	;RP0=0, select bank0
+  1589  039A  1285               	bcf	5,5	;volatile
+  1590                           
+  1591                           ;softi2c.c: 80: TRISIO4=1;
+  1592  039B  1683               	bsf	3,5	;RP0=1, select bank1
+  1593  039C  1605               	bsf	5,4	;volatile
+  1594  039D  3001               	movlw	1
+  1595  039E  1283               	bcf	3,5	;RP0=0, select bank0
+  1596  039F  02A4               	subwf	softi2c_yaz@i,f
+  1597  03A0  0824               	movf	softi2c_yaz@i,w
+  1598  03A1  1D03               	btfss	3,2
+  1599  03A2  2B85               	goto	l922
+  1600  03A3                     l179:	
+  1601                           
+  1602                           ;softi2c.c: 81: }
+  1603                           ;softi2c.c: 83: GPIO5=0;
+  1604  03A3  1285               	bcf	5,5	;volatile
+  1605                           
+  1606                           ;softi2c.c: 84: TRISIO4=1;
+  1607  03A4  1683               	bsf	3,5	;RP0=1, select bank1
+  1608  03A5  1605               	bsf	5,4	;volatile
+  1609                           
+  1610                           ;softi2c.c: 85: _delay((unsigned long)((4)*(4000000/4000000.0)));
+  1611  03A6  2BA7               	nop2	;2 cycle nop
+  1612  03A7  2BA8               	nop2	;2 cycle nop
+  1613                           
+  1614                           ;softi2c.c: 86: GPIO5=1;
+  1615  03A8  1283               	bcf	3,5	;RP0=0, select bank0
+  1616  03A9  1685               	bsf	5,5	;volatile
+  1617                           
+  1618                           ;softi2c.c: 87: temp=GPIO4;
+  1619  03AA  3000               	movlw	0
+  1620  03AB  1A05               	btfsc	5,4	;volatile
+  1621  03AC  3001               	movlw	1
+  1622  03AD  00A2               	movwf	softi2c_yaz@temp
+  1623                           
+  1624                           ;softi2c.c: 88: GPIO5=0;
+  1625  03AE  1285               	bcf	5,5	;volatile
+  1626  03AF  0008               	return
+  1627  03B0                     __end_of_softi2c_yaz:	
+  1628                           ;softi2c.c: 90: return temp;
+  1629                           ;	Return value of _softi2c_yaz is never used
+  1630                           
+  1631                           
+  1632                           	psect	text13
+  1633  0280                     __ptext13:	
+  1634 ;; *************** function _softi2c_durdur *****************
+  1635 ;; Defined at:
+  1636 ;;		line 37 in file "softi2c.c"
+  1637 ;; Parameters:    Size  Location     Type
+  1638 ;;		None
+  1639 ;; Auto vars:     Size  Location     Type
+  1640 ;;		None
+  1641 ;; Return value:  Size  Location     Type
+  1642 ;;                  1    wreg      void 
+  1643 ;; Registers used:
+  1644 ;;		None
+  1645 ;; Tracked objects:
+  1646 ;;		On entry : 0/0
+  1647 ;;		On exit  : 0/0
+  1648 ;;		Unchanged: 0/0
+  1649 ;; Data sizes:     COMMON   BANK0
+  1650 ;;      Params:         0       0
+  1651 ;;      Locals:         0       0
+  1652 ;;      Temps:          0       0
+  1653 ;;      Totals:         0       0
+  1654 ;;Total ram usage:        0 bytes
+  1655 ;; Hardware stack levels used:    1
+  1656 ;; This function calls:
+  1657 ;;		Nothing
+  1658 ;; This function is called by:
+  1659 ;;		_pcf8574_yaz
+  1660 ;;		_pcf8574_yaz_wEnable
+  1661 ;; This function uses a non-reentrant model
+  1662 ;;
+  1663                           
+  1664                           
+  1665                           ;psect for function _softi2c_durdur
+  1666  0280                     _softi2c_durdur:	
+  1667                           
+  1668                           ;softi2c.c: 39: TRISIO4=0;
+  1669                           
+  1670                           ;incstack = 0
+  1671                           ; Regs used in _softi2c_durdur: []
+  1672  0280  1683               	bsf	3,5	;RP0=1, select bank1
+  1673  0281  1205               	bcf	5,4	;volatile
+  1674                           
+  1675                           ;softi2c.c: 40: GPIO4=0;
+  1676  0282  1283               	bcf	3,5	;RP0=0, select bank0
+  1677  0283  1205               	bcf	5,4	;volatile
+  1678                           
+  1679                           ;softi2c.c: 41: GPIO5=1;
+  1680  0284  1685               	bsf	5,5	;volatile
+  1681                           
+  1682                           ;softi2c.c: 42: _delay((unsigned long)((4)*(4000000/4000000.0)));
+  1683  0285  2A86               	nop2	;2 cycle nop
+  1684  0286  2A87               	nop2	;2 cycle nop
+  1685                           
+  1686                           ;softi2c.c: 43: TRISIO4=1;
+  1687  0287  1683               	bsf	3,5	;RP0=1, select bank1
+  1688  0288  1605               	bsf	5,4	;volatile
+  1689                           
+  1690                           ;softi2c.c: 44: _delay((unsigned long)((4)*(4000000/4000000.0)));
+  1691  0289  2A8A               	nop2	;2 cycle nop
+  1692  028A  2A8B               	nop2	;2 cycle nop
+  1693  028B  0008               	return
+  1694  028C                     __end_of_softi2c_durdur:	
+  1695                           
+  1696                           	psect	text14
+  1697  028C                     __ptext14:	
+  1698 ;; *************** function _softi2c_baslat *****************
+  1699 ;; Defined at:
+  1700 ;;		line 25 in file "softi2c.c"
+  1701 ;; Parameters:    Size  Location     Type
+  1702 ;;		None
+  1703 ;; Auto vars:     Size  Location     Type
+  1704 ;;		None
+  1705 ;; Return value:  Size  Location     Type
+  1706 ;;                  1    wreg      void 
+  1707 ;; Registers used:
+  1708 ;;		None
+  1709 ;; Tracked objects:
+  1710 ;;		On entry : 0/0
+  1711 ;;		On exit  : 0/0
+  1712 ;;		Unchanged: 0/0
+  1713 ;; Data sizes:     COMMON   BANK0
+  1714 ;;      Params:         0       0
+  1715 ;;      Locals:         0       0
+  1716 ;;      Temps:          0       0
+  1717 ;;      Totals:         0       0
+  1718 ;;Total ram usage:        0 bytes
+  1719 ;; Hardware stack levels used:    1
+  1720 ;; This function calls:
+  1721 ;;		Nothing
+  1722 ;; This function is called by:
+  1723 ;;		_pcf8574_yaz
+  1724 ;;		_pcf8574_yaz_wEnable
+  1725 ;; This function uses a non-reentrant model
+  1726 ;;
+  1727                           
+  1728                           
+  1729                           ;psect for function _softi2c_baslat
+  1730  028C                     _softi2c_baslat:	
+  1731                           
+  1732                           ;softi2c.c: 27: GPIO5=1;
+  1733                           
+  1734                           ;incstack = 0
+  1735                           ; Regs used in _softi2c_baslat: []
+  1736  028C  1283               	bcf	3,5	;RP0=0, select bank0
+  1737  028D  1685               	bsf	5,5	;volatile
+  1738                           
+  1739                           ;softi2c.c: 28: _delay((unsigned long)((4)*(4000000/4000000.0)));
+  1740  028E  2A8F               	nop2	;2 cycle nop
+  1741  028F  2A90               	nop2	;2 cycle nop
+  1742                           
+  1743                           ;softi2c.c: 29: TRISIO4=0;
+  1744  0290  1683               	bsf	3,5	;RP0=1, select bank1
+  1745  0291  1205               	bcf	5,4	;volatile
+  1746                           
+  1747                           ;softi2c.c: 30: GPIO4=0;
+  1748  0292  1283               	bcf	3,5	;RP0=0, select bank0
+  1749  0293  1205               	bcf	5,4	;volatile
+  1750                           
+  1751                           ;softi2c.c: 31: _delay((unsigned long)((4)*(4000000/4000000.0)));
+  1752  0294  2A95               	nop2	;2 cycle nop
+  1753  0295  2A96               	nop2	;2 cycle nop
+  1754                           
+  1755                           ;softi2c.c: 32: GPIO5=0;
+  1756  0296  1283               	bcf	3,5	;RP0=0, select bank0
+  1757  0297  1285               	bcf	5,5	;volatile
+  1758                           
+  1759                           ;softi2c.c: 33: TRISIO4=1;
+  1760  0298  1683               	bsf	3,5	;RP0=1, select bank1
+  1761  0299  1605               	bsf	5,4	;volatile
+  1762  029A  0008               	return
+  1763  029B                     __end_of_softi2c_baslat:	
+  1764  005E                     btemp	set	94	;btemp
+  1765  005E                     wtemp0	set	94
+
+
+Data Sizes:
+    Strings     31
+    Constant    0
+    Data        0
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62     19      21
+
+Pointer List with Targets:
+
+    lcd_mesajyaz@mesaj	PTR const unsigned char  size(1) Largest target is 18
+		 -> STR_2(CODE[18]), STR_1(CODE[13]), 
+
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_lcd_mesajyaz
+    _lcd_mesajyaz->_lcd_git
+    _lcd_git->_lcd_komut
+    _lcd_baslat->_lcd_komut
+    _lcd_sil->_lcd_komut
+    _pcf8574_yaz_wEnable->_softi2c_yaz
+    _lcd_aydinlatma_ac->_pcf8574_yaz
+    _pcf8574_yaz->_softi2c_yaz
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0    1242
+                                             16 BANK0      3     3      0
+                       ___osccal_val
+                         _lcd_baslat
+                       _lcd_mesajyaz
+                        _softi2c_kur
+ ---------------------------------------------------------------------------------
+ (1) _softi2c_kur                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _lcd_mesajyaz                                         4     2      2     730
+                                             12 BANK0      4     2      2
+                            _lcd_git
+                        _lcd_harfyaz
+ ---------------------------------------------------------------------------------
+ (2) _lcd_harfyaz                                          3     3      0     120
+                                              5 BANK0      3     3      0
+                       _lcd_mesgulmu
+                _pcf8574_yaz_wEnable
+ ---------------------------------------------------------------------------------
+ (2) _lcd_git                                              4     3      1     309
+                                              8 BANK0      4     3      1
+                          _lcd_komut
+ ---------------------------------------------------------------------------------
+ (1) _lcd_baslat                                           2     2      0     512
+                                              8 BANK0      2     2      0
+                  _lcd_aydinlatma_ac
+                          _lcd_komut
+                            _lcd_sil
+                        _pcf8574_yaz
+                _pcf8574_yaz_wEnable
+ ---------------------------------------------------------------------------------
+ (2) _lcd_sil                                              0     0      0     120
+                          _lcd_komut
+ ---------------------------------------------------------------------------------
+ (3) _lcd_komut                                            3     3      0     120
+                                              5 BANK0      3     3      0
+                       _lcd_mesgulmu
+                _pcf8574_yaz_wEnable
+ ---------------------------------------------------------------------------------
+ (3) _pcf8574_yaz_wEnable                                  0     0      0      76
+                     _softi2c_baslat
+                     _softi2c_durdur
+                        _softi2c_yaz
+ ---------------------------------------------------------------------------------
+ (3) _lcd_mesgulmu                                         1     1      0       0
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _lcd_aydinlatma_ac                                    0     0      0      98
+                        _pcf8574_yaz
+ ---------------------------------------------------------------------------------
+ (2) _pcf8574_yaz                                          1     1      0      98
+                                              5 BANK0      1     1      0
+                     _softi2c_baslat
+                     _softi2c_durdur
+                        _softi2c_yaz
+ ---------------------------------------------------------------------------------
+ (4) _softi2c_yaz                                          5     5      0      76
+                                              0 BANK0      5     5      0
+ ---------------------------------------------------------------------------------
+ (4) _softi2c_durdur                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _softi2c_baslat                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) ___osccal_val                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   ___osccal_val
+   _lcd_baslat
+     _lcd_aydinlatma_ac
+       _pcf8574_yaz
+         _softi2c_baslat
+         _softi2c_durdur
+         _softi2c_yaz
+     _lcd_komut
+       _lcd_mesgulmu
+       _pcf8574_yaz_wEnable
+         _softi2c_baslat
+         _softi2c_durdur
+         _softi2c_yaz
+     _lcd_sil
+       _lcd_komut
+         _lcd_mesgulmu
+         _pcf8574_yaz_wEnable
+           _softi2c_baslat
+           _softi2c_durdur
+           _softi2c_yaz
+     _pcf8574_yaz
+       _softi2c_baslat
+       _softi2c_durdur
+       _softi2c_yaz
+     _pcf8574_yaz_wEnable
+       _softi2c_baslat
+       _softi2c_durdur
+       _softi2c_yaz
+   _lcd_mesajyaz
+     _lcd_git
+       _lcd_komut
+         _lcd_mesgulmu
+         _pcf8574_yaz_wEnable
+           _softi2c_baslat
+           _softi2c_durdur
+           _softi2c_yaz
+     _lcd_harfyaz
+       _lcd_mesgulmu
+       _pcf8574_yaz_wEnable
+         _softi2c_baslat
+         _softi2c_durdur
+         _softi2c_yaz
+   _softi2c_kur
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            3E      0       0       3        0.0%
+BANK0               3E     13      15       4       33.9%
+ABS                  0      0      15       5        0.0%
+DATA                 0      0      15       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.42 build -159332390 
+Symbol Table                                                                                   Sun Jul 09 19:00:26 2017
+
+                           pc 0002                   __CFG_CP$OFF 0000                            l79 02B3  
+                          fsr 0004                  softi2c_yaz@i 0024                   lcd_git@temp 002B  
+                         l180 0392                           l181 0396                           l179 03A3  
+                         l922 0385                           l990 02D0                           l984 02C7  
+                         l986 02CA                           l994 02D6                           l988 02CD  
+                         l996 02E4                           u307 02E9                           u317 0328  
+                         u327 0331                           u185 0365                           u337 0338  
+                         u257 03C1                  __CFG_CPD$OFF 0000                           u347 0341  
+                         u195 0305                           u267 03E3                           u357 035D  
+                         u277 03F2                           u367 0376                           u287 02FE  
+                         u377 026C                           u297 0314                           fsr0 0004  
+                lcd_git@satir 002A                  lcd_git@sutun 0028          _display_kursor_blink 0033  
+                        l1062 03DB                          STR_1 0019                          STR_2 0007  
+                        _main 03B0                          btemp 005E                 __CFG_BOREN$ON 0000  
+                        start 0000                ??_lcd_mesajyaz 002E                ??_lcd_mesgulmu 0020  
+                       ?_main 0020                 __CFG_WDTE$OFF 0000                         _CARRY 0018  
+                       _CMCON 0019                         _ANSEL 009F                         _GPIO4 002C  
+                       _GPIO5 002D                 __CFG_PWRTE$ON 0000               __end_of_lcd_git 02EC  
+             __end_of_lcd_sil 0264          __size_of_pcf8574_yaz 000A                  ___osccal_val 03FF  
+                       pclath 000A                         status 0003                         wtemp0 005E  
+             pcf8574_yaz@veri 0025             lcd_mesajyaz@mesaj 002D             lcd_mesajyaz@satir 002F  
+            ??_softi2c_baslat 0000             lcd_mesajyaz@sutun 002C                __CFG_MCLRE$OFF 0000  
+             __initialization 03FA               softi2c_yaz@temp 0022               softi2c_yaz@veri 0023  
+            ??_softi2c_durdur 0000                  __end_of_main 03FA                        ??_main 0030  
+__size_of_pcf8574_yaz_wEnable 0010                        _OSCCAL 0090          __size_of_lcd_harfyaz 002C  
+                   ??_lcd_git 0029                     ??_lcd_sil 0000          __end_of_lcd_mesajyaz 02C4  
+        __end_of_lcd_mesgulmu 026F                  ?_softi2c_kur 0020                  ?_softi2c_yaz 0020  
+     __end_of__initialization 03FD                __pcstackCOMMON 0000            __size_of_lcd_komut 0032  
+                  __pbssBANK0 0033               lcd_harfyaz@harf 0027                lcd_komut@komut 0027  
+                  __pmaintext 03B0                    _lcd_baslat 0318                       _TRISIO4 042C  
+                     _TRISIO5 042D                    __stringtab 0001           _pcf8574_yaz_wEnable 029B  
+           __end_of_lcd_komut 037B         __size_of_lcd_mesajyaz 0019                       __ptext1 026F  
+                     __ptext2 02AB                       __ptext3 02EC                       __ptext4 02C4  
+       __size_of_lcd_mesgulmu 0006                       __ptext5 0318                       __ptext6 0261  
+                     __ptext7 0349                       __ptext8 029B                       __ptext9 0269  
+                     _lcd_git 02C4                       _lcd_sil 0261                 ??_pcf8574_yaz 0000  
+        ?_pcf8574_yaz_wEnable 0020          end_of_initialization 03FD          __size_of_softi2c_kur 0007  
+        __size_of_softi2c_yaz 0035                  _lcd_mesajyaz 02AB                  _lcd_mesgulmu 0269  
+       ??_pcf8574_yaz_wEnable 0000                   ?_lcd_baslat 0020           __end_of_pcf8574_yaz 0280  
+               ??_lcd_harfyaz 0025       __size_of_softi2c_baslat 000F       __size_of_softi2c_durdur 000C  
+         start_initialization 03FA             _lcd_aydinlatma_ac 0264            ?_lcd_aydinlatma_ac 0020  
+         __size_of_lcd_baslat 0031           ??_lcd_aydinlatma_ac 0000           __end_of_lcd_harfyaz 0318  
+                 _pcf8574_yaz 0276                     ___latbits 0000                 __pcstackBANK0 0020  
+   __end_of_lcd_aydinlatma_ac 0269                 ?___osccal_val 0020                     _lcd_komut 0349  
+                   __pstrings 0001                      ?_lcd_git 0028                      ?_lcd_sil 0020  
+              ??___osccal_val 0000                      _GPIObits 0005                   _lcd_harfyaz 02EC  
+                  ?_lcd_komut 0020                   __stringbase 0006                _softi2c_baslat 028C  
+                ??_lcd_baslat 0028                _softi2c_durdur 0280                 ??_softi2c_kur 0000  
+               ??_softi2c_yaz 0020    __size_of_lcd_aydinlatma_ac 0005            __end_of_lcd_baslat 0349  
+ __end_of_pcf8574_yaz_wEnable 02AB        __end_of_softi2c_baslat 029B        __end_of_softi2c_durdur 028C  
+          __end_of__stringtab 0007              __size_of_lcd_git 0028              __size_of_lcd_sil 0003  
+                    __ptext10 0264                      __ptext11 0276                      __ptext12 037B  
+                    __ptext13 0280                      __ptext14 028C                      _pcf_port 0034  
+         __end_of_softi2c_kur 0276           __end_of_softi2c_yaz 03B0                 __size_of_main 004A  
+             ?_softi2c_baslat 0020                   ??_lcd_komut 0025               ?_softi2c_durdur 0020  
+                ?_pcf8574_yaz 0020                     stringcode 0001                      stringdir 0001  
+                    stringtab 0001                   _softi2c_kur 026F                   _softi2c_yaz 037B  
+           __CFG_FOSC$INTRCIO 0000                  ?_lcd_harfyaz 0020                    _TRISIObits 0085  
+               ?_lcd_mesajyaz 002C                 ?_lcd_mesgulmu 0020  
