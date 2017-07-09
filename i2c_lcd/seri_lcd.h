@@ -3,10 +3,13 @@
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 05 Temmuz 2017                                              *
- * Versiyon      : 0.2                                                         *
+ * Düzenleme     : 9 Temmuz 2017
+ * Versiyon      : 0.3                                                         *
  *                                                                             *
  * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
  ******************************************************************************/
+
+//v0.3 softI2C ile de çalýþabilecek þekilde düzenleme yapýldý.
 
 /*      Standart LCD ayak baðlantýlarý
 1: Gnd  2: Vcc  3: Vee - Kontras ayaðý
@@ -27,6 +30,7 @@
  */
 
 #define pcf_adres   0x3F    //i2c entegresinin adresi
+#define softI2C             //yazýlýmsal I2C fonksiyonlarýný kullan. 
 
 //printf fonksiyonu lcd'ye yazacak mý?
 #define lcdprintf_aktif

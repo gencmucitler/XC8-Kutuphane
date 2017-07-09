@@ -3,13 +3,21 @@
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 05 Temmuz 2017                                              *
- * Versiyon      : 0.2                                                         *
+ * Düzenleme     : 9 Temmuz 2017
+ * Versiyon      : 0.3                                                         *
  *                                                                             *
  * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
  ******************************************************************************/
+
+//v0.3 softI2C ile de çalýþabilecek þekilde düzenleme yapýldý.
+
 #include "mcc_generated_files/mcc.h"
 #include "seri_lcd.h"
 #include "pcf8574.h"
+
+#ifdef softI2C
+#include "softi2c.h"
+#endif
 
 //Deðiþkenler
 char display_kursor_blink; //display,kursor ve blink aç kapat komutlarý için.
@@ -51,6 +59,19 @@ _PCF_PORT pcf_port;
  *******************************************************************************/
 void pcf8574_yaz_wEnable() {
 
+    #ifdef softI2C
+    
+    softi2c_baslat();
+    softi2c_yaz(pcf_adres <<1);
+    softi2c_yaz(lcd_data);
+    pcf_port.lcd.E=1;
+    softi2c_yaz(lcd_data);
+    pcf_port.lcd.E=0;
+    softi2c_yaz(lcd_data);
+    softi2c_durdur();  
+    
+#else
+    
     I2C1_MESSAGE_STATUS status;
     uint8_t writeBuffer[3];
     uint16_t timeOut;
@@ -84,7 +105,8 @@ void pcf8574_yaz_wEnable() {
         else
             timeOut++;
     }
-
+#endif
+    
 }
 
 /*******************************************************************************
