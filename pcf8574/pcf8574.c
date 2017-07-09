@@ -4,7 +4,7 @@
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 4 Temmuz 2017                                               *
  * Düzenleme     : 9 Temmuz 2017
- * Versiyon      : 0.1                                                         *
+ * Versiyon      : 0.2                                                        *
  *                                                                             *
  * PCF8574 giriþ/çýkýþ port çoðullayýcý                                        *
  ******************************************************************************/
