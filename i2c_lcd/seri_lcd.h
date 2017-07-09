@@ -30,7 +30,7 @@
  */
 
 #define pcf_adres   0x3F    //i2c entegresinin adresi
-#define softI2C             //yazýlýmsal I2C fonksiyonlarýný kullan. 
+//#define softI2C             //yazýlýmsal I2C fonksiyonlarýný kullan. 
 
 //printf fonksiyonu lcd'ye yazacak mý?
 #define lcdprintf_aktif
