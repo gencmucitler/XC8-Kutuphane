@@ -3,6 +3,7 @@
  * Yazar         : sigmoid                                                     *
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 4 Temmuz 2017                                               *
+ * Düzenleme     : 9 Temmuz 2017
  * Versiyon      : 0.1                                                         *
  *                                                                             *
  * PCF8574 giriþ/çýkýþ port çoðullayýcý                                        *
@@ -12,6 +13,8 @@
 //öðrenebilirsiniz. PCF8574 ile PCF8574A nýn adres kodlarý farklýdýr. Bu sayede 
 //ayný hatta 8 adet PCF8574 ve 8 adet PCF8574A baðlanabilir. Böylece toplamda
 //16 adet port çoðaltýcý baðlanýlabilinir.
+
+//v0.2 softI2C ilede çalýþabilecek þekilde düzenleme yapýldý.
 
 
 #ifndef PCF8574_H
@@ -31,6 +34,8 @@ extern "C" {
 #ifndef pcf_adres
 #define pcf_adres   0x3F    //entegrenin adresi
 #endif
+
+//#define softI2C             //yazýlýmsal I2C fonksiyonlarýný kullan.
 
 #define pcf_tekrar   10     //hatalý gönderimde tekrar deneme sayýsý
 
