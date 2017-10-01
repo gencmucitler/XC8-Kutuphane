@@ -1,0 +1,1042 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.44 build -154322312 
+                                                                                               Sun Oct 01 18:01:19 2017
+
+Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
+     1                           	processor	12F675
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	strings,global,class=STRING,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	dabs	1,0x5E,2
+    16  0000                     
+    17                           ; Version 1.44
+    18                           ; Generated 14/09/2017 GMT
+    19                           ; 
+    20                           ; Copyright Â© 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    21                           ; All rights reserved.
+    22                           ; 
+    23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    24                           ; 
+    25                           ; Redistribution and use in source and binary forms, with or without modification, are
+    26                           ; permitted provided that the following conditions are met:
+    27                           ; 
+    28                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    29                           ;        conditions and the following disclaimer.
+    30                           ; 
+    31                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    32                           ;        of conditions and the following disclaimer in the documentation and/or other
+    33                           ;        materials provided with the distribution.
+    34                           ; 
+    35                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    36                           ;        software without specific prior written permission.
+    37                           ; 
+    38                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    39                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    40                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    41                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    42                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    43                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    44                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    45                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    46                           ; 
+    47                           ; 
+    48                           ; Code-generator required, PIC12F675 Definitions
+    49                           ; 
+    50                           ; SFR Addresses
+    51  0000                     	;# 
+    52  0001                     	;# 
+    53  0002                     	;# 
+    54  0003                     	;# 
+    55  0004                     	;# 
+    56  0005                     	;# 
+    57  000A                     	;# 
+    58  000B                     	;# 
+    59  000C                     	;# 
+    60  000E                     	;# 
+    61  000E                     	;# 
+    62  000F                     	;# 
+    63  0010                     	;# 
+    64  0019                     	;# 
+    65  001E                     	;# 
+    66  001F                     	;# 
+    67  0081                     	;# 
+    68  0085                     	;# 
+    69  008C                     	;# 
+    70  008E                     	;# 
+    71  0090                     	;# 
+    72  0095                     	;# 
+    73  0096                     	;# 
+    74  0096                     	;# 
+    75  0099                     	;# 
+    76  009A                     	;# 
+    77  009A                     	;# 
+    78  009B                     	;# 
+    79  009C                     	;# 
+    80  009D                     	;# 
+    81  009E                     	;# 
+    82  009F                     	;# 
+    83  0000                     	;# 
+    84  0001                     	;# 
+    85  0002                     	;# 
+    86  0003                     	;# 
+    87  0004                     	;# 
+    88  0005                     	;# 
+    89  000A                     	;# 
+    90  000B                     	;# 
+    91  000C                     	;# 
+    92  000E                     	;# 
+    93  000E                     	;# 
+    94  000F                     	;# 
+    95  0010                     	;# 
+    96  0019                     	;# 
+    97  001E                     	;# 
+    98  001F                     	;# 
+    99  0081                     	;# 
+   100  0085                     	;# 
+   101  008C                     	;# 
+   102  008E                     	;# 
+   103  0090                     	;# 
+   104  0095                     	;# 
+   105  0096                     	;# 
+   106  0096                     	;# 
+   107  0099                     	;# 
+   108  009A                     	;# 
+   109  009A                     	;# 
+   110  009B                     	;# 
+   111  009C                     	;# 
+   112  009D                     	;# 
+   113  009E                     	;# 
+   114  009F                     	;# 
+   115  0005                     _GPIObits	set	5
+   116  0019                     _CMCON	set	25
+   117  002D                     _GPIO5	set	45
+   118  0018                     _CARRY	set	24
+   119  002C                     _GPIO4	set	44
+   120  0085                     _TRISIObits	set	133
+   121  009F                     _ANSEL	set	159
+   122  042C                     _TRISIO4	set	1068
+   123  042D                     _TRISIO5	set	1069
+   124                           
+   125                           	psect	strings
+   126  0001                     __pstrings:	
+   127  0001                     stringtab:	
+   128  0001                     __stringtab:	
+   129  0001                     stringcode:	
+   130                           ;	String table - string pointers are 1 byte each
+   131                           
+   132  0001                     stringdir:	
+   133  0001  3000               	movlw	high stringdir
+   134  0002  008A               	movwf	10
+   135  0003  0804               	movf	4,w
+   136  0004  0A84               	incf	4,f
+   137  0005  0782               	addwf	2,f
+   138  0006                     __stringbase:	
+   139  0006  3400               	retlw	0
+   140  0007                     __end_of__stringtab:	
+   141  0007                     STR_1:	
+   142  0007  3459               	retlw	89	;'Y'
+   143  0008  3461               	retlw	97	;'a'
+   144  0009  347A               	retlw	122	;'z'
+   145  000A  34FD               	retlw	-3
+   146  000B  346C               	retlw	108	;'l'
+   147  000C  34FD               	retlw	-3
+   148  000D  346D               	retlw	109	;'m'
+   149  000E  3473               	retlw	115	;'s'
+   150  000F  3461               	retlw	97	;'a'
+   151  0010  346C               	retlw	108	;'l'
+   152  0011  3420               	retlw	32	;' '
+   153  0012  3455               	retlw	85	;'U'
+   154  0013  3441               	retlw	65	;'A'
+   155  0014  3452               	retlw	82	;'R'
+   156  0015  3454               	retlw	84	;'T'
+   157  0016  3420               	retlw	32	;' '
+   158  0017  3474               	retlw	116	;'t'
+   159  0018  3465               	retlw	101	;'e'
+   160  0019  3473               	retlw	115	;'s'
+   161  001A  3474               	retlw	116	;'t'
+   162  001B  342E               	retlw	46	;'.'
+   163  001C  340A               	retlw	10
+   164  001D  3400               	retlw	0
+   165                           
+   166                           ; #config settings
+   167  0000                     
+   168                           	psect	cinit
+   169  03FB                     start_initialization:	
+   170  03FB                     __initialization:	
+   171                           
+   172                           ; Clear objects allocated to BANK0
+   173  03FB  1283               	bcf	3,5	;RP0=0, select bank0
+   174  03FC  01AC               	clrf	__pbssBANK0& (0+127)
+   175  03FD                     end_of_initialization:	
+   176                           ;End of C runtime variable initialization code
+   177                           
+   178  03FD                     __end_of__initialization:	
+   179  03FD  0183               	clrf	3
+   180  03FE  2B73               	ljmp	_main	;jump to C main() function
+   181                           
+   182                           	psect	bssBANK0
+   183  002C                     __pbssBANK0:	
+   184  002C                     _temp:	
+   185  002C                     	ds	1
+   186                           
+   187                           	psect	cstackCOMMON
+   188  0000                     __pcstackCOMMON:	
+   189  0000                     ??_softusart_baslat:	
+   190  0000                     ??_putch:	
+   191                           ; 1 bytes @ 0x0
+   192                           
+   193                           
+   194                           	psect	cstackBANK0
+   195  0020                     __pcstackBANK0:	
+   196                           ; 1 bytes @ 0x0
+   197                           
+   198  0020                     ?_softusart_baslat:	
+   199  0020                     ?_softusart_oku:	
+   200                           ; 1 bytes @ 0x0
+   201                           
+   202  0020                     ??_softusart_oku:	
+   203                           ; 1 bytes @ 0x0
+   204                           
+   205  0020                     ?_softusart_yaz:	
+   206                           ; 1 bytes @ 0x0
+   207                           
+   208  0020                     ??_softusart_yaz:	
+   209                           ; 1 bytes @ 0x0
+   210                           
+   211  0020                     ?_main:	
+   212                           ; 1 bytes @ 0x0
+   213                           
+   214  0020                     ?_putch:	
+   215                           ; 1 bytes @ 0x0
+   216                           
+   217  0020                     ?_printf:	
+   218                           ; 1 bytes @ 0x0
+   219                           
+   220                           
+   221                           ; 2 bytes @ 0x0
+   222  0020                     	ds	2
+   223  0022                     softusart_yaz@veri:	
+   224  0022                     softusart_oku@i:	
+   225                           ; 1 bytes @ 0x2
+   226                           
+   227                           
+   228                           ; 1 bytes @ 0x2
+   229  0022                     	ds	1
+   230  0023                     softusart_yaz@i:	
+   231  0023                     softusart_oku@temp:	
+   232                           ; 1 bytes @ 0x3
+   233                           
+   234                           
+   235                           ; 2 bytes @ 0x3
+   236  0023                     	ds	1
+   237  0024                     putch@byte:	
+   238                           
+   239                           ; 1 bytes @ 0x4
+   240  0024                     	ds	1
+   241  0025                     ??_printf:	
+   242                           
+   243                           ; 1 bytes @ 0x5
+   244  0025                     	ds	1
+   245  0026                     printf@ap:	
+   246                           
+   247                           ; 1 bytes @ 0x6
+   248  0026                     	ds	1
+   249  0027                     printf@c:	
+   250                           
+   251                           ; 1 bytes @ 0x7
+   252  0027                     	ds	1
+   253  0028                     printf@f:	
+   254                           
+   255                           ; 1 bytes @ 0x8
+   256  0028                     	ds	1
+   257  0029                     ??_main:	
+   258                           
+   259                           ; 1 bytes @ 0x9
+   260  0029                     	ds	3
+   261                           
+   262                           	psect	maintext
+   263  0373                     __pmaintext:	
+   264 ;;
+   265 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   266 ;;
+   267 ;; *************** function _main *****************
+   268 ;; Defined at:
+   269 ;;		line 34 in file "main.c"
+   270 ;; Parameters:    Size  Location     Type
+   271 ;;		None
+   272 ;; Auto vars:     Size  Location     Type
+   273 ;;		None
+   274 ;; Return value:  Size  Location     Type
+   275 ;;                  1    wreg      void 
+   276 ;; Registers used:
+   277 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   278 ;; Tracked objects:
+   279 ;;		On entry : B00/0
+   280 ;;		On exit  : 0/0
+   281 ;;		Unchanged: 0/0
+   282 ;; Data sizes:     COMMON   BANK0
+   283 ;;      Params:         0       0
+   284 ;;      Locals:         0       0
+   285 ;;      Temps:          0       3
+   286 ;;      Totals:         0       3
+   287 ;;Total ram usage:        3 bytes
+   288 ;; Hardware stack levels required when called:    3
+   289 ;; This function calls:
+   290 ;;		_printf
+   291 ;;		_softusart_baslat
+   292 ;;		_softusart_oku
+   293 ;;		_softusart_yaz
+   294 ;; This function is called by:
+   295 ;;		Startup code after reset
+   296 ;; This function uses a non-reentrant model
+   297 ;;
+   298                           
+   299                           
+   300                           ;psect for function _main
+   301  0373                     _main:	
+   302                           
+   303                           ;main.c: 38: CMCON = 0x07;
+   304                           
+   305                           ;incstack = 0
+   306                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   307  0373  3007               	movlw	7
+   308  0374  1283               	bcf	3,5	;RP0=0, select bank0
+   309  0375  0099               	movwf	25	;volatile
+   310                           
+   311                           ;main.c: 39: ANSEL = 0x00;
+   312  0376  1683               	bsf	3,5	;RP0=1, select bank1
+   313  0377  019F               	clrf	31	;volatile
+   314                           
+   315                           ;main.c: 45: TRISIObits.TRISIO2 = 0;
+   316  0378  1105               	bcf	5,2	;volatile
+   317                           
+   318                           ;main.c: 46: do { GPIObits.GP2 = 1; } while(0);
+   319  0379  1283               	bcf	3,5	;RP0=0, select bank0
+   320  037A  1505               	bsf	5,2	;volatile
+   321                           
+   322                           ;main.c: 47: _delay((unsigned long)((250)*(4000000/4000.0)));
+   323  037B  3002               	movlw	2
+   324  037C  00AB               	movwf	??_main+2
+   325  037D  3045               	movlw	69
+   326  037E  00AA               	movwf	??_main+1
+   327  037F  30A9               	movlw	169
+   328  0380  00A9               	movwf	??_main
+   329  0381                     u217:	
+   330  0381  0BA9               	decfsz	??_main,f
+   331  0382  2B81               	goto	u217
+   332  0383  0BAA               	decfsz	??_main+1,f
+   333  0384  2B81               	goto	u217
+   334  0385  0BAB               	decfsz	??_main+2,f
+   335  0386  2B81               	goto	u217
+   336  0387  2B88               	nop2
+   337                           
+   338                           ;main.c: 48: do { GPIObits.GP2 = 0; } while(0);
+   339  0388  1283               	bcf	3,5	;RP0=0, select bank0
+   340  0389  1105               	bcf	5,2	;volatile
+   341                           
+   342                           ;main.c: 49: _delay((unsigned long)((250)*(4000000/4000.0)));
+   343  038A  3002               	movlw	2
+   344  038B  00AB               	movwf	??_main+2
+   345  038C  3045               	movlw	69
+   346  038D  00AA               	movwf	??_main+1
+   347  038E  30A9               	movlw	169
+   348  038F  00A9               	movwf	??_main
+   349  0390                     u227:	
+   350  0390  0BA9               	decfsz	??_main,f
+   351  0391  2B90               	goto	u227
+   352  0392  0BAA               	decfsz	??_main+1,f
+   353  0393  2B90               	goto	u227
+   354  0394  0BAB               	decfsz	??_main+2,f
+   355  0395  2B90               	goto	u227
+   356  0396  2B97               	nop2
+   357                           
+   358                           ;main.c: 52: softusart_baslat();
+   359  0397  2328               	fcall	_softusart_baslat
+   360                           
+   361                           ;main.c: 54: printf("Yazýlýmsal UART test.\n");
+   362  0398  3001               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
+   363  0399  232E               	fcall	_printf
+   364                           
+   365                           ;main.c: 62: switch (temp) {
+   366  039A  2B9F               	goto	l704
+   367  039B                     l33:	
+   368                           ;main.c: 64: case 'A':
+   369                           ;main.c: 65: do { GPIObits.GP2 = 1; } while(0);
+   370                           
+   371                           ;main.c: 63: case 'a':
+   372                           
+   373  039B  1283               	bcf	3,5	;RP0=0, select bank0
+   374  039C  1505               	bsf	5,2	;volatile
+   375                           
+   376                           ;main.c: 66: break;
+   377  039D  2B9F               	goto	l704
+   378  039E                     l38:	
+   379                           ;main.c: 68: case 'B':
+   380                           ;main.c: 69: do { GPIObits.GP2 = 0; } while(0);
+   381                           
+   382                           ;main.c: 67: case 'b':
+   383                           
+   384  039E  1105               	bcf	5,2	;volatile
+   385  039F                     l704:	
+   386                           ;main.c: 56: while (1) {
+   387                           
+   388                           ;main.c: 71: }
+   389                           
+   390                           ;main.c: 70: break;
+   391                           
+   392                           
+   393                           ;main.c: 59: temp = softusart_oku();
+   394  039F  23B6               	fcall	_softusart_oku
+   395  03A0  1283               	bcf	3,5	;RP0=0, select bank0
+   396  03A1  00A9               	movwf	??_main
+   397  03A2  0829               	movf	??_main,w
+   398  03A3  00AC               	movwf	_temp
+   399                           
+   400                           ;main.c: 60: softusart_yaz(temp);
+   401  03A4  082C               	movf	_temp,w
+   402  03A5  2344               	fcall	_softusart_yaz
+   403  03A6  1283               	bcf	3,5	;RP0=0, select bank0
+   404  03A7  082C               	movf	_temp,w
+   405                           
+   406                           ; Switch size 1, requested type "space"
+   407                           ; Number of cases is 4, Range of values is 65 to 98
+   408                           ; switch strategies available:
+   409                           ; Name         Instructions Cycles
+   410                           ; simple_byte           13     7 (average)
+   411                           ; direct_byte           43     9 (fixed)
+   412                           ; jumptable            263     9 (fixed)
+   413                           ;	Chosen strategy is simple_byte
+   414  03A8  3A41               	xorlw	65	; case 65
+   415  03A9  1903               	skipnz
+   416  03AA  2B9B               	goto	l33
+   417  03AB  3A03               	xorlw	3	; case 66
+   418  03AC  1903               	skipnz
+   419  03AD  2B9E               	goto	l38
+   420  03AE  3A23               	xorlw	35	; case 97
+   421  03AF  1903               	skipnz
+   422  03B0  2B9B               	goto	l33
+   423  03B1  3A03               	xorlw	3	; case 98
+   424  03B2  1903               	skipnz
+   425  03B3  2B9E               	goto	l38
+   426  03B4  2B9F               	goto	l704
+   427  03B5  2B9F               	goto	l704
+   428  03B6                     __end_of_main:	
+   429                           
+   430                           	psect	text1
+   431  03B6                     __ptext1:	
+   432 ;; *************** function _softusart_oku *****************
+   433 ;; Defined at:
+   434 ;;		line 36 in file "softusart.c"
+   435 ;; Parameters:    Size  Location     Type
+   436 ;;		None
+   437 ;; Auto vars:     Size  Location     Type
+   438 ;;  temp            2    3[BANK0 ] unsigned int 
+   439 ;;  i               1    2[BANK0 ] unsigned char 
+   440 ;; Return value:  Size  Location     Type
+   441 ;;                  1    wreg      unsigned char 
+   442 ;; Registers used:
+   443 ;;		wreg, status,2, status,0
+   444 ;; Tracked objects:
+   445 ;;		On entry : 0/0
+   446 ;;		On exit  : 0/0
+   447 ;;		Unchanged: 0/0
+   448 ;; Data sizes:     COMMON   BANK0
+   449 ;;      Params:         0       0
+   450 ;;      Locals:         0       3
+   451 ;;      Temps:          0       2
+   452 ;;      Totals:         0       5
+   453 ;;Total ram usage:        5 bytes
+   454 ;; Hardware stack levels used:    1
+   455 ;; This function calls:
+   456 ;;		Nothing
+   457 ;; This function is called by:
+   458 ;;		_main
+   459 ;; This function uses a non-reentrant model
+   460 ;;
+   461                           
+   462                           
+   463                           ;psect for function _softusart_oku
+   464  03B6                     _softusart_oku:	
+   465                           
+   466                           ;softusart.c: 38: char i;
+   467                           ;softusart.c: 39: unsigned temp=0;
+   468                           
+   469                           ;incstack = 0
+   470                           ; Regs used in _softusart_oku: [wreg+status,2+status,0]
+   471  03B6  1283               	bcf	3,5	;RP0=0, select bank0
+   472  03B7  01A3               	clrf	softusart_oku@temp
+   473  03B8  01A4               	clrf	softusart_oku@temp+1
+   474  03B9                     l65:	
+   475                           ;softusart.c: 40: while(GPIO5);
+   476                           
+   477  03B9  1A85               	btfsc	5,5	;volatile
+   478  03BA  2BB9               	goto	l65
+   479                           
+   480                           ;softusart.c: 41: _delay((4000000/4) / 9600);
+   481  03BB  3022               	movlw	34
+   482  03BC  00A0               	movwf	??_softusart_oku
+   483  03BD                     u237:	
+   484  03BD  0BA0               	decfsz	??_softusart_oku,f
+   485  03BE  2BBD               	goto	u237
+   486  03BF  0000               	nop
+   487                           
+   488                           ;softusart.c: 42: _delay((4000000/4) / 9600/2-20);
+   489  03C0  300A               	movlw	10
+   490  03C1  1283               	bcf	3,5	;RP0=0, select bank0
+   491  03C2  00A0               	movwf	??_softusart_oku
+   492  03C3                     u247:	
+   493  03C3  0BA0               	decfsz	??_softusart_oku,f
+   494  03C4  2BC3               	goto	u247
+   495  03C5  0000               	nop
+   496                           
+   497                           ;softusart.c: 43: for(i=8;i>0;i--)
+   498  03C6  3008               	movlw	8
+   499  03C7  1283               	bcf	3,5	;RP0=0, select bank0
+   500  03C8  00A0               	movwf	??_softusart_oku
+   501  03C9  0820               	movf	??_softusart_oku,w
+   502  03CA  00A2               	movwf	softusart_oku@i
+   503  03CB  0822               	movf	softusart_oku@i,w
+   504  03CC  1903               	btfsc	3,2
+   505  03CD  2BF2               	goto	l680
+   506  03CE                     l668:	
+   507                           
+   508                           ;softusart.c: 44: {
+   509                           ;softusart.c: 45: temp=temp>>1;
+   510  03CE  0824               	movf	softusart_oku@temp+1,w
+   511  03CF  00A1               	movwf	??_softusart_oku+1
+   512  03D0  0823               	movf	softusart_oku@temp,w
+   513  03D1  00A0               	movwf	??_softusart_oku
+   514  03D2  1003               	clrc
+   515  03D3  0CA1               	rrf	??_softusart_oku+1,f
+   516  03D4  0CA0               	rrf	??_softusart_oku,f
+   517  03D5  0820               	movf	??_softusart_oku,w
+   518  03D6  00A3               	movwf	softusart_oku@temp
+   519  03D7  0821               	movf	??_softusart_oku+1,w
+   520  03D8  00A4               	movwf	softusart_oku@temp+1
+   521                           
+   522                           ;softusart.c: 46: if(GPIO5)
+   523  03D9  1E85               	btfss	5,5	;volatile
+   524  03DA  2BE2               	goto	l70
+   525                           
+   526                           ;softusart.c: 47: temp=temp|0x80;
+   527  03DB  3080               	movlw	128
+   528  03DC  0423               	iorwf	softusart_oku@temp,w
+   529  03DD  00A3               	movwf	softusart_oku@temp
+   530  03DE  3000               	movlw	0
+   531  03DF  0424               	iorwf	softusart_oku@temp+1,w
+   532  03E0  00A4               	movwf	softusart_oku@temp+1
+   533  03E1  2BE6               	goto	l674
+   534  03E2                     l70:	
+   535                           
+   536                           ;softusart.c: 48: else
+   537                           ;softusart.c: 49: _delay(7);
+   538  03E2  2BE3               	nop2	;2 cycle nop
+   539  03E3  2BE4               	nop2	;2 cycle nop
+   540  03E4  2BE5               	nop2	;2 cycle nop
+   541  03E5  0000               	nop
+   542  03E6                     l674:	
+   543                           
+   544                           ;softusart.c: 51: _delay((4000000/4) / 9600-29);
+   545  03E6  3018               	movlw	24
+   546  03E7  1283               	bcf	3,5	;RP0=0, select bank0
+   547  03E8  00A0               	movwf	??_softusart_oku
+   548  03E9                     u257:	
+   549  03E9  0BA0               	decfsz	??_softusart_oku,f
+   550  03EA  2BE9               	goto	u257
+   551  03EB  2BEC               	nop2
+   552  03EC  3001               	movlw	1
+   553  03ED  1283               	bcf	3,5	;RP0=0, select bank0
+   554  03EE  02A2               	subwf	softusart_oku@i,f
+   555  03EF  0822               	movf	softusart_oku@i,w
+   556  03F0  1D03               	btfss	3,2
+   557  03F1  2BCE               	goto	l668
+   558  03F2                     l680:	
+   559                           
+   560                           ;softusart.c: 52: }
+   561                           ;softusart.c: 55: _delay((4000000/4) / 9600/2);
+   562  03F2  3011               	movlw	17
+   563  03F3  00A0               	movwf	??_softusart_oku
+   564  03F4                     u267:	
+   565  03F4  0BA0               	decfsz	??_softusart_oku,f
+   566  03F5  2BF4               	goto	u267
+   567  03F6                     l72:	
+   568                           ;softusart.c: 56: while(!GPIO5);
+   569                           
+   570  03F6  1283               	bcf	3,5	;RP0=0, select bank0
+   571  03F7  1E85               	btfss	5,5	;volatile
+   572  03F8  2BF6               	goto	l72
+   573                           
+   574                           ;softusart.c: 57: return temp;
+   575  03F9  0823               	movf	softusart_oku@temp,w
+   576  03FA  0008               	return
+   577  03FB                     __end_of_softusart_oku:	
+   578                           
+   579                           	psect	text2
+   580  0328                     __ptext2:	
+   581 ;; *************** function _softusart_baslat *****************
+   582 ;; Defined at:
+   583 ;;		line 14 in file "softusart.c"
+   584 ;; Parameters:    Size  Location     Type
+   585 ;;		None
+   586 ;; Auto vars:     Size  Location     Type
+   587 ;;		None
+   588 ;; Return value:  Size  Location     Type
+   589 ;;                  1    wreg      void 
+   590 ;; Registers used:
+   591 ;;		None
+   592 ;; Tracked objects:
+   593 ;;		On entry : 0/0
+   594 ;;		On exit  : 0/0
+   595 ;;		Unchanged: 0/0
+   596 ;; Data sizes:     COMMON   BANK0
+   597 ;;      Params:         0       0
+   598 ;;      Locals:         0       0
+   599 ;;      Temps:          0       0
+   600 ;;      Totals:         0       0
+   601 ;;Total ram usage:        0 bytes
+   602 ;; Hardware stack levels used:    1
+   603 ;; This function calls:
+   604 ;;		Nothing
+   605 ;; This function is called by:
+   606 ;;		_main
+   607 ;; This function uses a non-reentrant model
+   608 ;;
+   609                           
+   610                           
+   611                           ;psect for function _softusart_baslat
+   612  0328                     _softusart_baslat:	
+   613                           
+   614                           ;softusart.c: 16: GPIO4=1;
+   615                           
+   616                           ;incstack = 0
+   617                           ; Regs used in _softusart_baslat: []
+   618  0328  1283               	bcf	3,5	;RP0=0, select bank0
+   619  0329  1605               	bsf	5,4	;volatile
+   620                           
+   621                           ;softusart.c: 17: TRISIO5=1;
+   622  032A  1683               	bsf	3,5	;RP0=1, select bank1
+   623  032B  1685               	bsf	5,5	;volatile
+   624                           
+   625                           ;softusart.c: 18: TRISIO4=0;
+   626  032C  1205               	bcf	5,4	;volatile
+   627  032D  0008               	return
+   628  032E                     __end_of_softusart_baslat:	
+   629                           
+   630                           	psect	text3
+   631  032E                     __ptext3:	
+   632 ;; *************** function _printf *****************
+   633 ;; Defined at:
+   634 ;;		line 464 in file "C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c"
+   635 ;; Parameters:    Size  Location     Type
+   636 ;;  f               1    wreg     PTR const unsigned char 
+   637 ;;		 -> STR_1(23), 
+   638 ;; Auto vars:     Size  Location     Type
+   639 ;;  f               1    8[BANK0 ] PTR const unsigned char 
+   640 ;;		 -> STR_1(23), 
+   641 ;;  tmpval          4    0        struct .
+   642 ;;  cp              2    0        PTR const unsigned char 
+   643 ;;  len             2    0        unsigned int 
+   644 ;;  val             2    0        unsigned int 
+   645 ;;  c               1    7[BANK0 ] char 
+   646 ;;  ap              1    6[BANK0 ] PTR void [1]
+   647 ;;		 -> ?_printf(2), 
+   648 ;;  flag            1    0        unsigned char 
+   649 ;;  prec            1    0        char 
+   650 ;; Return value:  Size  Location     Type
+   651 ;;                  2   14[None  ] int 
+   652 ;; Registers used:
+   653 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   654 ;; Tracked objects:
+   655 ;;		On entry : 0/0
+   656 ;;		On exit  : 0/0
+   657 ;;		Unchanged: 0/0
+   658 ;; Data sizes:     COMMON   BANK0
+   659 ;;      Params:         0       0
+   660 ;;      Locals:         0       3
+   661 ;;      Temps:          0       1
+   662 ;;      Totals:         0       4
+   663 ;;Total ram usage:        4 bytes
+   664 ;; Hardware stack levels used:    1
+   665 ;; Hardware stack levels required when called:    2
+   666 ;; This function calls:
+   667 ;;		_putch
+   668 ;; This function is called by:
+   669 ;;		_main
+   670 ;; This function uses a non-reentrant model
+   671 ;;
+   672                           
+   673                           
+   674                           ;psect for function _printf
+   675  032E                     _printf:	
+   676                           
+   677                           ;incstack = 0
+   678                           ; Regs used in _printf: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   679                           ;printf@f stored from wreg
+   680  032E  1283               	bcf	3,5	;RP0=0, select bank0
+   681  032F  00A8               	movwf	printf@f
+   682                           
+   683                           ;doprnt.c: 466: va_list ap;
+   684                           ;doprnt.c: 499: signed char c;
+   685                           ;doprnt.c: 506: signed char prec;
+   686                           ;doprnt.c: 508: unsigned char flag;
+   687                           ;doprnt.c: 523: union {
+   688                           ;doprnt.c: 524: unsigned long vd;
+   689                           ;doprnt.c: 525: double integ;
+   690                           ;doprnt.c: 526: } tmpval;
+   691                           ;doprnt.c: 528: unsigned int val;
+   692                           ;doprnt.c: 529: unsigned len;
+   693                           ;doprnt.c: 530: const char * cp;
+   694                           ;doprnt.c: 533: *ap = __va_start();
+   695  0330  3020               	movlw	(low (?_printf| 0))& (0+255)
+   696  0331  00A5               	movwf	??_printf
+   697  0332  0825               	movf	??_printf,w
+   698  0333  00A6               	movwf	printf@ap
+   699  0334                     l658:	
+   700                           ;doprnt.c: 543: }
+   701                           ;doprnt.c: 1422: {
+   702                           
+   703                           ;doprnt.c: 542: continue;
+   704                           
+   705                           ;doprnt.c: 536: while(c = *f++) {
+   706                           
+   707  0334  3001               	movlw	1
+   708  0335  1283               	bcf	3,5	;RP0=0, select bank0
+   709  0336  07A8               	addwf	printf@f,f
+   710  0337  30FF               	movlw	-1
+   711  0338  0728               	addwf	printf@f,w
+   712  0339  0084               	movwf	4
+   713  033A  2001               	fcall	stringdir
+   714  033B  00A5               	movwf	??_printf
+   715  033C  0825               	movf	??_printf,w
+   716  033D  00A7               	movwf	printf@c
+   717  033E  0827               	movf	printf@c,w
+   718  033F  1903               	btfsc	3,2
+   719  0340  0008               	return
+   720                           
+   721                           ;doprnt.c: 540: {
+   722                           ;doprnt.c: 541: (putch(c) );
+   723  0341  0827               	movf	printf@c,w
+   724  0342  2323               	fcall	_putch
+   725  0343  2B34               	goto	l658
+   726  0344                     __end_of_printf:	
+   727                           ;doprnt.c: 1469: }
+   728                           ;doprnt.c: 1533: }
+   729                           ;doprnt.c: 1540: return 0;
+   730                           ;	Return value of _printf is never used
+   731                           
+   732                           
+   733                           	psect	text4
+   734  0323                     __ptext4:	
+   735 ;; *************** function _putch *****************
+   736 ;; Defined at:
+   737 ;;		line 62 in file "softusart.c"
+   738 ;; Parameters:    Size  Location     Type
+   739 ;;  byte            1    wreg     unsigned char 
+   740 ;; Auto vars:     Size  Location     Type
+   741 ;;  byte            1    4[BANK0 ] unsigned char 
+   742 ;; Return value:  Size  Location     Type
+   743 ;;                  1    wreg      void 
+   744 ;; Registers used:
+   745 ;;		wreg, status,2, status,0, pclath, cstack
+   746 ;; Tracked objects:
+   747 ;;		On entry : 0/0
+   748 ;;		On exit  : 0/0
+   749 ;;		Unchanged: 0/0
+   750 ;; Data sizes:     COMMON   BANK0
+   751 ;;      Params:         0       0
+   752 ;;      Locals:         0       1
+   753 ;;      Temps:          0       0
+   754 ;;      Totals:         0       1
+   755 ;;Total ram usage:        1 bytes
+   756 ;; Hardware stack levels used:    1
+   757 ;; Hardware stack levels required when called:    1
+   758 ;; This function calls:
+   759 ;;		_softusart_yaz
+   760 ;; This function is called by:
+   761 ;;		_printf
+   762 ;; This function uses a non-reentrant model
+   763 ;;
+   764                           
+   765                           
+   766                           ;psect for function _putch
+   767  0323                     _putch:	
+   768                           
+   769                           ;incstack = 0
+   770                           ; Regs used in _putch: [wreg+status,2+status,0+pclath+cstack]
+   771                           ;putch@byte stored from wreg
+   772  0323  1283               	bcf	3,5	;RP0=0, select bank0
+   773  0324  00A4               	movwf	putch@byte
+   774                           
+   775                           ;softusart.c: 64: softusart_yaz(byte);
+   776  0325  0824               	movf	putch@byte,w
+   777  0326  2344               	fcall	_softusart_yaz
+   778  0327  0008               	return
+   779  0328                     __end_of_putch:	
+   780                           
+   781                           	psect	text5
+   782  0344                     __ptext5:	
+   783 ;; *************** function _softusart_yaz *****************
+   784 ;; Defined at:
+   785 ;;		line 21 in file "softusart.c"
+   786 ;; Parameters:    Size  Location     Type
+   787 ;;  veri            1    wreg     unsigned char 
+   788 ;; Auto vars:     Size  Location     Type
+   789 ;;  veri            1    2[BANK0 ] unsigned char 
+   790 ;;  i               1    3[BANK0 ] unsigned char 
+   791 ;; Return value:  Size  Location     Type
+   792 ;;                  1    wreg      void 
+   793 ;; Registers used:
+   794 ;;		wreg, status,2, status,0
+   795 ;; Tracked objects:
+   796 ;;		On entry : 0/0
+   797 ;;		On exit  : 0/0
+   798 ;;		Unchanged: 0/0
+   799 ;; Data sizes:     COMMON   BANK0
+   800 ;;      Params:         0       0
+   801 ;;      Locals:         0       2
+   802 ;;      Temps:          0       2
+   803 ;;      Totals:         0       4
+   804 ;;Total ram usage:        4 bytes
+   805 ;; Hardware stack levels used:    1
+   806 ;; This function calls:
+   807 ;;		Nothing
+   808 ;; This function is called by:
+   809 ;;		_main
+   810 ;;		_putch
+   811 ;; This function uses a non-reentrant model
+   812 ;;
+   813                           
+   814                           
+   815                           ;psect for function _softusart_yaz
+   816  0344                     _softusart_yaz:	
+   817                           
+   818                           ;incstack = 0
+   819                           ; Regs used in _softusart_yaz: [wreg+status,2+status,0]
+   820                           ;softusart_yaz@veri stored from wreg
+   821  0344  1283               	bcf	3,5	;RP0=0, select bank0
+   822  0345  00A2               	movwf	softusart_yaz@veri
+   823                           
+   824                           ;softusart.c: 23: char i;
+   825                           ;softusart.c: 24: GPIO4=0;
+   826  0346  1205               	bcf	5,4	;volatile
+   827                           
+   828                           ;softusart.c: 25: _delay((4000000/4) / 9600-21);
+   829  0347  301B               	movlw	27
+   830  0348  00A0               	movwf	??_softusart_yaz
+   831  0349                     u277:	
+   832  0349  0BA0               	decfsz	??_softusart_yaz,f
+   833  034A  2B49               	goto	u277
+   834  034B  0000               	nop
+   835                           
+   836                           ;softusart.c: 26: for(i=8;i>0;i--)
+   837  034C  3008               	movlw	8
+   838  034D  1283               	bcf	3,5	;RP0=0, select bank0
+   839  034E  00A0               	movwf	??_softusart_yaz
+   840  034F  0820               	movf	??_softusart_yaz,w
+   841  0350  00A3               	movwf	softusart_yaz@i
+   842  0351  0823               	movf	softusart_yaz@i,w
+   843  0352  1903               	btfsc	3,2
+   844  0353  2B6C               	goto	l61
+   845  0354                     l638:	
+   846                           
+   847                           ;softusart.c: 27: {
+   848                           ;softusart.c: 28: veri=veri>>1;
+   849  0354  0822               	movf	softusart_yaz@veri,w
+   850  0355  00A0               	movwf	??_softusart_yaz
+   851  0356  1003               	clrc
+   852  0357  0C20               	rrf	??_softusart_yaz,w
+   853  0358  00A1               	movwf	??_softusart_yaz+1
+   854  0359  0821               	movf	??_softusart_yaz+1,w
+   855  035A  00A2               	movwf	softusart_yaz@veri
+   856                           
+   857                           ;softusart.c: 29: GPIO4=CARRY;
+   858  035B  1C03               	btfss	3,0	;volatile
+   859  035C  2B60               	goto	u120
+   860  035D  1283               	bcf	3,5	;RP0=0, select bank0
+   861  035E  1605               	bsf	5,4	;volatile
+   862  035F  2B62               	goto	l642
+   863  0360                     u120:	
+   864  0360  1283               	bcf	3,5	;RP0=0, select bank0
+   865  0361  1205               	bcf	5,4	;volatile
+   866  0362                     l642:	
+   867                           
+   868                           ;softusart.c: 30: _delay((4000000/4) / 9600-19);
+   869  0362  301C               	movlw	28
+   870  0363  00A0               	movwf	??_softusart_yaz
+   871  0364                     u287:	
+   872  0364  0BA0               	decfsz	??_softusart_yaz,f
+   873  0365  2B64               	goto	u287
+   874  0366  3001               	movlw	1
+   875  0367  1283               	bcf	3,5	;RP0=0, select bank0
+   876  0368  02A3               	subwf	softusart_yaz@i,f
+   877  0369  0823               	movf	softusart_yaz@i,w
+   878  036A  1D03               	btfss	3,2
+   879  036B  2B54               	goto	l638
+   880  036C                     l61:	
+   881                           
+   882                           ;softusart.c: 31: }
+   883                           ;softusart.c: 32: GPIO4=1;
+   884  036C  1605               	bsf	5,4	;volatile
+   885                           
+   886                           ;softusart.c: 33: _delay((4000000/4) / 9600);
+   887  036D  3022               	movlw	34
+   888  036E  00A0               	movwf	??_softusart_yaz
+   889  036F                     u297:	
+   890  036F  0BA0               	decfsz	??_softusart_yaz,f
+   891  0370  2B6F               	goto	u297
+   892  0371  0000               	nop
+   893  0372  0008               	return
+   894  0373                     __end_of_softusart_yaz:	
+   895  005E                     btemp	set	94	;btemp
+   896  005E                     wtemp0	set	94
+
+
+Data Sizes:
+    Strings     23
+    Constant    0
+    Data        0
+    BSS         1
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            62     12      13
+
+Pointer List with Targets:
+
+    printf@f	PTR const unsigned char  size(1) Largest target is 23
+		 -> STR_1(CODE[23]), 
+
+    printf@ap	PTR void [1] size(1) Largest target is 2
+		 -> ?_printf(BANK0[2]), 
+
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_printf
+    _printf->_putch
+    _putch->_softusart_yaz
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0     348
+                                              9 BANK0      3     3      0
+                             _printf
+                   _softusart_baslat
+                      _softusart_oku
+                      _softusart_yaz
+ ---------------------------------------------------------------------------------
+ (1) _softusart_oku                                        5     5      0     115
+                                              0 BANK0      5     5      0
+ ---------------------------------------------------------------------------------
+ (1) _softusart_baslat                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _printf                                              16    16      0     164
+                                              5 BANK0      4     4      0
+                              _putch
+ ---------------------------------------------------------------------------------
+ (2) _putch                                                1     1      0      91
+                                              4 BANK0      1     1      0
+                      _softusart_yaz
+ ---------------------------------------------------------------------------------
+ (1) _softusart_yaz                                        4     4      0      69
+                                              0 BANK0      4     4      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _printf
+     _putch
+       _softusart_yaz
+   _softusart_baslat
+   _softusart_oku
+   _softusart_yaz
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            3E      0       0       3        0.0%
+BANK0               3E      C       D       4       21.0%
+ABS                  0      0       D       5        0.0%
+DATA                 0      0       D       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.44 build -154322312 
+Symbol Table                                                                                   Sun Oct 01 18:01:19 2017
+
+                        pc 0002                __CFG_CP$OFF 0000                         l33 039B  
+                       l61 036C                         l70 03E2                         l38 039E  
+                       l72 03F6                         l65 03B9                         fsr 0004  
+                      l704 039F                        l642 0362                        l638 0354  
+                      l680 03F2                        l658 0334                        l674 03E6  
+                      l668 03CE                        u120 0360                        u217 0381  
+                      u227 0390                        u237 03BD                        u247 03C3  
+                      u257 03E9               __CFG_CPD$OFF 0000                        u267 03F4  
+                      u277 0349                        u287 0364                        u297 036F  
+                      fsr0 0004                       STR_1 0007                       _main 0373  
+                     _temp 002C                       btemp 005E              __CFG_BOREN$ON 0000  
+                     start 0000              __CFG_MCLRE$ON 0000              _softusart_oku 03B6  
+            _softusart_yaz 0344                      ?_main 0020              __CFG_WDTE$OFF 0000  
+                    _CARRY 0018                      _CMCON 0019                      _ANSEL 009F  
+                    _GPIO4 002C                      _GPIO5 002D              __CFG_PWRTE$ON 0000  
+                    _putch 0323          ?_softusart_baslat 0020                      pclath 000A  
+                    status 0003         ??_softusart_baslat 0000                      wtemp0 005E  
+          __initialization 03FB               __end_of_main 03B6             ?_softusart_oku 0020  
+           ?_softusart_yaz 0020                     ??_main 0029                     ?_putch 0020  
+                   _printf 032E    __end_of__initialization 03FD            ??_softusart_oku 0020  
+          ??_softusart_yaz 0020             __pcstackCOMMON 0000              __end_of_putch 0328  
+                  ??_putch 0000                 __pbssBANK0 002C                 __pmaintext 0373  
+                  ?_printf 0020                    _TRISIO4 042C                    _TRISIO5 042D  
+               __stringtab 0001  __size_of_softusart_baslat 0006                    __ptext1 03B6  
+                  __ptext2 0328                    __ptext3 032E                    __ptext4 0323  
+                  __ptext5 0344            __size_of_printf 0016       end_of_initialization 03FD  
+                  printf@c 0027                    printf@f 0028             __end_of_printf 0344  
+      start_initialization 03FB      __end_of_softusart_oku 03FB      __end_of_softusart_yaz 0373  
+         _softusart_baslat 0328                   ??_printf 0025                  ___latbits 0000  
+            __pcstackBANK0 0020                  __pstrings 0001             __size_of_putch 0005  
+                 _GPIObits 0005                __stringbase 0006          softusart_oku@temp 0023  
+        softusart_yaz@veri 0022         __end_of__stringtab 0007   __end_of_softusart_baslat 032E  
+           softusart_oku@i 0022             softusart_yaz@i 0023              __size_of_main 0043  
+                putch@byte 0024                  stringcode 0001                   printf@ap 0026  
+                 stringdir 0001                   stringtab 0001     __size_of_softusart_oku 0045  
+   __size_of_softusart_yaz 002F          __CFG_FOSC$INTRCIO 0000                 _TRISIObits 0085  

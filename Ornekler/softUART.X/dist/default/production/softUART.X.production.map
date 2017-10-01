@@ -1,0 +1,492 @@
+Microchip MPLAB XC8 Compiler V1.44 ()
+
+Linker command line:
+
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.44\dat\en_msgs.txt -cs \
+  -h+dist/default/production\softUART.X.production.sym \
+  --cmf=dist/default/production\softUART.X.production.cmf -z -Q12F675 \
+  -oC:\Users\ABD\AppData\Local\Temp\s5qk.2 \
+  -Mdist/default/production/softUART.X.production.map -E1 -ver=XC8 \
+  -ASTACK=02Dh-05dh -pstack=STACK -ACODE=00h-03FEh -ASTRCODE=00h-03FEh \
+  -ASTRING=00h-0FFhx3,0300h-03FEh -ACONST=00h-0FFhx3,0300h-03FEh \
+  -AENTRY=00h-0FFhx3,0300h-03FEh -ABANK0=020h-05Dh -ARAM=020h-05Dh \
+  -AABS1=020h-05Fh -ACOMMON=05Eh-05Fh -ASFR0=00h-01Fh -ASFR1=080h-0DDh \
+  -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
+  -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
+  -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
+  -peeprom_data=EEDATA -DEEDATA=2 -posccal=03FFh -DCODE=2 -DSTRCODE=2 \
+  -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
+  C:\Users\ABD\AppData\Local\Temp\s5qk.obj \
+  dist/default/production\softUART.X.production.obj 
+
+Object code version is 3.11
+
+Machine type is 12F675
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\ABD\AppData\Local\Temp\s5qk.obj
+                end_init                              0        0        1        0       0
+                config                             2007     2007        1     400E       0
+dist/default/production\softUART.X.production.obj
+                cinit                               3FB      3FB        4      7F6       0
+                text5                               344      344       2F      688       0
+                text4                               323      323        5      646       0
+                text3                               32E      32E       16      65C       0
+                text2                               328      328        6      650       0
+                text1                               3B6      3B6       45      76C       0
+                maintext                            373      373       43      6E6       0
+                cstackBANK0                          20       20        C       20       1
+                bssBANK0                             2C       2C        1       20       1
+                strings                               1        1       1D        2       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   STACK          
+
+        CLASS   CODE           
+                end_init                              0        0        1         0
+                cinit                               3FB      3FB        4         0
+                text5                               344      344       2F         0
+                text4                               323      323        5         0
+                text3                               32E      32E       16         0
+                text2                               328      328        6         0
+                text1                               3B6      3B6       45         0
+                maintext                            373      373       43         0
+
+        CLASS   STRCODE        
+
+        CLASS   STRING         
+                strings                               1        1       1D         0
+
+        CLASS   CONST          
+
+        CLASS   ENTRY          
+
+        CLASS   BANK0          
+                cstackBANK0                          20       20        C         1
+                bssBANK0                             2C       2C        1         1
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               5E       5E        2         1
+
+        CLASS   COMMON         
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         0
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+        CLASS   BANK1          
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000001  000001         0       0  CODE        2
+                strings                        000001  00001D  00001E         2       0  STRING      2
+                cstackBANK0                    000020  00000D  00002D        20       1  BANK0       1
+                text4                          000323  000005  000328       646       0  CODE        2
+                text2                          000328  000006  00032E       650       0  CODE        2
+                text3                          00032E  000016  000344       65C       0  CODE        2
+                text5                          000344  00002F  000373       688       0  CODE        2
+                maintext                       000373  000043  0003B6       6E6       0  CODE        2
+                text1                          0003B6  000045  0003FB       76C       0  CODE        2
+                cinit                          0003FB  000004  0003FF       7F6       0  CODE        2
+                config                         002007  000001  002008      400E       0  CONFIG      2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            002D-005D             31           1
+        CODE             001E-0322            305           2
+        CONST            001E-0322            100           2
+        EEDATA           2100-217F             80           2
+        ENTRY            001E-0322            100           2
+        IDLOC            2000-2003              4           2
+        RAM              002D-005D             31           1
+        SFR0             0000-001F             20           1
+        SFR1             0080-00DD             5E           1
+        STACK            002D-005D             31           1
+        STRCODE          001E-0322            305           2
+        STRING           001E-0322            100           2
+
+                                  Symbol Table
+
+?_printf                   cstackBANK0  0020
+_ANSEL                     (abs)        009F
+_CARRY                     (abs)        0018
+_CMCON                     (abs)        0019
+_GPIO4                     (abs)        002C
+_GPIO5                     (abs)        002D
+_GPIObits                  (abs)        0005
+_TRISIO4                   (abs)        042C
+_TRISIO5                   (abs)        042D
+_TRISIObits                (abs)        0085
+__CFG_BOREN$ON             (abs)        0000
+__CFG_CP$OFF               (abs)        0000
+__CFG_CPD$OFF              (abs)        0000
+__CFG_FOSC$INTRCIO         (abs)        0000
+__CFG_MCLRE$ON             (abs)        0000
+__CFG_PWRTE$ON             (abs)        0000
+__CFG_WDTE$OFF             (abs)        0000
+__Habs1                    abs1         07FE
+__Hbank0                   bank0        07FE
+__Hbank1                   bank1        07FE
+__HbssBANK0                bssBANK0     07FE
+__Hcinit                   cinit        03FF
+__Hclrtext                 clrtext      07FE
+__Hcode                    code         07FE
+__Hcommon                  common       07FE
+__Hconfig                  config       2008
+__HcstackBANK0             cstackBANK0  07FE
+__HcstackCOMMON            cstackCOMMON 07FE
+__Heeprom_data             eeprom_data  0000
+__Hend_init                end_init     0001
+__Hfunctab                 functab      0000
+__Hidloc                   idloc        0000
+__Hinit                    init         0000
+__Hintentry                intentry     0000
+__Hmaintext                maintext     07FE
+__Hosccal                  osccal       03FF
+__Hpowerup                 powerup      0000
+__Hram                     ram          07FE
+__Hreset_vec               reset_vec    0000
+__Hsfr0                    sfr0         07FE
+__Hsfr1                    sfr1         07FE
+__Hspace_0                 (abs)        2008
+__Hspace_1                 (abs)        07FE
+__Hspace_2                 (abs)        0000
+__Hspace_3                 (abs)        0000
+__Hstack                   stack        0000
+__Hstrings                 strings      07FE
+__Htext                    text         07FE
+__Labs1                    abs1         07FE
+__Lbank0                   bank0        07FE
+__Lbank1                   bank1        07FE
+__LbssBANK0                bssBANK0     07FE
+__Lcinit                   cinit        03FB
+__Lclrtext                 clrtext      07FE
+__Lcode                    code         07FE
+__Lcommon                  common       07FE
+__Lconfig                  config       2007
+__LcstackBANK0             cstackBANK0  07FE
+__LcstackCOMMON            cstackCOMMON 07FE
+__Leeprom_data             eeprom_data  0000
+__Lend_init                end_init     0000
+__Lfunctab                 functab      0000
+__Lidloc                   idloc        0000
+__Linit                    init         0000
+__Lintentry                intentry     0000
+__Lmaintext                maintext     07FE
+__Losccal                  osccal       03FF
+__Lpowerup                 powerup      0000
+__Lram                     ram          07FE
+__Lreset_vec               reset_vec    0000
+__Lsfr0                    sfr0         07FE
+__Lsfr1                    sfr1         07FE
+__Lspace_0                 (abs)        0000
+__Lspace_1                 (abs)        0000
+__Lspace_2                 (abs)        0000
+__Lspace_3                 (abs)        0000
+__Lstack                   stack        0000
+__Lstrings                 strings      07FE
+__Ltext                    text         07FE
+__S0                       (abs)        2008
+__S1                       (abs)        002D
+__S2                       (abs)        0000
+__S3                       (abs)        0000
+___int_sp                  stack        0000
+___latbits                 (abs)        0000
+___osccal_val              osccal       03FF
+___sp                      stack        0000
+__end_of__initialization   cinit        03FD
+__end_of__stringtab        strings      0007
+__end_of_main              maintext     03B6
+__end_of_printf            text3        0344
+__end_of_putch             text4        0328
+__end_of_softusart_baslat  text2        032E
+__end_of_softusart_oku     text1        03FB
+__end_of_softusart_yaz     text5        0373
+__initialization           cinit        03FB
+__pbssBANK0                bssBANK0     002C
+__pcstackBANK0             cstackBANK0  0020
+__pcstackCOMMON            cstackCOMMON 0000
+__pmaintext                maintext     0373
+__pstrings                 strings      0001
+__ptext1                   text1        03B6
+__ptext2                   text2        0328
+__ptext3                   text3        032E
+__ptext4                   text4        0323
+__ptext5                   text5        0344
+__size_of_main             (abs)        0000
+__size_of_printf           (abs)        0000
+__size_of_putch            (abs)        0000
+__size_of_softusart_baslat (abs)        0000
+__size_of_softusart_oku    (abs)        0000
+__size_of_softusart_yaz    (abs)        0000
+__stringbase               strings      0006
+__stringtab                strings      0001
+_main                      maintext     0373
+_printf                    text3        032E
+_putch                     text4        0323
+_softusart_baslat          text2        0328
+_softusart_oku             text1        03B6
+_softusart_yaz             text5        0344
+_temp                      bssBANK0     002C
+btemp                      (abs)        005E
+end_of_initialization      cinit        03FD
+intlevel0                  functab      0000
+intlevel1                  functab      0000
+intlevel2                  functab      0000
+intlevel3                  functab      0000
+intlevel4                  functab      0000
+intlevel5                  functab      0000
+printf@ap                  cstackBANK0  0026
+printf@c                   cstackBANK0  0027
+printf@f                   cstackBANK0  0028
+putch@byte                 cstackBANK0  0024
+reset_vec                  reset_vec    0000
+softusart_oku@i            cstackBANK0  0022
+softusart_oku@temp         cstackBANK0  0023
+softusart_yaz@i            cstackBANK0  0023
+softusart_yaz@veri         cstackBANK0  0022
+stackhi                    (abs)        0000
+stacklo                    (abs)        0000
+start                      init         0000
+start_initialization       cinit        03FB
+wtemp0                     (abs)        005E
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 34 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       3
+      Totals:         0       3
+Total ram usage:        3 bytes
+ Hardware stack levels required when called:    3
+ This function calls:
+		_printf
+		_softusart_baslat
+		_softusart_oku
+		_softusart_yaz
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _softusart_oku *****************
+ Defined at:
+		line 36 in file "softusart.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  temp            2    3[BANK0 ] unsigned int 
+  i               1    2[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       3
+      Temps:          0       2
+      Totals:         0       5
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _softusart_baslat *****************
+ Defined at:
+		line 14 in file "softusart.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       0
+      Temps:          0       0
+      Totals:         0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _printf *****************
+ Defined at:
+		line 464 in file "C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c"
+ Parameters:    Size  Location     Type
+  f               1    wreg     PTR const unsigned char 
+		 -> STR_1(23), 
+ Auto vars:     Size  Location     Type
+  f               1    8[BANK0 ] PTR const unsigned char 
+		 -> STR_1(23), 
+  tmpval          4    0        struct .
+  cp              2    0        PTR const unsigned char 
+  len             2    0        unsigned int 
+  val             2    0        unsigned int 
+  c               1    7[BANK0 ] char 
+  ap              1    6[BANK0 ] PTR void [1]
+		 -> ?_printf(2), 
+  flag            1    0        unsigned char 
+  prec            1    0        char 
+ Return value:  Size  Location     Type
+                  2   14[None  ] int 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       3
+      Temps:          0       1
+      Totals:         0       4
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_putch
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _putch *****************
+ Defined at:
+		line 62 in file "softusart.c"
+ Parameters:    Size  Location     Type
+  byte            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  byte            1    4[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       1
+      Temps:          0       0
+      Totals:         0       1
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_softusart_yaz
+ This function is called by:
+		_printf
+ This function uses a non-reentrant model
+
+
+ *************** function _softusart_yaz *****************
+ Defined at:
+		line 21 in file "softusart.c"
+ Parameters:    Size  Location     Type
+  veri            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  veri            1    2[BANK0 ] unsigned char 
+  i               1    3[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0
+      Params:         0       0
+      Locals:         0       2
+      Temps:          0       2
+      Totals:         0       4
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+		_putch
+ This function uses a non-reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+softusart.c
+		_putch         		CODE           	0323	0000	6
+		_softusart_oku 		CODE           	03B6	0000	70
+		_softusart_yaz 		CODE           	0344	0000	48
+		_softusart_baslat		CODE           	0328	0000	7
+
+softusart.c estimated size: 131
+
+C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c
+		_printf        		CODE           	032E	0000	23
+
+C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\doprnt.c estimated size: 23
+
+shared
+		__stringtab    		STRING         	0001	0000	7
+		__initialization		CODE           	03FB	0000	3
+
+shared estimated size: 10
+
+main.c
+		_main          		CODE           	0373	0000	68
+
+main.c estimated size: 68
+
