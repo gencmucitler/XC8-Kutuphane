@@ -1,0 +1,245 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1827 ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"52 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"69 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"77
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"89
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"52 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"127 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\nokia5110.c
+[v _lcd_baslat lcd_baslat `(v  1 e 1 0 ]
+"155
+[v _lcd_git lcd_git `(v  1 e 1 0 ]
+"166
+[v _lcd_mesajyaz lcd_mesajyaz `(v  1 e 1 0 ]
+"188
+[v _lcd_harfyaz lcd_harfyaz `(v  1 e 1 0 ]
+"248
+[v _lcd_sil lcd_sil `(v  1 e 1 0 ]
+"265
+[v _lcd_satirsil lcd_satirsil `(v  1 e 1 0 ]
+"305
+[v _lcd_ekrani_tersle lcd_ekrani_tersle `(v  1 e 1 0 ]
+"315
+[v _lcd_normalmode lcd_normalmode `(v  1 e 1 0 ]
+"326
+[v _lcd_veriyaz lcd_veriyaz `(v  1 e 1 0 ]
+"1150 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic16f1827.h
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1212
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S46 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1476
+[s S55 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S60 . 1 `S46 1 . 1 0 `S55 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES60  1 e 1 @149 ]
+"1587
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1646
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1704
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2037
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2094
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2777
+[v _APFCON0 APFCON0 `VEuc  1 e 1 @285 ]
+"2839
+[v _APFCON1 APFCON1 `VEuc  1 e 1 @286 ]
+"2859
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2911
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3485
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3514
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"6925
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"7203
+[v _LATB3 LATB3 `VEb  1 e 0 @2155 ]
+"7205
+[v _LATB4 LATB4 `VEb  1 e 0 @2156 ]
+"7207
+[v _LATB5 LATB5 `VEb  1 e 0 @2157 ]
+"7209
+[v _LATB6 LATB6 `VEb  1 e 0 @2158 ]
+"7211
+[v _LATB7 LATB7 `VEb  1 e 0 @2159 ]
+"7329
+[v _PLLR PLLR `VEb  1 e 0 @1238 ]
+"7621
+[v _TRISB3 TRISB3 `VEb  1 e 0 @1131 ]
+"7623
+[v _TRISB4 TRISB4 `VEb  1 e 0 @1132 ]
+"7625
+[v _TRISB5 TRISB5 `VEb  1 e 0 @1133 ]
+"7627
+[v _TRISB6 TRISB6 `VEb  1 e 0 @1134 ]
+"7629
+[v _TRISB7 TRISB7 `VEb  1 e 0 @1135 ]
+"11 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\nokia5110.c
+[v _lcd_kontrast lcd_kontrast `uc  1 e 1 0 ]
+"16
+[v _harftablo harftablo `DC[535]uc  1 e 535 0 ]
+"52 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"83
+[v main@i i `uc  1 a 1 2 ]
+"100
+} 0
+"248 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\nokia5110.c
+[v _lcd_sil lcd_sil `(v  1 e 1 0 ]
+{
+"250
+[v lcd_sil@i i `i  1 a 2 8 ]
+"260
+} 0
+"265
+[v _lcd_satirsil lcd_satirsil `(v  1 e 1 0 ]
+{
+[v lcd_satirsil@satir satir `uc  1 a 1 wreg ]
+"267
+[v lcd_satirsil@i i `uc  1 a 1 9 ]
+"265
+[v lcd_satirsil@satir satir `uc  1 a 1 wreg ]
+"268
+[v lcd_satirsil@satir satir `uc  1 a 1 8 ]
+"277
+} 0
+"315
+[v _lcd_normalmode lcd_normalmode `(v  1 e 1 0 ]
+{
+"319
+} 0
+"166
+[v _lcd_mesajyaz lcd_mesajyaz `(v  1 e 1 0 ]
+{
+[v lcd_mesajyaz@satir satir `uc  1 a 1 wreg ]
+[v lcd_mesajyaz@satir satir `uc  1 a 1 wreg ]
+[v lcd_mesajyaz@sutun sutun `uc  1 p 1 9 ]
+[v lcd_mesajyaz@mesaj mesaj `*.25DCuc  1 p 2 10 ]
+"168
+[v lcd_mesajyaz@satir satir `uc  1 a 1 13 ]
+"172
+} 0
+"188
+[v _lcd_harfyaz lcd_harfyaz `(v  1 e 1 0 ]
+{
+[v lcd_harfyaz@harf harf `uc  1 a 1 wreg ]
+"190
+[v lcd_harfyaz@adres adres `i  1 a 2 7 ]
+"188
+[v lcd_harfyaz@harf harf `uc  1 a 1 wreg ]
+"191
+[v lcd_harfyaz@harf harf `uc  1 a 1 6 ]
+"243
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"155 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\nokia5110.c
+[v _lcd_git lcd_git `(v  1 e 1 0 ]
+{
+[v lcd_git@satir satir `uc  1 a 1 wreg ]
+[v lcd_git@satir satir `uc  1 a 1 wreg ]
+[v lcd_git@sutun sutun `uc  1 p 1 4 ]
+"157
+[v lcd_git@satir satir `uc  1 a 1 6 ]
+"160
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 2 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
+"51
+} 0
+"305 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\nokia5110.c
+[v _lcd_ekrani_tersle lcd_ekrani_tersle `(v  1 e 1 0 ]
+{
+"310
+} 0
+"127
+[v _lcd_baslat lcd_baslat `(v  1 e 1 0 ]
+{
+"149
+} 0
+"326
+[v _lcd_veriyaz lcd_veriyaz `(v  1 e 1 0 ]
+{
+[v lcd_veriyaz@veri veri `uc  1 a 1 wreg ]
+"328
+[v lcd_veriyaz@i i `uc  1 a 1 2 ]
+"326
+[v lcd_veriyaz@veri veri `uc  1 a 1 wreg ]
+"330
+[v lcd_veriyaz@veri veri `uc  1 a 1 1 ]
+"342
+} 0
+"69 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"75
+} 0
+"89
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"93
+} 0
+"52 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"89
+} 0
+"77 D:\abd\Documents\MPLABX Projeler\Nokia5110_Lcd.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
