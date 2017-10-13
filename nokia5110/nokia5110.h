@@ -3,7 +3,7 @@
 *  Web 		: http://www.gencmucitler.com
 *  ?lk		: Ekim 2017
 *  Düzenleme: Yok 
-*  Versiyon : 0.1
+*  Versiyon : 0.2
 *  Açýklama : Nokia 5110 Kütüphanesi  (pcd8544)
 ***********************************************************/
 
@@ -23,6 +23,9 @@
 #define LCD_CLK         LATB5
 #define LCD_CLK_TRIS    TRISB5
 
+//rakam font büyüklüðü
+#define BUYUK   1
+#define NORMAL  0
 
 //fonksiyon prototipleri
 void lcd_veriyaz(char veri);
@@ -38,6 +41,8 @@ void lcd_kontrast_azalt(void);
 void lcd_ekrani_tersle(void);
 void lcd_normalmode(void);
 
+void lcd_sayiyaz(char satir, char sutun,char* sayi,char font);
+void lcd_resimciz(char satir,char sutun,const char *resim);
 
 #ifdef lcdprintf_aktif
 void putch(unsigned char byte);
