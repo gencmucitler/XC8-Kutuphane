@@ -1,0 +1,2551 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
+                                                                                               Fri Jan 05 19:40:32 2018
+
+Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
+     1                           	processor	16F1827
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     6                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	psect	text3,local,class=CODE,merge=1,delta=2
+    11                           	psect	text4,local,class=CODE,merge=1,delta=2,group=2
+    12                           	psect	text5,local,class=CODE,merge=1,delta=2,group=2
+    13                           	psect	text6,local,class=CODE,merge=1,delta=2,group=2
+    14                           	psect	text7,local,class=CODE,merge=1,delta=2
+    15                           	psect	text8,local,class=CODE,merge=1,delta=2
+    16                           	psect	text9,local,class=CODE,merge=1,delta=2
+    17                           	psect	text10,local,class=CODE,merge=1,delta=2
+    18                           	dabs	1,0x7E,2
+    19  0000                     
+    20                           ; Version 1.45
+    21                           ; Generated 16/11/2017 GMT
+    22                           ; 
+    23                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
+    30                           ; 
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    32                           ;        conditions and the following disclaimer.
+    33                           ; 
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution.
+    37                           ; 
+    38                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    39                           ;        software without specific prior written permission.
+    40                           ; 
+    41                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    42                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    43                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    44                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    45                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    46                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    47                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    48                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; 
+    50                           ; 
+    51                           ; Code-generator required, PIC16F1827 Definitions
+    52                           ; 
+    53                           ; SFR Addresses
+    54  0000                     	;# 
+    55  0001                     	;# 
+    56  0002                     	;# 
+    57  0003                     	;# 
+    58  0004                     	;# 
+    59  0005                     	;# 
+    60  0006                     	;# 
+    61  0007                     	;# 
+    62  0008                     	;# 
+    63  0009                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000D                     	;# 
+    68  0011                     	;# 
+    69  0012                     	;# 
+    70  0013                     	;# 
+    71  0014                     	;# 
+    72  0015                     	;# 
+    73  0016                     	;# 
+    74  0016                     	;# 
+    75  0017                     	;# 
+    76  0018                     	;# 
+    77  0019                     	;# 
+    78  001A                     	;# 
+    79  001B                     	;# 
+    80  001C                     	;# 
+    81  001E                     	;# 
+    82  001F                     	;# 
+    83  008C                     	;# 
+    84  008D                     	;# 
+    85  0091                     	;# 
+    86  0092                     	;# 
+    87  0093                     	;# 
+    88  0094                     	;# 
+    89  0095                     	;# 
+    90  0096                     	;# 
+    91  0097                     	;# 
+    92  0098                     	;# 
+    93  0099                     	;# 
+    94  009A                     	;# 
+    95  009B                     	;# 
+    96  009B                     	;# 
+    97  009C                     	;# 
+    98  009D                     	;# 
+    99  009E                     	;# 
+   100  010C                     	;# 
+   101  010D                     	;# 
+   102  0111                     	;# 
+   103  0112                     	;# 
+   104  0113                     	;# 
+   105  0114                     	;# 
+   106  0115                     	;# 
+   107  0116                     	;# 
+   108  0117                     	;# 
+   109  0118                     	;# 
+   110  0119                     	;# 
+   111  011A                     	;# 
+   112  011B                     	;# 
+   113  011D                     	;# 
+   114  011E                     	;# 
+   115  018C                     	;# 
+   116  018D                     	;# 
+   117  0191                     	;# 
+   118  0191                     	;# 
+   119  0192                     	;# 
+   120  0193                     	;# 
+   121  0193                     	;# 
+   122  0193                     	;# 
+   123  0194                     	;# 
+   124  0195                     	;# 
+   125  0196                     	;# 
+   126  0199                     	;# 
+   127  019A                     	;# 
+   128  019B                     	;# 
+   129  019B                     	;# 
+   130  019B                     	;# 
+   131  019B                     	;# 
+   132  019C                     	;# 
+   133  019C                     	;# 
+   134  019D                     	;# 
+   135  019E                     	;# 
+   136  019F                     	;# 
+   137  020C                     	;# 
+   138  020D                     	;# 
+   139  0211                     	;# 
+   140  0211                     	;# 
+   141  0212                     	;# 
+   142  0212                     	;# 
+   143  0213                     	;# 
+   144  0213                     	;# 
+   145  0214                     	;# 
+   146  0214                     	;# 
+   147  0215                     	;# 
+   148  0215                     	;# 
+   149  0215                     	;# 
+   150  0216                     	;# 
+   151  0216                     	;# 
+   152  0217                     	;# 
+   153  0217                     	;# 
+   154  0219                     	;# 
+   155  021A                     	;# 
+   156  021B                     	;# 
+   157  021C                     	;# 
+   158  021D                     	;# 
+   159  021E                     	;# 
+   160  021F                     	;# 
+   161  0291                     	;# 
+   162  0291                     	;# 
+   163  0292                     	;# 
+   164  0293                     	;# 
+   165  0294                     	;# 
+   166  0295                     	;# 
+   167  0295                     	;# 
+   168  0296                     	;# 
+   169  0298                     	;# 
+   170  0298                     	;# 
+   171  0299                     	;# 
+   172  029A                     	;# 
+   173  029B                     	;# 
+   174  029C                     	;# 
+   175  029C                     	;# 
+   176  029D                     	;# 
+   177  029E                     	;# 
+   178  029E                     	;# 
+   179  0311                     	;# 
+   180  0311                     	;# 
+   181  0312                     	;# 
+   182  0313                     	;# 
+   183  0318                     	;# 
+   184  0318                     	;# 
+   185  0319                     	;# 
+   186  031A                     	;# 
+   187  0394                     	;# 
+   188  0395                     	;# 
+   189  0396                     	;# 
+   190  039A                     	;# 
+   191  039C                     	;# 
+   192  039D                     	;# 
+   193  039E                     	;# 
+   194  039F                     	;# 
+   195  0415                     	;# 
+   196  0416                     	;# 
+   197  0417                     	;# 
+   198  041C                     	;# 
+   199  041D                     	;# 
+   200  041E                     	;# 
+   201  0FE4                     	;# 
+   202  0FE5                     	;# 
+   203  0FE6                     	;# 
+   204  0FE7                     	;# 
+   205  0FE8                     	;# 
+   206  0FE9                     	;# 
+   207  0FEA                     	;# 
+   208  0FEB                     	;# 
+   209  0FED                     	;# 
+   210  0FEE                     	;# 
+   211  0FEF                     	;# 
+   212  0000                     	;# 
+   213  0001                     	;# 
+   214  0002                     	;# 
+   215  0003                     	;# 
+   216  0004                     	;# 
+   217  0005                     	;# 
+   218  0006                     	;# 
+   219  0007                     	;# 
+   220  0008                     	;# 
+   221  0009                     	;# 
+   222  000A                     	;# 
+   223  000B                     	;# 
+   224  000C                     	;# 
+   225  000D                     	;# 
+   226  0011                     	;# 
+   227  0012                     	;# 
+   228  0013                     	;# 
+   229  0014                     	;# 
+   230  0015                     	;# 
+   231  0016                     	;# 
+   232  0016                     	;# 
+   233  0017                     	;# 
+   234  0018                     	;# 
+   235  0019                     	;# 
+   236  001A                     	;# 
+   237  001B                     	;# 
+   238  001C                     	;# 
+   239  001E                     	;# 
+   240  001F                     	;# 
+   241  008C                     	;# 
+   242  008D                     	;# 
+   243  0091                     	;# 
+   244  0092                     	;# 
+   245  0093                     	;# 
+   246  0094                     	;# 
+   247  0095                     	;# 
+   248  0096                     	;# 
+   249  0097                     	;# 
+   250  0098                     	;# 
+   251  0099                     	;# 
+   252  009A                     	;# 
+   253  009B                     	;# 
+   254  009B                     	;# 
+   255  009C                     	;# 
+   256  009D                     	;# 
+   257  009E                     	;# 
+   258  010C                     	;# 
+   259  010D                     	;# 
+   260  0111                     	;# 
+   261  0112                     	;# 
+   262  0113                     	;# 
+   263  0114                     	;# 
+   264  0115                     	;# 
+   265  0116                     	;# 
+   266  0117                     	;# 
+   267  0118                     	;# 
+   268  0119                     	;# 
+   269  011A                     	;# 
+   270  011B                     	;# 
+   271  011D                     	;# 
+   272  011E                     	;# 
+   273  018C                     	;# 
+   274  018D                     	;# 
+   275  0191                     	;# 
+   276  0191                     	;# 
+   277  0192                     	;# 
+   278  0193                     	;# 
+   279  0193                     	;# 
+   280  0193                     	;# 
+   281  0194                     	;# 
+   282  0195                     	;# 
+   283  0196                     	;# 
+   284  0199                     	;# 
+   285  019A                     	;# 
+   286  019B                     	;# 
+   287  019B                     	;# 
+   288  019B                     	;# 
+   289  019B                     	;# 
+   290  019C                     	;# 
+   291  019C                     	;# 
+   292  019D                     	;# 
+   293  019E                     	;# 
+   294  019F                     	;# 
+   295  020C                     	;# 
+   296  020D                     	;# 
+   297  0211                     	;# 
+   298  0211                     	;# 
+   299  0212                     	;# 
+   300  0212                     	;# 
+   301  0213                     	;# 
+   302  0213                     	;# 
+   303  0214                     	;# 
+   304  0214                     	;# 
+   305  0215                     	;# 
+   306  0215                     	;# 
+   307  0215                     	;# 
+   308  0216                     	;# 
+   309  0216                     	;# 
+   310  0217                     	;# 
+   311  0217                     	;# 
+   312  0219                     	;# 
+   313  021A                     	;# 
+   314  021B                     	;# 
+   315  021C                     	;# 
+   316  021D                     	;# 
+   317  021E                     	;# 
+   318  021F                     	;# 
+   319  0291                     	;# 
+   320  0291                     	;# 
+   321  0292                     	;# 
+   322  0293                     	;# 
+   323  0294                     	;# 
+   324  0295                     	;# 
+   325  0295                     	;# 
+   326  0296                     	;# 
+   327  0298                     	;# 
+   328  0298                     	;# 
+   329  0299                     	;# 
+   330  029A                     	;# 
+   331  029B                     	;# 
+   332  029C                     	;# 
+   333  029C                     	;# 
+   334  029D                     	;# 
+   335  029E                     	;# 
+   336  029E                     	;# 
+   337  0311                     	;# 
+   338  0311                     	;# 
+   339  0312                     	;# 
+   340  0313                     	;# 
+   341  0318                     	;# 
+   342  0318                     	;# 
+   343  0319                     	;# 
+   344  031A                     	;# 
+   345  0394                     	;# 
+   346  0395                     	;# 
+   347  0396                     	;# 
+   348  039A                     	;# 
+   349  039C                     	;# 
+   350  039D                     	;# 
+   351  039E                     	;# 
+   352  039F                     	;# 
+   353  0415                     	;# 
+   354  0416                     	;# 
+   355  0417                     	;# 
+   356  041C                     	;# 
+   357  041D                     	;# 
+   358  041E                     	;# 
+   359  0FE4                     	;# 
+   360  0FE5                     	;# 
+   361  0FE6                     	;# 
+   362  0FE7                     	;# 
+   363  0FE8                     	;# 
+   364  0FE9                     	;# 
+   365  0FEA                     	;# 
+   366  0FEB                     	;# 
+   367  0FED                     	;# 
+   368  0FEE                     	;# 
+   369  0FEF                     	;# 
+   370  0000                     	;# 
+   371  0001                     	;# 
+   372  0002                     	;# 
+   373  0003                     	;# 
+   374  0004                     	;# 
+   375  0005                     	;# 
+   376  0006                     	;# 
+   377  0007                     	;# 
+   378  0008                     	;# 
+   379  0009                     	;# 
+   380  000A                     	;# 
+   381  000B                     	;# 
+   382  000C                     	;# 
+   383  000D                     	;# 
+   384  0011                     	;# 
+   385  0012                     	;# 
+   386  0013                     	;# 
+   387  0014                     	;# 
+   388  0015                     	;# 
+   389  0016                     	;# 
+   390  0016                     	;# 
+   391  0017                     	;# 
+   392  0018                     	;# 
+   393  0019                     	;# 
+   394  001A                     	;# 
+   395  001B                     	;# 
+   396  001C                     	;# 
+   397  001E                     	;# 
+   398  001F                     	;# 
+   399  008C                     	;# 
+   400  008D                     	;# 
+   401  0091                     	;# 
+   402  0092                     	;# 
+   403  0093                     	;# 
+   404  0094                     	;# 
+   405  0095                     	;# 
+   406  0096                     	;# 
+   407  0097                     	;# 
+   408  0098                     	;# 
+   409  0099                     	;# 
+   410  009A                     	;# 
+   411  009B                     	;# 
+   412  009B                     	;# 
+   413  009C                     	;# 
+   414  009D                     	;# 
+   415  009E                     	;# 
+   416  010C                     	;# 
+   417  010D                     	;# 
+   418  0111                     	;# 
+   419  0112                     	;# 
+   420  0113                     	;# 
+   421  0114                     	;# 
+   422  0115                     	;# 
+   423  0116                     	;# 
+   424  0117                     	;# 
+   425  0118                     	;# 
+   426  0119                     	;# 
+   427  011A                     	;# 
+   428  011B                     	;# 
+   429  011D                     	;# 
+   430  011E                     	;# 
+   431  018C                     	;# 
+   432  018D                     	;# 
+   433  0191                     	;# 
+   434  0191                     	;# 
+   435  0192                     	;# 
+   436  0193                     	;# 
+   437  0193                     	;# 
+   438  0193                     	;# 
+   439  0194                     	;# 
+   440  0195                     	;# 
+   441  0196                     	;# 
+   442  0199                     	;# 
+   443  019A                     	;# 
+   444  019B                     	;# 
+   445  019B                     	;# 
+   446  019B                     	;# 
+   447  019B                     	;# 
+   448  019C                     	;# 
+   449  019C                     	;# 
+   450  019D                     	;# 
+   451  019E                     	;# 
+   452  019F                     	;# 
+   453  020C                     	;# 
+   454  020D                     	;# 
+   455  0211                     	;# 
+   456  0211                     	;# 
+   457  0212                     	;# 
+   458  0212                     	;# 
+   459  0213                     	;# 
+   460  0213                     	;# 
+   461  0214                     	;# 
+   462  0214                     	;# 
+   463  0215                     	;# 
+   464  0215                     	;# 
+   465  0215                     	;# 
+   466  0216                     	;# 
+   467  0216                     	;# 
+   468  0217                     	;# 
+   469  0217                     	;# 
+   470  0219                     	;# 
+   471  021A                     	;# 
+   472  021B                     	;# 
+   473  021C                     	;# 
+   474  021D                     	;# 
+   475  021E                     	;# 
+   476  021F                     	;# 
+   477  0291                     	;# 
+   478  0291                     	;# 
+   479  0292                     	;# 
+   480  0293                     	;# 
+   481  0294                     	;# 
+   482  0295                     	;# 
+   483  0295                     	;# 
+   484  0296                     	;# 
+   485  0298                     	;# 
+   486  0298                     	;# 
+   487  0299                     	;# 
+   488  029A                     	;# 
+   489  029B                     	;# 
+   490  029C                     	;# 
+   491  029C                     	;# 
+   492  029D                     	;# 
+   493  029E                     	;# 
+   494  029E                     	;# 
+   495  0311                     	;# 
+   496  0311                     	;# 
+   497  0312                     	;# 
+   498  0313                     	;# 
+   499  0318                     	;# 
+   500  0318                     	;# 
+   501  0319                     	;# 
+   502  031A                     	;# 
+   503  0394                     	;# 
+   504  0395                     	;# 
+   505  0396                     	;# 
+   506  039A                     	;# 
+   507  039C                     	;# 
+   508  039D                     	;# 
+   509  039E                     	;# 
+   510  039F                     	;# 
+   511  0415                     	;# 
+   512  0416                     	;# 
+   513  0417                     	;# 
+   514  041C                     	;# 
+   515  041D                     	;# 
+   516  041E                     	;# 
+   517  0FE4                     	;# 
+   518  0FE5                     	;# 
+   519  0FE6                     	;# 
+   520  0FE7                     	;# 
+   521  0FE8                     	;# 
+   522  0FE9                     	;# 
+   523  0FEA                     	;# 
+   524  0FEB                     	;# 
+   525  0FED                     	;# 
+   526  0FEE                     	;# 
+   527  0FEF                     	;# 
+   528  0000                     	;# 
+   529  0001                     	;# 
+   530  0002                     	;# 
+   531  0003                     	;# 
+   532  0004                     	;# 
+   533  0005                     	;# 
+   534  0006                     	;# 
+   535  0007                     	;# 
+   536  0008                     	;# 
+   537  0009                     	;# 
+   538  000A                     	;# 
+   539  000B                     	;# 
+   540  000C                     	;# 
+   541  000D                     	;# 
+   542  0011                     	;# 
+   543  0012                     	;# 
+   544  0013                     	;# 
+   545  0014                     	;# 
+   546  0015                     	;# 
+   547  0016                     	;# 
+   548  0016                     	;# 
+   549  0017                     	;# 
+   550  0018                     	;# 
+   551  0019                     	;# 
+   552  001A                     	;# 
+   553  001B                     	;# 
+   554  001C                     	;# 
+   555  001E                     	;# 
+   556  001F                     	;# 
+   557  008C                     	;# 
+   558  008D                     	;# 
+   559  0091                     	;# 
+   560  0092                     	;# 
+   561  0093                     	;# 
+   562  0094                     	;# 
+   563  0095                     	;# 
+   564  0096                     	;# 
+   565  0097                     	;# 
+   566  0098                     	;# 
+   567  0099                     	;# 
+   568  009A                     	;# 
+   569  009B                     	;# 
+   570  009B                     	;# 
+   571  009C                     	;# 
+   572  009D                     	;# 
+   573  009E                     	;# 
+   574  010C                     	;# 
+   575  010D                     	;# 
+   576  0111                     	;# 
+   577  0112                     	;# 
+   578  0113                     	;# 
+   579  0114                     	;# 
+   580  0115                     	;# 
+   581  0116                     	;# 
+   582  0117                     	;# 
+   583  0118                     	;# 
+   584  0119                     	;# 
+   585  011A                     	;# 
+   586  011B                     	;# 
+   587  011D                     	;# 
+   588  011E                     	;# 
+   589  018C                     	;# 
+   590  018D                     	;# 
+   591  0191                     	;# 
+   592  0191                     	;# 
+   593  0192                     	;# 
+   594  0193                     	;# 
+   595  0193                     	;# 
+   596  0193                     	;# 
+   597  0194                     	;# 
+   598  0195                     	;# 
+   599  0196                     	;# 
+   600  0199                     	;# 
+   601  019A                     	;# 
+   602  019B                     	;# 
+   603  019B                     	;# 
+   604  019B                     	;# 
+   605  019B                     	;# 
+   606  019C                     	;# 
+   607  019C                     	;# 
+   608  019D                     	;# 
+   609  019E                     	;# 
+   610  019F                     	;# 
+   611  020C                     	;# 
+   612  020D                     	;# 
+   613  0211                     	;# 
+   614  0211                     	;# 
+   615  0212                     	;# 
+   616  0212                     	;# 
+   617  0213                     	;# 
+   618  0213                     	;# 
+   619  0214                     	;# 
+   620  0214                     	;# 
+   621  0215                     	;# 
+   622  0215                     	;# 
+   623  0215                     	;# 
+   624  0216                     	;# 
+   625  0216                     	;# 
+   626  0217                     	;# 
+   627  0217                     	;# 
+   628  0219                     	;# 
+   629  021A                     	;# 
+   630  021B                     	;# 
+   631  021C                     	;# 
+   632  021D                     	;# 
+   633  021E                     	;# 
+   634  021F                     	;# 
+   635  0291                     	;# 
+   636  0291                     	;# 
+   637  0292                     	;# 
+   638  0293                     	;# 
+   639  0294                     	;# 
+   640  0295                     	;# 
+   641  0295                     	;# 
+   642  0296                     	;# 
+   643  0298                     	;# 
+   644  0298                     	;# 
+   645  0299                     	;# 
+   646  029A                     	;# 
+   647  029B                     	;# 
+   648  029C                     	;# 
+   649  029C                     	;# 
+   650  029D                     	;# 
+   651  029E                     	;# 
+   652  029E                     	;# 
+   653  0311                     	;# 
+   654  0311                     	;# 
+   655  0312                     	;# 
+   656  0313                     	;# 
+   657  0318                     	;# 
+   658  0318                     	;# 
+   659  0319                     	;# 
+   660  031A                     	;# 
+   661  0394                     	;# 
+   662  0395                     	;# 
+   663  0396                     	;# 
+   664  039A                     	;# 
+   665  039C                     	;# 
+   666  039D                     	;# 
+   667  039E                     	;# 
+   668  039F                     	;# 
+   669  0415                     	;# 
+   670  0416                     	;# 
+   671  0417                     	;# 
+   672  041C                     	;# 
+   673  041D                     	;# 
+   674  041E                     	;# 
+   675  0FE4                     	;# 
+   676  0FE5                     	;# 
+   677  0FE6                     	;# 
+   678  0FE7                     	;# 
+   679  0FE8                     	;# 
+   680  0FE9                     	;# 
+   681  0FEA                     	;# 
+   682  0FEB                     	;# 
+   683  0FED                     	;# 
+   684  0FEE                     	;# 
+   685  0FEF                     	;# 
+   686  0095                     _OPTION_REGbits	set	149
+   687  008D                     _TRISB	set	141
+   688  008C                     _TRISA	set	140
+   689  0097                     _WDTCON	set	151
+   690  0098                     _OSCTUNE	set	152
+   691  0099                     _OSCCON	set	153
+   692  04D6                     _PLLR	set	1238
+   693  011D                     _APFCON0	set	285
+   694  011E                     _APFCON1	set	286
+   695  010D                     _LATB	set	269
+   696  010C                     _LATA	set	268
+   697  0116                     _BORCON	set	278
+   698  0869                     _LATB1	set	2153
+   699  0868                     _LATB0	set	2152
+   700  018C                     _ANSELA	set	396
+   701  018D                     _ANSELB	set	397
+   702  020C                     _WPUA	set	524
+   703  020D                     _WPUB	set	525
+   704                           
+   705                           ; #config settings
+   706  0000                     
+   707                           	psect	cinit
+   708  07FD                     start_initialization:	
+   709  07FD                     __initialization:	
+   710  07FD                     end_of_initialization:	
+   711                           ;End of C runtime variable initialization code
+   712                           
+   713  07FD                     __end_of__initialization:	
+   714  07FD  0020               	movlb	0
+   715  07FE  3186  2E48         	ljmp	_main	;jump to C main() function
+   716                           
+   717                           	psect	cstackCOMMON
+   718  0070                     __pcstackCOMMON:	
+   719  0070                     ?_PIN_MANAGER_Initialize:	
+   720  0070                     ??_PIN_MANAGER_Initialize:	
+   721                           ; 1 bytes @ 0x0
+   722                           
+   723  0070                     ?_OSCILLATOR_Initialize:	
+   724                           ; 1 bytes @ 0x0
+   725                           
+   726  0070                     ??_OSCILLATOR_Initialize:	
+   727                           ; 1 bytes @ 0x0
+   728                           
+   729  0070                     ?_WDT_Initialize:	
+   730                           ; 1 bytes @ 0x0
+   731                           
+   732  0070                     ??_WDT_Initialize:	
+   733                           ; 1 bytes @ 0x0
+   734                           
+   735  0070                     ?_step_bekle:	
+   736                           ; 1 bytes @ 0x0
+   737                           
+   738  0070                     ?_SYSTEM_Initialize:	
+   739                           ; 1 bytes @ 0x0
+   740                           
+   741  0070                     ??_SYSTEM_Initialize:	
+   742                           ; 1 bytes @ 0x0
+   743                           
+   744  0070                     ?_main:	
+   745                           ; 1 bytes @ 0x0
+   746                           
+   747  0070                     ?___wmul:	
+   748                           ; 1 bytes @ 0x0
+   749                           
+   750  0070                     ?___lmul:	
+   751                           ; 2 bytes @ 0x0
+   752                           
+   753  0070                     step_bekle@sure:	
+   754                           ; 4 bytes @ 0x0
+   755                           
+   756  0070                     ___wmul@multiplier:	
+   757                           ; 2 bytes @ 0x0
+   758                           
+   759  0070                     ___lmul@multiplier:	
+   760                           ; 2 bytes @ 0x0
+   761                           
+   762                           
+   763                           ; 4 bytes @ 0x0
+   764  0070                     	ds	2
+   765  0072                     ??_step_bekle:	
+   766  0072                     step_bekle@i:	
+   767                           ; 1 bytes @ 0x2
+   768                           
+   769  0072                     ___wmul@multiplicand:	
+   770                           ; 2 bytes @ 0x2
+   771                           
+   772                           
+   773                           ; 2 bytes @ 0x2
+   774  0072                     	ds	2
+   775  0074                     ??___wmul:	
+   776  0074                     ___wmul@product:	
+   777                           ; 1 bytes @ 0x4
+   778                           
+   779  0074                     ___lmul@multiplicand:	
+   780                           ; 2 bytes @ 0x4
+   781                           
+   782                           
+   783                           ; 4 bytes @ 0x4
+   784  0074                     	ds	4
+   785  0078                     ??___lmul:	
+   786  0078                     ___lmul@product:	
+   787                           ; 1 bytes @ 0x8
+   788                           
+   789                           
+   790                           ; 4 bytes @ 0x8
+   791  0078                     	ds	4
+   792  007C                     ??___lldiv:	
+   793                           
+   794                           ; 1 bytes @ 0xC
+   795  007C                     	ds	1
+   796  007D                     ??_adimMotorDerece:	
+   797                           
+   798                           ; 1 bytes @ 0xD
+   799  007D                     	ds	1
+   800                           
+   801                           	psect	cstackBANK0
+   802  0020                     __pcstackBANK0:	
+   803  0020                     ?___lldiv:	
+   804  0020                     ___lldiv@divisor:	
+   805                           ; 4 bytes @ 0x0
+   806                           
+   807                           
+   808                           ; 4 bytes @ 0x0
+   809  0020                     	ds	4
+   810  0024                     ___lldiv@dividend:	
+   811                           
+   812                           ; 4 bytes @ 0x4
+   813  0024                     	ds	4
+   814  0028                     ___lldiv@quotient:	
+   815                           
+   816                           ; 4 bytes @ 0x8
+   817  0028                     	ds	4
+   818  002C                     ___lldiv@counter:	
+   819                           
+   820                           ; 1 bytes @ 0xC
+   821  002C                     	ds	1
+   822  002D                     ?_adimMotor:	
+   823  002D                     adimMotor@adimSayisi:	
+   824                           ; 1 bytes @ 0xD
+   825                           
+   826                           
+   827                           ; 2 bytes @ 0xD
+   828  002D                     	ds	2
+   829  002F                     adimMotor@adimYonu:	
+   830                           
+   831                           ; 1 bytes @ 0xF
+   832  002F                     	ds	1
+   833  0030                     ??_adimMotor:	
+   834                           
+   835                           ; 1 bytes @ 0x10
+   836  0030                     	ds	4
+   837  0034                     adimMotor@minbekleme:	
+   838                           
+   839                           ; 2 bytes @ 0x14
+   840  0034                     	ds	2
+   841  0036                     adimMotor@farkbekleme:	
+   842                           
+   843                           ; 2 bytes @ 0x16
+   844  0036                     	ds	2
+   845  0038                     adimMotor@yavaslamaadim:	
+   846                           
+   847                           ; 2 bytes @ 0x18
+   848  0038                     	ds	2
+   849  003A                     adimMotor@maxbekleme:	
+   850                           
+   851                           ; 2 bytes @ 0x1A
+   852  003A                     	ds	2
+   853  003C                     adimMotor@maxAdimAdeti:	
+   854                           
+   855                           ; 2 bytes @ 0x1C
+   856  003C                     	ds	2
+   857  003E                     adimMotor@yavaslamaAdimAdeti:	
+   858                           
+   859                           ; 2 bytes @ 0x1E
+   860  003E                     	ds	2
+   861  0040                     adimMotor@adim:	
+   862                           
+   863                           ; 2 bytes @ 0x20
+   864  0040                     	ds	2
+   865  0042                     adimMotor@hizlanmaAdimAdeti:	
+   866                           
+   867                           ; 2 bytes @ 0x22
+   868  0042                     	ds	2
+   869  0044                     adimMotor@i:	
+   870                           
+   871                           ; 2 bytes @ 0x24
+   872  0044                     	ds	2
+   873  0046                     adimMotor@bekleme:	
+   874                           
+   875                           ; 2 bytes @ 0x26
+   876  0046                     	ds	2
+   877  0048                     ?_adimMotorDerece:	
+   878  0048                     adimMotorDerece@adimDerece:	
+   879                           ; 1 bytes @ 0x28
+   880                           
+   881                           
+   882                           ; 2 bytes @ 0x28
+   883  0048                     	ds	2
+   884  004A                     adimMotorDerece@adimYonu:	
+   885                           
+   886                           ; 1 bytes @ 0x2A
+   887  004A                     	ds	1
+   888  004B                     adimMotorDerece@adimSayisiSonuc:	
+   889                           
+   890                           ; 2 bytes @ 0x2B
+   891  004B                     	ds	2
+   892  004D                     ??_main:	
+   893                           
+   894                           ; 1 bytes @ 0x2D
+   895  004D                     	ds	2
+   896                           
+   897                           	psect	maintext
+   898  0648                     __pmaintext:	
+   899 ;;
+   900 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   901 ;;
+   902 ;; *************** function _main *****************
+   903 ;; Defined at:
+   904 ;;		line 49 in file "main.c"
+   905 ;; Parameters:    Size  Location     Type
+   906 ;;		None
+   907 ;; Auto vars:     Size  Location     Type
+   908 ;;		None
+   909 ;; Return value:  Size  Location     Type
+   910 ;;                  1    wreg      void 
+   911 ;; Registers used:
+   912 ;;		wreg, status,2, status,0, pclath, cstack
+   913 ;; Tracked objects:
+   914 ;;		On entry : B1F/0
+   915 ;;		On exit  : 0/0
+   916 ;;		Unchanged: 0/0
+   917 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+   918 ;;      Params:         0       0       0       0       0       0
+   919 ;;      Locals:         0       0       0       0       0       0
+   920 ;;      Temps:          0       2       0       0       0       0
+   921 ;;      Totals:         0       2       0       0       0       0
+   922 ;;Total ram usage:        2 bytes
+   923 ;; Hardware stack levels required when called:    3
+   924 ;; This function calls:
+   925 ;;		_SYSTEM_Initialize
+   926 ;;		_adimMotor
+   927 ;;		_adimMotorDerece
+   928 ;; This function is called by:
+   929 ;;		Startup code after reset
+   930 ;; This function uses a non-reentrant model
+   931 ;;
+   932                           
+   933                           
+   934                           ;psect for function _main
+   935  0648                     _main:	
+   936                           
+   937                           ;main.c: 52: SYSTEM_Initialize();
+   938                           
+   939                           ;incstack = 0
+   940                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   941  0648  3185  2539  3186   	fcall	_SYSTEM_Initialize
+   942                           
+   943                           ;main.c: 69: adimMotor(16000,0);
+   944  064B  3080               	movlw	128
+   945  064C  0020               	movlb	0	; select bank0
+   946  064D  00AD               	movwf	adimMotor@adimSayisi
+   947  064E  303E               	movlw	62
+   948  064F  00AE               	movwf	adimMotor@adimSayisi+1
+   949  0650  01AF               	clrf	adimMotor@adimYonu
+   950  0651  3186  26A4  3186   	fcall	_adimMotor
+   951                           
+   952                           ;main.c: 70: _delay((unsigned long)((1000)*(32000000/4000.0)));
+   953  0654  3029               	movlw	41
+   954  0655  0020               	movlb	0	; select bank0
+   955  0656  00CE               	movwf	??_main+1
+   956  0657  3096               	movlw	150
+   957  0658  00CD               	movwf	??_main
+   958  0659  307F               	movlw	127
+   959  065A                     u647:	
+   960  065A  0B89               	decfsz	9,f
+   961  065B  2E5A               	goto	u647
+   962  065C  0BCD               	decfsz	??_main,f
+   963  065D  2E5A               	goto	u647
+   964  065E  0BCE               	decfsz	??_main+1,f
+   965  065F  2E5A               	goto	u647
+   966                           
+   967                           ;main.c: 71: adimMotor(8000,1);
+   968  0660  3040               	movlw	64
+   969  0661  0020               	movlb	0	; select bank0
+   970  0662  00AD               	movwf	adimMotor@adimSayisi
+   971  0663  301F               	movlw	31
+   972  0664  00AE               	movwf	adimMotor@adimSayisi+1
+   973  0665  01AF               	clrf	adimMotor@adimYonu
+   974  0666  0AAF               	incf	adimMotor@adimYonu,f
+   975  0667  3186  26A4  3186   	fcall	_adimMotor
+   976                           
+   977                           ;main.c: 72: _delay((unsigned long)((1000)*(32000000/4000.0)));
+   978  066A  3029               	movlw	41
+   979  066B  0020               	movlb	0	; select bank0
+   980  066C  00CE               	movwf	??_main+1
+   981  066D  3096               	movlw	150
+   982  066E  00CD               	movwf	??_main
+   983  066F  307F               	movlw	127
+   984  0670                     u657:	
+   985  0670  0B89               	decfsz	9,f
+   986  0671  2E70               	goto	u657
+   987  0672  0BCD               	decfsz	??_main,f
+   988  0673  2E70               	goto	u657
+   989  0674  0BCE               	decfsz	??_main+1,f
+   990  0675  2E70               	goto	u657
+   991  0676                     l907:	
+   992                           ;main.c: 74: while (1)
+   993                           
+   994                           
+   995                           ;main.c: 75: {
+   996                           ;main.c: 77: adimMotorDerece(720,0);
+   997  0676  30D0               	movlw	208
+   998  0677  0020               	movlb	0	; select bank0
+   999  0678  00C8               	movwf	adimMotorDerece@adimDerece
+  1000  0679  3002               	movlw	2
+  1001  067A  00C9               	movwf	adimMotorDerece@adimDerece+1
+  1002  067B  01CA               	clrf	adimMotorDerece@adimYonu
+  1003  067C  3185  25BF  3186   	fcall	_adimMotorDerece
+  1004                           
+  1005                           ;main.c: 78: _delay((unsigned long)((500)*(32000000/4000.0)));
+  1006  067F  3015               	movlw	21
+  1007  0680  0020               	movlb	0	; select bank0
+  1008  0681  00CE               	movwf	??_main+1
+  1009  0682  304B               	movlw	75
+  1010  0683  00CD               	movwf	??_main
+  1011  0684  30BE               	movlw	190
+  1012  0685                     u667:	
+  1013  0685  0B89               	decfsz	9,f
+  1014  0686  2E85               	goto	u667
+  1015  0687  0BCD               	decfsz	??_main,f
+  1016  0688  2E85               	goto	u667
+  1017  0689  0BCE               	decfsz	??_main+1,f
+  1018  068A  2E85               	goto	u667
+  1019  068B  0000               	nop
+  1020                           
+  1021                           ;main.c: 79: adimMotorDerece(720,1);
+  1022  068C  30D0               	movlw	208
+  1023  068D  0020               	movlb	0	; select bank0
+  1024  068E  00C8               	movwf	adimMotorDerece@adimDerece
+  1025  068F  3002               	movlw	2
+  1026  0690  00C9               	movwf	adimMotorDerece@adimDerece+1
+  1027  0691  01CA               	clrf	adimMotorDerece@adimYonu
+  1028  0692  0ACA               	incf	adimMotorDerece@adimYonu,f
+  1029  0693  3185  25BF  3186   	fcall	_adimMotorDerece
+  1030                           
+  1031                           ;main.c: 80: _delay((unsigned long)((500)*(32000000/4000.0)));
+  1032  0696  3015               	movlw	21
+  1033  0697  0020               	movlb	0	; select bank0
+  1034  0698  00CE               	movwf	??_main+1
+  1035  0699  304B               	movlw	75
+  1036  069A  00CD               	movwf	??_main
+  1037  069B  30BE               	movlw	190
+  1038  069C                     u677:	
+  1039  069C  0B89               	decfsz	9,f
+  1040  069D  2E9C               	goto	u677
+  1041  069E  0BCD               	decfsz	??_main,f
+  1042  069F  2E9C               	goto	u677
+  1043  06A0  0BCE               	decfsz	??_main+1,f
+  1044  06A1  2E9C               	goto	u677
+  1045  06A2  0000               	nop
+  1046  06A3  2E76               	goto	l907
+  1047  06A4                     __end_of_main:	
+  1048                           
+  1049                           	psect	text1
+  1050  05BF                     __ptext1:	
+  1051 ;; *************** function _adimMotorDerece *****************
+  1052 ;; Defined at:
+  1053 ;;		line 101 in file "easydriver.c"
+  1054 ;; Parameters:    Size  Location     Type
+  1055 ;;  adimDerece      2   40[BANK0 ] unsigned int 
+  1056 ;;  adimYonu        1   42[BANK0 ] unsigned char 
+  1057 ;; Auto vars:     Size  Location     Type
+  1058 ;;  adimSayisiSo    2   43[BANK0 ] unsigned int 
+  1059 ;; Return value:  Size  Location     Type
+  1060 ;;                  1    wreg      void 
+  1061 ;; Registers used:
+  1062 ;;		wreg, status,2, status,0, pclath, cstack
+  1063 ;; Tracked objects:
+  1064 ;;		On entry : 0/0
+  1065 ;;		On exit  : 0/0
+  1066 ;;		Unchanged: 0/0
+  1067 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1068 ;;      Params:         0       3       0       0       0       0
+  1069 ;;      Locals:         0       2       0       0       0       0
+  1070 ;;      Temps:          1       0       0       0       0       0
+  1071 ;;      Totals:         1       5       0       0       0       0
+  1072 ;;Total ram usage:        6 bytes
+  1073 ;; Hardware stack levels used:    1
+  1074 ;; Hardware stack levels required when called:    2
+  1075 ;; This function calls:
+  1076 ;;		___lldiv
+  1077 ;;		___lmul
+  1078 ;;		_adimMotor
+  1079 ;; This function is called by:
+  1080 ;;		_main
+  1081 ;; This function uses a non-reentrant model
+  1082 ;;
+  1083                           
+  1084                           
+  1085                           ;psect for function _adimMotorDerece
+  1086  05BF                     _adimMotorDerece:	
+  1087                           
+  1088                           ;easydriver.c: 102: unsigned int adimSayisiSonuc;
+  1089                           ;easydriver.c: 103: adimSayisiSonuc=(unsigned int)(((unsigned long)adimDerece*1600)/360)
+      +                          ;
+  1090                           
+  1091                           ;incstack = 0
+  1092                           ; Regs used in _adimMotorDerece: [wreg+status,2+status,0+pclath+cstack]
+  1093  05BF  3000               	movlw	0
+  1094  05C0  0020               	movlb	0	; select bank0
+  1095  05C1  00A3               	movwf	___lldiv@divisor+3
+  1096  05C2  3000               	movlw	0
+  1097  05C3  00A2               	movwf	___lldiv@divisor+2
+  1098  05C4  3001               	movlw	1
+  1099  05C5  00A1               	movwf	___lldiv@divisor+1
+  1100  05C6  3068               	movlw	104
+  1101  05C7  00A0               	movwf	___lldiv@divisor
+  1102  05C8  0848               	movf	adimMotorDerece@adimDerece,w
+  1103  05C9  00F0               	movwf	___lmul@multiplier
+  1104  05CA  0849               	movf	adimMotorDerece@adimDerece+1,w
+  1105  05CB  00F1               	movwf	___lmul@multiplier+1
+  1106  05CC  01F2               	clrf	___lmul@multiplier+2
+  1107  05CD  01F3               	clrf	___lmul@multiplier+3
+  1108  05CE  3000               	movlw	0
+  1109  05CF  00F7               	movwf	___lmul@multiplicand+3
+  1110  05D0  3000               	movlw	0
+  1111  05D1  00F6               	movwf	___lmul@multiplicand+2
+  1112  05D2  3006               	movlw	6
+  1113  05D3  00F5               	movwf	___lmul@multiplicand+1
+  1114  05D4  3040               	movlw	64
+  1115  05D5  00F4               	movwf	___lmul@multiplicand
+  1116  05D6  3185  2590  3185   	fcall	___lmul
+  1117  05D9  0873               	movf	?___lmul+3,w
+  1118  05DA  0020               	movlb	0	; select bank0
+  1119  05DB  00A7               	movwf	___lldiv@dividend+3
+  1120  05DC  0872               	movf	?___lmul+2,w
+  1121  05DD  00A6               	movwf	___lldiv@dividend+2
+  1122  05DE  0871               	movf	?___lmul+1,w
+  1123  05DF  00A5               	movwf	___lldiv@dividend+1
+  1124  05E0  0870               	movf	?___lmul,w
+  1125  05E1  00A4               	movwf	___lldiv@dividend
+  1126  05E2  3185  25F5  3185   	fcall	___lldiv
+  1127  05E5  0020               	movlb	0	; select bank0
+  1128  05E6  0821               	movf	?___lldiv+1,w
+  1129  05E7  00CC               	movwf	adimMotorDerece@adimSayisiSonuc+1
+  1130  05E8  0820               	movf	?___lldiv,w
+  1131  05E9  00CB               	movwf	adimMotorDerece@adimSayisiSonuc
+  1132                           
+  1133                           ;easydriver.c: 104: adimMotor(adimSayisiSonuc,adimYonu);
+  1134  05EA  084C               	movf	adimMotorDerece@adimSayisiSonuc+1,w
+  1135  05EB  00AE               	movwf	adimMotor@adimSayisi+1
+  1136  05EC  084B               	movf	adimMotorDerece@adimSayisiSonuc,w
+  1137  05ED  00AD               	movwf	adimMotor@adimSayisi
+  1138  05EE  084A               	movf	adimMotorDerece@adimYonu,w
+  1139  05EF  00FD               	movwf	??_adimMotorDerece
+  1140  05F0  087D               	movf	??_adimMotorDerece,w
+  1141  05F1  00AF               	movwf	adimMotor@adimYonu
+  1142  05F2  3186  26A4         	fcall	_adimMotor
+  1143  05F4  0008               	return
+  1144  05F5                     __end_of_adimMotorDerece:	
+  1145                           
+  1146                           	psect	text2
+  1147  06A4                     __ptext2:	
+  1148 ;; *************** function _adimMotor *****************
+  1149 ;; Defined at:
+  1150 ;;		line 14 in file "easydriver.c"
+  1151 ;; Parameters:    Size  Location     Type
+  1152 ;;  adimSayisi      2   13[BANK0 ] unsigned int 
+  1153 ;;  adimYonu        1   15[BANK0 ] unsigned char 
+  1154 ;; Auto vars:     Size  Location     Type
+  1155 ;;  bekleme         2   38[BANK0 ] unsigned int 
+  1156 ;;  i               2   36[BANK0 ] unsigned int 
+  1157 ;;  hizlanmaAdim    2   34[BANK0 ] unsigned int 
+  1158 ;;  adim            2   32[BANK0 ] unsigned int 
+  1159 ;;  yavaslamaAdi    2   30[BANK0 ] unsigned int 
+  1160 ;;  maxAdimAdeti    2   28[BANK0 ] unsigned int 
+  1161 ;;  maxbekleme      2   26[BANK0 ] unsigned int 
+  1162 ;;  yavaslamaadi    2   24[BANK0 ] unsigned int 
+  1163 ;;  farkbekleme     2   22[BANK0 ] unsigned int 
+  1164 ;;  minbekleme      2   20[BANK0 ] unsigned int 
+  1165 ;;  j               2    0        unsigned int 
+  1166 ;; Return value:  Size  Location     Type
+  1167 ;;                  1    wreg      void 
+  1168 ;; Registers used:
+  1169 ;;		wreg, status,2, status,0, pclath, cstack
+  1170 ;; Tracked objects:
+  1171 ;;		On entry : 0/0
+  1172 ;;		On exit  : 0/0
+  1173 ;;		Unchanged: 0/0
+  1174 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1175 ;;      Params:         0       3       0       0       0       0
+  1176 ;;      Locals:         0      20       0       0       0       0
+  1177 ;;      Temps:          0       4       0       0       0       0
+  1178 ;;      Totals:         0      27       0       0       0       0
+  1179 ;;Total ram usage:       27 bytes
+  1180 ;; Hardware stack levels used:    1
+  1181 ;; Hardware stack levels required when called:    1
+  1182 ;; This function calls:
+  1183 ;;		___lldiv
+  1184 ;;		___wmul
+  1185 ;;		_step_bekle
+  1186 ;; This function is called by:
+  1187 ;;		_main
+  1188 ;;		_adimMotorDerece
+  1189 ;; This function uses a non-reentrant model
+  1190 ;;
+  1191                           
+  1192                           
+  1193                           ;psect for function _adimMotor
+  1194  06A4                     _adimMotor:	
+  1195                           
+  1196                           ;easydriver.c: 15: unsigned int i, j, adim;
+  1197                           ;easydriver.c: 16: unsigned int maxAdimAdeti, hizlanmaAdimAdeti, yavaslamaAdimAdeti, yav
+      +                          aslamaadim;
+  1198                           ;easydriver.c: 17: unsigned int minbekleme,maxbekleme,farkbekleme,bekleme;
+  1199                           ;easydriver.c: 20: minbekleme=100000UL/800;
+  1200                           
+  1201                           ;incstack = 0
+  1202                           ; Regs used in _adimMotor: [wreg+status,2+status,0+pclath+cstack]
+  1203  06A4  307D               	movlw	125
+  1204  06A5  0020               	movlb	0	; select bank0
+  1205  06A6  00B4               	movwf	adimMotor@minbekleme
+  1206  06A7  3000               	movlw	0
+  1207  06A8  00B5               	movwf	adimMotor@minbekleme+1
+  1208                           
+  1209                           ;easydriver.c: 21: maxbekleme=100000UL/16000;
+  1210  06A9  3006               	movlw	6
+  1211  06AA  00BA               	movwf	adimMotor@maxbekleme
+  1212  06AB  3000               	movlw	0
+  1213  06AC  00BB               	movwf	adimMotor@maxbekleme+1
+  1214                           
+  1215                           ;easydriver.c: 24: farkbekleme=minbekleme-maxbekleme;
+  1216  06AD  093A               	comf	adimMotor@maxbekleme,w
+  1217  06AE  00B0               	movwf	??_adimMotor
+  1218  06AF  093B               	comf	adimMotor@maxbekleme+1,w
+  1219  06B0  00B1               	movwf	??_adimMotor+1
+  1220  06B1  0AB0               	incf	??_adimMotor,f
+  1221  06B2  1903               	skipnz
+  1222  06B3  0AB1               	incf	??_adimMotor+1,f
+  1223  06B4  0834               	movf	adimMotor@minbekleme,w
+  1224  06B5  0730               	addwf	??_adimMotor,w
+  1225  06B6  00B6               	movwf	adimMotor@farkbekleme
+  1226  06B7  0835               	movf	adimMotor@minbekleme+1,w
+  1227  06B8  3D31               	addwfc	??_adimMotor+1,w
+  1228  06B9  00B7               	movwf	adimMotor@farkbekleme+1
+  1229                           
+  1230                           ;easydriver.c: 26: hizlanmaAdimAdeti=farkbekleme*4;
+  1231  06BA  0837               	movf	adimMotor@farkbekleme+1,w
+  1232  06BB  00B1               	movwf	??_adimMotor+1
+  1233  06BC  0836               	movf	adimMotor@farkbekleme,w
+  1234  06BD  00B0               	movwf	??_adimMotor
+  1235  06BE  35B0               	lslf	??_adimMotor,f
+  1236  06BF  0DB1               	rlf	??_adimMotor+1,f
+  1237  06C0  35B0               	lslf	??_adimMotor,f
+  1238  06C1  0DB1               	rlf	??_adimMotor+1,f
+  1239  06C2  0830               	movf	??_adimMotor,w
+  1240  06C3  00C2               	movwf	adimMotor@hizlanmaAdimAdeti
+  1241  06C4  0831               	movf	??_adimMotor+1,w
+  1242  06C5  00C3               	movwf	adimMotor@hizlanmaAdimAdeti+1
+  1243                           
+  1244                           ;easydriver.c: 27: yavaslamaAdimAdeti=farkbekleme*10;
+  1245  06C6  0837               	movf	adimMotor@farkbekleme+1,w
+  1246  06C7  00F1               	movwf	___wmul@multiplier+1
+  1247  06C8  0836               	movf	adimMotor@farkbekleme,w
+  1248  06C9  00F0               	movwf	___wmul@multiplier
+  1249  06CA  300A               	movlw	10
+  1250  06CB  00F2               	movwf	___wmul@multiplicand
+  1251  06CC  3000               	movlw	0
+  1252  06CD  00F3               	movwf	___wmul@multiplicand+1
+  1253  06CE  3185  2575  3186   	fcall	___wmul
+  1254  06D1  0871               	movf	?___wmul+1,w
+  1255  06D2  0020               	movlb	0	; select bank0
+  1256  06D3  00BF               	movwf	adimMotor@yavaslamaAdimAdeti+1
+  1257  06D4  0870               	movf	?___wmul,w
+  1258  06D5  00BE               	movwf	adimMotor@yavaslamaAdimAdeti
+  1259                           
+  1260                           ;easydriver.c: 30: if(adimSayisi<(hizlanmaAdimAdeti+yavaslamaAdimAdeti))
+  1261  06D6  083E               	movf	adimMotor@yavaslamaAdimAdeti,w
+  1262  06D7  0742               	addwf	adimMotor@hizlanmaAdimAdeti,w
+  1263  06D8  00B0               	movwf	??_adimMotor
+  1264  06D9  083F               	movf	adimMotor@yavaslamaAdimAdeti+1,w
+  1265  06DA  3D43               	addwfc	adimMotor@hizlanmaAdimAdeti+1,w
+  1266  06DB  00B1               	movwf	??_adimMotor+1
+  1267  06DC  0831               	movf	??_adimMotor+1,w
+  1268  06DD  022E               	subwf	adimMotor@adimSayisi+1,w
+  1269  06DE  1D03               	skipz
+  1270  06DF  2EE2               	goto	u455
+  1271  06E0  0830               	movf	??_adimMotor,w
+  1272  06E1  022D               	subwf	adimMotor@adimSayisi,w
+  1273  06E2                     u455:	
+  1274  06E2  1803               	skipnc
+  1275  06E3  2F19               	goto	l811
+  1276                           
+  1277                           ;easydriver.c: 31: {
+  1278                           ;easydriver.c: 32: hizlanmaAdimAdeti=(unsigned int)(((unsigned long)adimSayisi*4)/(4+10)
+      +                          );
+  1279  06E4  3000               	movlw	0
+  1280  06E5  00A3               	movwf	___lldiv@divisor+3
+  1281  06E6  3000               	movlw	0
+  1282  06E7  00A2               	movwf	___lldiv@divisor+2
+  1283  06E8  3000               	movlw	0
+  1284  06E9  00A1               	movwf	___lldiv@divisor+1
+  1285  06EA  300E               	movlw	14
+  1286  06EB  00A0               	movwf	___lldiv@divisor
+  1287  06EC  082D               	movf	adimMotor@adimSayisi,w
+  1288  06ED  00B0               	movwf	??_adimMotor
+  1289  06EE  082E               	movf	adimMotor@adimSayisi+1,w
+  1290  06EF  00B1               	movwf	??_adimMotor+1
+  1291  06F0  01B2               	clrf	??_adimMotor+2
+  1292  06F1  01B3               	clrf	??_adimMotor+3
+  1293  06F2  3002               	movlw	2
+  1294  06F3                     u465:	
+  1295  06F3  35B0               	lslf	??_adimMotor,f
+  1296  06F4  0DB1               	rlf	??_adimMotor+1,f
+  1297  06F5  0DB2               	rlf	??_adimMotor+2,f
+  1298  06F6  0DB3               	rlf	??_adimMotor+3,f
+  1299  06F7  0B89               	decfsz	9,f
+  1300  06F8  2EF3               	goto	u465
+  1301  06F9  0833               	movf	??_adimMotor+3,w
+  1302  06FA  00A7               	movwf	___lldiv@dividend+3
+  1303  06FB  0832               	movf	??_adimMotor+2,w
+  1304  06FC  00A6               	movwf	___lldiv@dividend+2
+  1305  06FD  0831               	movf	??_adimMotor+1,w
+  1306  06FE  00A5               	movwf	___lldiv@dividend+1
+  1307  06FF  0830               	movf	??_adimMotor,w
+  1308  0700  00A4               	movwf	___lldiv@dividend
+  1309  0701  3185  25F5  3186   	fcall	___lldiv
+  1310  0704  0020               	movlb	0	; select bank0
+  1311  0705  0821               	movf	?___lldiv+1,w
+  1312  0706  00C3               	movwf	adimMotor@hizlanmaAdimAdeti+1
+  1313  0707  0820               	movf	?___lldiv,w
+  1314  0708  00C2               	movwf	adimMotor@hizlanmaAdimAdeti
+  1315                           
+  1316                           ;easydriver.c: 33: yavaslamaAdimAdeti=adimSayisi-hizlanmaAdimAdeti;
+  1317  0709  0942               	comf	adimMotor@hizlanmaAdimAdeti,w
+  1318  070A  00B0               	movwf	??_adimMotor
+  1319  070B  0943               	comf	adimMotor@hizlanmaAdimAdeti+1,w
+  1320  070C  00B1               	movwf	??_adimMotor+1
+  1321  070D  0AB0               	incf	??_adimMotor,f
+  1322  070E  1903               	skipnz
+  1323  070F  0AB1               	incf	??_adimMotor+1,f
+  1324  0710  082D               	movf	adimMotor@adimSayisi,w
+  1325  0711  0730               	addwf	??_adimMotor,w
+  1326  0712  00BE               	movwf	adimMotor@yavaslamaAdimAdeti
+  1327  0713  082E               	movf	adimMotor@adimSayisi+1,w
+  1328  0714  3D31               	addwfc	??_adimMotor+1,w
+  1329  0715  00BF               	movwf	adimMotor@yavaslamaAdimAdeti+1
+  1330                           
+  1331                           ;easydriver.c: 34: maxAdimAdeti=0;
+  1332  0716  01BC               	clrf	adimMotor@maxAdimAdeti
+  1333  0717  01BD               	clrf	adimMotor@maxAdimAdeti+1
+  1334                           
+  1335                           ;easydriver.c: 35: }
+  1336  0718  2F2A               	goto	l813
+  1337  0719                     l811:	
+  1338                           
+  1339                           ;easydriver.c: 36: else
+  1340                           ;easydriver.c: 37: {
+  1341                           ;easydriver.c: 39: maxAdimAdeti=adimSayisi-hizlanmaAdimAdeti-yavaslamaAdimAdeti;
+  1342  0719  083E               	movf	adimMotor@yavaslamaAdimAdeti,w
+  1343  071A  0742               	addwf	adimMotor@hizlanmaAdimAdeti,w
+  1344  071B  00B0               	movwf	??_adimMotor
+  1345  071C  083F               	movf	adimMotor@yavaslamaAdimAdeti+1,w
+  1346  071D  3D43               	addwfc	adimMotor@hizlanmaAdimAdeti+1,w
+  1347  071E  00B1               	movwf	??_adimMotor+1
+  1348  071F  09B0               	comf	??_adimMotor,f
+  1349  0720  09B1               	comf	??_adimMotor+1,f
+  1350  0721  0AB0               	incf	??_adimMotor,f
+  1351  0722  1903               	skipnz
+  1352  0723  0AB1               	incf	??_adimMotor+1,f
+  1353  0724  082D               	movf	adimMotor@adimSayisi,w
+  1354  0725  0730               	addwf	??_adimMotor,w
+  1355  0726  00BC               	movwf	adimMotor@maxAdimAdeti
+  1356  0727  082E               	movf	adimMotor@adimSayisi+1,w
+  1357  0728  3D31               	addwfc	??_adimMotor+1,w
+  1358  0729  00BD               	movwf	adimMotor@maxAdimAdeti+1
+  1359  072A                     l813:	
+  1360                           
+  1361                           ;easydriver.c: 40: }
+  1362                           ;easydriver.c: 45: LATB0 = adimYonu;
+  1363  072A  1C2F               	btfss	adimMotor@adimYonu,0
+  1364  072B  2F2F               	goto	u470
+  1365  072C  0022               	movlb	2	; select bank2
+  1366  072D  140D               	bsf	13,0	;volatile
+  1367  072E  2F31               	goto	l815
+  1368  072F                     u470:	
+  1369  072F  0022               	movlb	2	; select bank2
+  1370  0730  100D               	bcf	13,0	;volatile
+  1371  0731                     l815:	
+  1372                           
+  1373                           ;easydriver.c: 47: adim = 0;
+  1374  0731  0020               	movlb	0	; select bank0
+  1375  0732  01C0               	clrf	adimMotor@adim
+  1376  0733  01C1               	clrf	adimMotor@adim+1
+  1377                           
+  1378                           ;easydriver.c: 48: bekleme=minbekleme;
+  1379  0734  0835               	movf	adimMotor@minbekleme+1,w
+  1380  0735  00C7               	movwf	adimMotor@bekleme+1
+  1381  0736  0834               	movf	adimMotor@minbekleme,w
+  1382  0737  00C6               	movwf	adimMotor@bekleme
+  1383  0738                     l841:	
+  1384                           ;easydriver.c: 51: while (adim <hizlanmaAdimAdeti) {
+  1385                           
+  1386  0738  0843               	movf	adimMotor@hizlanmaAdimAdeti+1,w
+  1387  0739  0241               	subwf	adimMotor@adim+1,w
+  1388  073A  1D03               	skipz
+  1389  073B  2F3E               	goto	u535
+  1390  073C  0842               	movf	adimMotor@hizlanmaAdimAdeti,w
+  1391  073D  0240               	subwf	adimMotor@adim,w
+  1392  073E                     u535:	
+  1393  073E  1803               	btfsc	3,0
+  1394  073F  2F81               	goto	l843
+  1395                           
+  1396                           ;easydriver.c: 52: for (i = 0; i < 4; i++) {
+  1397  0740  01C4               	clrf	adimMotor@i
+  1398  0741  01C5               	clrf	adimMotor@i+1
+  1399  0742  3000               	movlw	0
+  1400  0743  0245               	subwf	adimMotor@i+1,w
+  1401  0744  3004               	movlw	4
+  1402  0745  1903               	skipnz
+  1403  0746  0244               	subwf	adimMotor@i,w
+  1404  0747  1803               	btfsc	3,0
+  1405  0748  2F75               	goto	l837
+  1406  0749                     l87:	
+  1407                           
+  1408                           ;easydriver.c: 53: LATB1 = 1;
+  1409  0749  0022               	movlb	2	; select bank2
+  1410  074A  148D               	bsf	13,1	;volatile
+  1411                           
+  1412                           ;easydriver.c: 54: step_bekle(bekleme);
+  1413  074B  0020               	movlb	0	; select bank0
+  1414  074C  0847               	movf	adimMotor@bekleme+1,w
+  1415  074D  00F1               	movwf	step_bekle@sure+1
+  1416  074E  0846               	movf	adimMotor@bekleme,w
+  1417  074F  00F0               	movwf	step_bekle@sure
+  1418  0750  3185  254C  3186   	fcall	_step_bekle
+  1419                           
+  1420                           ;easydriver.c: 55: LATB1 = 0;
+  1421  0753  0022               	movlb	2	; select bank2
+  1422  0754  108D               	bcf	13,1	;volatile
+  1423                           
+  1424                           ;easydriver.c: 56: step_bekle(bekleme);
+  1425  0755  0020               	movlb	0	; select bank0
+  1426  0756  0847               	movf	adimMotor@bekleme+1,w
+  1427  0757  00F1               	movwf	step_bekle@sure+1
+  1428  0758  0846               	movf	adimMotor@bekleme,w
+  1429  0759  00F0               	movwf	step_bekle@sure
+  1430  075A  3185  254C  3186   	fcall	_step_bekle
+  1431                           
+  1432                           ;easydriver.c: 58: adim++;
+  1433  075D  3001               	movlw	1
+  1434  075E  0020               	movlb	0	; select bank0
+  1435  075F  07C0               	addwf	adimMotor@adim,f
+  1436  0760  3000               	movlw	0
+  1437  0761  3DC1               	addwfc	adimMotor@adim+1,f
+  1438                           
+  1439                           ;easydriver.c: 59: if(adim>=hizlanmaAdimAdeti)
+  1440  0762  0843               	movf	adimMotor@hizlanmaAdimAdeti+1,w
+  1441  0763  0241               	subwf	adimMotor@adim+1,w
+  1442  0764  1D03               	skipz
+  1443  0765  2F68               	goto	u505
+  1444  0766  0842               	movf	adimMotor@hizlanmaAdimAdeti,w
+  1445  0767  0240               	subwf	adimMotor@adim,w
+  1446  0768                     u505:	
+  1447  0768  1803               	btfsc	3,0
+  1448  0769  2F75               	goto	l837
+  1449                           
+  1450                           ;easydriver.c: 60: break;
+  1451  076A  3001               	movlw	1
+  1452  076B  07C4               	addwf	adimMotor@i,f
+  1453  076C  3000               	movlw	0
+  1454  076D  3DC5               	addwfc	adimMotor@i+1,f
+  1455  076E  3000               	movlw	0
+  1456  076F  0245               	subwf	adimMotor@i+1,w
+  1457  0770  3004               	movlw	4
+  1458  0771  1903               	skipnz
+  1459  0772  0244               	subwf	adimMotor@i,w
+  1460  0773  1C03               	skipc
+  1461  0774  2F49               	goto	l87
+  1462  0775                     l837:	
+  1463                           
+  1464                           ;easydriver.c: 61: }
+  1465                           ;easydriver.c: 63: bekleme--;
+  1466  0775  3001               	movlw	1
+  1467  0776  02C6               	subwf	adimMotor@bekleme,f
+  1468  0777  3000               	movlw	0
+  1469  0778  3BC7               	subwfb	adimMotor@bekleme+1,f
+  1470                           
+  1471                           ;easydriver.c: 64: if(bekleme==maxbekleme)
+  1472  0779  083B               	movf	adimMotor@maxbekleme+1,w
+  1473  077A  0647               	xorwf	adimMotor@bekleme+1,w
+  1474  077B  1D03               	skipz
+  1475  077C  2F7F               	goto	u525
+  1476  077D  083A               	movf	adimMotor@maxbekleme,w
+  1477  077E  0646               	xorwf	adimMotor@bekleme,w
+  1478  077F                     u525:	
+  1479  077F  1D03               	skipz
+  1480  0780  2F38               	goto	l841
+  1481  0781                     l843:	
+  1482                           ;easydriver.c: 65: break;
+  1483                           
+  1484                           
+  1485                           ;easydriver.c: 67: }
+  1486                           ;easydriver.c: 70: if (maxAdimAdeti > 0) {
+  1487  0781  083C               	movf	adimMotor@maxAdimAdeti,w
+  1488  0782  043D               	iorwf	adimMotor@maxAdimAdeti+1,w
+  1489  0783  1903               	btfsc	3,2
+  1490  0784  2FB3               	goto	l859
+  1491                           
+  1492                           ;easydriver.c: 71: bekleme=maxbekleme;
+  1493  0785  083B               	movf	adimMotor@maxbekleme+1,w
+  1494  0786  00C7               	movwf	adimMotor@bekleme+1
+  1495  0787  083A               	movf	adimMotor@maxbekleme,w
+  1496  0788  00C6               	movwf	adimMotor@bekleme
+  1497                           
+  1498                           ;easydriver.c: 72: for (i = 0; i < maxAdimAdeti; i++) {
+  1499  0789  01C4               	clrf	adimMotor@i
+  1500  078A  01C5               	clrf	adimMotor@i+1
+  1501  078B                     l855:	
+  1502  078B  083D               	movf	adimMotor@maxAdimAdeti+1,w
+  1503  078C  0245               	subwf	adimMotor@i+1,w
+  1504  078D  1D03               	skipz
+  1505  078E  2F91               	goto	u555
+  1506  078F  083C               	movf	adimMotor@maxAdimAdeti,w
+  1507  0790  0244               	subwf	adimMotor@i,w
+  1508  0791                     u555:	
+  1509  0791  1803               	btfsc	3,0
+  1510  0792  2FAD               	goto	l857
+  1511                           
+  1512                           ;easydriver.c: 73: LATB1 = 1;
+  1513  0793  0022               	movlb	2	; select bank2
+  1514  0794  148D               	bsf	13,1	;volatile
+  1515                           
+  1516                           ;easydriver.c: 74: step_bekle(bekleme);
+  1517  0795  0020               	movlb	0	; select bank0
+  1518  0796  0847               	movf	adimMotor@bekleme+1,w
+  1519  0797  00F1               	movwf	step_bekle@sure+1
+  1520  0798  0846               	movf	adimMotor@bekleme,w
+  1521  0799  00F0               	movwf	step_bekle@sure
+  1522  079A  3185  254C  3186   	fcall	_step_bekle
+  1523                           
+  1524                           ;easydriver.c: 75: LATB1 = 0;
+  1525  079D  0022               	movlb	2	; select bank2
+  1526  079E  108D               	bcf	13,1	;volatile
+  1527                           
+  1528                           ;easydriver.c: 76: step_bekle(bekleme);
+  1529  079F  0020               	movlb	0	; select bank0
+  1530  07A0  0847               	movf	adimMotor@bekleme+1,w
+  1531  07A1  00F1               	movwf	step_bekle@sure+1
+  1532  07A2  0846               	movf	adimMotor@bekleme,w
+  1533  07A3  00F0               	movwf	step_bekle@sure
+  1534  07A4  3185  254C  3186   	fcall	_step_bekle
+  1535  07A7  3001               	movlw	1
+  1536  07A8  0020               	movlb	0	; select bank0
+  1537  07A9  07C4               	addwf	adimMotor@i,f
+  1538  07AA  3000               	movlw	0
+  1539  07AB  3DC5               	addwfc	adimMotor@i+1,f
+  1540  07AC  2F8B               	goto	l855
+  1541  07AD                     l857:	
+  1542                           
+  1543                           ;easydriver.c: 77: }
+  1544                           ;easydriver.c: 78: adim = adim + maxAdimAdeti;
+  1545  07AD  083C               	movf	adimMotor@maxAdimAdeti,w
+  1546  07AE  0740               	addwf	adimMotor@adim,w
+  1547  07AF  00C0               	movwf	adimMotor@adim
+  1548  07B0  083D               	movf	adimMotor@maxAdimAdeti+1,w
+  1549  07B1  3D41               	addwfc	adimMotor@adim+1,w
+  1550  07B2  00C1               	movwf	adimMotor@adim+1
+  1551  07B3                     l859:	
+  1552                           
+  1553                           ;easydriver.c: 79: }
+  1554                           ;easydriver.c: 82: yavaslamaadim=0;
+  1555  07B3  01B8               	clrf	adimMotor@yavaslamaadim
+  1556  07B4  01B9               	clrf	adimMotor@yavaslamaadim+1
+  1557  07B5                     l883:	
+  1558                           ;easydriver.c: 83: while (yavaslamaadim < yavaslamaAdimAdeti) {
+  1559                           
+  1560  07B5  083F               	movf	adimMotor@yavaslamaAdimAdeti+1,w
+  1561  07B6  0239               	subwf	adimMotor@yavaslamaadim+1,w
+  1562  07B7  1D03               	skipz
+  1563  07B8  2FBB               	goto	u595
+  1564  07B9  083E               	movf	adimMotor@yavaslamaAdimAdeti,w
+  1565  07BA  0238               	subwf	adimMotor@yavaslamaadim,w
+  1566  07BB                     u595:	
+  1567  07BB  1803               	btfsc	3,0
+  1568  07BC  0008               	return
+  1569                           
+  1570                           ;easydriver.c: 84: for (i = 0; i < 10; i++) {
+  1571  07BD  01C4               	clrf	adimMotor@i
+  1572  07BE  01C5               	clrf	adimMotor@i+1
+  1573  07BF  3000               	movlw	0
+  1574  07C0  0245               	subwf	adimMotor@i+1,w
+  1575  07C1  300A               	movlw	10
+  1576  07C2  1903               	skipnz
+  1577  07C3  0244               	subwf	adimMotor@i,w
+  1578  07C4  1803               	btfsc	3,0
+  1579  07C5  2FF2               	goto	l879
+  1580  07C6                     l98:	
+  1581                           
+  1582                           ;easydriver.c: 85: LATB1 = 1;
+  1583  07C6  0022               	movlb	2	; select bank2
+  1584  07C7  148D               	bsf	13,1	;volatile
+  1585                           
+  1586                           ;easydriver.c: 86: step_bekle(bekleme);
+  1587  07C8  0020               	movlb	0	; select bank0
+  1588  07C9  0847               	movf	adimMotor@bekleme+1,w
+  1589  07CA  00F1               	movwf	step_bekle@sure+1
+  1590  07CB  0846               	movf	adimMotor@bekleme,w
+  1591  07CC  00F0               	movwf	step_bekle@sure
+  1592  07CD  3185  254C  3186   	fcall	_step_bekle
+  1593                           
+  1594                           ;easydriver.c: 87: LATB1 = 0;
+  1595  07D0  0022               	movlb	2	; select bank2
+  1596  07D1  108D               	bcf	13,1	;volatile
+  1597                           
+  1598                           ;easydriver.c: 88: step_bekle(bekleme);
+  1599  07D2  0020               	movlb	0	; select bank0
+  1600  07D3  0847               	movf	adimMotor@bekleme+1,w
+  1601  07D4  00F1               	movwf	step_bekle@sure+1
+  1602  07D5  0846               	movf	adimMotor@bekleme,w
+  1603  07D6  00F0               	movwf	step_bekle@sure
+  1604  07D7  3185  254C  3186   	fcall	_step_bekle
+  1605                           
+  1606                           ;easydriver.c: 89: adim++;
+  1607  07DA  3001               	movlw	1
+  1608  07DB  0020               	movlb	0	; select bank0
+  1609  07DC  07C0               	addwf	adimMotor@adim,f
+  1610  07DD  3000               	movlw	0
+  1611  07DE  3DC1               	addwfc	adimMotor@adim+1,f
+  1612                           
+  1613                           ;easydriver.c: 91: if (adim>=adimSayisi)
+  1614  07DF  082E               	movf	adimMotor@adimSayisi+1,w
+  1615  07E0  0241               	subwf	adimMotor@adim+1,w
+  1616  07E1  1D03               	skipz
+  1617  07E2  2FE5               	goto	u575
+  1618  07E3  082D               	movf	adimMotor@adimSayisi,w
+  1619  07E4  0240               	subwf	adimMotor@adim,w
+  1620  07E5                     u575:	
+  1621  07E5  1803               	btfsc	3,0
+  1622  07E6  0008               	return
+  1623                           
+  1624                           ;easydriver.c: 92: return;
+  1625  07E7  3001               	movlw	1
+  1626  07E8  07C4               	addwf	adimMotor@i,f
+  1627  07E9  3000               	movlw	0
+  1628  07EA  3DC5               	addwfc	adimMotor@i+1,f
+  1629  07EB  3000               	movlw	0
+  1630  07EC  0245               	subwf	adimMotor@i+1,w
+  1631  07ED  300A               	movlw	10
+  1632  07EE  1903               	skipnz
+  1633  07EF  0244               	subwf	adimMotor@i,w
+  1634  07F0  1C03               	skipc
+  1635  07F1  2FC6               	goto	l98
+  1636  07F2                     l879:	
+  1637                           
+  1638                           ;easydriver.c: 93: }
+  1639                           ;easydriver.c: 94: yavaslamaadim = yavaslamaadim + 10;
+  1640  07F2  0838               	movf	adimMotor@yavaslamaadim,w
+  1641  07F3  3E0A               	addlw	10
+  1642  07F4  00B8               	movwf	adimMotor@yavaslamaadim
+  1643  07F5  3000               	movlw	0
+  1644  07F6  3D39               	addwfc	adimMotor@yavaslamaadim+1,w
+  1645  07F7  00B9               	movwf	adimMotor@yavaslamaadim+1
+  1646                           
+  1647                           ;easydriver.c: 95: bekleme++;
+  1648  07F8  3001               	movlw	1
+  1649  07F9  07C6               	addwf	adimMotor@bekleme,f
+  1650  07FA  3000               	movlw	0
+  1651  07FB  3DC7               	addwfc	adimMotor@bekleme+1,f
+  1652  07FC  2FB5               	goto	l883
+  1653  07FD                     __end_of_adimMotor:	
+  1654                           
+  1655                           	psect	text3
+  1656  054C                     __ptext3:	
+  1657 ;; *************** function _step_bekle *****************
+  1658 ;; Defined at:
+  1659 ;;		line 109 in file "easydriver.c"
+  1660 ;; Parameters:    Size  Location     Type
+  1661 ;;  sure            2    0[COMMON] unsigned int 
+  1662 ;; Auto vars:     Size  Location     Type
+  1663 ;;  i               2    2[COMMON] unsigned int 
+  1664 ;; Return value:  Size  Location     Type
+  1665 ;;                  1    wreg      void 
+  1666 ;; Registers used:
+  1667 ;;		wreg, status,2
+  1668 ;; Tracked objects:
+  1669 ;;		On entry : 0/0
+  1670 ;;		On exit  : 0/0
+  1671 ;;		Unchanged: 0/0
+  1672 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1673 ;;      Params:         2       0       0       0       0       0
+  1674 ;;      Locals:         2       0       0       0       0       0
+  1675 ;;      Temps:          0       0       0       0       0       0
+  1676 ;;      Totals:         4       0       0       0       0       0
+  1677 ;;Total ram usage:        4 bytes
+  1678 ;; Hardware stack levels used:    1
+  1679 ;; This function calls:
+  1680 ;;		Nothing
+  1681 ;; This function is called by:
+  1682 ;;		_adimMotor
+  1683 ;; This function uses a non-reentrant model
+  1684 ;;
+  1685                           
+  1686                           
+  1687                           ;psect for function _step_bekle
+  1688  054C                     _step_bekle:	
+  1689                           
+  1690                           ;easydriver.c: 110: unsigned int i;
+  1691                           ;easydriver.c: 112: for (i = 0; i < sure; i++)
+  1692                           
+  1693                           ;incstack = 0
+  1694                           ; Regs used in _step_bekle: [wreg+status,2]
+  1695  054C  01F2               	clrf	step_bekle@i
+  1696  054D  01F3               	clrf	step_bekle@i+1
+  1697  054E                     l108:	
+  1698  054E  0871               	movf	step_bekle@sure+1,w
+  1699  054F  0273               	subwf	step_bekle@i+1,w
+  1700  0550  1D03               	skipz
+  1701  0551  2D54               	goto	u335
+  1702  0552  0870               	movf	step_bekle@sure,w
+  1703  0553  0272               	subwf	step_bekle@i,w
+  1704  0554                     u335:	
+  1705  0554  1803               	btfsc	3,0
+  1706  0555  0008               	return
+  1707                           
+  1708                           ;easydriver.c: 113: _delay((unsigned long)((10)*(32000000/4000000.0)));
+  1709  0556  301A               	movlw	26
+  1710  0557                     u687:	
+  1711  0557  0B89               	decfsz	9,f
+  1712  0558  2D57               	goto	u687
+  1713  0559  3200               	nop2
+  1714  055A  3001               	movlw	1
+  1715  055B  07F2               	addwf	step_bekle@i,f
+  1716  055C  3000               	movlw	0
+  1717  055D  3DF3               	addwfc	step_bekle@i+1,f
+  1718  055E  2D4E               	goto	l108
+  1719  055F                     __end_of_step_bekle:	
+  1720                           
+  1721                           	psect	text4
+  1722  0575                     __ptext4:	
+  1723 ;; *************** function ___wmul *****************
+  1724 ;; Defined at:
+  1725 ;;		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c"
+  1726 ;; Parameters:    Size  Location     Type
+  1727 ;;  multiplier      2    0[COMMON] unsigned int 
+  1728 ;;  multiplicand    2    2[COMMON] unsigned int 
+  1729 ;; Auto vars:     Size  Location     Type
+  1730 ;;  product         2    4[COMMON] unsigned int 
+  1731 ;; Return value:  Size  Location     Type
+  1732 ;;                  2    0[COMMON] unsigned int 
+  1733 ;; Registers used:
+  1734 ;;		wreg, status,2, status,0
+  1735 ;; Tracked objects:
+  1736 ;;		On entry : 0/0
+  1737 ;;		On exit  : 0/0
+  1738 ;;		Unchanged: 0/0
+  1739 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1740 ;;      Params:         4       0       0       0       0       0
+  1741 ;;      Locals:         2       0       0       0       0       0
+  1742 ;;      Temps:          0       0       0       0       0       0
+  1743 ;;      Totals:         6       0       0       0       0       0
+  1744 ;;Total ram usage:        6 bytes
+  1745 ;; Hardware stack levels used:    1
+  1746 ;; This function calls:
+  1747 ;;		Nothing
+  1748 ;; This function is called by:
+  1749 ;;		_adimMotor
+  1750 ;; This function uses a non-reentrant model
+  1751 ;;
+  1752                           
+  1753                           
+  1754                           ;psect for function ___wmul
+  1755  0575                     ___wmul:	
+  1756                           
+  1757                           ;incstack = 0
+  1758                           ; Regs used in ___wmul: [wreg+status,2+status,0]
+  1759  0575  01F4               	clrf	___wmul@product
+  1760  0576  01F5               	clrf	___wmul@product+1
+  1761  0577                     l759:	
+  1762  0577  1C70               	btfss	___wmul@multiplier,0
+  1763  0578  2D7D               	goto	l195
+  1764  0579  0872               	movf	___wmul@multiplicand,w
+  1765  057A  07F4               	addwf	___wmul@product,f
+  1766  057B  0873               	movf	___wmul@multiplicand+1,w
+  1767  057C  3DF5               	addwfc	___wmul@product+1,f
+  1768  057D                     l195:	
+  1769  057D  3001               	movlw	1
+  1770  057E                     u355:	
+  1771  057E  35F2               	lslf	___wmul@multiplicand,f
+  1772  057F  0DF3               	rlf	___wmul@multiplicand+1,f
+  1773  0580  0B89               	decfsz	9,f
+  1774  0581  2D7E               	goto	u355
+  1775  0582  3001               	movlw	1
+  1776  0583                     u365:	
+  1777  0583  36F1               	lsrf	___wmul@multiplier+1,f
+  1778  0584  0CF0               	rrf	___wmul@multiplier,f
+  1779  0585  0B89               	decfsz	9,f
+  1780  0586  2D83               	goto	u365
+  1781  0587  0870               	movf	___wmul@multiplier,w
+  1782  0588  0471               	iorwf	___wmul@multiplier+1,w
+  1783  0589  1D03               	btfss	3,2
+  1784  058A  2D77               	goto	l759
+  1785  058B  0875               	movf	___wmul@product+1,w
+  1786  058C  00F1               	movwf	?___wmul+1
+  1787  058D  0874               	movf	___wmul@product,w
+  1788  058E  00F0               	movwf	?___wmul
+  1789  058F  0008               	return
+  1790  0590                     __end_of___wmul:	
+  1791                           
+  1792                           	psect	text5
+  1793  05F5                     __ptext5:	
+  1794 ;; *************** function ___lldiv *****************
+  1795 ;; Defined at:
+  1796 ;;		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c"
+  1797 ;; Parameters:    Size  Location     Type
+  1798 ;;  divisor         4    0[BANK0 ] unsigned long 
+  1799 ;;  dividend        4    4[BANK0 ] unsigned long 
+  1800 ;; Auto vars:     Size  Location     Type
+  1801 ;;  quotient        4    8[BANK0 ] unsigned long 
+  1802 ;;  counter         1   12[BANK0 ] unsigned char 
+  1803 ;; Return value:  Size  Location     Type
+  1804 ;;                  4    0[BANK0 ] unsigned long 
+  1805 ;; Registers used:
+  1806 ;;		wreg, status,2, status,0
+  1807 ;; Tracked objects:
+  1808 ;;		On entry : 0/0
+  1809 ;;		On exit  : 0/0
+  1810 ;;		Unchanged: 0/0
+  1811 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1812 ;;      Params:         0       8       0       0       0       0
+  1813 ;;      Locals:         0       5       0       0       0       0
+  1814 ;;      Temps:          1       0       0       0       0       0
+  1815 ;;      Totals:         1      13       0       0       0       0
+  1816 ;;Total ram usage:       14 bytes
+  1817 ;; Hardware stack levels used:    1
+  1818 ;; This function calls:
+  1819 ;;		Nothing
+  1820 ;; This function is called by:
+  1821 ;;		_adimMotor
+  1822 ;;		_adimMotorDerece
+  1823 ;; This function uses a non-reentrant model
+  1824 ;;
+  1825                           
+  1826                           
+  1827                           ;psect for function ___lldiv
+  1828  05F5                     ___lldiv:	
+  1829                           
+  1830                           ;incstack = 0
+  1831                           ; Regs used in ___lldiv: [wreg+status,2+status,0]
+  1832  05F5  3000               	movlw	0
+  1833  05F6  0020               	movlb	0	; select bank0
+  1834  05F7  00AB               	movwf	___lldiv@quotient+3
+  1835  05F8  3000               	movlw	0
+  1836  05F9  00AA               	movwf	___lldiv@quotient+2
+  1837  05FA  3000               	movlw	0
+  1838  05FB  00A9               	movwf	___lldiv@quotient+1
+  1839  05FC  3000               	movlw	0
+  1840  05FD  00A8               	movwf	___lldiv@quotient
+  1841  05FE  0823               	movf	___lldiv@divisor+3,w
+  1842  05FF  0422               	iorwf	___lldiv@divisor+2,w
+  1843  0600  0421               	iorwf	___lldiv@divisor+1,w
+  1844  0601  0420               	iorwf	___lldiv@divisor,w
+  1845  0602  1903               	skipnz
+  1846  0603  2E3F               	goto	l791
+  1847  0604  01AC               	clrf	___lldiv@counter
+  1848  0605  0AAC               	incf	___lldiv@counter,f
+  1849  0606                     l777:	
+  1850  0606  1BA3               	btfsc	___lldiv@divisor+3,7
+  1851  0607  2E14               	goto	l779
+  1852  0608  3001               	movlw	1
+  1853  0609                     u395:	
+  1854  0609  35A0               	lslf	___lldiv@divisor,f
+  1855  060A  0DA1               	rlf	___lldiv@divisor+1,f
+  1856  060B  0DA2               	rlf	___lldiv@divisor+2,f
+  1857  060C  0DA3               	rlf	___lldiv@divisor+3,f
+  1858  060D  0B89               	decfsz	9,f
+  1859  060E  2E09               	goto	u395
+  1860  060F  3001               	movlw	1
+  1861  0610  00FC               	movwf	??___lldiv
+  1862  0611  087C               	movf	??___lldiv,w
+  1863  0612  07AC               	addwf	___lldiv@counter,f
+  1864  0613  2E06               	goto	l777
+  1865  0614                     l779:	
+  1866  0614  3001               	movlw	1
+  1867  0615                     u415:	
+  1868  0615  35A8               	lslf	___lldiv@quotient,f
+  1869  0616  0DA9               	rlf	___lldiv@quotient+1,f
+  1870  0617  0DAA               	rlf	___lldiv@quotient+2,f
+  1871  0618  0DAB               	rlf	___lldiv@quotient+3,f
+  1872  0619  0B89               	decfsz	9,f
+  1873  061A  2E15               	goto	u415
+  1874  061B  0823               	movf	___lldiv@divisor+3,w
+  1875  061C  0227               	subwf	___lldiv@dividend+3,w
+  1876  061D  1D03               	skipz
+  1877  061E  2E29               	goto	u425
+  1878  061F  0822               	movf	___lldiv@divisor+2,w
+  1879  0620  0226               	subwf	___lldiv@dividend+2,w
+  1880  0621  1D03               	skipz
+  1881  0622  2E29               	goto	u425
+  1882  0623  0821               	movf	___lldiv@divisor+1,w
+  1883  0624  0225               	subwf	___lldiv@dividend+1,w
+  1884  0625  1D03               	skipz
+  1885  0626  2E29               	goto	u425
+  1886  0627  0820               	movf	___lldiv@divisor,w
+  1887  0628  0224               	subwf	___lldiv@dividend,w
+  1888  0629                     u425:	
+  1889  0629  1C03               	skipc
+  1890  062A  2E34               	goto	l787
+  1891  062B  0820               	movf	___lldiv@divisor,w
+  1892  062C  02A4               	subwf	___lldiv@dividend,f
+  1893  062D  0821               	movf	___lldiv@divisor+1,w
+  1894  062E  3BA5               	subwfb	___lldiv@dividend+1,f
+  1895  062F  0822               	movf	___lldiv@divisor+2,w
+  1896  0630  3BA6               	subwfb	___lldiv@dividend+2,f
+  1897  0631  0823               	movf	___lldiv@divisor+3,w
+  1898  0632  3BA7               	subwfb	___lldiv@dividend+3,f
+  1899  0633  1428               	bsf	___lldiv@quotient,0
+  1900  0634                     l787:	
+  1901  0634  3001               	movlw	1
+  1902  0635                     u435:	
+  1903  0635  36A3               	lsrf	___lldiv@divisor+3,f
+  1904  0636  0CA2               	rrf	___lldiv@divisor+2,f
+  1905  0637  0CA1               	rrf	___lldiv@divisor+1,f
+  1906  0638  0CA0               	rrf	___lldiv@divisor,f
+  1907  0639  0B89               	decfsz	9,f
+  1908  063A  2E35               	goto	u435
+  1909  063B  3001               	movlw	1
+  1910  063C  02AC               	subwf	___lldiv@counter,f
+  1911  063D  1D03               	btfss	3,2
+  1912  063E  2E14               	goto	l779
+  1913  063F                     l791:	
+  1914  063F  082B               	movf	___lldiv@quotient+3,w
+  1915  0640  00A3               	movwf	?___lldiv+3
+  1916  0641  082A               	movf	___lldiv@quotient+2,w
+  1917  0642  00A2               	movwf	?___lldiv+2
+  1918  0643  0829               	movf	___lldiv@quotient+1,w
+  1919  0644  00A1               	movwf	?___lldiv+1
+  1920  0645  0828               	movf	___lldiv@quotient,w
+  1921  0646  00A0               	movwf	?___lldiv
+  1922  0647  0008               	return
+  1923  0648                     __end_of___lldiv:	
+  1924                           
+  1925                           	psect	text6
+  1926  0590                     __ptext6:	
+  1927 ;; *************** function ___lmul *****************
+  1928 ;; Defined at:
+  1929 ;;		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c"
+  1930 ;; Parameters:    Size  Location     Type
+  1931 ;;  multiplier      4    0[COMMON] unsigned long 
+  1932 ;;  multiplicand    4    4[COMMON] unsigned long 
+  1933 ;; Auto vars:     Size  Location     Type
+  1934 ;;  product         4    8[COMMON] unsigned long 
+  1935 ;; Return value:  Size  Location     Type
+  1936 ;;                  4    0[COMMON] unsigned long 
+  1937 ;; Registers used:
+  1938 ;;		wreg, status,2, status,0
+  1939 ;; Tracked objects:
+  1940 ;;		On entry : 0/0
+  1941 ;;		On exit  : 0/0
+  1942 ;;		Unchanged: 0/0
+  1943 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1944 ;;      Params:         8       0       0       0       0       0
+  1945 ;;      Locals:         4       0       0       0       0       0
+  1946 ;;      Temps:          0       0       0       0       0       0
+  1947 ;;      Totals:        12       0       0       0       0       0
+  1948 ;;Total ram usage:       12 bytes
+  1949 ;; Hardware stack levels used:    1
+  1950 ;; This function calls:
+  1951 ;;		Nothing
+  1952 ;; This function is called by:
+  1953 ;;		_adimMotorDerece
+  1954 ;; This function uses a non-reentrant model
+  1955 ;;
+  1956                           
+  1957                           
+  1958                           ;psect for function ___lmul
+  1959  0590                     ___lmul:	
+  1960                           
+  1961                           ;incstack = 0
+  1962                           ; Regs used in ___lmul: [wreg+status,2+status,0]
+  1963  0590  3000               	movlw	0
+  1964  0591  00FB               	movwf	___lmul@product+3
+  1965  0592  3000               	movlw	0
+  1966  0593  00FA               	movwf	___lmul@product+2
+  1967  0594  3000               	movlw	0
+  1968  0595  00F9               	movwf	___lmul@product+1
+  1969  0596  3000               	movlw	0
+  1970  0597  00F8               	movwf	___lmul@product
+  1971  0598                     l887:	
+  1972  0598  1C70               	btfss	___lmul@multiplier,0
+  1973  0599  2DA2               	goto	l891
+  1974  059A  0874               	movf	___lmul@multiplicand,w
+  1975  059B  07F8               	addwf	___lmul@product,f
+  1976  059C  0875               	movf	___lmul@multiplicand+1,w
+  1977  059D  3DF9               	addwfc	___lmul@product+1,f
+  1978  059E  0876               	movf	___lmul@multiplicand+2,w
+  1979  059F  3DFA               	addwfc	___lmul@product+2,f
+  1980  05A0  0877               	movf	___lmul@multiplicand+3,w
+  1981  05A1  3DFB               	addwfc	___lmul@product+3,f
+  1982  05A2                     l891:	
+  1983  05A2  3001               	movlw	1
+  1984  05A3                     u615:	
+  1985  05A3  35F4               	lslf	___lmul@multiplicand,f
+  1986  05A4  0DF5               	rlf	___lmul@multiplicand+1,f
+  1987  05A5  0DF6               	rlf	___lmul@multiplicand+2,f
+  1988  05A6  0DF7               	rlf	___lmul@multiplicand+3,f
+  1989  05A7  0B89               	decfsz	9,f
+  1990  05A8  2DA3               	goto	u615
+  1991  05A9  3001               	movlw	1
+  1992  05AA                     u625:	
+  1993  05AA  36F3               	lsrf	___lmul@multiplier+3,f
+  1994  05AB  0CF2               	rrf	___lmul@multiplier+2,f
+  1995  05AC  0CF1               	rrf	___lmul@multiplier+1,f
+  1996  05AD  0CF0               	rrf	___lmul@multiplier,f
+  1997  05AE  0B89               	decfsz	9,f
+  1998  05AF  2DAA               	goto	u625
+  1999  05B0  0873               	movf	___lmul@multiplier+3,w
+  2000  05B1  0472               	iorwf	___lmul@multiplier+2,w
+  2001  05B2  0471               	iorwf	___lmul@multiplier+1,w
+  2002  05B3  0470               	iorwf	___lmul@multiplier,w
+  2003  05B4  1D03               	skipz
+  2004  05B5  2D98               	goto	l887
+  2005  05B6  087B               	movf	___lmul@product+3,w
+  2006  05B7  00F3               	movwf	?___lmul+3
+  2007  05B8  087A               	movf	___lmul@product+2,w
+  2008  05B9  00F2               	movwf	?___lmul+2
+  2009  05BA  0879               	movf	___lmul@product+1,w
+  2010  05BB  00F1               	movwf	?___lmul+1
+  2011  05BC  0878               	movf	___lmul@product,w
+  2012  05BD  00F0               	movwf	?___lmul
+  2013  05BE  0008               	return
+  2014  05BF                     __end_of___lmul:	
+  2015                           
+  2016                           	psect	text7
+  2017  0539                     __ptext7:	
+  2018 ;; *************** function _SYSTEM_Initialize *****************
+  2019 ;; Defined at:
+  2020 ;;		line 70 in file "mcc_generated_files/mcc.c"
+  2021 ;; Parameters:    Size  Location     Type
+  2022 ;;		None
+  2023 ;; Auto vars:     Size  Location     Type
+  2024 ;;		None
+  2025 ;; Return value:  Size  Location     Type
+  2026 ;;                  1    wreg      void 
+  2027 ;; Registers used:
+  2028 ;;		wreg, status,2, status,0, pclath, cstack
+  2029 ;; Tracked objects:
+  2030 ;;		On entry : 0/0
+  2031 ;;		On exit  : 0/0
+  2032 ;;		Unchanged: 0/0
+  2033 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2034 ;;      Params:         0       0       0       0       0       0
+  2035 ;;      Locals:         0       0       0       0       0       0
+  2036 ;;      Temps:          0       0       0       0       0       0
+  2037 ;;      Totals:         0       0       0       0       0       0
+  2038 ;;Total ram usage:        0 bytes
+  2039 ;; Hardware stack levels used:    1
+  2040 ;; Hardware stack levels required when called:    1
+  2041 ;; This function calls:
+  2042 ;;		_OSCILLATOR_Initialize
+  2043 ;;		_PIN_MANAGER_Initialize
+  2044 ;;		_WDT_Initialize
+  2045 ;; This function is called by:
+  2046 ;;		_main
+  2047 ;; This function uses a non-reentrant model
+  2048 ;;
+  2049                           
+  2050                           
+  2051                           ;psect for function _SYSTEM_Initialize
+  2052  0539                     _SYSTEM_Initialize:	
+  2053                           
+  2054                           ;mcc.c: 73: PIN_MANAGER_Initialize();
+  2055                           
+  2056                           ;incstack = 0
+  2057                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2058  0539  3185  255F  3185   	fcall	_PIN_MANAGER_Initialize
+  2059                           
+  2060                           ;mcc.c: 74: OSCILLATOR_Initialize();
+  2061  053C  3185  2542  3185   	fcall	_OSCILLATOR_Initialize
+  2062                           
+  2063                           ;mcc.c: 75: WDT_Initialize();
+  2064  053F  3185  2535         	fcall	_WDT_Initialize
+  2065  0541  0008               	return
+  2066  0542                     __end_of_SYSTEM_Initialize:	
+  2067                           
+  2068                           	psect	text8
+  2069  0535                     __ptext8:	
+  2070 ;; *************** function _WDT_Initialize *****************
+  2071 ;; Defined at:
+  2072 ;;		line 92 in file "mcc_generated_files/mcc.c"
+  2073 ;; Parameters:    Size  Location     Type
+  2074 ;;		None
+  2075 ;; Auto vars:     Size  Location     Type
+  2076 ;;		None
+  2077 ;; Return value:  Size  Location     Type
+  2078 ;;                  1    wreg      void 
+  2079 ;; Registers used:
+  2080 ;;		wreg
+  2081 ;; Tracked objects:
+  2082 ;;		On entry : 0/0
+  2083 ;;		On exit  : 0/0
+  2084 ;;		Unchanged: 0/0
+  2085 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2086 ;;      Params:         0       0       0       0       0       0
+  2087 ;;      Locals:         0       0       0       0       0       0
+  2088 ;;      Temps:          0       0       0       0       0       0
+  2089 ;;      Totals:         0       0       0       0       0       0
+  2090 ;;Total ram usage:        0 bytes
+  2091 ;; Hardware stack levels used:    1
+  2092 ;; This function calls:
+  2093 ;;		Nothing
+  2094 ;; This function is called by:
+  2095 ;;		_SYSTEM_Initialize
+  2096 ;; This function uses a non-reentrant model
+  2097 ;;
+  2098                           
+  2099                           
+  2100                           ;psect for function _WDT_Initialize
+  2101  0535                     _WDT_Initialize:	
+  2102                           
+  2103                           ;mcc.c: 95: WDTCON = 0x16;
+  2104                           
+  2105                           ;incstack = 0
+  2106                           ; Regs used in _WDT_Initialize: [wreg]
+  2107  0535  3016               	movlw	22
+  2108  0536  0021               	movlb	1	; select bank1
+  2109  0537  0097               	movwf	23	;volatile
+  2110  0538  0008               	return
+  2111  0539                     __end_of_WDT_Initialize:	
+  2112                           
+  2113                           	psect	text9
+  2114  055F                     __ptext9:	
+  2115 ;; *************** function _PIN_MANAGER_Initialize *****************
+  2116 ;; Defined at:
+  2117 ;;		line 52 in file "mcc_generated_files/pin_manager.c"
+  2118 ;; Parameters:    Size  Location     Type
+  2119 ;;		None
+  2120 ;; Auto vars:     Size  Location     Type
+  2121 ;;		None
+  2122 ;; Return value:  Size  Location     Type
+  2123 ;;                  1    wreg      void 
+  2124 ;; Registers used:
+  2125 ;;		wreg, status,2
+  2126 ;; Tracked objects:
+  2127 ;;		On entry : 0/0
+  2128 ;;		On exit  : 0/0
+  2129 ;;		Unchanged: 0/0
+  2130 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2131 ;;      Params:         0       0       0       0       0       0
+  2132 ;;      Locals:         0       0       0       0       0       0
+  2133 ;;      Temps:          0       0       0       0       0       0
+  2134 ;;      Totals:         0       0       0       0       0       0
+  2135 ;;Total ram usage:        0 bytes
+  2136 ;; Hardware stack levels used:    1
+  2137 ;; This function calls:
+  2138 ;;		Nothing
+  2139 ;; This function is called by:
+  2140 ;;		_SYSTEM_Initialize
+  2141 ;; This function uses a non-reentrant model
+  2142 ;;
+  2143                           
+  2144                           
+  2145                           ;psect for function _PIN_MANAGER_Initialize
+  2146  055F                     _PIN_MANAGER_Initialize:	
+  2147                           
+  2148                           ;pin_manager.c: 57: LATA = 0x00;
+  2149                           
+  2150                           ;incstack = 0
+  2151                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
+  2152  055F  0022               	movlb	2	; select bank2
+  2153  0560  018C               	clrf	12	;volatile
+  2154                           
+  2155                           ;pin_manager.c: 58: LATB = 0x00;
+  2156  0561  018D               	clrf	13	;volatile
+  2157                           
+  2158                           ;pin_manager.c: 63: TRISA = 0xFF;
+  2159  0562  30FF               	movlw	255
+  2160  0563  0021               	movlb	1	; select bank1
+  2161  0564  008C               	movwf	12	;volatile
+  2162                           
+  2163                           ;pin_manager.c: 64: TRISB = 0xFC;
+  2164  0565  30FC               	movlw	252
+  2165  0566  008D               	movwf	13	;volatile
+  2166                           
+  2167                           ;pin_manager.c: 69: ANSELB = 0xFE;
+  2168  0567  30FE               	movlw	254
+  2169  0568  0023               	movlb	3	; select bank3
+  2170  0569  008D               	movwf	13	;volatile
+  2171                           
+  2172                           ;pin_manager.c: 70: ANSELA = 0x1F;
+  2173  056A  301F               	movlw	31
+  2174  056B  008C               	movwf	12	;volatile
+  2175                           
+  2176                           ;pin_manager.c: 75: WPUB = 0x00;
+  2177  056C  0024               	movlb	4	; select bank4
+  2178  056D  018D               	clrf	13	;volatile
+  2179                           
+  2180                           ;pin_manager.c: 76: WPUA = 0x00;
+  2181  056E  018C               	clrf	12	;volatile
+  2182                           
+  2183                           ;pin_manager.c: 77: OPTION_REGbits.nWPUEN = 1;
+  2184  056F  0021               	movlb	1	; select bank1
+  2185  0570  1795               	bsf	21,7	;volatile
+  2186                           
+  2187                           ;pin_manager.c: 83: APFCON1 = 0x00;
+  2188  0571  0022               	movlb	2	; select bank2
+  2189  0572  019E               	clrf	30	;volatile
+  2190                           
+  2191                           ;pin_manager.c: 84: APFCON0 = 0x00;
+  2192  0573  019D               	clrf	29	;volatile
+  2193  0574  0008               	return
+  2194  0575                     __end_of_PIN_MANAGER_Initialize:	
+  2195                           
+  2196                           	psect	text10
+  2197  0542                     __ptext10:	
+  2198 ;; *************** function _OSCILLATOR_Initialize *****************
+  2199 ;; Defined at:
+  2200 ;;		line 78 in file "mcc_generated_files/mcc.c"
+  2201 ;; Parameters:    Size  Location     Type
+  2202 ;;		None
+  2203 ;; Auto vars:     Size  Location     Type
+  2204 ;;		None
+  2205 ;; Return value:  Size  Location     Type
+  2206 ;;                  1    wreg      void 
+  2207 ;; Registers used:
+  2208 ;;		wreg, status,2
+  2209 ;; Tracked objects:
+  2210 ;;		On entry : 0/0
+  2211 ;;		On exit  : 0/0
+  2212 ;;		Unchanged: 0/0
+  2213 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2214 ;;      Params:         0       0       0       0       0       0
+  2215 ;;      Locals:         0       0       0       0       0       0
+  2216 ;;      Temps:          0       0       0       0       0       0
+  2217 ;;      Totals:         0       0       0       0       0       0
+  2218 ;;Total ram usage:        0 bytes
+  2219 ;; Hardware stack levels used:    1
+  2220 ;; This function calls:
+  2221 ;;		Nothing
+  2222 ;; This function is called by:
+  2223 ;;		_SYSTEM_Initialize
+  2224 ;; This function uses a non-reentrant model
+  2225 ;;
+  2226                           
+  2227                           
+  2228                           ;psect for function _OSCILLATOR_Initialize
+  2229  0542                     _OSCILLATOR_Initialize:	
+  2230                           
+  2231                           ;mcc.c: 81: OSCCON = 0x38;
+  2232                           
+  2233                           ;incstack = 0
+  2234                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
+  2235  0542  3038               	movlw	56
+  2236  0543  0021               	movlb	1	; select bank1
+  2237  0544  0099               	movwf	25	;volatile
+  2238                           
+  2239                           ;mcc.c: 83: OSCTUNE = 0x00;
+  2240  0545  0198               	clrf	24	;volatile
+  2241                           
+  2242                           ;mcc.c: 85: BORCON = 0x00;
+  2243  0546  0022               	movlb	2	; select bank2
+  2244  0547  0196               	clrf	22	;volatile
+  2245  0548                     l22:	
+  2246                           ;mcc.c: 88: {
+  2247                           
+  2248                           ;mcc.c: 87: while(PLLR == 0)
+  2249                           
+  2250  0548  0021               	movlb	1	; select bank1
+  2251  0549  1B1A               	btfsc	26,6	;volatile
+  2252  054A  0008               	return
+  2253  054B  2D48               	goto	l22
+  2254  054C                     __end_of_OSCILLATOR_Initialize:	
+  2255  007E                     btemp	set	126	;btemp
+  2256  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80     47      47
+    BANK1            80      0       0
+    BANK2            80      0       0
+    BANK3            80      0       0
+    BANK4            48      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_adimMotorDerece
+    _adimMotorDerece->___lldiv
+    _adimMotor->___lldiv
+    ___lldiv->___lmul
+
+Critical Paths under _main in BANK0
+
+    _main->_adimMotorDerece
+    _adimMotorDerece->_adimMotor
+    _adimMotor->___lldiv
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0    5257
+                                             45 BANK0      2     2      0
+                  _SYSTEM_Initialize
+                          _adimMotor
+                    _adimMotorDerece
+ ---------------------------------------------------------------------------------
+ (1) _adimMotorDerece                                      6     3      3    3054
+                                             13 COMMON     1     1      0
+                                             40 BANK0      5     2      3
+                            ___lldiv
+                             ___lmul
+                          _adimMotor
+ ---------------------------------------------------------------------------------
+ (2) _adimMotor                                           29    26      3    2203
+                                             13 BANK0     27    24      3
+                            ___lldiv
+                             ___wmul
+                         _step_bekle
+ ---------------------------------------------------------------------------------
+ (3) _step_bekle                                           4     2      2     364
+                                              0 COMMON     4     2      2
+ ---------------------------------------------------------------------------------
+ (3) ___wmul                                               6     2      4     198
+                                              0 COMMON     6     2      4
+ ---------------------------------------------------------------------------------
+ (3) ___lldiv                                             14     6      8     374
+                                             12 COMMON     1     1      0
+                                              0 BANK0     13     5      8
+                             ___lmul (ARG)
+ ---------------------------------------------------------------------------------
+ (2) ___lmul                                              12     4      8     198
+                                              0 COMMON    12     4      8
+ ---------------------------------------------------------------------------------
+ (1) _SYSTEM_Initialize                                    0     0      0       0
+              _OSCILLATOR_Initialize
+             _PIN_MANAGER_Initialize
+                     _WDT_Initialize
+ ---------------------------------------------------------------------------------
+ (2) _WDT_Initialize                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _PIN_MANAGER_Initialize                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _OSCILLATOR_Initialize                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _SYSTEM_Initialize
+     _OSCILLATOR_Initialize
+     _PIN_MANAGER_Initialize
+     _WDT_Initialize
+   _adimMotor
+     ___lldiv
+       ___lmul (ARG)
+     ___wmul
+     _step_bekle
+   _adimMotorDerece
+     ___lldiv
+       ___lmul (ARG)
+     ___lmul
+     _adimMotor
+       ___lldiv
+         ___lmul (ARG)
+       ___wmul
+       _step_bekle
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             170      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITCOMMON            E      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               E      E       E       2      100.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR2              0      0       0       3        0.0%
+SFR2                 0      0       0       3        0.0%
+STACK                0      0       0       3        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+ABS                  0      0       0       4        0.0%
+BITBANK0            50      0       0       5        0.0%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BANK0               50     2F      2F       6       58.8%
+BITSFR5              0      0       0       6        0.0%
+SFR5                 0      0       0       6        0.0%
+BITBANK1            50      0       0       7        0.0%
+BITSFR6              0      0       0       7        0.0%
+SFR6                 0      0       0       7        0.0%
+BANK1               50      0       0       8        0.0%
+BITSFR7              0      0       0       8        0.0%
+SFR7                 0      0       0       8        0.0%
+BITBANK2            50      0       0       9        0.0%
+BITSFR8              0      0       0       9        0.0%
+SFR8                 0      0       0       9        0.0%
+BANK2               50      0       0      10        0.0%
+BITSFR9              0      0       0      10        0.0%
+SFR9                 0      0       0      10        0.0%
+BITBANK3            50      0       0      11        0.0%
+BITSFR10             0      0       0      11        0.0%
+SFR10                0      0       0      11        0.0%
+BANK3               50      0       0      12        0.0%
+BITSFR11             0      0       0      12        0.0%
+SFR11                0      0       0      12        0.0%
+BITBANK4            30      0       0      13        0.0%
+BITSFR12             0      0       0      13        0.0%
+SFR12                0      0       0      13        0.0%
+BANK4               30      0       0      14        0.0%
+BITSFR13             0      0       0      14        0.0%
+SFR13                0      0       0      14        0.0%
+BITSFR14             0      0       0      15        0.0%
+SFR14                0      0       0      15        0.0%
+DATA                 0      0       0      15        0.0%
+BITSFR15             0      0       0      16        0.0%
+SFR15                0      0       0      16        0.0%
+BITSFR16             0      0       0      17        0.0%
+SFR16                0      0       0      17        0.0%
+BITSFR17             0      0       0      18        0.0%
+SFR17                0      0       0      18        0.0%
+BITSFR18             0      0       0      19        0.0%
+SFR18                0      0       0      19        0.0%
+BITSFR19             0      0       0      20        0.0%
+SFR19                0      0       0      20        0.0%
+BITSFR20             0      0       0      21        0.0%
+SFR20                0      0       0      21        0.0%
+BITSFR21             0      0       0      22        0.0%
+SFR21                0      0       0      22        0.0%
+BITSFR22             0      0       0      23        0.0%
+SFR22                0      0       0      23        0.0%
+BITSFR23             0      0       0      24        0.0%
+SFR23                0      0       0      24        0.0%
+BITSFR24             0      0       0      25        0.0%
+SFR24                0      0       0      25        0.0%
+BITSFR25             0      0       0      26        0.0%
+SFR25                0      0       0      26        0.0%
+BITSFR26             0      0       0      27        0.0%
+SFR26                0      0       0      27        0.0%
+BITSFR27             0      0       0      28        0.0%
+SFR27                0      0       0      28        0.0%
+BITSFR28             0      0       0      29        0.0%
+SFR28                0      0       0      29        0.0%
+BITSFR29             0      0       0      30        0.0%
+SFR29                0      0       0      30        0.0%
+BITSFR30             0      0       0      31        0.0%
+SFR30                0      0       0      31        0.0%
+BITSFR31             0      0       0      32        0.0%
+SFR31                0      0       0      32        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.45 build -152302408 
+Symbol Table                                                                                   Fri Jan 05 19:40:32 2018
+
+              ??_adimMotorDerece 007D                      __CFG_CP$OFF 0000                               l22 0548  
+                             l87 0749                               l98 07C6              ___wmul@multiplicand 0072  
+                    __CFG_LVP$ON 0000                              l108 054E                              l195 057D  
+                            l811 0719                              l813 072A                              l815 0731  
+                            l841 0738                              l843 0781                              l907 0676  
+                            l837 0775                              l791 063F                              l759 0577  
+                            l855 078B                              l777 0606                              l857 07AD  
+                            l891 05A2                              l787 0634                              l779 0614  
+                            l883 07B5                              l859 07B3                              l887 0598  
+                            l879 07F2                              u415 0615                              u335 0554  
+                            u425 0629                              u505 0768                     __CFG_CPD$OFF 0000  
+                            u435 0635                              u355 057E                              u365 0583  
+                            u525 077F                              u470 072F                              u615 05A3  
+                            u535 073E                              u455 06E2                              u625 05AA  
+                            u465 06F3                              u395 0609                              u555 0791  
+                            u575 07E5                              u647 065A                              u657 0670  
+                            u595 07BB                              u667 0685                              u677 069C  
+                            u687 0557                     __CFG_BORV$LO 0000                              wreg 0009  
+                   __CFG_IESO$ON 0000                     __CFG_FOSC$HS 0000                             _LATA 010C  
+                           _LATB 010D                             _PLLR 04D6                             _WPUA 020C  
+                           _WPUB 020D                     __CFG_WRT$OFF 0000                    __CFG_FCMEN$ON 0000  
+                           _main 0648                             btemp 007E                    __CFG_BOREN$ON 0000  
+                           start 0002                    __CFG_MCLRE$ON 0000   adimMotorDerece@adimSayisiSonuc 004B  
+                  __CFG_PLLEN$ON 0000   __size_of_OSCILLATOR_Initialize 000A    __end_of_OSCILLATOR_Initialize 054C  
+                          ?_main 0070                    __CFG_WDTE$OFF 0000                  __end_of___lldiv 0648  
+                          _LATB0 0868                            _LATB1 0869                            _TRISA 008C  
+                          _TRISB 008D              ___lmul@multiplicand 0074                   _WDT_Initialize 0535  
+                          status 0003                            wtemp0 007E                  __initialization 07FD  
+                   __end_of_main 06A4                           ??_main 004D                 adimMotor@bekleme 0046  
+         __end_of_WDT_Initialize 0539                           _ANSELA 018C                           _ANSELB 018D  
+                         _BORCON 0116                           _OSCCON 0099                           _WDTCON 0097  
+                 __CFG_PWRTE$OFF 0000                           ___lmul 0590                           ___wmul 0575  
+                 __CFG_STVREN$ON 0000                        ??___lldiv 007C                  ?_WDT_Initialize 0070  
+              _SYSTEM_Initialize 0539          __end_of__initialization 07FD              adimMotor@adimSayisi 002D  
+                _adimMotorDerece 05BF               ?_SYSTEM_Initialize 0070          adimMotorDerece@adimYonu 004A  
+             __size_of_adimMotor 0159                   __pcstackCOMMON 0070              ??_SYSTEM_Initialize 0070  
+                 _OPTION_REGbits 0095        __end_of_SYSTEM_Initialize 0542                adimMotor@adimYonu 002F  
+          adimMotor@maxAdimAdeti 003C                       __pmaintext 0648                          ?___lmul 0070  
+                        ?___wmul 0070                   ___lmul@product 0078                          _APFCON0 011D  
+                        _APFCON1 011E                       adimMotor@i 0044                __end_of_adimMotor 07FD  
+                        _OSCTUNE 0098          __end_of_adimMotorDerece 05F5              adimMotor@maxbekleme 003A  
+            adimMotor@minbekleme 0034                  __size_of___lmul 002F                          ___lldiv 05F5  
+                __size_of___wmul 001B                          __ptext1 05BF                          __ptext2 06A4  
+                        __ptext3 054C                          __ptext4 0575                          __ptext5 05F5  
+                        __ptext6 0590                          __ptext7 0539                          __ptext8 0535  
+                        __ptext9 055F            _OSCILLATOR_Initialize 0542         ??_PIN_MANAGER_Initialize 0070  
+     __size_of_SYSTEM_Initialize 0009             end_of_initialization 07FD                  ___lldiv@divisor 0020  
+                ___lldiv@counter 002C                 ??_WDT_Initialize 0070                 ?_adimMotorDerece 0048  
+                     _step_bekle 054C                   __end_of___lmul 05BF                   __end_of___wmul 0590  
+         ?_OSCILLATOR_Initialize 0070              start_initialization 07FD  __size_of_PIN_MANAGER_Initialize 0016  
+                    step_bekle@i 0072                         ??___lmul 0078                         ??___wmul 0074  
+           adimMotor@farkbekleme 0036        adimMotorDerece@adimDerece 0048                        ___latbits 0001  
+                  __pcstackBANK0 0020                      ?_step_bekle 0070                        _adimMotor 06A4  
+         _PIN_MANAGER_Initialize 055F                         ?___lldiv 0020                       ?_adimMotor 002D  
+                 ___wmul@product 0074      adimMotor@yavaslamaAdimAdeti 003E              __size_of_step_bekle 0013  
+     adimMotor@hizlanmaAdimAdeti 0042                ___wmul@multiplier 0070                ___lmul@multiplier 0070  
+         adimMotor@yavaslamaadim 0038                   step_bekle@sure 0070          ??_OSCILLATOR_Initialize 0070  
+               __size_of___lldiv 0053                         __ptext10 0542                      ??_adimMotor 0030  
+                  __size_of_main 005C         __size_of_adimMotorDerece 0036                    adimMotor@adim 0040  
+                   ??_step_bekle 0072          __size_of_WDT_Initialize 0004                 ___lldiv@dividend 0024  
+        ?_PIN_MANAGER_Initialize 0070                __CFG_CLKOUTEN$OFF 0000               __end_of_step_bekle 055F  
+               ___lldiv@quotient 0028   __end_of_PIN_MANAGER_Initialize 0575  
