@@ -24,7 +24,7 @@
 
 
 // tuþ takýmý patterni
-const char tuslar[]={   'F','G','#','*',    //F1   F2  #    *   
+const char tuslar[]={   'Q','W','#','*',    //F1   F2  #    *   
                         '1','2','3','Y',    //1    2   3     Yukarý
                         '4','5','6','A',    //4    5   6     Aþaðý
                         '7','8','9','C',    //7    8   9     Çýkýþ /ESC
