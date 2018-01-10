@@ -8,9 +8,9 @@
 *  kütüphanesi
 ***********************************************************/
 
-#define     LCD_CS      LATB0
-#define     LCD_DI      LATB1
-#define     LCD_CLK     LATB2
+#define     LCD_CS      LATD0
+#define     LCD_DI      LATD1
+#define     LCD_CLK     LATD2
 
 //printf fonksiyonu lcd'ye yazacak mý?
 //#define lcdprintf_aktif
@@ -37,3 +37,6 @@ void lcd_display_ac(void);
 void lcd_display_kapat(void);
 void lcd_blink_ac(void);
 void lcd_blink_kapat(void);
+void lcd_temel_komutseti(void);
+void lcd_gelismis_komutseti(void);
+void lcd_satir_tersle(char satirno);

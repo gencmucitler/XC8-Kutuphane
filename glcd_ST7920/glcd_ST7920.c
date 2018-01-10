@@ -86,7 +86,7 @@ void lcd_komut(char komut)
     lcd_seriverigonder(komut & 0xF0);
     lcd_seriverigonder((komut<<4)&0xf0); 
     LCD_CS=0;
-    __delay_us(75);
+    __delay_us(100);
 }
 
 
@@ -97,6 +97,8 @@ void lcd_komut(char komut)
 void lcd_sil()
 {
     lcd_komut(0x01);
+    __delay_ms(10);
+    lcd_display_ac();
 }
 
 /********************************************************************************
@@ -127,6 +129,7 @@ void lcd_git(char satir, char sutun) {
             temp = (sutun - 1 + 0x98);
             break;
     }
+    lcd_komut(0x30);
     lcd_komut(temp);
 }
 
@@ -266,6 +269,23 @@ void lcd_satir4(void) {
     lcd_komut(0x98);
 }
 
+
+void lcd_temel_komutseti(void)
+{
+    lcd_komut(0x30);
+}
+
+void lcd_gelismis_komutseti(void)
+{
+    lcd_komut(0x34);
+}
+
+void lcd_satir_tersle(char satirno)
+{
+    lcd_gelismis_komutseti();
+    lcd_komut(0x04-1+satirno);
+   // lcd_temel_komutseti();
+}
 /*******************************************************************************
  * printf fonksiyonu için                                                       *
  *******************************************************************************/
