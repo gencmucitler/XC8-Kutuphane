@@ -2,14 +2,15 @@
 *  Yazar 	: sigmoid
 *  Web 		: http://www.gencmucitler.com
 *  Ýlk		: Ocak 2018
-*  Düzenleme: Yok 
-*  Versiyon : 0.1
+*  Düzenleme: Þubat 2018  
+*  Versiyon : 0.11
 *  Açýklama : ST7920 chipli 128x64 grafik lcd için seri haberleþme 
 *  kütüphanesi
 ***********************************************************/
+// v0.11 ufak hata düzeltme
 
 #include "mcc_generated_files/mcc.h"
-#include "lcd_ST7920.h"
+#include "glcd_ST7920.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -21,19 +22,46 @@ char display_kursor_blink;
  *****************************************************************************/
 void lcd_seriverigonder(char veri)
 {
+//    char i;           
+//	for(i=0;i<8;i++)
+//	{
+//        LCD_CLK=1;
+//        __delay_us(5);
+//		veri=veri<<1;
+//		LCD_DI=CARRY;   //PRO mode da bu kod çalýþmýyor..!!!
+//        LCD_CLK=0;
+//        __delay_us(5);
+//
+//	}	
+
+    
+//    char i;
+//	for(i=8;i>0;i--)
+//	{
+//        LCD_CLK=1;
+//        __delay_us(5);		
+//		LCD_DI=(veri & (1 << i-1))>>i-1;
+//        LCD_CLK=0;
+//        __delay_us(5);
+//
+//	}	
+        
     char i;
 	for(i=0;i<8;i++)
 	{
         LCD_CLK=1;
-        __delay_us(5);
-		veri=veri<<1;
-		LCD_DI=CARRY;
+        __delay_us(25);
+        
+        if(veri & 0x80)
+            LCD_DI=1;
+        else
+            LCD_DI=0;
+        
+		veri=veri << 1;
         LCD_CLK=0;
-        __delay_us(5);
+        __delay_us(25);
 
 	}	
-
-    
 }
 
 /******************************************************************************
@@ -292,6 +320,6 @@ void lcd_satir_tersle(char satirno)
 #ifdef lcdprintf_aktif
 
 void putch(unsigned char byte) {
-    lcd_harfyaz(byte);
+    lcd_harf(byte);
 }
 #endif
