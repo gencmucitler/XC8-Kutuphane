@@ -4,11 +4,12 @@
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 05 Temmuz 2017                                              *
  * Düzenleme     : 9 Temmuz 2017
- * Versiyon      : 0.3                                                         *
+ * Versiyon      : 0.31                                                         *
  *                                                                             *
  * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
  ******************************************************************************/
 
+//v0.31 lcd_baslat içindeki ufak bir data düzeltildi.
 //v0.3 softI2C ile de çalýþabilecek þekilde düzenleme yapýldý.
 
 /*      Standart LCD ayak baðlantýlarý

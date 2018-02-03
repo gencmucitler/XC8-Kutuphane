@@ -4,11 +4,12 @@
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 05 Temmuz 2017                                              *
  * Düzenleme     : 9 Temmuz 2017
- * Versiyon      : 0.3                                                         *
+ * Versiyon      : 0.31                                                      *
  *                                                                             *
  * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
  ******************************************************************************/
 
+//v0.31 lcd_baslat içindeki ufak bir data düzeltildi.
 //v0.3 softI2C ile de çalýþabilecek þekilde düzenleme yapýldý.
 
 #include "mcc_generated_files/mcc.h"
@@ -113,15 +114,28 @@ void pcf8574_yaz_wEnable() {
  *  LCD ekraný çalýþtýrýr. Ýlk önce bu fonksiyon çalýþtýrýlmalýdýr.             *
  *******************************************************************************/
 void lcd_baslat(void) {
-
+    char i;
+    
+    __delay_ms(15);
+    
     pcf8574_yaz(0x00);
     lcd_data=0x00;
 
+    for(i=0;i<3;i++)
+    {
+        lcd_data=0x00;
+        lcd_data = 0x30 | (lcd_data & 0x0f); //8 bit mod
+        pcf8574_yaz_wEnable();
+        __delay_ms(5);
+    }   //2 kere 4bit modunda çalýþacaðýný duyur. Garantiye al :)    
+    
+    __delay_us(150);
+    
+    lcd_data=0x00;
     lcd_data = 0x20 | (lcd_data & 0x0f); //4 bit mod
-
     pcf8574_yaz_wEnable();
     __delay_ms(5);
-    
+            
     lcd_komut(0x28);
     __delay_us(40);
     lcd_komut(0x0C); //display on
