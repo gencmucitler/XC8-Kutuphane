@@ -1,9 +1,9 @@
 /**********************************************************
 *  Yazar 	: sigmoid
 *  Web 		: http://www.gencmucitler.com
-*  İlk		: Temmuz 2010
+*  İlk		: 9 Temmuz 2017
 *  Düzenleme: Yok 
-*  Versiyon : 0.1
+*  Versiyon : 0.11
 *  Açıklama :  software i2c master mode
 *  100KHz bağlantı hızı..
 ***********************************************************/
@@ -63,8 +63,8 @@ char softi2c_yaz(char veri)
 	SOFT_SCL=0;
 	for(i=8;i>0;i--)
 	{
-		veri=veri<<1;
-		if(CARRY==0)
+
+		if((veri & 0x80) ==0)
 		{
 			SOFT_SDA_TRIS=0;
 			SOFT_SDA=0;
@@ -74,6 +74,9 @@ char softi2c_yaz(char veri)
 			SOFT_SDA_TRIS=1;
 			SOFT_SDA=1;
 		}	
+        
+        veri=veri<<1;
+                
 		SOFT_SCL=1;
 		__delay_us(4);
 		SOFT_SCL=0;

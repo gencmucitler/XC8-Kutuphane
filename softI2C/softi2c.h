@@ -3,7 +3,7 @@
 *  Web 		: http://www.gencmucitler.com
 *  Ýlk		: 9 Temmuz 2017
 *  Düzenleme: Yok 
-*  Versiyon : 0.1
+*  Versiyon : 0.11
 *  Açýklama :  software i2c master mode
 *  100KHz baðlantý hýzý..
 ***********************************************************/
@@ -22,12 +22,12 @@
 
 
 //kullanýlacak pinler tanýmlanýr
-#define SOFT_SCL	LATB1
-#define SOFT_SDA	RB0
+#define SOFT_SCL	LATDbits.LATD2
+#define SOFT_SDA	PORTDbits.RD3
 
 
-#define SOFT_SCL_TRIS	TRISB1
-#define SOFT_SDA_TRIS	TRISB0
+#define SOFT_SCL_TRIS   TRISDbits.TRISD2
+#define SOFT_SDA_TRIS	TRISDbits.TRISD3
 
 void softi2c_kur(void);
 void softi2c_baslat(void);
