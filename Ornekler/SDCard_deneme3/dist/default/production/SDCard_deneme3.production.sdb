@@ -1,0 +1,2520 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC LFSROK SPACEOPT EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F46K22 ]
+[d frameptr 4065 ]
+"378 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[e E11 . `uc
+RES_OK 0
+RES_ERROR 1
+RES_WRPRT 2
+RES_NOTRDY 3
+RES_PARERR 4
+]
+"1034 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[e E69 . `uc
+FR_OK 0
+FR_DISK_ERR 1
+FR_INT_ERR 2
+FR_NOT_READY 3
+FR_NO_FILE 4
+FR_NO_PATH 5
+FR_INVALID_NAME 6
+FR_DENIED 7
+FR_EXIST 8
+FR_INVALID_OBJECT 9
+FR_WRITE_PROTECTED 10
+FR_INVALID_DRIVE 11
+FR_NOT_ENABLED 12
+FR_NO_FILESYSTEM 13
+FR_MKFS_ABORTED 14
+FR_TIMEOUT 15
+FR_LOCKED 16
+FR_NOT_ENOUGH_CORE 17
+FR_TOO_MANY_OPEN_FILES 18
+FR_INVALID_PARAMETER 19
+]
+"1039
+[e E216 . `uc
+RES_OK 0
+RES_ERROR 1
+RES_WRPRT 2
+RES_NOTRDY 3
+RES_PARERR 4
+]
+"143 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[e E7469 . `uc
+FR_OK 0
+FR_DISK_ERR 1
+FR_INT_ERR 2
+FR_NOT_READY 3
+FR_NO_FILE 4
+FR_NO_PATH 5
+FR_INVALID_NAME 6
+FR_DENIED 7
+FR_EXIST 8
+FR_INVALID_OBJECT 9
+FR_WRITE_PROTECTED 10
+FR_INVALID_DRIVE 11
+FR_NOT_ENABLED 12
+FR_NO_FILESYSTEM 13
+FR_MKFS_ABORTED 14
+FR_TIMEOUT 15
+FR_LOCKED 16
+FR_NOT_ENOUGH_CORE 17
+FR_TOO_MANY_OPEN_FILES 18
+FR_INVALID_PARAMETER 19
+]
+"309
+[e E7385 . `uc
+RES_OK 0
+RES_ERROR 1
+RES_WRPRT 2
+RES_NOTRDY 3
+RES_PARERR 4
+]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strchr.c
+[v _strchr strchr `(*.39uc  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"74 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[v _wait_ready wait_ready `(uc  1 s 1 wait_ready ]
+"94
+[v _deselect deselect `(v  1 s 1 deselect ]
+"107
+[v _select select `(uc  1 s 1 select ]
+"124
+[v _rcvr_datablock rcvr_datablock `(uc  1 s 1 rcvr_datablock ]
+"157
+[v _xmit_datablock xmit_datablock `(uc  1 s 1 xmit_datablock ]
+"196
+[v ___send_cmd __send_cmd `(uc  1 s 1 __send_cmd ]
+"233
+[v _send_cmd send_cmd `(uc  1 s 1 send_cmd ]
+"298
+[v _disk_initialize disk_initialize `(uc  1 e 1 0 ]
+"358
+[v _disk_status disk_status `(uc  1 e 1 0 ]
+"372
+[v _disk_read disk_read `(E11  1 e 1 0 ]
+"407
+[v _disk_write disk_write `(E11  1 e 1 0 ]
+"448
+[v _disk_ioctl disk_ioctl `(E11  1 e 1 0 ]
+"566 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _ld_word ld_word `(us  1 s 2 ld_word ]
+"576
+[v _ld_dword ld_dword `(ul  1 s 4 ld_dword ]
+"607
+[v _st_word st_word `(v  1 s 1 st_word ]
+"614
+[v _st_dword st_dword `(v  1 s 1 st_dword ]
+"646
+[v _mem_cpy mem_cpy `(v  1 s 1 mem_cpy ]
+"661
+[v _mem_set mem_set `(v  1 s 1 mem_set ]
+"673
+[v _mem_cmp mem_cmp `(i  1 s 2 mem_cmp ]
+"688
+[v _chk_chr chk_chr `(i  1 s 2 chk_chr ]
+"697
+[v _dbc_1st dbc_1st `(i  1 s 2 dbc_1st ]
+"718
+[v _dbc_2nd dbc_2nd `(i  1 s 2 dbc_2nd ]
+"743
+[v _tchar2uni tchar2uni `(ul  1 s 4 tchar2uni ]
+"812
+[v _put_utf put_utf `(uc  1 s 1 put_utf ]
+"1031
+[v _sync_window sync_window `(E69  1 s 1 sync_window ]
+"1054
+[v _move_window move_window `(E69  1 s 1 move_window ]
+"1086
+[v _sync_fs sync_fs `(E69  1 s 1 sync_fs ]
+"1124
+[v _clst2sect clst2sect `(ul  1 s 4 clst2sect ]
+"1142
+[v _get_fat get_fat `(ul  1 s 4 get_fat ]
+"1220
+[v _put_fat put_fat `(E69  1 s 1 put_fat ]
+"1414
+[v _remove_chain remove_chain `(E69  1 s 1 remove_chain ]
+"1509
+[v _create_chain create_chain `(ul  1 s 4 create_chain ]
+"1644
+[v _dir_clear dir_clear `(E69  1 s 1 dir_clear ]
+"1684
+[v _dir_sdi dir_sdi `(E69  1 s 1 dir_sdi ]
+"1733
+[v _dir_next dir_next `(E69  1 s 1 dir_next ]
+"1794
+[v _dir_alloc dir_alloc `(E69  1 s 1 dir_alloc ]
+"1837
+[v _ld_clust ld_clust `(ul  1 s 4 ld_clust ]
+"1855
+[v _st_clust st_clust `(v  1 s 1 st_clust ]
+"1875
+[v _cmp_lfn cmp_lfn `(i  1 s 2 cmp_lfn ]
+"1911
+[v _pick_lfn pick_lfn `(i  1 s 2 pick_lfn ]
+"1949
+[v _put_lfn put_lfn `(v  1 s 1 put_lfn ]
+"1987
+[v _gen_numname gen_numname `(v  1 s 1 gen_numname ]
+"2046
+[v _sum_sfn sum_sfn `(uc  1 s 1 sum_sfn ]
+"2348
+[v _dir_read dir_read `(E69  1 s 1 dir_read ]
+"2427
+[v _dir_find dir_find `(E69  1 s 1 dir_find ]
+"2509
+[v _dir_register dir_register `(E69  1 s 1 dir_register ]
+"2616
+[v _dir_remove dir_remove `(E69  1 s 1 dir_remove ]
+"2663
+[v _get_fileinfo get_fileinfo `(v  1 s 1 get_fileinfo ]
+"2848
+[v _create_name create_name `(E69  1 s 1 create_name ]
+"3046
+[v _follow_path follow_path `(E69  1 s 1 follow_path ]
+"3134
+[v _get_ldnumber get_ldnumber `(i  1 s 2 get_ldnumber ]
+"3195
+[v _check_fs check_fs `(uc  1 s 1 check_fs ]
+"3223
+[v _find_volume find_volume `(E69  1 s 1 find_volume ]
+"3449
+[v _validate validate `(E69  1 s 1 validate ]
+"3493
+[v _f_mount f_mount `(E69  1 e 1 0 ]
+"3541
+[v _f_open f_open `(E69  1 e 1 0 ]
+"3731
+[v _f_read f_read `(E69  1 e 1 0 ]
+"3831
+[v _f_write f_write `(E69  1 e 1 0 ]
+"3952
+[v _f_sync f_sync `(E69  1 e 1 0 ]
+"4033
+[v _f_close f_close `(E69  1 e 1 0 ]
+"4220
+[v _f_lseek f_lseek `(E69  1 e 1 0 ]
+"4381
+[v _f_opendir f_opendir `(E69  1 e 1 0 ]
+"4447
+[v _f_closedir f_closedir `(E69  1 e 1 0 ]
+"4477
+[v _f_readdir f_readdir `(E69  1 e 1 0 ]
+"4600
+[v _f_getfree f_getfree `(E69  1 e 1 0 ]
+"4689
+[v _f_truncate f_truncate `(E69  1 e 1 0 ]
+"4739
+[v _f_unlink f_unlink `(E69  1 e 1 0 ]
+"4833
+[v _f_mkdir f_mkdir `(E69  1 e 1 0 ]
+"4921
+[v _f_rename f_rename `(E69  1 e 1 0 ]
+"15251 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ffunicode.c
+[v _ff_uni2oem ff_uni2oem `(us  1 e 2 0 ]
+"15273
+[v _ff_oem2uni ff_oem2uni `(us  1 e 2 0 ]
+"15495
+[v _ff_wtoupper ff_wtoupper `(ul  1 e 4 0 ]
+"72 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _softRTC softRTC `(v  1 e 1 0 ]
+"116
+[v _get_fattime get_fattime `(ul  1 e 4 0 ]
+"142
+[v _put_rc put_rc `(v  1 s 1 put_rc ]
+"160
+[v _putch putch `(v  1 e 1 0 ]
+"177
+[v _scan_files scan_files `RR(E7469  1 e 1 0 ]
+"214
+[v _main main `(v  1 e 1 0 ]
+"53 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"75
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"93
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"51 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"57
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"112 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"122
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"52 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"63 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+"77
+[v _SPI1_Exchange8bit SPI1_Exchange8bit `(uc  1 e 1 0 ]
+"63 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"120
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"157
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"171
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"175
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"26 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\pcf8574.c
+[v _pcf8574_yaz pcf8574_yaz `(v  1 e 1 0 ]
+"61 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\seri_lcd.c
+[v _pcf8574_yaz_wEnable pcf8574_yaz_wEnable `(v  1 e 1 0 ]
+"116
+[v _lcd_baslat lcd_baslat `(v  1 e 1 0 ]
+"155
+[v _lcd_git lcd_git `(v  1 e 1 0 ]
+"179
+[v _lcd_mesajyaz lcd_mesajyaz `(v  1 e 1 0 ]
+"200
+[v _lcd_mesgulmu lcd_mesgulmu `(v  1 e 1 0 ]
+"208
+[v _lcd_harfyaz lcd_harfyaz `(v  1 e 1 0 ]
+"225
+[v _lcd_komut lcd_komut `(v  1 e 1 0 ]
+"269
+[v _lcd_sil lcd_sil `(v  1 e 1 0 ]
+"276
+[v _lcd_satirbasi lcd_satirbasi `(v  1 e 1 0 ]
+"384
+[v _lcd_aydinlatma_ac lcd_aydinlatma_ac `(v  1 e 1 0 ]
+"16 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\softi2c.c
+[v _softi2c_kur softi2c_kur `(v  1 e 1 0 ]
+"25
+[v _softi2c_baslat softi2c_baslat `(v  1 e 1 0 ]
+"37
+[v _softi2c_durdur softi2c_durdur `(v  1 e 1 0 ]
+"60
+[v _softi2c_yaz softi2c_yaz `(uc  1 e 1 0 ]
+"26 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\xprintf.c
+[v _xputc xputc `RR(v  1 e 1 0 ]
+"44
+[v _xputs xputs `(v  1 e 1 0 ]
+"88
+[v _xvprintf xvprintf `(v  1 s 1 xvprintf ]
+"165
+[v _xprintf xprintf `(v  1 e 1 0 ]
+"225
+[v _put_dump put_dump `(v  1 e 1 0 ]
+"280
+[v _xgets xgets `(i  1 e 2 0 ]
+"351
+[v _xatoi xatoi `(i  1 e 2 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f46k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"95
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"145
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+"196
+[v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
+"258
+[v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
+"2717
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+[s S3535 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"7203
+[s S3544 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 P2B 1 0 :1:2 
+`uc 1 P2C 1 0 :1:3 
+`uc 1 P2D 1 0 :1:4 
+`uc 1 P1B 1 0 :1:5 
+`uc 1 P1C 1 0 :1:6 
+`uc 1 P1D 1 0 :1:7 
+]
+[s S3552 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP4 1 0 :1:1 
+`uc 1 . 1 0 :4:2 
+`uc 1 TX2 1 0 :1:6 
+`uc 1 RX2 1 0 :1:7 
+]
+[s S3558 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_SS2 1 0 :1:3 
+]
+[s S3561 . 1 `uc 1 SCK2 1 0 :1:0 
+`uc 1 SDI2 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 nSS2 1 0 :1:3 
+`uc 1 SDO2 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CK2 1 0 :1:6 
+`uc 1 DT2 1 0 :1:7 
+]
+[s S3570 . 1 `uc 1 SCL2 1 0 :1:0 
+`uc 1 SDA2 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SS2 1 0 :1:3 
+]
+[s S3575 . 1 `uc 1 AN20 1 0 :1:0 
+`uc 1 AN21 1 0 :1:1 
+`uc 1 AN22 1 0 :1:2 
+`uc 1 AN23 1 0 :1:3 
+`uc 1 AN24 1 0 :1:4 
+`uc 1 AN25 1 0 :1:5 
+`uc 1 AN26 1 0 :1:6 
+`uc 1 AN27 1 0 :1:7 
+]
+[u S3584 . 1 `S3535 1 . 1 0 `S3544 1 . 1 0 `S3552 1 . 1 0 `S3558 1 . 1 0 `S3561 1 . 1 0 `S3570 1 . 1 0 `S3575 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES3584  1 e 1 @3971 ]
+"7558
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"7670
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"7782
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+[s S32 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"7809
+[s S41 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S50 . 1 `S32 1 . 1 0 `S41 1 . 1 0 ]
+[v _LATCbits LATCbits `VES50  1 e 1 @3979 ]
+"7894
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S3008 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"7921
+[s S3017 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S3026 . 1 `S3008 1 . 1 0 `S3017 1 . 1 0 ]
+[v _LATDbits LATDbits `VES3026  1 e 1 @3980 ]
+"8006
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"8058
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"8280
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8502
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"8724
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S3642 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"8756
+[u S3660 . 1 `S3642 1 . 1 0 `S3535 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES3660  1 e 1 @3989 ]
+"8946
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"9062
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S2496 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"9434
+[s S2504 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S2509 . 1 `S2496 1 . 1 0 `S2504 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES2509  1 e 1 @3997 ]
+[s S2526 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"9511
+[s S2534 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S2539 . 1 `S2526 1 . 1 0 `S2534 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2539  1 e 1 @3998 ]
+"10377
+[v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
+[s S2811 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"10430
+[s S2820 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S2823 . 1 `uc 1 RX9D1 1 0 :1:0 
+`uc 1 OERR1 1 0 :1:1 
+`uc 1 FERR1 1 0 :1:2 
+`uc 1 ADDEN1 1 0 :1:3 
+`uc 1 CREN1 1 0 :1:4 
+`uc 1 SREN1 1 0 :1:5 
+`uc 1 RX91 1 0 :1:6 
+`uc 1 SPEN1 1 0 :1:7 
+]
+[s S2832 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S2836 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S2839 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[u S2842 . 1 `S2811 1 . 1 0 `S2820 1 . 1 0 `S2823 1 . 1 0 `S2832 1 . 1 0 `S2836 1 . 1 0 `S2839 1 . 1 0 ]
+[v _RCSTA1bits RCSTA1bits `VES2842  1 e 1 @4011 ]
+"10833
+[v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
+"11208
+[v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
+"11286
+[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"11364
+[v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4015 ]
+"11442
+[v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @4016 ]
+"12406
+[v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4024 ]
+"14135
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
+[s S2051 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"14170
+[s S2057 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S2062 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S2071 . 1 `S2051 1 . 1 0 `S2057 1 . 1 0 `S2062 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES2071  1 e 1 @4038 ]
+"14373
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @4039 ]
+[s S2097 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"14479
+[s S2100 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S2103 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S2112 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S2117 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S2122 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S2127 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S2132 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S2135 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S2138 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S2143 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S2152 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S2158 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S2164 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S2169 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+]
+[s S2172 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S2175 . 1 `S2097 1 . 1 0 `S2100 1 . 1 0 `S2103 1 . 1 0 `S2112 1 . 1 0 `S2117 1 . 1 0 `S2122 1 . 1 0 `S2127 1 . 1 0 `S2132 1 . 1 0 `S2135 1 . 1 0 `S2138 1 . 1 0 `S2143 1 . 1 0 `S2152 1 . 1 0 `S2158 1 . 1 0 `S2164 1 . 1 0 `S2169 1 . 1 0 `S2172 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES2175  1 e 1 @4039 ]
+"15003
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
+"15257
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @4041 ]
+"15571
+[v _T1GCON T1GCON `VEuc  1 e 1 @4044 ]
+"15666
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S2647 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"15699
+[s S2650 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1SOSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[s S2657 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[s S2666 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+]
+[u S2669 . 1 `S2647 1 . 1 0 `S2650 1 . 1 0 `S2657 1 . 1 0 `S2666 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES2669  1 e 1 @4045 ]
+"15779
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"15786
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"15806
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S2380 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"15869
+[s S2382 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S2385 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S2388 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S2391 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S2394 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S2403 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S2409 . 1 `S2380 1 . 1 0 `S2382 1 . 1 0 `S2385 1 . 1 0 `S2388 1 . 1 0 `S2391 1 . 1 0 `S2394 1 . 1 0 `S2403 1 . 1 0 ]
+[v _RCONbits RCONbits `VES2409  1 e 1 @4048 ]
+"15987
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"16044
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S2311 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"16879
+[s S2314 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S2323 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S2326 . 1 `S2311 1 . 1 0 `S2314 1 . 1 0 `S2323 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES2326  1 e 1 @4081 ]
+[s S2447 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"16956
+[s S2456 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S2465 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S2469 . 1 `S2447 1 . 1 0 `S2456 1 . 1 0 `S2465 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES2469  1 e 1 @4082 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+[v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
+"62 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[v _Stat Stat `uc  1 s 1 Stat ]
+"65
+[v _CardType CardType `uc  1 s 1 CardType ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"429 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v ff@FatFs FatFs `[1]*.39S154  1 s 2 FatFs ]
+"430
+[v _Fsid Fsid `us  1 s 2 Fsid ]
+"465
+[v _LfnOfs LfnOfs `C[13]uc  1 s 13 LfnOfs ]
+"472
+[v _LfnBuf LfnBuf `[101]us  1 s 202 LfnBuf ]
+"543
+[v _ExCvt ExCvt `C[128]uc  1 s 128 ExCvt ]
+"15126 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ffunicode.c
+[v _uc857 uc857 `C[128]us  1 s 256 uc857 ]
+"53 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _AccSize AccSize `ul  1 e 4 0 ]
+"54
+[v _AccFiles AccFiles `us  1 e 2 0 ]
+[v _AccDirs AccDirs `us  1 e 2 0 ]
+[s S236 . 278 `ul 1 fsize 4 0 `us 1 fdate 2 4 `us 1 ftime 2 6 `uc 1 fattrib 1 8 `[13]uc 1 altname 13 9 `[256]uc 1 fname 256 22 ]
+"55
+[v _Finfo Finfo `S236  1 e 278 0 ]
+"57
+[v _Line Line `[50]uc  1 e 50 0 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"59
+[v _FatFs FatFs `S154  1 e 561 0 ]
+"61
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v _File File `[2]S245  1 e 1092 0 ]
+"62
+[v _Buff Buff `[512]uc  1 e 512 0 ]
+"64
+[v _Timer Timer `VEui  1 e 2 0 ]
+"65
+[v _rtcYear rtcYear `VEus  1 e 2 0 ]
+"66
+[v _rtcMon rtcMon `VEuc  1 e 1 0 ]
+[v _rtcMday rtcMday `VEuc  1 e 1 0 ]
+[v _rtcHour rtcHour `VEuc  1 e 1 0 ]
+[v _rtcMin rtcMin `VEuc  1 e 1 0 ]
+[v _rtcSec rtcSec `VEuc  1 e 1 0 ]
+"56 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
+"57
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+[s S3383 . 1 `uc 1 P0 1 0 :1:0 
+`uc 1 P1 1 0 :1:1 
+`uc 1 P2 1 0 :1:2 
+`uc 1 P3 1 0 :1:3 
+`uc 1 P4 1 0 :1:4 
+`uc 1 P5 1 0 :1:5 
+`uc 1 P6 1 0 :1:6 
+`uc 1 P7 1 0 :1:7 
+]
+"56 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\seri_lcd.c
+[s S3392 . 1 `uc 1 RS 1 0 :1:0 
+`uc 1 RW 1 0 :1:1 
+`uc 1 E 1 0 :1:2 
+`uc 1 LED 1 0 :1:3 
+`uc 1 D4 1 0 :1:4 
+`uc 1 D5 1 0 :1:5 
+`uc 1 D6 1 0 :1:6 
+`uc 1 D7 1 0 :1:7 
+]
+[u S3401 . 1 `S3383 1 pin 1 0 `S3392 1 lcd 1 0 `uc 1 port 1 0 ]
+[v _pcf_port pcf_port `S3401  1 e 1 0 ]
+"19 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\xprintf.c
+[v _xfunc_out xfunc_out `*.37(v  1 e 2 0 ]
+"20
+[v _outptr outptr `*.2uc  1 s 2 outptr ]
+"274
+[v _xfunc_in xfunc_in `*.37(uc  1 e 2 0 ]
+"214 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"249
+[v main@i i `uc  1 a 1 160 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"226
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v main@dir dir `S223  1 a 44 185 ]
+"219
+[v main@p1 p1 `l  1 a 4 231 ]
+[v main@p2 p2 `l  1 a 4 181 ]
+"223
+[v main@ofs ofs `ul  1 a 4 165 ]
+"219
+[v main@p3 p3 `l  1 a 4 161 ]
+"223
+[v main@sect sect `ul  1 a 4 135 ]
+"221
+[v main@ft ft `C[4]uc  1 a 4 131 ]
+"218
+[v main@ptr ptr `*.39uc  1 a 2 229 ]
+"225
+[v main@fs fs `*.39S154  1 a 2 178 ]
+"222
+[v main@s2 s2 `ui  1 a 2 176 ]
+[v main@cnt cnt `ui  1 a 2 174 ]
+[v main@s1 s1 `ui  1 a 2 172 ]
+"218
+[v main@ptr2 ptr2 `*.39uc  1 a 2 170 ]
+"224
+[v main@res res `E7469  1 a 1 180 ]
+"220
+[v main@b b `uc  1 a 1 169 ]
+[v main@drv drv `uc  1 a 1 159 ]
+[v main@F7711 F7711 `C[4]uc  1 s 4 F7711 ]
+"648
+} 0
+"280 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\xprintf.c
+[v _xgets xgets `(i  1 e 2 0 ]
+{
+"285
+[v xgets@c c `i  1 a 2 26 ]
+[v xgets@i i `i  1 a 2 24 ]
+"281
+[v xgets@buff buff `*.39uc  1 p 2 15 ]
+"282
+[v xgets@len len `i  1 p 2 17 ]
+"317
+} 0
+"75 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/eusart1.c
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"91
+} 0
+"351 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\xprintf.c
+[v _xatoi xatoi `(i  1 e 2 0 ]
+{
+"356
+[v xatoi@val val `ul  1 a 4 52 ]
+"357
+[v xatoi@c c `uc  1 a 1 56 ]
+[v xatoi@r r `uc  1 a 1 51 ]
+[v xatoi@s s `uc  1 a 1 50 ]
+"352
+[v xatoi@str str `*.39*.39uc  1 p 2 44 ]
+"353
+[v xatoi@res res `*.39l  1 p 2 46 ]
+"404
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\strchr.c
+[v _strchr strchr `(*.39uc  1 e 2 0 ]
+{
+[v strchr@ptr ptr `*.39Cuc  1 p 2 13 ]
+[v strchr@chr chr `i  1 p 2 15 ]
+"11
+} 0
+"16 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\softi2c.c
+[v _softi2c_kur softi2c_kur `(v  1 e 1 0 ]
+{
+"22
+} 0
+"142 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _put_rc put_rc `(v  1 s 1 put_rc ]
+{
+[v put_rc@rc rc `E7469  1 a 1 wreg ]
+"144
+[v put_rc@str str `*.32Cuc  1 a 2 41 ]
+"149
+[v put_rc@i i `E7469  1 a 1 39 ]
+"142
+[v put_rc@rc rc `E7469  1 a 1 wreg ]
+"148
+[v put_rc@rc rc `E7469  1 a 1 40 ]
+"155
+} 0
+"225 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\xprintf.c
+[v _put_dump put_dump `(v  1 e 1 0 ]
+{
+"232
+[v put_dump@i i `i  1 a 2 52 ]
+"233
+[v put_dump@bp bp `*.39Cuc  1 a 2 50 ]
+"235
+[v put_dump@lp lp `*.39Cul  1 a 2 46 ]
+"234
+[v put_dump@sp sp `*.39Cus  1 a 2 44 ]
+"226
+[v put_dump@buff buff `*.39Cv  1 p 2 32 ]
+"227
+[v put_dump@addr addr `ul  1 p 4 34 ]
+"228
+[v put_dump@len len `i  1 p 2 38 ]
+"229
+[v put_dump@width width `i  1 p 2 40 ]
+"267
+} 0
+"165
+[v _xprintf xprintf `(v  1 e 1 0 ]
+{
+"170
+[v xprintf@arp arp `[1]*.30v  1 a 1 31 ]
+"166
+[v xprintf@fmt fmt `*.32Cuc  1 p 2 84 ]
+"176
+} 0
+"88
+[v _xvprintf xvprintf `(v  1 s 1 xvprintf ]
+{
+"95
+[v xvprintf@s s `[16]uc  1 a 16 42 ]
+"94
+[v xvprintf@v v `ul  1 a 4 74 ]
+"93
+[v xvprintf@i i `ui  1 a 2 80 ]
+[v xvprintf@f f `ui  1 a 2 78 ]
+[v xvprintf@j j `ui  1 a 2 72 ]
+[v xvprintf@w w `ui  1 a 2 70 ]
+[v xvprintf@r r `ui  1 a 2 68 ]
+"95
+[v xvprintf@p p `*.34uc  1 a 2 66 ]
+[v xvprintf@c c `uc  1 a 1 83 ]
+[v xvprintf@d d `uc  1 a 1 82 ]
+"89
+[v xvprintf@fmt fmt `*.32Cuc  1 p 2 26 ]
+"90
+[v xvprintf@arp arp `*.30*.30v  1 p 1 28 ]
+"162
+} 0
+"44
+[v _xputs xputs `(v  1 e 1 0 ]
+{
+"45
+[v xputs@str str `*.34Cuc  1 p 2 15 ]
+"50
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"11
+[v ___llmod@counter counter `uc  1 a 1 22 ]
+"8
+[v ___llmod@dividend dividend `ul  1 p 4 13 ]
+[v ___llmod@divisor divisor `ul  1 p 4 17 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+{
+"15
+[v memset@p p `*.39uc  1 a 2 19 ]
+"8
+[v memset@p1 p1 `*.39v  1 p 2 13 ]
+[v memset@c c `i  1 p 2 15 ]
+[v memset@n n `ui  1 p 2 17 ]
+"22
+} 0
+"179 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\seri_lcd.c
+[v _lcd_mesajyaz lcd_mesajyaz `(v  1 e 1 0 ]
+{
+[v lcd_mesajyaz@satir satir `uc  1 a 1 wreg ]
+[v lcd_mesajyaz@satir satir `uc  1 a 1 wreg ]
+[v lcd_mesajyaz@sutun sutun `uc  1 p 1 21 ]
+[v lcd_mesajyaz@mesaj mesaj `*.32Cuc  1 p 2 22 ]
+[v lcd_mesajyaz@satir satir `uc  1 a 1 24 ]
+"184
+} 0
+"208
+[v _lcd_harfyaz lcd_harfyaz `(v  1 e 1 0 ]
+{
+[v lcd_harfyaz@harf harf `uc  1 a 1 wreg ]
+[v lcd_harfyaz@harf harf `uc  1 a 1 wreg ]
+[v lcd_harfyaz@harf harf `uc  1 a 1 17 ]
+"219
+} 0
+"155
+[v _lcd_git lcd_git `(v  1 e 1 0 ]
+{
+[v lcd_git@satir satir `uc  1 a 1 wreg ]
+"156
+[v lcd_git@temp temp `uc  1 a 1 20 ]
+"155
+[v lcd_git@satir satir `uc  1 a 1 wreg ]
+[v lcd_git@sutun sutun `uc  1 p 1 18 ]
+[v lcd_git@satir satir `uc  1 a 1 19 ]
+"173
+} 0
+"116
+[v _lcd_baslat lcd_baslat `(v  1 e 1 0 ]
+{
+"117
+[v lcd_baslat@i i `uc  1 a 1 19 ]
+"148
+} 0
+"269
+[v _lcd_sil lcd_sil `(v  1 e 1 0 ]
+{
+"271
+} 0
+"225
+[v _lcd_komut lcd_komut `(v  1 e 1 0 ]
+{
+[v lcd_komut@komut komut `uc  1 a 1 wreg ]
+[v lcd_komut@komut komut `uc  1 a 1 wreg ]
+[v lcd_komut@komut komut `uc  1 a 1 17 ]
+"236
+} 0
+"61
+[v _pcf8574_yaz_wEnable pcf8574_yaz_wEnable `(v  1 e 1 0 ]
+{
+"111
+} 0
+"200
+[v _lcd_mesgulmu lcd_mesgulmu `(v  1 e 1 0 ]
+{
+"202
+} 0
+"384
+[v _lcd_aydinlatma_ac lcd_aydinlatma_ac `(v  1 e 1 0 ]
+{
+"388
+} 0
+"26 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\pcf8574.c
+[v _pcf8574_yaz pcf8574_yaz `(v  1 e 1 0 ]
+{
+[v pcf8574_yaz@veri veri `uc  1 a 1 wreg ]
+[v pcf8574_yaz@veri veri `uc  1 a 1 wreg ]
+"30
+[v pcf8574_yaz@veri veri `uc  1 a 1 16 ]
+"66
+} 0
+"60 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\softi2c.c
+[v _softi2c_yaz softi2c_yaz `(uc  1 e 1 0 ]
+{
+[v softi2c_yaz@veri veri `uc  1 a 1 wreg ]
+"62
+[v softi2c_yaz@i i `uc  1 a 1 15 ]
+"60
+[v softi2c_yaz@veri veri `uc  1 a 1 wreg ]
+"63
+[v softi2c_yaz@veri veri `uc  1 a 1 14 ]
+"95
+} 0
+"37
+[v _softi2c_durdur softi2c_durdur `(v  1 e 1 0 ]
+{
+"45
+} 0
+"25
+[v _softi2c_baslat softi2c_baslat `(v  1 e 1 0 ]
+{
+"34
+} 0
+"3831 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _f_write f_write `(E69  1 e 1 0 ]
+{
+"3840
+[v f_write@sect sect `ul  1 a 4 99 ]
+[v f_write@clst clst `ul  1 a 4 93 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3839
+[v f_write@fs fs `*.39S154  1 a 2 103 ]
+"3841
+[v f_write@wcnt wcnt `ui  1 a 2 97 ]
+[v f_write@cc cc `ui  1 a 2 91 ]
+[v f_write@csect csect `ui  1 a 2 89 ]
+"3842
+[v f_write@wbuff wbuff `*.39Cuc  1 a 2 87 ]
+"3838
+[v f_write@res res `E69  1 a 1 86 ]
+"3832
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_write@fp fp `*.39S245  1 p 2 62 ]
+"3833
+[v f_write@buff buff `*.39Cv  1 p 2 64 ]
+"3834
+[v f_write@btw btw `ui  1 p 2 66 ]
+"3835
+[v f_write@bw bw `*.39ui  1 p 2 68 ]
+"3943
+} 0
+"4739
+[v _f_unlink f_unlink `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4744
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_unlink@dj dj `S223  1 a 44 168 ]
+[v f_unlink@sdj sdj `S223  1 a 44 124 ]
+"4745
+[v f_unlink@dclst dclst `ul  1 a 4 117 ]
+"4746
+[v f_unlink@fs fs `*.39S154  1 a 2 121 ]
+"4743
+[v f_unlink@res res `E69  1 a 1 123 ]
+"4740
+[v f_unlink@path path `*.34Cuc  1 p 2 115 ]
+"4824
+} 0
+"4689
+[v _f_truncate f_truncate `(E69  1 e 1 0 ]
+{
+"4695
+[v f_truncate@ncl ncl `ul  1 a 4 68 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4694
+[v f_truncate@fs fs `*.39S154  1 a 2 66 ]
+"4693
+[v f_truncate@res res `E69  1 a 1 72 ]
+"4690
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_truncate@fp fp `*.39S245  1 p 2 156 ]
+"4730
+} 0
+"4921
+[v _f_rename f_rename `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4927
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_rename@djn djn `S223  1 a 44 87 ]
+[v f_rename@djo djo `S223  1 a 44 43 ]
+"4929
+[v f_rename@buf buf `[32]uc  1 a 32 0 ]
+"4930
+[v f_rename@dw dw `ul  1 a 4 34 ]
+"4928
+[v f_rename@fs fs `*.39S154  1 a 2 40 ]
+"4929
+[v f_rename@dir dir `*.39uc  1 a 2 38 ]
+"4926
+[v f_rename@res res `E69  1 a 1 42 ]
+"4922
+[v f_rename@path_old path_old `*.34Cuc  1 p 2 135 ]
+"4923
+[v f_rename@path_new path_new `*.34Cuc  1 p 2 137 ]
+"5017
+} 0
+"2616
+[v _dir_remove dir_remove `(E69  1 s 1 dir_remove ]
+{
+"2623
+[v dir_remove@last last `ul  1 a 4 96 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"2621
+[v dir_remove@fs fs `*.39S154  1 a 2 102 ]
+"2620
+[v dir_remove@res res `E69  1 a 1 104 ]
+"2617
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_remove@dp dp `*.39S223  1 p 2 156 ]
+"2651
+} 0
+"3731
+[v _f_read f_read `(E69  1 e 1 0 ]
+{
+"3740
+[v f_read@sect sect `ul  1 a 4 63 ]
+[v f_read@clst clst `ul  1 a 4 51 ]
+"3741
+[v f_read@remain remain `ul  1 a 4 46 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3739
+[v f_read@fs fs `*.39S154  1 a 2 67 ]
+"3742
+[v f_read@rcnt rcnt `ui  1 a 2 61 ]
+[v f_read@cc cc `ui  1 a 2 59 ]
+[v f_read@csect csect `ui  1 a 2 57 ]
+"3743
+[v f_read@rbuff rbuff `*.39uc  1 a 2 55 ]
+"3738
+[v f_read@res res `E69  1 a 1 50 ]
+"3732
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_read@fp fp `*.39S245  1 p 2 26 ]
+"3733
+[v f_read@buff buff `*.39v  1 p 2 28 ]
+"3734
+[v f_read@btr btr `ui  1 p 2 30 ]
+"3735
+[v f_read@br br `*.39ui  1 p 2 32 ]
+"3821
+} 0
+"3541
+[v _f_open f_open `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3548
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_open@dj dj `S223  1 a 44 177 ]
+"3551
+[v f_open@clst clst `ul  1 a 4 170 ]
+"3552
+[v f_open@ofs ofs `ul  1 a 4 166 ]
+"3551
+[v f_open@cl cl `ul  1 a 4 162 ]
+[v f_open@bcs bcs `ul  1 a 4 158 ]
+[v f_open@sc sc `ul  1 a 4 152 ]
+[v f_open@dw dw `ul  1 a 4 148 ]
+"3549
+[v f_open@fs fs `*.39S154  1 a 2 174 ]
+"3547
+[v f_open@res res `E69  1 a 1 176 ]
+"3542
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_open@fp fp `*.39S245  1 p 2 135 ]
+"3543
+[v f_open@path path `*.34Cuc  1 p 2 137 ]
+"3544
+[v f_open@mode mode `uc  1 p 1 139 ]
+"3722
+} 0
+"3493
+[v _f_mount f_mount `(E69  1 e 1 0 ]
+{
+"3500
+[v f_mount@vol vol `i  1 a 2 87 ]
+"3502
+[v f_mount@rp rp `*.34Cuc  1 a 2 85 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3499
+[v f_mount@cfs cfs `*.39S154  1 a 2 83 ]
+"3501
+[v f_mount@res res `E69  1 a 1 82 ]
+"3494
+[v f_mount@fs fs `*.39S154  1 p 2 77 ]
+"3495
+[v f_mount@path path `*.34Cuc  1 p 2 79 ]
+"3496
+[v f_mount@opt opt `uc  1 p 1 81 ]
+"3532
+} 0
+"4833
+[v _f_mkdir f_mkdir `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4838
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_mkdir@dj dj `S223  1 a 44 160 ]
+"4841
+[v f_mkdir@dcl dcl `ul  1 a 4 151 ]
+[v f_mkdir@tm tm `ul  1 a 4 147 ]
+[v f_mkdir@pcl pcl `ul  1 a 4 143 ]
+"4839
+[v f_mkdir@fs fs `*.39S154  1 a 2 157 ]
+"4840
+[v f_mkdir@dir dir `*.39uc  1 a 2 155 ]
+"4837
+[v f_mkdir@res res `E69  1 a 1 159 ]
+"4834
+[v f_mkdir@path path `*.34Cuc  1 p 2 135 ]
+"4912
+} 0
+"1414
+[v _remove_chain remove_chain `(E69  1 s 1 remove_chain ]
+{
+"1421
+[v remove_chain@nxt nxt `ul  1 a 4 51 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1422
+[v remove_chain@fs fs `*.39S154  1 a 2 56 ]
+"1420
+[v remove_chain@res res `E69  1 a 1 55 ]
+"1415
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[v remove_chain@obj obj `*.39S216  1 p 2 33 ]
+"1416
+[v remove_chain@clst clst `ul  1 p 4 35 ]
+"1417
+[v remove_chain@pclst pclst `ul  1 p 4 39 ]
+"1500
+} 0
+"2509
+[v _dir_register dir_register `(E69  1 s 1 dir_register ]
+{
+"2517
+[v dir_register@sn sn `[12]uc  1 a 12 113 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"2514
+[v dir_register@fs fs `*.39S154  1 a 2 132 ]
+"2516
+[v dir_register@nent nent `ui  1 a 2 130 ]
+[v dir_register@n n `ui  1 a 2 128 ]
+[v dir_register@nlen nlen `ui  1 a 2 126 ]
+"2513
+[v dir_register@res res `E69  1 a 1 134 ]
+"2517
+[v dir_register@sum sum `uc  1 a 1 125 ]
+"2510
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_register@dp dp `*.39S223  1 p 2 101 ]
+"2604
+} 0
+"1949
+[v _put_lfn put_lfn `(v  1 s 1 put_lfn ]
+{
+"1957
+[v put_lfn@wc wc `us  1 a 2 31 ]
+"1956
+[v put_lfn@i i `ui  1 a 2 29 ]
+[v put_lfn@s s `ui  1 a 2 27 ]
+"1950
+[v put_lfn@lfn lfn `*.39Cus  1 p 2 19 ]
+"1951
+[v put_lfn@dir dir `*.39uc  1 p 2 21 ]
+"1952
+[v put_lfn@ord ord `uc  1 p 1 23 ]
+"1953
+[v put_lfn@sum sum `uc  1 p 1 24 ]
+"1974
+} 0
+"1987
+[v _gen_numname gen_numname `(v  1 s 1 gen_numname ]
+{
+"1994
+[v gen_numname@ns ns `[8]uc  1 a 8 37 ]
+"1997
+[v gen_numname@sr sr `ul  1 a 4 50 ]
+"1995
+[v gen_numname@i i `ui  1 a 2 56 ]
+[v gen_numname@j j `ui  1 a 2 54 ]
+"1996
+[v gen_numname@wc wc `us  1 a 2 45 ]
+"1994
+[v gen_numname@c c `uc  1 a 1 49 ]
+"1988
+[v gen_numname@dst dst `*.39uc  1 p 2 23 ]
+"1989
+[v gen_numname@src src `*.39Cuc  1 p 2 25 ]
+"1990
+[v gen_numname@lfn lfn `*.39Cus  1 p 2 27 ]
+"1991
+[v gen_numname@seq seq `ui  1 p 2 29 ]
+"2035
+} 0
+"646
+[v _mem_cpy mem_cpy `(v  1 s 1 mem_cpy ]
+{
+"649
+[v mem_cpy@s s `*.39Cuc  1 a 2 21 ]
+"648
+[v mem_cpy@d d `*.39uc  1 a 2 19 ]
+"646
+[v mem_cpy@dst dst `*.39v  1 p 2 13 ]
+[v mem_cpy@src src `*.39Cv  1 p 2 15 ]
+[v mem_cpy@cnt cnt `ui  1 p 2 17 ]
+"656
+} 0
+"1794
+[v _dir_alloc dir_alloc `(E69  1 s 1 dir_alloc ]
+{
+"1800
+[v dir_alloc@n n `ui  1 a 2 98 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1801
+[v dir_alloc@fs fs `*.39S154  1 a 2 96 ]
+"1799
+[v dir_alloc@res res `E69  1 a 1 100 ]
+"1795
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_alloc@dp dp `*.39S223  1 p 2 92 ]
+"1796
+[v dir_alloc@nent nent `ui  1 p 2 94 ]
+"1825
+} 0
+"4220
+[v _f_lseek f_lseek `(E69  1 e 1 0 ]
+{
+"4227
+[v f_lseek@clst clst `ul  1 a 4 95 ]
+[v f_lseek@bcs bcs `ul  1 a 4 89 ]
+[v f_lseek@nsect nsect `ul  1 a 4 84 ]
+"4228
+[v f_lseek@ifptr ifptr `ul  1 a 4 80 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4226
+[v f_lseek@fs fs `*.39S154  1 a 2 93 ]
+"4225
+[v f_lseek@res res `E69  1 a 1 88 ]
+"4221
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_lseek@fp fp `*.39S245  1 p 2 62 ]
+"4222
+[v f_lseek@ofs ofs `ul  1 p 4 64 ]
+"4372
+} 0
+"4600
+[v _f_getfree f_getfree `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4610
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[v f_getfree@obj obj `S216  1 a 14 91 ]
+"4608
+[v f_getfree@clst clst `ul  1 a 4 117 ]
+[v f_getfree@stat stat `ul  1 a 4 113 ]
+[v f_getfree@nfree nfree `ul  1 a 4 109 ]
+[v f_getfree@sect sect `ul  1 a 4 105 ]
+"4607
+[v f_getfree@fs fs `*.39S154  1 a 2 124 ]
+"4609
+[v f_getfree@i i `ui  1 a 2 121 ]
+"4606
+[v f_getfree@res res `E69  1 a 1 123 ]
+"4601
+[v f_getfree@path path `*.34Cuc  1 p 2 77 ]
+"4602
+[v f_getfree@nclst nclst `*.39ul  1 p 2 79 ]
+"4603
+[v f_getfree@fatfs fatfs `*.39*.39S154  1 p 2 81 ]
+"4680
+} 0
+"4033
+[v _f_close f_close `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4038
+[v f_close@fs fs `*.39S154  1 a 2 36 ]
+"4037
+[v f_close@res res `E69  1 a 1 38 ]
+"4034
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_close@fp fp `*.39S245  1 p 2 34 ]
+"4059
+} 0
+"3952
+[v _f_sync f_sync `(E69  1 e 1 0 ]
+{
+"3958
+[v f_sync@tm tm `ul  1 a 4 25 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3957
+[v f_sync@fs fs `*.39S154  1 a 2 32 ]
+"3959
+[v f_sync@dir dir `*.39uc  1 a 2 30 ]
+"3956
+[v f_sync@res res `E69  1 a 1 29 ]
+"3953
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S245 . 546 `S216 1 obj 14 0 `uc 1 flag 1 14 `uc 1 err 1 15 `ul 1 fptr 4 16 `ul 1 clust 4 20 `ul 1 sect 4 24 `ul 1 dir_sect 4 28 `*.39uc 1 dir_ptr 2 32 `[512]uc 1 buf 512 34 ]
+[v f_sync@fp fp `*.39S245  1 p 2 156 ]
+"4022
+} 0
+"1086
+[v _sync_fs sync_fs `(E69  1 s 1 sync_fs ]
+{
+"1090
+[v sync_fs@res res `E69  1 a 1 57 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1087
+[v sync_fs@fs fs `*.39S154  1 p 2 146 ]
+"1113
+} 0
+"448 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[v _disk_ioctl disk_ioctl `(E11  1 e 1 0 ]
+{
+"449
+[v disk_ioctl@pdrv pdrv `uc  1 a 1 wreg ]
+"455
+[v disk_ioctl@csd csd `[16]uc  1 a 16 1 ]
+"456
+[v disk_ioctl@csize csize `ul  1 a 4 17 ]
+"455
+[v disk_ioctl@ptr ptr `*.39uc  1 a 2 23 ]
+[v disk_ioctl@n n `uc  1 a 1 22 ]
+"454
+[v disk_ioctl@res res `E11  1 a 1 21 ]
+"449
+[v disk_ioctl@pdrv pdrv `uc  1 a 1 wreg ]
+"450
+[v disk_ioctl@cmd cmd `uc  1 p 1 120 ]
+"451
+[v disk_ioctl@buff buff `*.39v  1 p 2 121 ]
+"455
+[v disk_ioctl@pdrv pdrv `uc  1 a 1 0 ]
+"547
+} 0
+"1855 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _st_clust st_clust `(v  1 s 1 st_clust ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1856
+[v st_clust@fs fs `*.39S154  1 p 2 17 ]
+"1857
+[v st_clust@dir dir `*.39uc  1 p 2 19 ]
+"1858
+[v st_clust@cl cl `ul  1 p 4 21 ]
+"1865
+} 0
+"116 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _get_fattime get_fattime `(ul  1 e 4 0 ]
+{
+"118
+[v get_fattime@tmr tmr `ul  1 a 4 53 ]
+"132
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"11
+[v ___aldiv@quotient quotient `l  1 a 4 23 ]
+"12
+[v ___aldiv@sign sign `uc  1 a 1 22 ]
+[v ___aldiv@counter counter `uc  1 a 1 21 ]
+"8
+[v ___aldiv@dividend dividend `l  1 p 4 13 ]
+[v ___aldiv@divisor divisor `l  1 p 4 17 ]
+"42
+} 0
+"112 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"120
+} 0
+"63 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"90
+} 0
+"171
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 13 ]
+"173
+} 0
+"52 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"122 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"130
+} 0
+"51 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"53 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"73
+} 0
+"74 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[v _wait_ready wait_ready `(uc  1 s 1 wait_ready ]
+{
+"76
+[v wait_ready@tmr tmr `ui  1 a 2 35 ]
+"85
+} 0
+"157
+[v _xmit_datablock xmit_datablock `(uc  1 s 1 xmit_datablock ]
+{
+"163
+[v xmit_datablock@i i `us  1 a 2 44 ]
+"162
+[v xmit_datablock@resp resp `uc  1 a 1 46 ]
+"158
+[v xmit_datablock@buff buff `*.36Cuc  1 p 3 37 ]
+"159
+[v xmit_datablock@token token `uc  1 p 1 40 ]
+"182
+} 0
+"196
+[v ___send_cmd __send_cmd `(uc  1 s 1 __send_cmd ]
+{
+"197
+[v ___send_cmd@cmd cmd `uc  1 a 1 wreg ]
+"201
+[v ___send_cmd@n n `uc  1 a 1 45 ]
+[v ___send_cmd@res res `uc  1 a 1 44 ]
+"197
+[v ___send_cmd@cmd cmd `uc  1 a 1 wreg ]
+"198
+[v ___send_cmd@arg arg `ul  1 p 4 37 ]
+"205
+[v ___send_cmd@cmd cmd `uc  1 a 1 46 ]
+"229
+} 0
+"107
+[v _select select `(uc  1 s 1 select ]
+{
+"115
+} 0
+"358
+[v _disk_status disk_status `(uc  1 e 1 0 ]
+{
+"359
+[v disk_status@pdrv pdrv `uc  1 a 1 wreg ]
+[v disk_status@pdrv pdrv `uc  1 a 1 wreg ]
+"362
+[v disk_status@pdrv pdrv `uc  1 a 1 14 ]
+"364
+} 0
+"673 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _mem_cmp mem_cmp `(i  1 s 2 mem_cmp ]
+{
+"676
+[v mem_cmp@r r `i  1 a 2 30 ]
+"675
+[v mem_cmp@s s `*.34Cuc  1 a 2 28 ]
+[v mem_cmp@d d `*.39Cuc  1 a 2 26 ]
+"673
+[v mem_cmp@dst dst `*.39Cv  1 p 2 13 ]
+[v mem_cmp@src src `*.34Cv  1 p 2 15 ]
+[v mem_cmp@cnt cnt `ui  1 p 2 17 ]
+"683
+} 0
+"688
+[v _chk_chr chk_chr `(i  1 s 2 chk_chr ]
+{
+[v chk_chr@str str `*.32Cuc  1 p 2 13 ]
+[v chk_chr@chr chr `i  1 p 2 15 ]
+"692
+} 0
+"718
+[v _dbc_2nd dbc_2nd `(i  1 s 2 dbc_2nd ]
+{
+[v dbc_2nd@c c `uc  1 a 1 wreg ]
+[v dbc_2nd@c c `uc  1 a 1 wreg ]
+"733
+[v dbc_2nd@c c `uc  1 a 1 16 ]
+"736
+} 0
+"743
+[v _tchar2uni tchar2uni `(ul  1 s 4 tchar2uni ]
+{
+"747
+[v tchar2uni@uc uc `ul  1 a 4 46 ]
+"790
+[v tchar2uni@wc wc `us  1 a 2 53 ]
+"748
+[v tchar2uni@p p `*.34Cuc  1 a 2 51 ]
+"789
+[v tchar2uni@b b `uc  1 a 1 50 ]
+"744
+[v tchar2uni@str str `*.30*.34Cuc  1 p 1 31 ]
+"807
+} 0
+"15273 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ffunicode.c
+[v _ff_oem2uni ff_oem2uni `(us  1 e 2 0 ]
+{
+"15278
+[v ff_oem2uni@c c `us  1 a 2 29 ]
+"15279
+[v ff_oem2uni@p p `*.32Cus  1 a 2 27 ]
+"15274
+[v ff_oem2uni@oem oem `us  1 p 2 13 ]
+"15275
+[v ff_oem2uni@cp cp `us  1 p 2 15 ]
+"15292
+} 0
+"697 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _dbc_1st dbc_1st `(i  1 s 2 dbc_1st ]
+{
+[v dbc_1st@c c `uc  1 a 1 wreg ]
+[v dbc_1st@c c `uc  1 a 1 wreg ]
+"710
+[v dbc_1st@c c `uc  1 a 1 15 ]
+"713
+} 0
+"812
+[v _put_utf put_utf `(uc  1 s 1 put_utf ]
+{
+"867
+[v put_utf@wc wc `us  1 a 2 41 ]
+"813
+[v put_utf@chr chr `ul  1 p 4 31 ]
+"814
+[v put_utf@buf buf `*.39uc  1 p 2 35 ]
+"815
+[v put_utf@szb szb `ui  1 p 2 37 ]
+"880
+} 0
+"15251 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ffunicode.c
+[v _ff_uni2oem ff_uni2oem `(us  1 e 2 0 ]
+{
+"15256
+[v ff_uni2oem@c c `us  1 a 2 29 ]
+"15257
+[v ff_uni2oem@p p `*.32Cus  1 a 2 27 ]
+"15252
+[v ff_uni2oem@uni uni `ul  1 p 4 13 ]
+"15253
+[v ff_uni2oem@cp cp `us  1 p 2 17 ]
+"15271
+} 0
+"1875 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _cmp_lfn cmp_lfn `(i  1 s 2 cmp_lfn ]
+{
+"1880
+[v cmp_lfn@s s `ui  1 a 2 151 ]
+"1881
+[v cmp_lfn@uc uc `us  1 a 2 149 ]
+"1880
+[v cmp_lfn@i i `ui  1 a 2 147 ]
+"1881
+[v cmp_lfn@wc wc `us  1 a 2 145 ]
+"1876
+[v cmp_lfn@lfnbuf lfnbuf `*.39Cus  1 p 2 125 ]
+"1877
+[v cmp_lfn@dir dir `*.39uc  1 p 2 127 ]
+"1903
+} 0
+"15495 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ffunicode.c
+[v _ff_wtoupper ff_wtoupper `(ul  1 e 4 0 ]
+{
+"15553
+[v ff_wtoupper@uc uc `us  1 a 2 39 ]
+[v ff_wtoupper@bc bc `us  1 a 2 37 ]
+"15552
+[v ff_wtoupper@p p `*.32Cus  1 a 2 35 ]
+"15553
+[v ff_wtoupper@nc nc `us  1 a 2 33 ]
+[v ff_wtoupper@cmd cmd `us  1 a 2 31 ]
+"15496
+[v ff_wtoupper@uni uni `ul  1 p 4 13 ]
+"15500
+[v ff_wtoupper@cvt1 cvt1 `C[249]us  1 s 498 cvt1 ]
+"15524
+[v ff_wtoupper@cvt2 cvt2 `C[94]us  1 s 188 cvt2 ]
+"15583
+} 0
+"1911 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _pick_lfn pick_lfn `(i  1 s 2 pick_lfn ]
+{
+"1916
+[v pick_lfn@i i `ui  1 a 2 144 ]
+[v pick_lfn@s s `ui  1 a 2 142 ]
+"1917
+[v pick_lfn@uc uc `us  1 a 2 140 ]
+[v pick_lfn@wc wc `us  1 a 2 138 ]
+"1912
+[v pick_lfn@lfnbuf lfnbuf `*.39us  1 p 2 125 ]
+"1913
+[v pick_lfn@dir dir `*.39uc  1 p 2 127 ]
+"1940
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 17 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 13 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 15 ]
+"53
+} 0
+"2663 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _get_fileinfo get_fileinfo `(v  1 s 1 get_fileinfo ]
+{
+"2668
+[v get_fileinfo@di di `ui  1 a 2 157 ]
+"2670
+[v get_fileinfo@wc wc `us  1 a 2 155 ]
+"2668
+[v get_fileinfo@si si `ui  1 a 2 153 ]
+"2670
+[v get_fileinfo@hs hs `us  1 a 2 151 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"2671
+[v get_fileinfo@fs fs `*.39S154  1 a 2 149 ]
+"2664
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v get_fileinfo@dp dp `*.39S223  1 p 2 125 ]
+[s S236 . 278 `ul 1 fsize 4 0 `us 1 fdate 2 4 `us 1 ftime 2 6 `uc 1 fattrib 1 8 `[13]uc 1 altname 13 9 `[256]uc 1 fname 256 22 ]
+"2665
+[v get_fileinfo@fno fno `*.39S236  1 p 2 127 ]
+"2756
+} 0
+"2848
+[v _create_name create_name `(E69  1 s 1 create_name ]
+{
+"2856
+[v create_name@uc uc `ul  1 a 4 34 ]
+"2855
+[v create_name@wc wc `us  1 a 2 52 ]
+"2857
+[v create_name@di di `ui  1 a 2 50 ]
+[v create_name@si si `ui  1 a 2 48 ]
+"2855
+[v create_name@lfn lfn `*.39us  1 a 2 46 ]
+"2857
+[v create_name@ni ni `ui  1 a 2 43 ]
+[v create_name@i i `ui  1 a 2 40 ]
+"2858
+[v create_name@p p `*.34Cuc  1 a 2 38 ]
+"2854
+[v create_name@b b `uc  1 a 1 45 ]
+[v create_name@cf cf `uc  1 a 1 42 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"2849
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v create_name@dp dp `*.39S223  1 p 2 0 ]
+"2850
+[v create_name@path path `*.39*.34Cuc  1 p 2 2 ]
+"3036
+} 0
+"3195
+[v _check_fs check_fs `(uc  1 s 1 check_fs ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3196
+[v check_fs@fs fs `*.39S154  1 p 2 0 ]
+"3197
+[v check_fs@sect sect `ul  1 p 4 2 ]
+"3213
+} 0
+"4447
+[v _f_closedir f_closedir `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4452
+[v f_closedir@fs fs `*.39S154  1 a 2 31 ]
+"4451
+[v f_closedir@res res `E69  1 a 1 33 ]
+"4448
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_closedir@dp dp `*.39S223  1 p 2 26 ]
+"4468
+} 0
+"93 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/eusart1.c
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 14 ]
+"100
+} 0
+"160 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@temp temp `uc  1 a 1 wreg ]
+[v putch@temp temp `uc  1 a 1 wreg ]
+"162
+[v putch@temp temp `uc  1 a 1 16 ]
+"163
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 25 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 20 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 22 ]
+"26
+} 0
+"298 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[v _disk_initialize disk_initialize `(uc  1 e 1 0 ]
+{
+"299
+[v disk_initialize@pdrv pdrv `uc  1 a 1 wreg ]
+"302
+[v disk_initialize@ocr ocr `[4]uc  1 a 4 133 ]
+"303
+[v disk_initialize@tmr tmr `ui  1 a 2 141 ]
+"302
+[v disk_initialize@n n `uc  1 a 1 143 ]
+[v disk_initialize@ty ty `uc  1 a 1 140 ]
+[v disk_initialize@cmd cmd `uc  1 a 1 139 ]
+"299
+[v disk_initialize@pdrv pdrv `uc  1 a 1 wreg ]
+"306
+[v disk_initialize@pdrv pdrv `uc  1 a 1 132 ]
+"350
+} 0
+"63 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+{
+"75
+} 0
+"4381 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _f_opendir f_opendir `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4387
+[v f_opendir@fs fs `*.39S154  1 a 2 122 ]
+"4386
+[v f_opendir@res res `E69  1 a 1 124 ]
+"4382
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_opendir@dp dp `*.39S223  1 p 2 115 ]
+"4383
+[v f_opendir@path path `*.34Cuc  1 p 2 117 ]
+"4438
+} 0
+"3046
+[v _follow_path follow_path `(E69  1 s 1 follow_path ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3053
+[v follow_path@fs fs `*.39S154  1 a 2 111 ]
+"3051
+[v follow_path@res res `E69  1 a 1 114 ]
+"3052
+[v follow_path@ns ns `uc  1 a 1 113 ]
+"3047
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v follow_path@dp dp `*.39S223  1 p 2 101 ]
+"3048
+[v follow_path@path path `*.34Cuc  1 p 2 103 ]
+"3124
+} 0
+"1837
+[v _ld_clust ld_clust `(ul  1 s 4 ld_clust ]
+{
+"1842
+[v ld_clust@cl cl `ul  1 a 4 133 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1838
+[v ld_clust@fs fs `*.39S154  1 p 2 125 ]
+"1839
+[v ld_clust@dir dir `*.39Cuc  1 p 2 127 ]
+"1850
+} 0
+"2427
+[v _dir_find dir_find `(E69  1 s 1 dir_find ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"2432
+[v dir_find@fs fs `*.39S154  1 a 2 94 ]
+"2431
+[v dir_find@res res `E69  1 a 1 100 ]
+"2433
+[v dir_find@c c `uc  1 a 1 99 ]
+"2435
+[v dir_find@ord ord `uc  1 a 1 98 ]
+[v dir_find@a a `uc  1 a 1 97 ]
+[v dir_find@sum sum `uc  1 a 1 96 ]
+"2428
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_find@dp dp `*.39S223  1 p 2 156 ]
+"2498
+} 0
+"661
+[v _mem_set mem_set `(v  1 s 1 mem_set ]
+{
+"663
+[v mem_set@d d `*.39uc  1 a 2 19 ]
+"661
+[v mem_set@dst dst `*.39v  1 p 2 13 ]
+[v mem_set@val val `i  1 p 2 15 ]
+[v mem_set@cnt cnt `ui  1 p 2 17 ]
+"668
+} 0
+"3223
+[v _find_volume find_volume `(E69  1 s 1 find_volume ]
+{
+"3232
+[v find_volume@br br `[4]ul  1 a 16 19 ]
+[v find_volume@bsect bsect `ul  1 a 4 68 ]
+[v find_volume@fasize fasize `ul  1 a 4 64 ]
+[v find_volume@nclst nclst `ul  1 a 4 60 ]
+[v find_volume@tsect tsect `ul  1 a 4 55 ]
+[v find_volume@sysect sysect `ul  1 a 4 47 ]
+[v find_volume@szbfat szbfat `ul  1 a 4 41 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3234
+[v find_volume@fs fs `*.39S154  1 a 2 75 ]
+"3235
+[v find_volume@i i `ui  1 a 2 72 ]
+"3233
+[v find_volume@nrsv nrsv `us  1 a 2 53 ]
+"3230
+[v find_volume@vol vol `i  1 a 2 51 ]
+"3229
+[v find_volume@pt pt `*.39uc  1 a 2 45 ]
+[v find_volume@fmt fmt `uc  1 a 1 74 ]
+"3231
+[v find_volume@stat stat `uc  1 a 1 59 ]
+"3224
+[v find_volume@path path `*.39*.34Cuc  1 p 2 6 ]
+"3225
+[v find_volume@rfs rfs `*.39*.39S154  1 p 2 8 ]
+"3226
+[v find_volume@mode mode `uc  1 p 1 10 ]
+"3439
+} 0
+"566
+[v _ld_word ld_word `(us  1 s 2 ld_word ]
+{
+"568
+[v ld_word@rv rv `us  1 a 2 123 ]
+"566
+[v ld_word@ptr ptr `*.39Cuc  1 p 2 56 ]
+"573
+} 0
+"3134
+[v _get_ldnumber get_ldnumber `(i  1 s 2 get_ldnumber ]
+{
+"3138
+[v get_ldnumber@tt tt `*.34Cuc  1 a 2 25 ]
+"3139
+[v get_ldnumber@i i `ui  1 a 2 23 ]
+"3138
+[v get_ldnumber@tp tp `*.34Cuc  1 a 2 21 ]
+"3140
+[v get_ldnumber@vol vol `i  1 a 2 19 ]
+"3135
+[v get_ldnumber@path path `*.39*.34Cuc  1 p 2 13 ]
+"3185
+} 0
+"77 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/spi1.c
+[v _SPI1_Exchange8bit SPI1_Exchange8bit `(uc  1 e 1 0 ]
+{
+[v SPI1_Exchange8bit@data data `uc  1 a 1 wreg ]
+[v SPI1_Exchange8bit@data data `uc  1 a 1 wreg ]
+"80
+[v SPI1_Exchange8bit@data data `uc  1 a 1 32 ]
+"89
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"11
+[v ___lldiv@quotient quotient `ul  1 a 4 21 ]
+"12
+[v ___lldiv@counter counter `uc  1 a 1 25 ]
+"8
+[v ___lldiv@dividend dividend `ul  1 p 4 13 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 17 ]
+"31
+} 0
+"4477 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _f_readdir f_readdir `(E69  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"4483
+[v f_readdir@fs fs `*.39S154  1 a 2 112 ]
+"4482
+[v f_readdir@res res `E69  1 a 1 114 ]
+"4478
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v f_readdir@dp dp `*.39S223  1 p 2 105 ]
+[s S236 . 278 `ul 1 fsize 4 0 `us 1 fdate 2 4 `us 1 ftime 2 6 `uc 1 fattrib 1 8 `[13]uc 1 altname 13 9 `[256]uc 1 fname 256 22 ]
+"4479
+[v f_readdir@fno fno `*.39S236  1 p 2 107 ]
+"4504
+} 0
+"3449
+[v _validate validate `(E69  1 s 1 validate ]
+{
+"3454
+[v validate@res res `E69  1 a 1 25 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"3450
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[v validate@obj obj `*.39S216  1 p 2 15 ]
+"3451
+[v validate@rfs rfs `*.39*.39S154  1 p 2 17 ]
+"3476
+} 0
+"1684
+[v _dir_sdi dir_sdi `(E69  1 s 1 dir_sdi ]
+{
+"1689
+[v dir_sdi@clst clst `ul  1 a 4 50 ]
+[v dir_sdi@csz csz `ul  1 a 4 46 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1690
+[v dir_sdi@fs fs `*.39S154  1 a 2 54 ]
+"1685
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_sdi@dp dp `*.39S223  1 p 2 26 ]
+"1686
+[v dir_sdi@ofs ofs `ul  1 p 4 28 ]
+"1723
+} 0
+"2348
+[v _dir_read dir_read `(E69  1 s 1 dir_read ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"2354
+[v dir_read@fs fs `*.39S154  1 a 2 98 ]
+"2355
+[v dir_read@c c `uc  1 a 1 104 ]
+"2353
+[v dir_read@res res `E69  1 a 1 103 ]
+"2357
+[v dir_read@ord ord `uc  1 a 1 102 ]
+[v dir_read@sum sum `uc  1 a 1 101 ]
+"2355
+[v dir_read@a a `uc  1 a 1 100 ]
+"2349
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_read@dp dp `*.39S223  1 p 2 92 ]
+"2350
+[v dir_read@vol vol `i  1 p 2 94 ]
+"2416
+} 0
+"2046
+[v _sum_sfn sum_sfn `(uc  1 s 1 sum_sfn ]
+{
+"2051
+[v sum_sfn@n n `ui  1 a 2 17 ]
+"2050
+[v sum_sfn@sum sum `uc  1 a 1 19 ]
+"2047
+[v sum_sfn@dir dir `*.39Cuc  1 p 2 13 ]
+"2057
+} 0
+"1733
+[v _dir_next dir_next `(E69  1 s 1 dir_next ]
+{
+"1738
+[v dir_next@clst clst `ul  1 a 4 88 ]
+[v dir_next@ofs ofs `ul  1 a 4 82 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1739
+[v dir_next@fs fs `*.39S154  1 a 2 86 ]
+"1734
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v dir_next@dp dp `*.39S223  1 p 2 62 ]
+"1735
+[v dir_next@stretch stretch `i  1 p 2 64 ]
+"1783
+} 0
+"1644
+[v _dir_clear dir_clear `(E69  1 s 1 dir_clear ]
+{
+"1649
+[v dir_clear@sect sect `ul  1 a 4 2 ]
+"1650
+[v dir_clear@n n `ui  1 a 2 8 ]
+[v dir_clear@szb szb `ui  1 a 2 6 ]
+"1651
+[v dir_clear@ibuf ibuf `*.39uc  1 a 2 0 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1645
+[v dir_clear@fs fs `*.39S154  1 p 2 146 ]
+"1646
+[v dir_clear@clst clst `ul  1 p 4 148 ]
+"1673
+} 0
+"1124
+[v _clst2sect clst2sect `(ul  1 s 4 clst2sect ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1125
+[v clst2sect@fs fs `*.39S154  1 p 2 44 ]
+"1126
+[v clst2sect@clst clst `ul  1 p 4 46 ]
+"1132
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 40 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 32 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 36 ]
+"129
+} 0
+"1509 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _create_chain create_chain `(ul  1 s 4 create_chain ]
+{
+"1514
+[v create_chain@cs cs `ul  1 a 4 58 ]
+[v create_chain@ncl ncl `ul  1 a 4 52 ]
+[v create_chain@scl scl `ul  1 a 4 48 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1516
+[v create_chain@fs fs `*.39S154  1 a 2 56 ]
+"1515
+[v create_chain@res res `E69  1 a 1 47 ]
+"1510
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[v create_chain@obj obj `*.39S216  1 p 2 33 ]
+"1511
+[v create_chain@clst clst `ul  1 p 4 35 ]
+"1600
+} 0
+"1220
+[v _put_fat put_fat `(E69  1 s 1 put_fat ]
+{
+"1226
+[v put_fat@bc bc `ui  1 a 2 30 ]
+"1227
+[v put_fat@p p `*.39uc  1 a 2 28 ]
+"1228
+[v put_fat@res res `E69  1 a 1 32 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1221
+[v put_fat@fs fs `*.39S154  1 p 2 0 ]
+"1222
+[v put_fat@clst clst `ul  1 p 4 2 ]
+"1223
+[v put_fat@val val `ul  1 p 4 6 ]
+"1269
+} 0
+"607
+[v _st_word st_word `(v  1 s 1 st_word ]
+{
+[v st_word@ptr ptr `*.39uc  1 p 2 13 ]
+[v st_word@val val `us  1 p 2 15 ]
+"611
+} 0
+"614
+[v _st_dword st_dword `(v  1 s 1 st_dword ]
+{
+[v st_dword@ptr ptr `*.39uc  1 p 2 0 ]
+[v st_dword@val val `ul  1 p 4 2 ]
+"620
+} 0
+"1054
+[v _move_window move_window `(E69  1 s 1 move_window ]
+{
+"1059
+[v move_window@res res `E69  1 a 1 57 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1055
+[v move_window@fs fs `*.39S154  1 p 2 146 ]
+"1056
+[v move_window@sector sector `ul  1 p 4 148 ]
+"1075
+} 0
+"1031
+[v _sync_window sync_window `(E69  1 s 1 sync_window ]
+{
+"1035
+[v sync_window@res res `E69  1 a 1 55 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1032
+[v sync_window@fs fs `*.39S154  1 p 2 128 ]
+"1049
+} 0
+"407 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\diskio.c
+[v _disk_write disk_write `(E11  1 e 1 0 ]
+{
+"408
+[v disk_write@pdrv pdrv `uc  1 a 1 wreg ]
+[v disk_write@pdrv pdrv `uc  1 a 1 wreg ]
+"409
+[v disk_write@buff buff `*.39Cuc  1 p 2 120 ]
+"410
+[v disk_write@sector sector `ul  1 p 4 122 ]
+"411
+[v disk_write@count count `ui  1 p 2 126 ]
+"414
+[v disk_write@pdrv pdrv `uc  1 a 1 54 ]
+"439
+} 0
+"233
+[v _send_cmd send_cmd `(uc  1 s 1 send_cmd ]
+{
+"234
+[v send_cmd@cmd cmd `uc  1 a 1 wreg ]
+"241
+[v send_cmd@res res `uc  1 a 1 52 ]
+"234
+[v send_cmd@cmd cmd `uc  1 a 1 wreg ]
+"235
+[v send_cmd@arg arg `ul  1 p 4 47 ]
+"244
+[v send_cmd@cmd cmd `uc  1 a 1 51 ]
+"283
+} 0
+"94
+[v _deselect deselect `(v  1 s 1 deselect ]
+{
+"98
+} 0
+"372
+[v _disk_read disk_read `(E11  1 e 1 0 ]
+{
+"373
+[v disk_read@pdrv pdrv `uc  1 a 1 wreg ]
+"379
+[v disk_read@cmd cmd `uc  1 a 1 56 ]
+"373
+[v disk_read@pdrv pdrv `uc  1 a 1 wreg ]
+"374
+[v disk_read@buff buff `*.39uc  1 p 2 120 ]
+"375
+[v disk_read@sector sector `ul  1 p 4 122 ]
+"376
+[v disk_read@count count `ui  1 p 2 126 ]
+"382
+[v disk_read@pdrv pdrv `uc  1 a 1 53 ]
+"398
+} 0
+"124
+[v _rcvr_datablock rcvr_datablock `(uc  1 s 1 rcvr_datablock ]
+{
+"130
+[v rcvr_datablock@tmr tmr `ui  1 a 2 37 ]
+"129
+[v rcvr_datablock@token token `uc  1 a 1 39 ]
+"125
+[v rcvr_datablock@buff buff `*.39uc  1 p 2 33 ]
+"126
+[v rcvr_datablock@btr btr `ui  1 p 2 35 ]
+"147
+} 0
+"576 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\ff.c
+[v _ld_dword ld_dword `(ul  1 s 4 ld_dword ]
+{
+"578
+[v ld_dword@rv rv `ul  1 a 4 21 ]
+"576
+[v ld_dword@ptr ptr `*.39Cuc  1 p 2 13 ]
+"585
+} 0
+"1142
+[v _get_fat get_fat `(ul  1 s 4 get_fat ]
+{
+"1148
+[v get_fat@val val `ul  1 a 4 18 ]
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"1149
+[v get_fat@fs fs `*.39S154  1 a 2 24 ]
+"1147
+[v get_fat@bc bc `ui  1 a 2 22 ]
+[v get_fat@wc wc `ui  1 a 2 16 ]
+"1143
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[v get_fat@obj obj `*.39S216  1 p 2 0 ]
+"1144
+[v get_fat@clst clst `ul  1 p 4 2 ]
+"1209
+} 0
+"177 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _scan_files scan_files `RR(E7469  1 e 1 0 ]
+{
+[s S154 . 561 `uc 1 fs_type 1 0 `uc 1 pdrv 1 1 `uc 1 n_fats 1 2 `uc 1 wflag 1 3 `uc 1 fsi_flag 1 4 `us 1 id 2 5 `us 1 n_rootdir 2 7 `us 1 csize 2 9 `*.39us 1 lfnbuf 2 11 `ul 1 last_clst 4 13 `ul 1 free_clst 4 17 `ul 1 n_fatent 4 21 `ul 1 fsize 4 25 `ul 1 volbase 4 29 `ul 1 fatbase 4 33 `ul 1 dirbase 4 37 `ul 1 database 4 41 `ul 1 winsect 4 45 `[512]uc 1 win 512 49 ]
+"182
+[s S216 . 14 `*.39S154 1 fs 2 0 `us 1 id 2 2 `uc 1 attr 1 4 `uc 1 stat 1 5 `ul 1 sclust 4 6 `ul 1 objsize 4 10 ]
+[s S223 . 44 `S216 1 obj 14 0 `ul 1 dptr 4 14 `ul 1 clust 4 18 `ul 1 sect 4 22 `*.39uc 1 dir 2 26 `[12]uc 1 fn 12 28 `ul 1 blk_ofs 4 40 ]
+[v _dir dir `S223  1 a 44 0 ]
+"181
+[v _res res `E7469  1 a 1 44 ]
+"178
+[v _path path `*.39uc  1 p 2 -2 ]
+[s S236 . 278 `ul 1 fsize 4 0 `us 1 fdate 2 4 `us 1 ftime 2 6 `uc 1 fattrib 1 8 `[13]uc 1 altname 13 9 `[256]uc 1 fname 256 22 ]
+"184
+[v scan_files@fno fno `S236  1 s 278 fno ]
+"208
+} 45
+"464 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"530
+[v printf@cp cp `*.34Cuc  1 a 2 36 ]
+"528
+[v printf@val val `ui  1 a 2 32 ]
+"499
+[v printf@c c `c  1 a 1 38 ]
+"466
+[v printf@ap ap `[1]*.30v  1 a 1 35 ]
+"506
+[v printf@prec prec `c  1 a 1 34 ]
+"464
+[v printf@f f `*.32Cuc  1 p 2 26 ]
+"1541
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 18 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 17 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 13 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 15 ]
+"31
+} 0
+"26 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\xprintf.c
+[v _xputc xputc `RR(v  1 e 1 0 ]
+{
+[v _c c `uc  1 p 1 -1 ]
+"36
+} 0
+"57 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"75
+} 0
+"157 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"168
+} 0
+"175
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"178
+} 0
+"72 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\main.c
+[v _softRTC softRTC `(v  1 e 1 0 ]
+{
+"76
+[v softRTC@n n `uc  1 a 1 4 ]
+"74
+[v softRTC@samurai samurai `C[12]uc  1 s 12 samurai ]
+"75
+[v softRTC@div1k div1k `ui  1 s 2 div1k ]
+"105
+} 0
+"120 D:\abd\Documents\MPLABX Projeler\SDCard_deneme3\mcc_generated_files/tmr1.c
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `ui  1 p 2 0 ]
+"140
+} 0

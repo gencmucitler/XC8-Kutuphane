@@ -1,0 +1,985 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;integer.h: 18: typedef int INT;
+[; ;integer.h: 19: typedef unsigned int UINT;
+[; ;integer.h: 22: typedef unsigned char BYTE;
+[; ;integer.h: 25: typedef short SHORT;
+[; ;integer.h: 26: typedef unsigned short WORD;
+[; ;integer.h: 27: typedef unsigned short WCHAR;
+[; ;integer.h: 30: typedef long LONG;
+[; ;integer.h: 31: typedef unsigned long DWORD;
+[; ;integer.h: 34: typedef unsigned long long QWORD;
+[; ;ff.h: 66: typedef char TCHAR;
+[; ;ff.h: 80: typedef DWORD FSIZE_t;
+[; ;ff.h: 87: typedef struct {
+[; ;ff.h: 88: BYTE fs_type;
+[; ;ff.h: 89: BYTE pdrv;
+[; ;ff.h: 90: BYTE n_fats;
+[; ;ff.h: 91: BYTE wflag;
+[; ;ff.h: 92: BYTE fsi_flag;
+[; ;ff.h: 93: WORD id;
+[; ;ff.h: 94: WORD n_rootdir;
+[; ;ff.h: 95: WORD csize;
+[; ;ff.h: 100: WCHAR* lfnbuf;
+[; ;ff.h: 109: DWORD last_clst;
+[; ;ff.h: 110: DWORD free_clst;
+[; ;ff.h: 120: DWORD n_fatent;
+[; ;ff.h: 121: DWORD fsize;
+[; ;ff.h: 122: DWORD volbase;
+[; ;ff.h: 123: DWORD fatbase;
+[; ;ff.h: 124: DWORD dirbase;
+[; ;ff.h: 125: DWORD database;
+[; ;ff.h: 126: DWORD winsect;
+[; ;ff.h: 127: BYTE win[512];
+[; ;ff.h: 128: } FATFS;
+[; ;ff.h: 134: typedef struct {
+[; ;ff.h: 135: FATFS* fs;
+[; ;ff.h: 136: WORD id;
+[; ;ff.h: 137: BYTE attr;
+[; ;ff.h: 138: BYTE stat;
+[; ;ff.h: 139: DWORD sclust;
+[; ;ff.h: 140: FSIZE_t objsize;
+[; ;ff.h: 151: } FFOBJID;
+[; ;ff.h: 157: typedef struct {
+[; ;ff.h: 158: FFOBJID obj;
+[; ;ff.h: 159: BYTE flag;
+[; ;ff.h: 160: BYTE err;
+[; ;ff.h: 161: FSIZE_t fptr;
+[; ;ff.h: 162: DWORD clust;
+[; ;ff.h: 163: DWORD sect;
+[; ;ff.h: 165: DWORD dir_sect;
+[; ;ff.h: 166: BYTE* dir_ptr;
+[; ;ff.h: 172: BYTE buf[512];
+[; ;ff.h: 174: } FIL;
+[; ;ff.h: 180: typedef struct {
+[; ;ff.h: 181: FFOBJID obj;
+[; ;ff.h: 182: DWORD dptr;
+[; ;ff.h: 183: DWORD clust;
+[; ;ff.h: 184: DWORD sect;
+[; ;ff.h: 185: BYTE* dir;
+[; ;ff.h: 186: BYTE fn[12];
+[; ;ff.h: 188: DWORD blk_ofs;
+[; ;ff.h: 193: } DIR;
+[; ;ff.h: 199: typedef struct {
+[; ;ff.h: 200: FSIZE_t fsize;
+[; ;ff.h: 201: WORD fdate;
+[; ;ff.h: 202: WORD ftime;
+[; ;ff.h: 203: BYTE fattrib;
+[; ;ff.h: 205: TCHAR altname[12 + 1];
+[; ;ff.h: 206: TCHAR fname[255 + 1];
+[; ;ff.h: 210: } FILINFO;
+[; ;ff.h: 216: typedef enum {
+[; ;ff.h: 217: FR_OK = 0,
+[; ;ff.h: 218: FR_DISK_ERR,
+[; ;ff.h: 219: FR_INT_ERR,
+[; ;ff.h: 220: FR_NOT_READY,
+[; ;ff.h: 221: FR_NO_FILE,
+[; ;ff.h: 222: FR_NO_PATH,
+[; ;ff.h: 223: FR_INVALID_NAME,
+[; ;ff.h: 224: FR_DENIED,
+[; ;ff.h: 225: FR_EXIST,
+[; ;ff.h: 226: FR_INVALID_OBJECT,
+[; ;ff.h: 227: FR_WRITE_PROTECTED,
+[; ;ff.h: 228: FR_INVALID_DRIVE,
+[; ;ff.h: 229: FR_NOT_ENABLED,
+[; ;ff.h: 230: FR_NO_FILESYSTEM,
+[; ;ff.h: 231: FR_MKFS_ABORTED,
+[; ;ff.h: 232: FR_TIMEOUT,
+[; ;ff.h: 233: FR_LOCKED,
+[; ;ff.h: 234: FR_NOT_ENOUGH_CORE,
+[; ;ff.h: 235: FR_TOO_MANY_OPEN_FILES,
+[; ;ff.h: 236: FR_INVALID_PARAMETER
+[; ;ff.h: 237: } FRESULT;
+[; ;ff.h: 244: FRESULT f_open (FIL* fp, const TCHAR* path, BYTE mode);
+[; ;ff.h: 245: FRESULT f_close (FIL* fp);
+[; ;ff.h: 246: FRESULT f_read (FIL* fp, void* buff, UINT btr, UINT* br);
+[; ;ff.h: 247: FRESULT f_write (FIL* fp, const void* buff, UINT btw, UINT* bw);
+[; ;ff.h: 248: FRESULT f_lseek (FIL* fp, FSIZE_t ofs);
+[; ;ff.h: 249: FRESULT f_truncate (FIL* fp);
+[; ;ff.h: 250: FRESULT f_sync (FIL* fp);
+[; ;ff.h: 251: FRESULT f_opendir (DIR* dp, const TCHAR* path);
+[; ;ff.h: 252: FRESULT f_closedir (DIR* dp);
+[; ;ff.h: 253: FRESULT f_readdir (DIR* dp, FILINFO* fno);
+[; ;ff.h: 254: FRESULT f_findfirst (DIR* dp, FILINFO* fno, const TCHAR* path, const TCHAR* pattern);
+[; ;ff.h: 255: FRESULT f_findnext (DIR* dp, FILINFO* fno);
+[; ;ff.h: 256: FRESULT f_mkdir (const TCHAR* path);
+[; ;ff.h: 257: FRESULT f_unlink (const TCHAR* path);
+[; ;ff.h: 258: FRESULT f_rename (const TCHAR* path_old, const TCHAR* path_new);
+[; ;ff.h: 259: FRESULT f_stat (const TCHAR* path, FILINFO* fno);
+[; ;ff.h: 260: FRESULT f_chmod (const TCHAR* path, BYTE attr, BYTE mask);
+[; ;ff.h: 261: FRESULT f_utime (const TCHAR* path, const FILINFO* fno);
+[; ;ff.h: 262: FRESULT f_chdir (const TCHAR* path);
+[; ;ff.h: 263: FRESULT f_chdrive (const TCHAR* path);
+[; ;ff.h: 264: FRESULT f_getcwd (TCHAR* buff, UINT len);
+[; ;ff.h: 265: FRESULT f_getfree (const TCHAR* path, DWORD* nclst, FATFS** fatfs);
+[; ;ff.h: 266: FRESULT f_getlabel (const TCHAR* path, TCHAR* label, DWORD* vsn);
+[; ;ff.h: 267: FRESULT f_setlabel (const TCHAR* label);
+[; ;ff.h: 268: FRESULT f_forward (FIL* fp, UINT(*func)(const BYTE*,UINT), UINT btf, UINT* bf);
+[; ;ff.h: 269: FRESULT f_expand (FIL* fp, FSIZE_t szf, BYTE opt);
+[; ;ff.h: 270: FRESULT f_mount (FATFS* fs, const TCHAR* path, BYTE opt);
+[; ;ff.h: 271: FRESULT f_mkfs (const TCHAR* path, BYTE opt, DWORD au, void* work, UINT len);
+[; ;ff.h: 272: FRESULT f_fdisk (BYTE pdrv, const DWORD* szt, void* work);
+[; ;ff.h: 273: FRESULT f_setcp (WORD cp);
+[; ;ff.h: 274: int f_putc (TCHAR c, FIL* fp);
+[; ;ff.h: 275: int f_puts (const TCHAR* str, FIL* cp);
+[; ;ff.h: 276: int f_printf (FIL* fp, const TCHAR* str, ...);
+[; ;ff.h: 277: TCHAR* f_gets (TCHAR* buff, int len, FIL* fp);
+[; ;ff.h: 300: DWORD get_fattime (void);
+[; ;ff.h: 305: WCHAR ff_oem2uni (WCHAR oem, WORD cp);
+[; ;ff.h: 306: WCHAR ff_uni2oem (DWORD uni, WORD cp);
+[; ;ff.h: 307: DWORD ff_wtoupper (DWORD uni);
+"15126 ffunicode.c
+[v _uc857 `Cus ~T0 @X0 -> 0 `x s ]
+[i _uc857
+:U ..
+"15127
+-> -> 199 `i `us
+-> -> 252 `i `us
+-> -> 233 `i `us
+-> -> 226 `i `us
+-> -> 228 `i `us
+-> -> 224 `i `us
+-> -> 229 `i `us
+-> -> 231 `i `us
+-> -> 234 `i `us
+-> -> 235 `i `us
+-> -> 232 `i `us
+-> -> 239 `i `us
+-> -> 238 `i `us
+-> -> 305 `i `us
+-> -> 196 `i `us
+-> -> 197 `i `us
+"15128
+-> -> 201 `i `us
+-> -> 230 `i `us
+-> -> 198 `i `us
+-> -> 244 `i `us
+-> -> 246 `i `us
+-> -> 242 `i `us
+-> -> 251 `i `us
+-> -> 249 `i `us
+-> -> 304 `i `us
+-> -> 214 `i `us
+-> -> 220 `i `us
+-> -> 248 `i `us
+-> -> 163 `i `us
+-> -> 216 `i `us
+-> -> 350 `i `us
+-> -> 351 `i `us
+"15129
+-> -> 225 `i `us
+-> -> 237 `i `us
+-> -> 243 `i `us
+-> -> 250 `i `us
+-> -> 241 `i `us
+-> -> 209 `i `us
+-> -> 286 `i `us
+-> -> 287 `i `us
+-> -> 191 `i `us
+-> -> 174 `i `us
+-> -> 172 `i `us
+-> -> 189 `i `us
+-> -> 188 `i `us
+-> -> 161 `i `us
+-> -> 171 `i `us
+-> -> 187 `i `us
+"15130
+-> -> 9617 `i `us
+-> -> 9618 `i `us
+-> -> 9619 `i `us
+-> -> 9474 `i `us
+-> -> 9508 `i `us
+-> -> 193 `i `us
+-> -> 194 `i `us
+-> -> 192 `i `us
+-> -> 169 `i `us
+-> -> 9571 `i `us
+-> -> 9553 `i `us
+-> -> 9559 `i `us
+-> -> 9565 `i `us
+-> -> 162 `i `us
+-> -> 165 `i `us
+-> -> 9488 `i `us
+"15131
+-> -> 9492 `i `us
+-> -> 9524 `i `us
+-> -> 9516 `i `us
+-> -> 9500 `i `us
+-> -> 9472 `i `us
+-> -> 9532 `i `us
+-> -> 227 `i `us
+-> -> 195 `i `us
+-> -> 9562 `i `us
+-> -> 9556 `i `us
+-> -> 9577 `i `us
+-> -> 9574 `i `us
+-> -> 9568 `i `us
+-> -> 9552 `i `us
+-> -> 9580 `i `us
+-> -> 164 `i `us
+"15132
+-> -> 186 `i `us
+-> -> 170 `i `us
+-> -> 202 `i `us
+-> -> 203 `i `us
+-> -> 200 `i `us
+-> -> 0 `i `us
+-> -> 205 `i `us
+-> -> 206 `i `us
+-> -> 207 `i `us
+-> -> 9496 `i `us
+-> -> 9484 `i `us
+-> -> 9608 `i `us
+-> -> 9604 `i `us
+-> -> 166 `i `us
+-> -> 204 `i `us
+-> -> 9600 `i `us
+"15133
+-> -> 211 `i `us
+-> -> 223 `i `us
+-> -> 212 `i `us
+-> -> 210 `i `us
+-> -> 245 `i `us
+-> -> 213 `i `us
+-> -> 181 `i `us
+-> -> 0 `i `us
+-> -> 215 `i `us
+-> -> 218 `i `us
+-> -> 219 `i `us
+-> -> 217 `i `us
+-> -> 236 `i `us
+-> -> 255 `i `us
+-> -> 175 `i `us
+-> -> 180 `i `us
+"15134
+-> -> 173 `i `us
+-> -> 177 `i `us
+-> -> 0 `i `us
+-> -> 190 `i `us
+-> -> 182 `i `us
+-> -> 167 `i `us
+-> -> 247 `i `us
+-> -> 184 `i `us
+-> -> 176 `i `us
+-> -> 168 `i `us
+-> -> 183 `i `us
+-> -> 185 `i `us
+-> -> 179 `i `us
+-> -> 178 `i `us
+-> -> 9632 `i `us
+"15135
+-> -> 160 `i `us
+..
+]
+[; ;ffunicode.c: 15125: static
+[; ;ffunicode.c: 15126: const WCHAR uc857[] = {
+[; ;ffunicode.c: 15127: 0x00C7, 0x00FC, 0x00E9, 0x00E2, 0x00E4, 0x00E0, 0x00E5, 0x00E7, 0x00EA, 0x00EB, 0x00E8, 0x00EF, 0x00EE, 0x0131, 0x00C4, 0x00C5,
+[; ;ffunicode.c: 15128: 0x00C9, 0x00E6, 0x00C6, 0x00F4, 0x00F6, 0x00F2, 0x00FB, 0x00F9, 0x0130, 0x00D6, 0x00DC, 0x00F8, 0x00A3, 0x00D8, 0x015E, 0x015F,
+[; ;ffunicode.c: 15129: 0x00E1, 0x00ED, 0x00F3, 0x00FA, 0x00F1, 0x00D1, 0x011E, 0x011F, 0x00BF, 0x00AE, 0x00AC, 0x00BD, 0x00BC, 0x00A1, 0x00AB, 0x00BB,
+[; ;ffunicode.c: 15130: 0x2591, 0x2592, 0x2593, 0x2502, 0x2524, 0x00C1, 0x00C2, 0x00C0, 0x00A9, 0x2563, 0x2551, 0x2557, 0x255D, 0x00A2, 0x00A5, 0x2510,
+[; ;ffunicode.c: 15131: 0x2514, 0x2534, 0x252C, 0x251C, 0x2500, 0x253C, 0x00E3, 0x00C3, 0x255A, 0x2554, 0x2569, 0x2566, 0x2560, 0x2550, 0x256C, 0x00A4,
+[; ;ffunicode.c: 15132: 0x00BA, 0x00AA, 0x00CA, 0x00CB, 0x00C8, 0x0000, 0x00CD, 0x00CE, 0x00CF, 0x2518, 0x250C, 0x2588, 0x2584, 0x00A6, 0x00CC, 0x2580,
+[; ;ffunicode.c: 15133: 0x00D3, 0x00DF, 0x00D4, 0x00D2, 0x00F5, 0x00D5, 0x00B5, 0x0000, 0x00D7, 0x00DA, 0x00DB, 0x00D9, 0x00EC, 0x00FF, 0x00AF, 0x00B4,
+[; ;ffunicode.c: 15134: 0x00AD, 0x00B1, 0x0000, 0x00BE, 0x00B6, 0x00A7, 0x00F7, 0x00B8, 0x00B0, 0x00A8, 0x00B7, 0x00B9, 0x00B3, 0x00B2, 0x25A0, 0x00A0
+[; ;ffunicode.c: 15135: };
+"15251
+[v _ff_uni2oem `(us ~T0 @X0 1 ef2`ul`us ]
+"15255
+{
+[; ;ffunicode.c: 15251: WCHAR ff_uni2oem (
+[; ;ffunicode.c: 15252: DWORD uni,
+[; ;ffunicode.c: 15253: WORD cp
+[; ;ffunicode.c: 15254: )
+[; ;ffunicode.c: 15255: {
+[e :U _ff_uni2oem ]
+"15252
+[v _uni `ul ~T0 @X0 1 r1 ]
+"15253
+[v _cp `us ~T0 @X0 1 r2 ]
+"15255
+[f ]
+"15256
+[v _c `us ~T0 @X0 1 a ]
+[; ;ffunicode.c: 15256: WCHAR c = 0;
+[e = _c -> -> 0 `i `us ]
+"15257
+[v _p `*Cus ~T0 @X0 1 a ]
+[; ;ffunicode.c: 15257: const WCHAR *p = uc857;
+[e = _p &U _uc857 ]
+[; ;ffunicode.c: 15260: if (uni < 0x80) {
+"15260
+[e $ ! < _uni -> -> -> 128 `i `l `ul 7  ]
+{
+[; ;ffunicode.c: 15261: c = (WCHAR)uni;
+"15261
+[e = _c -> _uni `us ]
+"15263
+}
+[; ;ffunicode.c: 15263: } else {
+[e $U 8  ]
+[e :U 7 ]
+{
+[; ;ffunicode.c: 15264: if (uni < 0x10000 && cp == 857) {
+"15264
+[e $ ! && < _uni -> -> 65536 `l `ul == -> _cp `ui -> -> 857 `i `ui 9  ]
+{
+[; ;ffunicode.c: 15265: for (c = 0; c < 0x80 && uni != p[c]; c++) ;
+"15265
+{
+[e = _c -> -> 0 `i `us ]
+[e $U 13  ]
+[e :U 10 ]
+[e ++ _c -> -> 1 `i `us ]
+[e :U 13 ]
+[e $ && < -> _c `ui -> -> 128 `i `ui != _uni -> *U + _p * -> _c `ux -> -> # *U _p `ui `ux `ul 10  ]
+[e :U 11 ]
+}
+[; ;ffunicode.c: 15266: c = (c + 0x80) & 0xFF;
+"15266
+[e = _c -> & + -> _c `ui -> -> 128 `i `ui -> -> 255 `i `ui `us ]
+"15267
+}
+[e :U 9 ]
+"15268
+}
+[e :U 8 ]
+[; ;ffunicode.c: 15267: }
+[; ;ffunicode.c: 15268: }
+[; ;ffunicode.c: 15270: return c;
+"15270
+[e ) _c ]
+[e $UE 6  ]
+[; ;ffunicode.c: 15271: }
+"15271
+[e :UE 6 ]
+}
+"15273
+[v _ff_oem2uni `(us ~T0 @X0 1 ef2`us`us ]
+"15277
+{
+[; ;ffunicode.c: 15273: WCHAR ff_oem2uni (
+[; ;ffunicode.c: 15274: WCHAR oem,
+[; ;ffunicode.c: 15275: WORD cp
+[; ;ffunicode.c: 15276: )
+[; ;ffunicode.c: 15277: {
+[e :U _ff_oem2uni ]
+"15274
+[v _oem `us ~T0 @X0 1 r1 ]
+"15275
+[v _cp `us ~T0 @X0 1 r2 ]
+"15277
+[f ]
+"15278
+[v _c `us ~T0 @X0 1 a ]
+[; ;ffunicode.c: 15278: WCHAR c = 0;
+[e = _c -> -> 0 `i `us ]
+"15279
+[v _p `*Cus ~T0 @X0 1 a ]
+[; ;ffunicode.c: 15279: const WCHAR *p = uc857;
+[e = _p &U _uc857 ]
+[; ;ffunicode.c: 15282: if (oem < 0x80) {
+"15282
+[e $ ! < -> _oem `ui -> -> 128 `i `ui 15  ]
+{
+[; ;ffunicode.c: 15283: c = oem;
+"15283
+[e = _c _oem ]
+"15285
+}
+[; ;ffunicode.c: 15285: } else {
+[e $U 16  ]
+[e :U 15 ]
+{
+[; ;ffunicode.c: 15286: if (cp == 857) {
+"15286
+[e $ ! == -> _cp `ui -> -> 857 `i `ui 17  ]
+{
+[; ;ffunicode.c: 15287: if (oem < 0x100) c = p[oem - 0x80];
+"15287
+[e $ ! < -> _oem `ui -> -> 256 `i `ui 18  ]
+[e = _c *U + _p * -> - -> _oem `ui -> -> 128 `i `ui `ux -> -> # *U _p `ui `ux ]
+[e :U 18 ]
+"15288
+}
+[e :U 17 ]
+"15289
+}
+[e :U 16 ]
+[; ;ffunicode.c: 15288: }
+[; ;ffunicode.c: 15289: }
+[; ;ffunicode.c: 15291: return c;
+"15291
+[e ) _c ]
+[e $UE 14  ]
+[; ;ffunicode.c: 15292: }
+"15292
+[e :UE 14 ]
+}
+"15495
+[v _ff_wtoupper `(ul ~T0 @X0 1 ef1`ul ]
+"15498
+{
+[; ;ffunicode.c: 15495: DWORD ff_wtoupper (
+[; ;ffunicode.c: 15496: DWORD uni
+[; ;ffunicode.c: 15497: )
+[; ;ffunicode.c: 15498: {
+[e :U _ff_wtoupper ]
+"15496
+[v _uni `ul ~T0 @X0 1 r1 ]
+"15498
+[f ]
+"15500
+[v F226 `Cus ~T0 @X0 -> 0 `x s cvt1 ]
+[i F226
+:U ..
+"15502
+-> -> 97 `i `us
+-> -> 794 `i `us
+"15504
+-> -> 224 `i `us
+-> -> 791 `i `us
+-> -> 248 `i `us
+-> -> 775 `i `us
+-> -> 255 `i `us
+-> -> 1 `i `us
+-> -> 376 `i `us
+"15506
+-> -> 256 `i `us
+-> -> 304 `i `us
+-> -> 306 `i `us
+-> -> 262 `i `us
+-> -> 313 `i `us
+-> -> 272 `i `us
+-> -> 330 `i `us
+-> -> 302 `i `us
+-> -> 377 `i `us
+-> -> 262 `i `us
+"15508
+-> -> 384 `i `us
+-> -> 77 `i `us
+-> -> 579 `i `us
+-> -> 385 `i `us
+-> -> 386 `i `us
+-> -> 386 `i `us
+-> -> 388 `i `us
+-> -> 388 `i `us
+-> -> 390 `i `us
+-> -> 391 `i `us
+-> -> 391 `i `us
+-> -> 393 `i `us
+-> -> 394 `i `us
+-> -> 395 `i `us
+-> -> 395 `i `us
+-> -> 397 `i `us
+-> -> 398 `i `us
+-> -> 399 `i `us
+-> -> 400 `i `us
+-> -> 401 `i `us
+-> -> 401 `i `us
+-> -> 403 `i `us
+-> -> 404 `i `us
+-> -> 502 `i `us
+-> -> 406 `i `us
+-> -> 407 `i `us
+-> -> 408 `i `us
+-> -> 408 `i `us
+-> -> 573 `i `us
+-> -> 411 `i `us
+-> -> 412 `i `us
+-> -> 413 `i `us
+-> -> 544 `i `us
+-> -> 415 `i `us
+-> -> 416 `i `us
+-> -> 416 `i `us
+-> -> 418 `i `us
+-> -> 418 `i `us
+-> -> 420 `i `us
+-> -> 420 `i `us
+-> -> 422 `i `us
+-> -> 423 `i `us
+-> -> 423 `i `us
+-> -> 425 `i `us
+-> -> 426 `i `us
+-> -> 427 `i `us
+-> -> 428 `i `us
+-> -> 428 `i `us
+-> -> 430 `i `us
+-> -> 431 `i `us
+-> -> 431 `i `us
+-> -> 433 `i `us
+-> -> 434 `i `us
+-> -> 435 `i `us
+-> -> 435 `i `us
+-> -> 437 `i `us
+-> -> 437 `i `us
+-> -> 439 `i `us
+-> -> 440 `i `us
+-> -> 440 `i `us
+-> -> 442 `i `us
+-> -> 443 `i `us
+-> -> 444 `i `us
+-> -> 444 `i `us
+-> -> 446 `i `us
+-> -> 503 `i `us
+-> -> 448 `i `us
+-> -> 449 `i `us
+-> -> 450 `i `us
+-> -> 451 `i `us
+-> -> 452 `i `us
+-> -> 453 `i `us
+-> -> 452 `i `us
+-> -> 455 `i `us
+-> -> 456 `i `us
+-> -> 455 `i `us
+-> -> 458 `i `us
+-> -> 459 `i `us
+-> -> 458 `i `us
+"15509
+-> -> 461 `i `us
+-> -> 272 `i `us
+-> -> 477 `i `us
+-> -> 1 `i `us
+-> -> 398 `i `us
+-> -> 478 `i `us
+-> -> 274 `i `us
+-> -> 499 `i `us
+-> -> 3 `i `us
+-> -> 497 `i `us
+-> -> 500 `i `us
+-> -> 500 `i `us
+-> -> 504 `i `us
+-> -> 296 `i `us
+"15510
+-> -> 546 `i `us
+-> -> 274 `i `us
+-> -> 570 `i `us
+-> -> 9 `i `us
+-> -> 11365 `i `us
+-> -> 571 `i `us
+-> -> 571 `i `us
+-> -> 573 `i `us
+-> -> 11366 `i `us
+-> -> 575 `i `us
+-> -> 576 `i `us
+-> -> 577 `i `us
+-> -> 577 `i `us
+-> -> 582 `i `us
+-> -> 266 `i `us
+"15512
+-> -> 595 `i `us
+-> -> 64 `i `us
+-> -> 385 `i `us
+-> -> 390 `i `us
+-> -> 597 `i `us
+-> -> 393 `i `us
+-> -> 394 `i `us
+-> -> 600 `i `us
+-> -> 399 `i `us
+-> -> 602 `i `us
+-> -> 400 `i `us
+-> -> 604 `i `us
+-> -> 605 `i `us
+-> -> 606 `i `us
+-> -> 607 `i `us
+-> -> 403 `i `us
+-> -> 609 `i `us
+-> -> 610 `i `us
+-> -> 404 `i `us
+-> -> 612 `i `us
+-> -> 613 `i `us
+-> -> 614 `i `us
+-> -> 615 `i `us
+-> -> 407 `i `us
+-> -> 406 `i `us
+-> -> 618 `i `us
+-> -> 11362 `i `us
+-> -> 620 `i `us
+-> -> 621 `i `us
+-> -> 622 `i `us
+-> -> 412 `i `us
+-> -> 624 `i `us
+-> -> 625 `i `us
+-> -> 413 `i `us
+-> -> 627 `i `us
+-> -> 628 `i `us
+-> -> 415 `i `us
+-> -> 630 `i `us
+-> -> 631 `i `us
+-> -> 632 `i `us
+-> -> 633 `i `us
+-> -> 634 `i `us
+-> -> 635 `i `us
+-> -> 636 `i `us
+-> -> 11364 `i `us
+-> -> 638 `i `us
+-> -> 639 `i `us
+-> -> 422 `i `us
+-> -> 641 `i `us
+-> -> 642 `i `us
+-> -> 425 `i `us
+-> -> 644 `i `us
+-> -> 645 `i `us
+-> -> 646 `i `us
+-> -> 647 `i `us
+-> -> 430 `i `us
+-> -> 580 `i `us
+-> -> 433 `i `us
+-> -> 434 `i `us
+-> -> 581 `i `us
+-> -> 653 `i `us
+-> -> 654 `i `us
+-> -> 655 `i `us
+-> -> 656 `i `us
+-> -> 657 `i `us
+-> -> 439 `i `us
+"15514
+-> -> 891 `i `us
+-> -> 3 `i `us
+-> -> 1021 `i `us
+-> -> 1022 `i `us
+-> -> 1023 `i `us
+-> -> 940 `i `us
+-> -> 4 `i `us
+-> -> 902 `i `us
+-> -> 904 `i `us
+-> -> 905 `i `us
+-> -> 906 `i `us
+-> -> 945 `i `us
+-> -> 785 `i `us
+"15515
+-> -> 962 `i `us
+-> -> 2 `i `us
+-> -> 931 `i `us
+-> -> 931 `i `us
+-> -> 964 `i `us
+-> -> 776 `i `us
+-> -> 972 `i `us
+-> -> 3 `i `us
+-> -> 908 `i `us
+-> -> 910 `i `us
+-> -> 911 `i `us
+-> -> 984 `i `us
+-> -> 280 `i `us
+"15516
+-> -> 1010 `i `us
+-> -> 10 `i `us
+-> -> 1017 `i `us
+-> -> 1011 `i `us
+-> -> 1012 `i `us
+-> -> 1013 `i `us
+-> -> 1014 `i `us
+-> -> 1015 `i `us
+-> -> 1015 `i `us
+-> -> 1017 `i `us
+-> -> 1018 `i `us
+-> -> 1018 `i `us
+"15518
+-> -> 1072 `i `us
+-> -> 800 `i `us
+-> -> 1104 `i `us
+-> -> 1808 `i `us
+-> -> 1120 `i `us
+-> -> 290 `i `us
+-> -> 1162 `i `us
+-> -> 310 `i `us
+-> -> 1217 `i `us
+-> -> 270 `i `us
+-> -> 1231 `i `us
+-> -> 1 `i `us
+-> -> 1216 `i `us
+-> -> 1232 `i `us
+-> -> 324 `i `us
+"15520
+-> -> 1377 `i `us
+-> -> 1062 `i `us
+"15523
+-> -> 0 `i `us
+..
+]
+"15524
+[v F227 `Cus ~T0 @X0 -> 0 `x s cvt2 ]
+[i F227
+:U ..
+"15526
+-> -> 7549 `i `us
+-> -> 1 `i `us
+-> -> 11363 `i `us
+"15528
+-> -> 7680 `i `us
+-> -> 406 `i `us
+-> -> 7840 `i `us
+-> -> 346 `i `us
+"15530
+-> -> 7936 `i `us
+-> -> 1544 `i `us
+-> -> 7952 `i `us
+-> -> 1542 `i `us
+-> -> 7968 `i `us
+-> -> 1544 `i `us
+-> -> 7984 `i `us
+-> -> 1544 `i `us
+-> -> 8000 `i `us
+-> -> 1542 `i `us
+"15531
+-> -> 8017 `i `us
+-> -> 7 `i `us
+-> -> 8025 `i `us
+-> -> 8018 `i `us
+-> -> 8027 `i `us
+-> -> 8020 `i `us
+-> -> 8029 `i `us
+-> -> 8022 `i `us
+-> -> 8031 `i `us
+-> -> 8032 `i `us
+-> -> 1544 `i `us
+"15532
+-> -> 8048 `i `us
+-> -> 14 `i `us
+-> -> 8122 `i `us
+-> -> 8123 `i `us
+-> -> 8136 `i `us
+-> -> 8137 `i `us
+-> -> 8138 `i `us
+-> -> 8139 `i `us
+-> -> 8154 `i `us
+-> -> 8155 `i `us
+-> -> 8184 `i `us
+-> -> 8185 `i `us
+-> -> 8170 `i `us
+-> -> 8171 `i `us
+-> -> 8186 `i `us
+-> -> 8187 `i `us
+"15533
+-> -> 8064 `i `us
+-> -> 1544 `i `us
+-> -> 8080 `i `us
+-> -> 1544 `i `us
+-> -> 8096 `i `us
+-> -> 1544 `i `us
+-> -> 8112 `i `us
+-> -> 4 `i `us
+-> -> 8120 `i `us
+-> -> 8121 `i `us
+-> -> 8114 `i `us
+-> -> 8124 `i `us
+"15534
+-> -> 8140 `i `us
+-> -> 1 `i `us
+-> -> 8131 `i `us
+-> -> 8144 `i `us
+-> -> 1538 `i `us
+-> -> 8160 `i `us
+-> -> 1538 `i `us
+-> -> 8165 `i `us
+-> -> 1 `i `us
+-> -> 8172 `i `us
+-> -> 8179 `i `us
+-> -> 1 `i `us
+-> -> 8188 `i `us
+"15536
+-> -> 8526 `i `us
+-> -> 1 `i `us
+-> -> 8498 `i `us
+"15538
+-> -> 8560 `i `us
+-> -> 528 `i `us
+-> -> 8580 `i `us
+-> -> 1 `i `us
+-> -> 8579 `i `us
+"15540
+-> -> 9424 `i `us
+-> -> 1306 `i `us
+-> -> 11312 `i `us
+-> -> 1071 `i `us
+"15542
+-> -> 11360 `i `us
+-> -> 258 `i `us
+-> -> 11367 `i `us
+-> -> 262 `i `us
+-> -> 11381 `i `us
+-> -> 258 `i `us
+"15544
+-> -> 11392 `i `us
+-> -> 356 `i `us
+"15546
+-> -> 11520 `i `us
+-> -> 2086 `i `us
+"15548
+-> -> 65345 `ui `us
+-> -> 794 `i `us
+"15551
+-> -> 0 `i `us
+..
+]
+"15552
+[v _p `*Cus ~T0 @X0 1 a ]
+"15553
+[v _uc `us ~T0 @X0 1 a ]
+[v _bc `us ~T0 @X0 1 a ]
+[v _nc `us ~T0 @X0 1 a ]
+[v _cmd `us ~T0 @X0 1 a ]
+[; ;ffunicode.c: 15500: static const WORD cvt1[] = {
+[; ;ffunicode.c: 15502: 0x0061,0x031A,
+[; ;ffunicode.c: 15504: 0x00E0,0x0317, 0x00F8,0x0307, 0x00FF,0x0001,0x0178,
+[; ;ffunicode.c: 15506: 0x0100,0x0130, 0x0132,0x0106, 0x0139,0x0110, 0x014A,0x012E, 0x0179,0x0106,
+[; ;ffunicode.c: 15508: 0x0180,0x004D,0x0243,0x0181,0x0182,0x0182,0x0184,0x0184,0x0186,0x0187,0x0187,0x0189,0x018A,0x018B,0x018B,0x018D,0x018E,0x018F,0x0190,0x0191,0x0191,0x0193,0x0194,0x01F6,0x0196,0x0197,0x0198,0x0198,0x023D,0x019B,0x019C,0x019D,0x0220,0x019F,0x01A0,0x01A
+[; ;ffunicode.c: 15509: 0x01CD,0x0110, 0x01DD,0x0001,0x018E, 0x01DE,0x0112, 0x01F3,0x0003,0x01F1,0x01F4,0x01F4, 0x01F8,0x0128,
+[; ;ffunicode.c: 15510: 0x0222,0x0112, 0x023A,0x0009,0x2C65,0x023B,0x023B,0x023D,0x2C66,0x023F,0x0240,0x0241,0x0241, 0x0246,0x010A,
+[; ;ffunicode.c: 15512: 0x0253,0x0040,0x0181,0x0186,0x0255,0x0189,0x018A,0x0258,0x018F,0x025A,0x0190,0x025C,0x025D,0x025E,0x025F,0x0193,0x0261,0x0262,0x0194,0x0264,0x0265,0x0266,0x0267,0x0197,0x0196,0x026A,0x2C62,0x026C,0x026D,0x026E,0x019C,0x0270,0x0271,0x019D,0x0273,0x027
+[; ;ffunicode.c: 15514: 0x037B,0x0003,0x03FD,0x03FE,0x03FF, 0x03AC,0x0004,0x0386,0x0388,0x0389,0x038A, 0x03B1,0x0311,
+[; ;ffunicode.c: 15515: 0x03C2,0x0002,0x03A3,0x03A3, 0x03C4,0x0308, 0x03CC,0x0003,0x038C,0x038E,0x038F, 0x03D8,0x0118,
+[; ;ffunicode.c: 15516: 0x03F2,0x000A,0x03F9,0x03F3,0x03F4,0x03F5,0x03F6,0x03F7,0x03F7,0x03F9,0x03FA,0x03FA,
+[; ;ffunicode.c: 15518: 0x0430,0x0320, 0x0450,0x0710, 0x0460,0x0122, 0x048A,0x0136, 0x04C1,0x010E, 0x04CF,0x0001,0x04C0, 0x04D0,0x0144,
+[; ;ffunicode.c: 15520: 0x0561,0x0426,
+[; ;ffunicode.c: 15522: 0x0000
+[; ;ffunicode.c: 15523: };
+[; ;ffunicode.c: 15524: static const WORD cvt2[] = {
+[; ;ffunicode.c: 15526: 0x1D7D,0x0001,0x2C63,
+[; ;ffunicode.c: 15528: 0x1E00,0x0196, 0x1EA0,0x015A,
+[; ;ffunicode.c: 15530: 0x1F00,0x0608, 0x1F10,0x0606, 0x1F20,0x0608, 0x1F30,0x0608, 0x1F40,0x0606,
+[; ;ffunicode.c: 15531: 0x1F51,0x0007,0x1F59,0x1F52,0x1F5B,0x1F54,0x1F5D,0x1F56,0x1F5F, 0x1F60,0x0608,
+[; ;ffunicode.c: 15532: 0x1F70,0x000E,0x1FBA,0x1FBB,0x1FC8,0x1FC9,0x1FCA,0x1FCB,0x1FDA,0x1FDB,0x1FF8,0x1FF9,0x1FEA,0x1FEB,0x1FFA,0x1FFB,
+[; ;ffunicode.c: 15533: 0x1F80,0x0608, 0x1F90,0x0608, 0x1FA0,0x0608, 0x1FB0,0x0004,0x1FB8,0x1FB9,0x1FB2,0x1FBC,
+[; ;ffunicode.c: 15534: 0x1FCC,0x0001,0x1FC3, 0x1FD0,0x0602, 0x1FE0,0x0602, 0x1FE5,0x0001,0x1FEC, 0x1FF3,0x0001,0x1FFC,
+[; ;ffunicode.c: 15536: 0x214E,0x0001,0x2132,
+[; ;ffunicode.c: 15538: 0x2170,0x0210, 0x2184,0x0001,0x2183,
+[; ;ffunicode.c: 15540: 0x24D0,0x051A, 0x2C30,0x042F,
+[; ;ffunicode.c: 15542: 0x2C60,0x0102, 0x2C67,0x0106, 0x2C75,0x0102,
+[; ;ffunicode.c: 15544: 0x2C80,0x0164,
+[; ;ffunicode.c: 15546: 0x2D00,0x0826,
+[; ;ffunicode.c: 15548: 0xFF41,0x031A,
+[; ;ffunicode.c: 15550: 0x0000
+[; ;ffunicode.c: 15551: };
+[; ;ffunicode.c: 15552: const WORD *p;
+[; ;ffunicode.c: 15553: WORD uc, bc, nc, cmd;
+[; ;ffunicode.c: 15556: if (uni < 0x10000) {
+"15556
+[e $ ! < _uni -> -> 65536 `l `ul 20  ]
+{
+[; ;ffunicode.c: 15557: uc = (WORD)uni;
+"15557
+[e = _uc -> _uni `us ]
+[; ;ffunicode.c: 15558: p = uc < 0x1000 ? cvt1 : cvt2;
+"15558
+[e = _p ? < -> _uc `ui -> -> 4096 `i `ui : &U F226 &U F227 ]
+[; ;ffunicode.c: 15559: for (;;) {
+"15559
+{
+[e :U 21 ]
+{
+[; ;ffunicode.c: 15560: bc = *p++;
+"15560
+[e = _bc *U ++ _p * -> -> 1 `i `x -> -> # *U _p `i `x ]
+[; ;ffunicode.c: 15561: if (!bc || uc < bc) break;
+"15561
+[e $ ! || ! != -> _bc `ui -> -> -> 0 `i `us `ui < -> _uc `ui -> _bc `ui 24  ]
+[e $U 22  ]
+[e :U 24 ]
+[; ;ffunicode.c: 15562: nc = *p++; cmd = nc >> 8; nc &= 0xFF;
+"15562
+[e = _nc *U ++ _p * -> -> 1 `i `x -> -> # *U _p `i `x ]
+[e = _cmd -> >> -> _nc `ui -> 8 `i `us ]
+[e =& _nc -> -> 255 `i `us ]
+[; ;ffunicode.c: 15563: if (uc < bc + nc) {
+"15563
+[e $ ! < -> _uc `ui + -> _bc `ui -> _nc `ui 25  ]
+{
+[; ;ffunicode.c: 15564: switch (cmd) {
+"15564
+[e $U 27  ]
+{
+[; ;ffunicode.c: 15565: case 0: uc = p[uc - bc]; break;
+"15565
+[e :U 28 ]
+[e = _uc *U + _p * -> - -> _uc `ui -> _bc `ui `ux -> -> # *U _p `ui `ux ]
+[e $U 26  ]
+[; ;ffunicode.c: 15566: case 1: uc -= (uc - bc) & 1; break;
+"15566
+[e :U 29 ]
+[e =- _uc -> & - -> _uc `ui -> _bc `ui -> -> 1 `i `ui `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15567: case 2: uc -= 16; break;
+"15567
+[e :U 30 ]
+[e =- _uc -> -> 16 `i `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15568: case 3: uc -= 32; break;
+"15568
+[e :U 31 ]
+[e =- _uc -> -> 32 `i `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15569: case 4: uc -= 48; break;
+"15569
+[e :U 32 ]
+[e =- _uc -> -> 48 `i `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15570: case 5: uc -= 26; break;
+"15570
+[e :U 33 ]
+[e =- _uc -> -> 26 `i `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15571: case 6: uc += 8; break;
+"15571
+[e :U 34 ]
+[e =+ _uc -> -> 8 `i `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15572: case 7: uc -= 80; break;
+"15572
+[e :U 35 ]
+[e =- _uc -> -> 80 `i `us ]
+[e $U 26  ]
+[; ;ffunicode.c: 15573: case 8: uc -= 0x1C60; break;
+"15573
+[e :U 36 ]
+[e =- _uc -> -> 7264 `i `us ]
+[e $U 26  ]
+"15574
+}
+[; ;ffunicode.c: 15574: }
+[e $U 26  ]
+"15564
+[e :U 27 ]
+[e [\ _cmd , $ -> -> 0 `i `us 28
+ , $ -> -> 1 `i `us 29
+ , $ -> -> 2 `i `us 30
+ , $ -> -> 3 `i `us 31
+ , $ -> -> 4 `i `us 32
+ , $ -> -> 5 `i `us 33
+ , $ -> -> 6 `i `us 34
+ , $ -> -> 7 `i `us 35
+ , $ -> -> 8 `i `us 36
+ 26 ]
+"15574
+[e :U 26 ]
+[; ;ffunicode.c: 15575: break;
+"15575
+[e $U 22  ]
+"15576
+}
+[e :U 25 ]
+[; ;ffunicode.c: 15576: }
+[; ;ffunicode.c: 15577: if (!cmd) p += nc;
+"15577
+[e $ ! ! != -> _cmd `ui -> -> -> 0 `i `us `ui 37  ]
+[e =+ _p * -> _nc `ux -> -> # *U _p `ui `ux ]
+[e :U 37 ]
+"15578
+}
+[; ;ffunicode.c: 15578: }
+[e $U 21  ]
+[e :U 22 ]
+}
+[; ;ffunicode.c: 15579: uni = uc;
+"15579
+[e = _uni -> _uc `ul ]
+"15580
+}
+[e :U 20 ]
+[; ;ffunicode.c: 15580: }
+[; ;ffunicode.c: 15582: return uni;
+"15582
+[e ) _uni ]
+[e $UE 19  ]
+[; ;ffunicode.c: 15583: }
+"15583
+[e :UE 19 ]
+}
