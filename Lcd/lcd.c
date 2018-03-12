@@ -4,7 +4,7 @@
  * Web           : http://www.gencmucitler.com                                 *
  * Baþlangýç     : 01 Mayýs 2014                                               *
  * Son Düzenleme : 04 Mayýs 2014                                               *
- * Versiyon      : 0.1                                                         *
+ * Versiyon      : 0.21                                                         *
  *                                                                             *
  * HD44780 karakter LCD kütüphanesi (4bit ve 8 bit modlu)                      *
  ******************************************************************************/
@@ -53,6 +53,7 @@ void lcd_baslat(void) {
 #ifdef LCDBIT4
 
 void lcd_baslat(void) {
+    char i;
 #ifdef LCDustpin
     lcd_tris = lcd_tris & 0x0f;
 #endif
@@ -70,6 +71,23 @@ void lcd_baslat(void) {
     __delay_ms(20);
     lcd_rs = 0;
     lcd_e = 0;
+    
+    //3 kere 8 bit modda çalýþ diye komut gönder.
+    for(i=0;i<3;i++)
+    {
+ #ifdef LCDustpin
+    lcd_data = 0x30 | (lcd_data & 0x0f); //4 bit mod
+#endif
+#ifdef LCDaltpin
+    lcd_data = 0x03 | (lcd_data & 0xf0); //4 bit mod
+#endif
+        lcd_e = 1;
+        __delay_us(1);
+        lcd_e = 0;
+        __delay_ms(5);
+    }
+    
+    //4 bit modunda çalýþtýr.
 #ifdef LCDustpin
     lcd_data = 0x20 | (lcd_data & 0x0f); //4 bit mod
 #endif
@@ -86,6 +104,7 @@ void lcd_baslat(void) {
     __delay_us(40);
     lcd_komut(0x06); //cursor ileri
     __delay_ms(2);
+    lcd_komut(0x01); //ekraný sil
 }
 #endif
 

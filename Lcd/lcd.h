@@ -3,7 +3,7 @@
  * Web       : http://www.gencmucitler.com                                     *
  * Tarih     : 01 Mayýs 2014                                                   *
  * Düzenleme : 20 Mayýs 2017                                                   *
- * Versiyon  : 0.2                                                             *
+ * Versiyon  : 0.21                                                             *
  *                                                                             *
  * HD44780 karakter LCD  kütüphanesi                                           *
  ******************************************************************************/
@@ -14,6 +14,7 @@
 7: D0   8: D1   9: D2   10: D3  11: D4  12: D5  13: D6  14: D7
 15: Backlight Vcc       16: Backlight Gnd                                     */
 
+//v0.21     lcd_baslat() arada lcdnin baþlatýlamamasý hatasý düzeltildi.
 
 //#define LCDBIT8    //lcd ekrana 8bit mi eriþilecek
 #define LCDBIT4    //yoksa 4 bit mi?
@@ -33,6 +34,7 @@
 #define lcd_data	LATB
 #define lcd_read    PORTB
 #define lcd_tris	TRISB
+
 #define lcd_rs          LATB5
 #define lcd_tris_rs     TRISB5
 #define lcd_e           LATB4
