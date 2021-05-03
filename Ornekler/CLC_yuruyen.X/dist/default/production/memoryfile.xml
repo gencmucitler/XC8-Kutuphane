@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\CLC_yuruyen.X.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>65536</length>
+      <used>668</used>
+      <free>64868</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3615</length>
+      <used>0</used>
+      <free>3615</free>
+    </memory>
+  </executable>
+</project>

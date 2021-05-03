@@ -1,0 +1,557 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F46Q10 ]
+[d frameptr 4065 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"49 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc1.c
+[v _CLC1_Initialize CLC1_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc2.c
+[v _CLC2_Initialize CLC2_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc3.c
+[v _CLC3_Initialize CLC3_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc4.c
+[v _CLC4_Initialize CLC4_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc5.c
+[v _CLC5_Initialize CLC5_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc6.c
+[v _CLC6_Initialize CLC6_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc7.c
+[v _CLC7_Initialize CLC7_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc8.c
+[v _CLC8_Initialize CLC8_Initialize `(v  1 e 1 0 ]
+"50 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"66
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"84
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"60 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"53 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f46q10.h
+[v _CLCIN0PPS CLCIN0PPS `VEuc  1 e 1 @3615 ]
+"581
+[v _CLC1CON CLC1CON `VEuc  1 e 1 @3623 ]
+[s S34 . 1 `uc 1 MODE 1 0 :3:0 
+`uc 1 INTN 1 0 :1:3 
+`uc 1 INTP 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"614
+[s S41 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+]
+[s S567 . 1 `uc 1 LC1MODE 1 0 :3:0 
+`uc 1 LC1INTN 1 0 :1:3 
+`uc 1 LC1INTP 1 0 :1:4 
+`uc 1 LC1OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC1EN 1 0 :1:7 
+]
+[s S574 . 1 `uc 1 LC1MODE0 1 0 :1:0 
+`uc 1 LC1MODE1 1 0 :1:1 
+`uc 1 LC1MODE2 1 0 :1:2 
+]
+[u S578 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S567 1 . 1 0 `S574 1 . 1 0 ]
+[v _CLC1CONbits CLC1CONbits `VES578  1 e 1 @3623 ]
+"699
+[v _CLC1POL CLC1POL `VEuc  1 e 1 @3624 ]
+"777
+[v _CLC1SEL0 CLC1SEL0 `VEuc  1 e 1 @3625 ]
+"905
+[v _CLC1SEL1 CLC1SEL1 `VEuc  1 e 1 @3626 ]
+"1033
+[v _CLC1SEL2 CLC1SEL2 `VEuc  1 e 1 @3627 ]
+"1161
+[v _CLC1SEL3 CLC1SEL3 `VEuc  1 e 1 @3628 ]
+"1289
+[v _CLC1GLS0 CLC1GLS0 `VEuc  1 e 1 @3629 ]
+"1401
+[v _CLC1GLS1 CLC1GLS1 `VEuc  1 e 1 @3630 ]
+"1513
+[v _CLC1GLS2 CLC1GLS2 `VEuc  1 e 1 @3631 ]
+"1625
+[v _CLC1GLS3 CLC1GLS3 `VEuc  1 e 1 @3632 ]
+"1737
+[v _CLC2CON CLC2CON `VEuc  1 e 1 @3633 ]
+"1770
+[s S499 . 1 `uc 1 LC2MODE 1 0 :3:0 
+`uc 1 LC2INTN 1 0 :1:3 
+`uc 1 LC2INTP 1 0 :1:4 
+`uc 1 LC2OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC2EN 1 0 :1:7 
+]
+[s S506 . 1 `uc 1 LC2MODE0 1 0 :1:0 
+`uc 1 LC2MODE1 1 0 :1:1 
+`uc 1 LC2MODE2 1 0 :1:2 
+]
+[u S510 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S499 1 . 1 0 `S506 1 . 1 0 ]
+[v _CLC2CONbits CLC2CONbits `VES510  1 e 1 @3633 ]
+"1855
+[v _CLC2POL CLC2POL `VEuc  1 e 1 @3634 ]
+"1933
+[v _CLC2SEL0 CLC2SEL0 `VEuc  1 e 1 @3635 ]
+"2061
+[v _CLC2SEL1 CLC2SEL1 `VEuc  1 e 1 @3636 ]
+"2189
+[v _CLC2SEL2 CLC2SEL2 `VEuc  1 e 1 @3637 ]
+"2317
+[v _CLC2SEL3 CLC2SEL3 `VEuc  1 e 1 @3638 ]
+"2445
+[v _CLC2GLS0 CLC2GLS0 `VEuc  1 e 1 @3639 ]
+"2557
+[v _CLC2GLS1 CLC2GLS1 `VEuc  1 e 1 @3640 ]
+"2669
+[v _CLC2GLS2 CLC2GLS2 `VEuc  1 e 1 @3641 ]
+"2781
+[v _CLC2GLS3 CLC2GLS3 `VEuc  1 e 1 @3642 ]
+"2893
+[v _CLC3CON CLC3CON `VEuc  1 e 1 @3643 ]
+"2926
+[s S113 . 1 `uc 1 LC3MODE 1 0 :3:0 
+`uc 1 LC3INTN 1 0 :1:3 
+`uc 1 LC3INTP 1 0 :1:4 
+`uc 1 LC3OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC3EN 1 0 :1:7 
+]
+[s S120 . 1 `uc 1 LC3MODE0 1 0 :1:0 
+`uc 1 LC3MODE1 1 0 :1:1 
+`uc 1 LC3MODE2 1 0 :1:2 
+]
+[u S124 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S113 1 . 1 0 `S120 1 . 1 0 ]
+[v _CLC3CONbits CLC3CONbits `VES124  1 e 1 @3643 ]
+"3011
+[v _CLC3POL CLC3POL `VEuc  1 e 1 @3644 ]
+"3089
+[v _CLC3SEL0 CLC3SEL0 `VEuc  1 e 1 @3645 ]
+"3217
+[v _CLC3SEL1 CLC3SEL1 `VEuc  1 e 1 @3646 ]
+"3345
+[v _CLC3SEL2 CLC3SEL2 `VEuc  1 e 1 @3647 ]
+"3473
+[v _CLC3SEL3 CLC3SEL3 `VEuc  1 e 1 @3648 ]
+"3601
+[v _CLC3GLS0 CLC3GLS0 `VEuc  1 e 1 @3649 ]
+"3713
+[v _CLC3GLS1 CLC3GLS1 `VEuc  1 e 1 @3650 ]
+"3825
+[v _CLC3GLS2 CLC3GLS2 `VEuc  1 e 1 @3651 ]
+"3937
+[v _CLC3GLS3 CLC3GLS3 `VEuc  1 e 1 @3652 ]
+"4049
+[v _CLC4CON CLC4CON `VEuc  1 e 1 @3653 ]
+"4082
+[s S181 . 1 `uc 1 LC4MODE 1 0 :3:0 
+`uc 1 LC4INTN 1 0 :1:3 
+`uc 1 LC4INTP 1 0 :1:4 
+`uc 1 LC4OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC4EN 1 0 :1:7 
+]
+[s S188 . 1 `uc 1 LC4MODE0 1 0 :1:0 
+`uc 1 LC4MODE1 1 0 :1:1 
+`uc 1 LC4MODE2 1 0 :1:2 
+]
+[u S192 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S181 1 . 1 0 `S188 1 . 1 0 ]
+[v _CLC4CONbits CLC4CONbits `VES192  1 e 1 @3653 ]
+"4167
+[v _CLC4POL CLC4POL `VEuc  1 e 1 @3654 ]
+"4245
+[v _CLC4SEL0 CLC4SEL0 `VEuc  1 e 1 @3655 ]
+"4373
+[v _CLC4SEL1 CLC4SEL1 `VEuc  1 e 1 @3656 ]
+"4501
+[v _CLC4SEL2 CLC4SEL2 `VEuc  1 e 1 @3657 ]
+"4629
+[v _CLC4SEL3 CLC4SEL3 `VEuc  1 e 1 @3658 ]
+"4757
+[v _CLC4GLS0 CLC4GLS0 `VEuc  1 e 1 @3659 ]
+"4869
+[v _CLC4GLS1 CLC4GLS1 `VEuc  1 e 1 @3660 ]
+"4981
+[v _CLC4GLS2 CLC4GLS2 `VEuc  1 e 1 @3661 ]
+"5093
+[v _CLC4GLS3 CLC4GLS3 `VEuc  1 e 1 @3662 ]
+"5205
+[v _CLC5CON CLC5CON `VEuc  1 e 1 @3663 ]
+"5238
+[s S249 . 1 `uc 1 LC5MODE 1 0 :3:0 
+`uc 1 LC5INTN 1 0 :1:3 
+`uc 1 LC5INTP 1 0 :1:4 
+`uc 1 LC5OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC5EN 1 0 :1:7 
+]
+[s S256 . 1 `uc 1 LC5MODE0 1 0 :1:0 
+`uc 1 LC5MODE1 1 0 :1:1 
+`uc 1 LC5MODE2 1 0 :1:2 
+]
+[u S260 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S249 1 . 1 0 `S256 1 . 1 0 ]
+[v _CLC5CONbits CLC5CONbits `VES260  1 e 1 @3663 ]
+"5323
+[v _CLC5POL CLC5POL `VEuc  1 e 1 @3664 ]
+"5401
+[v _CLC5SEL0 CLC5SEL0 `VEuc  1 e 1 @3665 ]
+"5529
+[v _CLC5SEL1 CLC5SEL1 `VEuc  1 e 1 @3666 ]
+"5657
+[v _CLC5SEL2 CLC5SEL2 `VEuc  1 e 1 @3667 ]
+"5785
+[v _CLC5SEL3 CLC5SEL3 `VEuc  1 e 1 @3668 ]
+"5913
+[v _CLC5GLS0 CLC5GLS0 `VEuc  1 e 1 @3669 ]
+"6025
+[v _CLC5GLS1 CLC5GLS1 `VEuc  1 e 1 @3670 ]
+"6137
+[v _CLC5GLS2 CLC5GLS2 `VEuc  1 e 1 @3671 ]
+"6249
+[v _CLC5GLS3 CLC5GLS3 `VEuc  1 e 1 @3672 ]
+"6361
+[v _CLC6CON CLC6CON `VEuc  1 e 1 @3673 ]
+"6394
+[s S317 . 1 `uc 1 LC6MODE 1 0 :3:0 
+`uc 1 LC6INTN 1 0 :1:3 
+`uc 1 LC6INTP 1 0 :1:4 
+`uc 1 LC6OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC6EN 1 0 :1:7 
+]
+[s S324 . 1 `uc 1 LC6MODE0 1 0 :1:0 
+`uc 1 LC6MODE1 1 0 :1:1 
+`uc 1 LC6MODE2 1 0 :1:2 
+]
+[u S328 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S317 1 . 1 0 `S324 1 . 1 0 ]
+[v _CLC6CONbits CLC6CONbits `VES328  1 e 1 @3673 ]
+"6479
+[v _CLC6POL CLC6POL `VEuc  1 e 1 @3674 ]
+"6557
+[v _CLC6SEL0 CLC6SEL0 `VEuc  1 e 1 @3675 ]
+"6685
+[v _CLC6SEL1 CLC6SEL1 `VEuc  1 e 1 @3676 ]
+"6813
+[v _CLC6SEL2 CLC6SEL2 `VEuc  1 e 1 @3677 ]
+"6941
+[v _CLC6SEL3 CLC6SEL3 `VEuc  1 e 1 @3678 ]
+"7069
+[v _CLC6GLS0 CLC6GLS0 `VEuc  1 e 1 @3679 ]
+"7181
+[v _CLC6GLS1 CLC6GLS1 `VEuc  1 e 1 @3680 ]
+"7293
+[v _CLC6GLS2 CLC6GLS2 `VEuc  1 e 1 @3681 ]
+"7405
+[v _CLC6GLS3 CLC6GLS3 `VEuc  1 e 1 @3682 ]
+"7517
+[v _CLC7CON CLC7CON `VEuc  1 e 1 @3683 ]
+"7550
+[s S385 . 1 `uc 1 LC7MODE 1 0 :3:0 
+`uc 1 LC7INTN 1 0 :1:3 
+`uc 1 LC7INTP 1 0 :1:4 
+`uc 1 LC7OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC7EN 1 0 :1:7 
+]
+[s S392 . 1 `uc 1 LC7MODE0 1 0 :1:0 
+`uc 1 LC7MODE1 1 0 :1:1 
+`uc 1 LC7MODE2 1 0 :1:2 
+]
+[u S396 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S385 1 . 1 0 `S392 1 . 1 0 ]
+[v _CLC7CONbits CLC7CONbits `VES396  1 e 1 @3683 ]
+"7635
+[v _CLC7POL CLC7POL `VEuc  1 e 1 @3684 ]
+"7713
+[v _CLC7SEL0 CLC7SEL0 `VEuc  1 e 1 @3685 ]
+"7841
+[v _CLC7SEL1 CLC7SEL1 `VEuc  1 e 1 @3686 ]
+"7969
+[v _CLC7SEL2 CLC7SEL2 `VEuc  1 e 1 @3687 ]
+"8097
+[v _CLC7SEL3 CLC7SEL3 `VEuc  1 e 1 @3688 ]
+"8225
+[v _CLC7GLS0 CLC7GLS0 `VEuc  1 e 1 @3689 ]
+"8337
+[v _CLC7GLS1 CLC7GLS1 `VEuc  1 e 1 @3690 ]
+"8449
+[v _CLC7GLS2 CLC7GLS2 `VEuc  1 e 1 @3691 ]
+"8561
+[v _CLC7GLS3 CLC7GLS3 `VEuc  1 e 1 @3692 ]
+"8673
+[v _CLC8CON CLC8CON `VEuc  1 e 1 @3693 ]
+"8706
+[s S45 . 1 `uc 1 LC8MODE 1 0 :3:0 
+`uc 1 LC8INTN 1 0 :1:3 
+`uc 1 LC8INTP 1 0 :1:4 
+`uc 1 LC8OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 LC8EN 1 0 :1:7 
+]
+[s S52 . 1 `uc 1 LC8MODE0 1 0 :1:0 
+`uc 1 LC8MODE1 1 0 :1:1 
+`uc 1 LC8MODE2 1 0 :1:2 
+]
+[u S56 . 1 `S34 1 . 1 0 `S41 1 . 1 0 `S45 1 . 1 0 `S52 1 . 1 0 ]
+[v _CLC8CONbits CLC8CONbits `VES56  1 e 1 @3693 ]
+"8791
+[v _CLC8POL CLC8POL `VEuc  1 e 1 @3694 ]
+"8869
+[v _CLC8SEL0 CLC8SEL0 `VEuc  1 e 1 @3695 ]
+"8997
+[v _CLC8SEL1 CLC8SEL1 `VEuc  1 e 1 @3696 ]
+"9125
+[v _CLC8SEL2 CLC8SEL2 `VEuc  1 e 1 @3697 ]
+"9253
+[v _CLC8SEL3 CLC8SEL3 `VEuc  1 e 1 @3698 ]
+"9381
+[v _CLC8GLS0 CLC8GLS0 `VEuc  1 e 1 @3699 ]
+"9493
+[v _CLC8GLS1 CLC8GLS1 `VEuc  1 e 1 @3700 ]
+"9605
+[v _CLC8GLS2 CLC8GLS2 `VEuc  1 e 1 @3701 ]
+"9717
+[v _CLC8GLS3 CLC8GLS3 `VEuc  1 e 1 @3702 ]
+[s S617 . 1 `uc 1 INT0IF 1 0 :1:0 
+`uc 1 INT1IF 1 0 :1:1 
+`uc 1 INT2IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"15648
+[u S624 . 1 `S617 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES624  1 e 1 @3781 ]
+"16628
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @3795 ]
+"16768
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @3797 ]
+"16920
+[v _OSCEN OSCEN `VEuc  1 e 1 @3799 ]
+"16971
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3800 ]
+"17029
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @3801 ]
+"17200
+[v _PMD0 PMD0 `VEuc  1 e 1 @3804 ]
+"17277
+[v _PMD1 PMD1 `VEuc  1 e 1 @3805 ]
+"17341
+[v _PMD2 PMD2 `VEuc  1 e 1 @3806 ]
+"17386
+[v _PMD3 PMD3 `VEuc  1 e 1 @3807 ]
+"17448
+[v _PMD4 PMD4 `VEuc  1 e 1 @3808 ]
+"17501
+[v _PMD5 PMD5 `VEuc  1 e 1 @3809 ]
+"18338
+[v _RC2PPS RC2PPS `VEuc  1 e 1 @3828 ]
+"18382
+[v _RC3PPS RC3PPS `VEuc  1 e 1 @3829 ]
+"18426
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @3830 ]
+"18470
+[v _RC5PPS RC5PPS `VEuc  1 e 1 @3831 ]
+"18602
+[v _RD0PPS RD0PPS `VEuc  1 e 1 @3834 ]
+"18646
+[v _RD1PPS RD1PPS `VEuc  1 e 1 @3835 ]
+"18690
+[v _RD2PPS RD2PPS `VEuc  1 e 1 @3836 ]
+"18734
+[v _RD3PPS RD3PPS `VEuc  1 e 1 @3837 ]
+"19272
+[v _INLVLA INLVLA `VEuc  1 e 1 @3848 ]
+"19334
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @3849 ]
+"19396
+[v _ODCONA ODCONA `VEuc  1 e 1 @3850 ]
+"19458
+[v _WPUA WPUA `VEuc  1 e 1 @3851 ]
+"19520
+[v _ANSELA ANSELA `VEuc  1 e 1 @3852 ]
+"19768
+[v _INLVLB INLVLB `VEuc  1 e 1 @3856 ]
+"19830
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @3857 ]
+"19892
+[v _ODCONB ODCONB `VEuc  1 e 1 @3858 ]
+"19954
+[v _WPUB WPUB `VEuc  1 e 1 @3859 ]
+"20016
+[v _ANSELB ANSELB `VEuc  1 e 1 @3860 ]
+"20264
+[v _INLVLC INLVLC `VEuc  1 e 1 @3864 ]
+"20326
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @3865 ]
+"20388
+[v _ODCONC ODCONC `VEuc  1 e 1 @3866 ]
+"20450
+[v _WPUC WPUC `VEuc  1 e 1 @3867 ]
+"20512
+[v _ANSELC ANSELC `VEuc  1 e 1 @3868 ]
+"20574
+[v _INLVLD INLVLD `VEuc  1 e 1 @3869 ]
+"20636
+[v _SLRCOND SLRCOND `VEuc  1 e 1 @3870 ]
+"20698
+[v _ODCOND ODCOND `VEuc  1 e 1 @3871 ]
+"20760
+[v _WPUD WPUD `VEuc  1 e 1 @3872 ]
+"20822
+[v _ANSELD ANSELD `VEuc  1 e 1 @3873 ]
+"20998
+[v _INLVLE INLVLE `VEuc  1 e 1 @3877 ]
+"21036
+[v _SLRCONE SLRCONE `VEuc  1 e 1 @3878 ]
+"21068
+[v _ODCONE ODCONE `VEuc  1 e 1 @3879 ]
+"21100
+[v _WPUE WPUE `VEuc  1 e 1 @3880 ]
+"21138
+[v _ANSELE ANSELE `VEuc  1 e 1 @3881 ]
+"27536
+[v _LATA LATA `VEuc  1 e 1 @3970 ]
+"27598
+[v _LATB LATB `VEuc  1 e 1 @3971 ]
+"27660
+[v _LATC LATC `VEuc  1 e 1 @3972 ]
+"27722
+[v _LATD LATD `VEuc  1 e 1 @3973 ]
+"27784
+[v _LATE LATE `VEuc  1 e 1 @3974 ]
+"27816
+[v _TRISA TRISA `VEuc  1 e 1 @3975 ]
+"27938
+[v _TRISB TRISB `VEuc  1 e 1 @3976 ]
+"28060
+[v _TRISC TRISC `VEuc  1 e 1 @3977 ]
+"28182
+[v _TRISD TRISD `VEuc  1 e 1 @3978 ]
+"28304
+[v _TRISE TRISE `VEuc  1 e 1 @3979 ]
+"36221
+[v _TMR0L TMR0L `VEuc  1 e 1 @4050 ]
+"36359
+[v _TMR0H TMR0H `VEuc  1 e 1 @4051 ]
+"36613
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @4052 ]
+[s S635 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+`uc 1 T016BIT 1 0 :1:4 
+`uc 1 T0OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T0EN 1 0 :1:7 
+]
+"36633
+[s S641 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+`uc 1 T0OUTPS1 1 0 :1:1 
+`uc 1 T0OUTPS2 1 0 :1:2 
+`uc 1 T0OUTPS3 1 0 :1:3 
+]
+"36633
+[u S646 . 1 `S635 1 . 1 0 `S641 1 . 1 0 ]
+"36633
+"36633
+[v _T0CON0bits T0CON0bits `VES646  1 e 1 @4052 ]
+"36678
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @4053 ]
+"43243
+[v _PLLR PLLR `VEb  1 e 0 @30384 ]
+"49 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"74
+} 0
+"50 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"60 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"78
+} 0
+"84 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/mcc.c
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"98
+} 0
+"55 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"136
+} 0
+"66 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"82
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc8.c
+[v _CLC8_Initialize CLC8_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc7.c
+[v _CLC7_Initialize CLC7_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc6.c
+[v _CLC6_Initialize CLC6_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc5.c
+[v _CLC5_Initialize CLC5_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc4.c
+[v _CLC4_Initialize CLC4_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc3.c
+[v _CLC3_Initialize CLC3_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc2.c
+[v _CLC2_Initialize CLC2_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"58 C:\Users\bilgisayar\MPLABXProjects\CLC_yuruyen.X\mcc_generated_files/clc1.c
+[v _CLC1_Initialize CLC1_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
