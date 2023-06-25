@@ -1,18 +1,17 @@
 /*******************************************************************************
- * Kütüphane     : Gelişmiş Buton Okuma Fonksiyonu                             *
+ * KÃ¼tÃ¼phane     : GeliÅŸmiÅŸ Buton Okuma Fonksiyonu                             *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 18 Haziran 2017                                             *
- * Düzenleme     : 22 Haziran 2017                                             *
+ * BaÅŸlangÄ±Ã§     : 18 Haziran 2017                                             *
+ * DÃ¼zenleme     : 22 Haziran 2017                                             *
  * Versiyon      : 0.2                                                         *
  *                                                                             *
- * Butonların kontak sıçrama durumlarınıda dikkate alarak buton durumunu okur. *
- * Bu fonksiyon ile butona basılma, bırakılma, uzun basılma,basılı tutulma     *
- * durumları kolayca okunabilmektedir.                                         * 
+ * ButonlarÄ±n kontak sÄ±Ã§rama durumlarÄ±nÄ±da dikkate alarak buton durumunu okur. *
+ * Bu fonksiyon ile butona basÄ±lma, bÄ±rakÄ±lma, uzun basÄ±lma,basÄ±lÄ± tutulma     *
+ * durumlarÄ± kolayca okunabilmektedir.                                         * 
  ******************************************************************************/
-// v0.2 Basılı Tutuluyor kodu sonuna return butonNo eklendi.
-//      Çift tıklama ve Kısa Basma durumları eklendi.
-// v0.1 ilk düzenleme.
+// v0.2 BasÄ±lÄ± Tutuluyor kodu sonuna return butonNo eklendi.
+//      Ã‡ift tÄ±klama ve KÄ±sa Basma durumlarÄ± eklendi.
+// v0.1 ilk dÃ¼zenleme.
 
 #ifndef BUTON_H
 #define	BUTON_H
@@ -33,25 +32,25 @@ extern "C" {
 #define buton3 PORTBbits.RB2
 
 #define debounce_suresi 20u         // 20ms
-#define cift_tiklama_suresi 250u    // iki kez tıklama için gereken maksimum süre.
-#define kisa_basma_suresi   300u    // kısa basma süresi çift tıklama süresinden 
+#define cift_tiklama_suresi 250u    // iki kez tÄ±klama iÃ§in gereken maksimum sÃ¼re.
+#define kisa_basma_suresi   300u    // kÄ±sa basma sÃ¼resi Ã§ift tÄ±klama sÃ¼resinden 
                                     // uzun girilmeli.
 #define uzun_basma_suresi   1500u   //2saniye
 
 typedef enum _buton_durum_e
 {
-    SERBEST=0,          //buton basılmadığında boşta ise.
-    DEBOUNCE,           //buton basılma anındaki kontak sıcraması(debounce) testi için
-    BASILDI,            //1 kez çalışır
-    BASILI_TUTULUYOR,   //butona basılıyor
-    CIFT_TIKLAMA,       //iki kez peş peşe butona basılıp bırakılınca tetiklenir.
-    KISA_BASILDI,       //butona kısa bir süre basılınca 1 kez tetiklenir.
-    UZUN_BASILDI,       //buton belirtilen süre boyunca basılırsa 1 kez çalışır.
-    DEBOUNCE2,          //buton bırakılma anındaki kontak sıcraması(debounce) testi için
-    BIRAKILDI           //1 kez çalışır.
+    SERBEST=0,          //buton basÄ±lmadÄ±ÄŸÄ±nda boÅŸta ise.
+    DEBOUNCE,           //buton basÄ±lma anÄ±ndaki kontak sÄ±cramasÄ±(debounce) testi iÃ§in
+    BASILDI,            //1 kez Ã§alÄ±ÅŸÄ±r
+    BASILI_TUTULUYOR,   //butona basÄ±lÄ±yor
+    CIFT_TIKLAMA,       //iki kez peÅŸ peÅŸe butona basÄ±lÄ±p bÄ±rakÄ±lÄ±nca tetiklenir.
+    KISA_BASILDI,       //butona kÄ±sa bir sÃ¼re basÄ±lÄ±nca 1 kez tetiklenir.
+    UZUN_BASILDI,       //buton belirtilen sÃ¼re boyunca basÄ±lÄ±rsa 1 kez Ã§alÄ±ÅŸÄ±r.
+    DEBOUNCE2,          //buton bÄ±rakÄ±lma anÄ±ndaki kontak sÄ±cramasÄ±(debounce) testi iÃ§in
+    BIRAKILDI           //1 kez Ã§alÄ±ÅŸÄ±r.
 }buton_durum_e;
 
-//Değişken Tanımlamaları
+//DeÄŸiÅŸken TanÄ±mlamalarÄ±
 buton_durum_e butonDurumu=SERBEST;
 
 //fonksiyon prototipleri
