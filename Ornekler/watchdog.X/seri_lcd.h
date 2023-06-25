@@ -1,29 +1,28 @@
 /*******************************************************************************
- * Kütüphane     : I2C LCD                                                     *
+ * KÃ¼tÃ¼phane     : I2C LCD                                                     *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Baþlangýç     : 05 Temmuz 2017                                              *
- * Düzenleme     : 9 Temmuz 2017
+ * BaÅŸlangÄ±Ã§     : 05 Temmuz 2017                                              *
+ * DÃ¼zenleme     : 9 Temmuz 2017
  * Versiyon      : 0.31                                                         *
  *                                                                             *
- * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
+ * PCF8574 modÃ¼lÃ¼ ile I2C Lcd kullanÄ±m kÃ¼tÃ¼phanesi                             *
  ******************************************************************************/
 
-//v0.31 lcd_baslat içindeki ufak bir data düzeltildi.
-//v0.3 softI2C ile de çalýþabilecek þekilde düzenleme yapýldý.
+//v0.31 lcd_baslat iÃ§indeki ufak bir data dÃ¼zeltildi.
+//v0.3 softI2C ile de Ã§alÄ±ÅŸabilecek ÅŸekilde dÃ¼zenleme yapÄ±ldÄ±.
 
-/*      Standart LCD ayak baðlantýlarý
-1: Gnd  2: Vcc  3: Vee - Kontras ayaðý
+/*      Standart LCD ayak baÄŸlantÄ±larÄ±
+1: Gnd  2: Vcc  3: Vee - Kontras ayaÄŸÄ±
 4: RS   5: RW   6: E
 7: D0   8: D1   9: D2   10: D3  11: D4  12: D5  13: D6  14: D7
 15: Backlight Vcc       16: Backlight Gnd                                     */
 
-/*PCF8574A entegresinin lcd ekran baðlantýsý
+/*PCF8574A entegresinin lcd ekran baÄŸlantÄ±sÄ±
  * 
  * P0: RS
  * P1: RW
  * P2: E
- * P3: aydýnlatma
+ * P3: aydÄ±nlatma
  * P4: D4
  * P5: D5
  * P6: D6
@@ -31,12 +30,12 @@
  */
 
 #define pcf_adres   0x3F    //i2c entegresinin adresi
-//#define softI2C             //yazýlýmsal I2C fonksiyonlarýný kullan. 
+//#define softI2C             //yazÄ±lÄ±msal I2C fonksiyonlarÄ±nÄ± kullan. 
 
-//printf fonksiyonu lcd'ye yazacak mý?
+//printf fonksiyonu lcd'ye yazacak mÄ±?
 #define lcdprintf_aktif
 
-// kullanýlacak lcd ayaklar?
+// kullanÄ±lacak lcd ayaklar?
 #define lcd_data	pcf_port.port
 
 #define lcd_rs          pcf_port.lcd.RS
