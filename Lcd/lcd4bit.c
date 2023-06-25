@@ -1,11 +1,10 @@
 /**********************************************************
-*  Web 		: http://www.gencmucitler.com
-*  Ýlk		: Aðustos 2008
-*  Düzenleme: Mayýs 2017 
+*  Ä°lk		: AÄŸustos 2008
+*  DÃ¼zenleme: MayÄ±s 2017 
 *  Versiyon : 0.4
-*  Açýklama : Piyasada rahatlýkla bulunan HD44780 karakter lcd ekran kütüphanesi.
-*			  Lcd ye 4 bit modda eriþim saðlanýr.
- *            XC8 için gerekli düzenlemeler yapýldý.
+*  AÃ§Ä±klama : Piyasada rahatlÄ±kla bulunan HD44780 karakter lcd ekran kÃ¼tÃ¼phanesi.
+*			  Lcd ye 4 bit modda eriÅŸim saÄŸlanÄ±r.
+ *            XC8 iÃ§in gerekli dÃ¼zenlemeler yapÄ±ldÄ±.
 ***********************************************************/
 
 #include "mcc_generated_files/mcc.h"
@@ -13,21 +12,21 @@
 
 
 /*
-*  Standart LCD ayak baðlantýlarý
+*  Standart LCD ayak baÄŸlantÄ±larÄ±
 *  1: Gnd
 *  2: Vcc
-*  3: Vee : Kontras ayaðý. 10K pot veya 1K direnç ile þaseye baðla.
+*  3: Vee : Kontras ayaÄŸÄ±. 10K pot veya 1K direnÃ§ ile ÅŸaseye baÄŸla.
 *  4: RS
 *  5: RW
 *  6: E
-*  7: D0 - gnd ye baðla
-*  8: D1 - gnd ye baðla
-*  9: D2 - gnd ye baðla
-* 10: D3 - gnd ye baðla
-* 11: D4 highport aktifse 4 e deðilse 0 a baðla.
-* 12: D5 highport aktifse 5 e deðilse 1 a baðla.
-* 13: D6 highport aktifse 6 e deðilse 2 a baðla.
-* 14: D7 highport aktifse 7 e deðilse 3 a baðla.
+*  7: D0 - gnd ye baÄŸla
+*  8: D1 - gnd ye baÄŸla
+*  9: D2 - gnd ye baÄŸla
+* 10: D3 - gnd ye baÄŸla
+* 11: D4 highport aktifse 4 e deÄŸilse 0 a baÄŸla.
+* 12: D5 highport aktifse 5 e deÄŸilse 1 a baÄŸla.
+* 13: D6 highport aktifse 6 e deÄŸilse 2 a baÄŸla.
+* 14: D7 highport aktifse 7 e deÄŸilse 3 a baÄŸla.
 * 15: Backlight Vcc
 * 16: Backlight Gnd
 */
@@ -35,7 +34,7 @@
 
 
 /***********************************************************
-*  Lcd ekraný çalýþtýrýr. Diðer fonksiyonlar kullanýlmadan önce ilk olarak bu çalýþtýrýlmalýdýr.
+*  Lcd ekranÄ± Ã§alÄ±ÅŸtÄ±rÄ±r. DiÄŸer fonksiyonlar kullanÄ±lmadan Ã¶nce ilk olarak bu Ã§alÄ±ÅŸtÄ±rÄ±lmalÄ±dÄ±r.
 */
 void lcd_baslat(void)
 {
@@ -76,8 +75,8 @@ void lcd_baslat(void)
 }
 
 /*********************************************************
-* Ýstenilen pozisyona gider.
-* Örnek lcd_git(2,5);
+* Ä°stenilen pozisyona gider.
+* Ã–rnek lcd_git(2,5);
 */
 void lcd_git(char satir, char sutun)
 {
@@ -102,8 +101,8 @@ void lcd_git(char satir, char sutun)
 }
 	
 /***********************************************************
-* Ýstenilen posziyonda ekrana string yazar.
-* Örnek : lcd_mesajyaz(1,4,"Deneme");
+* Ä°stenilen posziyonda ekrana string yazar.
+* Ã–rnek : lcd_mesajyaz(1,4,"Deneme");
 */
 void lcd_mesajyaz(char satir, char sutun, const char *mesaj)
 {
@@ -133,8 +132,8 @@ void lcd_mesajyaz(char satir, char sutun, const char *mesaj)
 
 
 /***********************************************************
-* Lcd ekrana en son kaldýðý pozisyondan itibaren string yazar. 
-* Örnek : lcd_mesajyaz_cp("deneme");
+* Lcd ekrana en son kaldÄ±ÄŸÄ± pozisyondan itibaren string yazar. 
+* Ã–rnek : lcd_mesajyaz_cp("deneme");
 */
 void lcd_mesajyaz_cp(const char *mesaj)
 {
@@ -145,8 +144,8 @@ void lcd_mesajyaz_cp(const char *mesaj)
 }
 
 /***********************************************************
-* Lcd meþgul olduðu sürece bu fonksiyon içinde bekler..
-* Lcd_komut ve lcd_harfyaz fonksiyonlarý bu fonksiyonu kullanýr.
+* Lcd meÅŸgul olduÄŸu sÃ¼rece bu fonksiyon iÃ§inde bekler..
+* Lcd_komut ve lcd_harfyaz fonksiyonlarÄ± bu fonksiyonu kullanÄ±r.
 */
 #ifdef mesgulbitioku
 
@@ -174,7 +173,7 @@ void lcd_mesgulmu(void)
 		__delay_us(1);		
 		lcd_e=1;
 		__delay_us(1);
-		lcd_e=0;	//low byte oku, ama herhangi bir deðiþkene kaydetmeye gerek yok.
+		lcd_e=0;	//low byte oku, ama herhangi bir deÄŸiÅŸkene kaydetmeye gerek yok.
 	}while(temp);
 	#ifdef lcd_highport	
 		lcd_tris=lcd_tris & 0x0f;	
@@ -193,7 +192,7 @@ void lcd_mesgulmu(void)
 
 /***********************************************************
 * Lcd ekrana tek bir harf yazar.
-* Örnek : lcd_harfyaz('A');
+* Ã–rnek : lcd_harfyaz('A');
 */
 void lcd_harfyaz(char harf)
 {
@@ -203,7 +202,7 @@ void lcd_harfyaz(char harf)
     lcd_rw = 0;
 #endif
 	#ifdef lcd_highport
-		lcd_data = (lcd_data & 0x0f) | (harf & 0xf0);	//high verisini gönder.
+		lcd_data = (lcd_data & 0x0f) | (harf & 0xf0);	//high verisini gÃ¶nder.
 	#else
 		lcd_data = (lcd_data & 0xf0) | (harf >>4);
 	#endif	
@@ -212,7 +211,7 @@ void lcd_harfyaz(char harf)
 	lcd_e=0;	
 	__delay_us(1);
 	#ifdef lcd_highport
-		lcd_data = (lcd_data & 0x0f) | (harf << 4);  //low verisini gönder.
+		lcd_data = (lcd_data & 0x0f) | (harf << 4);  //low verisini gÃ¶nder.
 	#else
 		lcd_data = (lcd_data & 0xf0) | (harf & 0x0f);
 	#endif	
@@ -223,7 +222,7 @@ void lcd_harfyaz(char harf)
 }
 
 /***********************************************************
-* Lcd komutlarýný gönderir.
+* Lcd komutlarÄ±nÄ± gÃ¶nderir.
 */	
 void lcd_komut(char komut)
 {
@@ -233,7 +232,7 @@ void lcd_komut(char komut)
     lcd_rw = 0;
 #endif
 	#ifdef lcd_highport
-		lcd_data = (lcd_data & 0x0f) | (komut & 0xf0);	//high verisini gönder.
+		lcd_data = (lcd_data & 0x0f) | (komut & 0xf0);	//high verisini gÃ¶nder.
 	#else
 		lcd_data = (lcd_data & 0xf0) | (komut >>4);
 	#endif	
@@ -242,7 +241,7 @@ void lcd_komut(char komut)
 	lcd_e=0;	
 	__delay_us(1);
 	#ifdef lcd_highport
-		lcd_data = (lcd_data & 0x0f) | (komut << 4);  //low verisini gönder.
+		lcd_data = (lcd_data & 0x0f) | (komut << 4);  //low verisini gÃ¶nder.
 	#else
 		lcd_data = (lcd_data & 0xf0) | (komut & 0x0f);
 	#endif	
@@ -254,7 +253,7 @@ void lcd_komut(char komut)
 	
 /***********************************************************
 * Lcdyi siler.
-* Örnek : lcd_sil();
+* Ã–rnek : lcd_sil();
 */
 void lcd_sil(void)
 {
@@ -265,8 +264,8 @@ void lcd_sil(void)
 }
 
 /***********************************************************
-* Kursörü aktif yapar
-* Örnek : lcd_kursorac();
+* KursÃ¶rÃ¼ aktif yapar
+* Ã–rnek : lcd_kursorac();
 */
 void lcd_kursorac(void)
 {
@@ -274,7 +273,7 @@ void lcd_kursorac(void)
 }
 
 /***********************************************************
-* Kürsörü kapatýr.
+* KÃ¼rsÃ¶rÃ¼ kapatÄ±r.
 */
 void lcd_kursorkapat(void)
 {
@@ -282,7 +281,7 @@ void lcd_kursorkapat(void)
 }
 
 /***********************************************************
-* 1. satýr 1. sutuna gider
+* 1. satÄ±r 1. sutuna gider
 */
 void lcd_satirbasi(void)
 {
@@ -290,7 +289,7 @@ void lcd_satirbasi(void)
 }
 
 /***********************************************************
-* 1. satýr 1. sutuna gider
+* 1. satÄ±r 1. sutuna gider
 */
 void lcd_satir1(void)
 {
@@ -298,7 +297,7 @@ void lcd_satir1(void)
 }
 
 /***********************************************************
-* 2. satýr 1. sutuna gider
+* 2. satÄ±r 1. sutuna gider
 */
 void lcd_satir2(void)
 {
@@ -306,7 +305,7 @@ void lcd_satir2(void)
 }
 
 /***********************************************************
-* 3. satýr 1. sutuna gider 
+* 3. satÄ±r 1. sutuna gider 
 */
 void lcd_satir3(void)
 {
@@ -314,14 +313,14 @@ void lcd_satir3(void)
 }
 
 /***********************************************************
-* 4. satýr 1. sutuna gider
+* 4. satÄ±r 1. sutuna gider
 */
 void lcd_satir4(void)
 {
 	lcd_komut(0xd4);
 }
 
-/* Printf fonksiyonu için.
+/* Printf fonksiyonu iÃ§in.
 */
 void putch(unsigned char byte)
 {
@@ -330,8 +329,8 @@ void putch(unsigned char byte)
 
 
 /*
-v0.3 #define mesgulbitioku parametresi eklendi. Bu sayede meþgul biti okunarak mý yoksa
-sabit bir süremi bekleneceði belirleniyor. Proteusta Meþgul biti özelliði çalýþmýyor.
+v0.3 #define mesgulbitioku parametresi eklendi. Bu sayede meÅŸgul biti okunarak mÄ± yoksa
+sabit bir sÃ¼remi bekleneceÄŸi belirleniyor. Proteusta MeÅŸgul biti Ã¶zelliÄŸi Ã§alÄ±ÅŸmÄ±yor.
 
 v0.2 lcd_git() fonksiyonu eklendi.
 */
