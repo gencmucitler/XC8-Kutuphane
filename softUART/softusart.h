@@ -1,10 +1,9 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  ?lk		: Eylül 2017
-*  Düzenleme: Yok 
+*  ?lk		: EylÃ¼l 2017
+*  DÃ¼zenleme: Yok 
 *  Versiyon : 0.1
-*  Açıklama : Yazılımsal olarak gerçekleştirilmiş RS232
+*  AÃ§Ä±klama : YazÄ±lÄ±msal olarak gerÃ§ekleÅŸtirilmiÅŸ RS232
 *    8 bit data no parity
 ***********************************************************/
 
@@ -12,8 +11,8 @@
     #define _XTAL_FREQ 4000000
 #endif
 
-#define USARTHIZ 9600	//istenilen bağlantı hızını yazın.      
-#define usartdelaycyc (_XTAL_FREQ/4) / USARTHIZ  //bağlantı hızını hesapla
+#define USARTHIZ 9600	//istenilen baÄŸlantÄ± hÄ±zÄ±nÄ± yazÄ±n.      
+#define usartdelaycyc (_XTAL_FREQ/4) / USARTHIZ  //baÄŸlantÄ± hÄ±zÄ±nÄ± hesapla
 #define usartdelaycycyarim usartdelaycyc/2
 
 #define softrxpintris	TRISIO5
@@ -21,7 +20,7 @@
 #define softrxpin	GPIO5
 #define softtxpin	GPIO4
 
-//soft usart içindeki kullanınan fonksiyonlardan komutların çalışma süresinin çıkartılması
+//soft usart iÃ§indeki kullanÄ±nan fonksiyonlardan komutlarÄ±n Ã§alÄ±ÅŸma sÃ¼resinin Ã§Ä±kartÄ±lmasÄ±
 #define sucyc1 21
 #define sucyc2 19
 
