@@ -1,62 +1,61 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  İlk		: 9 Temmuz 2017
-*  Düzenleme: Yok 
+*  Ãlk		: 9 Temmuz 2017
+*  DÃ¼zenleme: Yok 
 *  Versiyon : 0.1
-*  Açıklama :  software i2c master mode
-*  100KHz bağlantı hızı..
+*  AÃ§Ã½klama :  software i2c master mode
+*  100KHz baÃ°lantÃ½ hÃ½zÃ½..
 ***********************************************************/
 #include <xc.h>
 #include "softi2c.h"
 
 #define _XTAL_FREQ 4000000
 
-//diğer fonksiyonlar çalıştırılmadan önce ilk olarak bu çalıştırılmalı
+//diÃ°er fonksiyonlar Ã§alÃ½Ã¾tÃ½rÃ½lmadan Ã¶nce ilk olarak bu Ã§alÃ½Ã¾tÃ½rÃ½lmalÃ½
 void softi2c_kur(void)
 {
 	SOFT_SCL=1;
 	SOFT_SDA=1;
-	SOFT_SCL_TRIS=0;	//çıkış
-	SOFT_SDA_TRIS=1;	//high empedans - giriş
+	SOFT_SCL_TRIS=0;	//Ã§Ã½kÃ½Ã¾
+	SOFT_SDA_TRIS=1;	//high empedans - giriÃ¾
 }	
 
-//start sinyalini gönderir
+//start sinyalini gÃ¶nderir
 void softi2c_baslat(void)
 {
 	SOFT_SCL=1;
 	__delay_us(4);
-	SOFT_SDA_TRIS=0;	//çıkış
-	SOFT_SDA=0;	// Clock high konumda iken 1 den 0 a düş.
+	SOFT_SDA_TRIS=0;	//Ã§Ã½kÃ½Ã¾
+	SOFT_SDA=0;	// Clock high konumda iken 1 den 0 a dÃ¼Ã¾.
 	__delay_us(4);
 	SOFT_SCL=0;
-	SOFT_SDA_TRIS=1;	//giriş	
+	SOFT_SDA_TRIS=1;	//giriÃ¾	
 }
 	
-//stop sinyalini gönderir
+//stop sinyalini gÃ¶nderir
 void softi2c_durdur(void)
 {
 	SOFT_SDA_TRIS=0;
 	SOFT_SDA=0;
 	SOFT_SCL=1;
 	__delay_us(4);
-	SOFT_SDA_TRIS=1;	//Clock high konumunda iken 0 dan 1e çık.
+	SOFT_SDA_TRIS=1;	//Clock high konumunda iken 0 dan 1e Ã§Ã½k.
 	__delay_us(4);
 }
 
-//restart sinyalini gönderir	
+//restart sinyalini gÃ¶nderir	
 void softi2c_yenidenbaslat(void)
 {
 	SOFT_SCL=1;
 	__delay_us(4);
-	SOFT_SDA_TRIS=0;	//çıkış
-	SOFT_SDA=0;	// Clock high konumda iken 1 den 0 a düş.
+	SOFT_SDA_TRIS=0;	//Ã§Ã½kÃ½Ã¾
+	SOFT_SDA=0;	// Clock high konumda iken 1 den 0 a dÃ¼Ã¾.
 	__delay_us(4);
 	SOFT_SCL=0;
-	SOFT_SDA_TRIS=1;	//giriş	
+	SOFT_SDA_TRIS=1;	//giriÃ¾	
 }
 
-//1 byte veri gönderir, ack sinyalini okur
+//1 byte veri gÃ¶nderir, ack sinyalini okur
 char softi2c_yaz(char veri)
 {
 	char i,temp;
@@ -79,19 +78,19 @@ char softi2c_yaz(char veri)
 		SOFT_SCL=0;
 		SOFT_SDA_TRIS=1;
 	}	
-	//0 dönerse ack alınmış demektir.
+	//0 dÃ¶nerse ack alÃ½nmÃ½Ã¾ demektir.
 		SOFT_SCL=0;
 		SOFT_SDA_TRIS=1;
 		__delay_us(4);
 		SOFT_SCL=1;
-		temp=SOFT_SDA;	//ack değerini al.
+		temp=SOFT_SDA;	//ack deÃ°erini al.
 		SOFT_SCL=0;
 		
 		return temp;
 		
 }
 
-//1 byte veri okur, ack sinyali gönderir.
+//1 byte veri okur, ack sinyali gÃ¶nderir.
 char softi2c_oku(char onay)
 {
 	char i,veri=0;
@@ -109,7 +108,7 @@ char softi2c_oku(char onay)
 		SOFT_SCL=0;
         __delay_us(2);	
 	}	
-	//onay kodunu gönder..
+	//onay kodunu gÃ¶nder..
 	if(onay==0)
 	{
 		SOFT_SDA_TRIS=0;
