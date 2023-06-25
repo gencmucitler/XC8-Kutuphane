@@ -1,13 +1,12 @@
 /*******************************************************************************
- * Kütüphane     : Gelişmiş Buton Okuma Fonksiyonu                             *
+ * KÃ¼tÃ¼phane     : GeliÅŸmiÅŸ Buton Okuma Fonksiyonu                             *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 18 Haziran 2017                                             *
+ * BaÅŸlangÄ±Ã§     : 18 Haziran 2017                                             *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * Butonların kontak sıçrama durumlarınıda dikkate alarak buton durumunu okur. *
- * Bu fonksiyon ile butona basılma, bırakılma, uzun basılma,basılı tutulma     *
- * durumları kolayca okunabilmektedir.                                         * 
+ * ButonlarÄ±n kontak sÄ±Ã§rama durumlarÄ±nÄ±da dikkate alarak buton durumunu okur. *
+ * Bu fonksiyon ile butona basÄ±lma, bÄ±rakÄ±lma, uzun basÄ±lma,basÄ±lÄ± tutulma     *
+ * durumlarÄ± kolayca okunabilmektedir.                                         * 
  ******************************************************************************/
 
 #ifndef BUTON_H
@@ -33,16 +32,16 @@ extern "C" {
 
 typedef enum _buton_durum_e
 {
-    SERBEST=0,          //buton basılmadığında boşta ise.
-    DEBOUNCE,           //buton basılma anındaki kontak sıcraması(debounce) testi için
-    BASILDI,            //1 kez çalışır
-    BASILI_TUTULUYOR,   //butona basılıyor
-    UZUN_BASILDI,       //buton belirtilen süre boyunca basılırsa 1 kez çalışır.
-    DEBOUNCE2,          //buton bırakılma anındaki kontak sıcraması(debounce) testi için
-    BIRAKILDI           //1 kez çalışır.
+    SERBEST=0,          //buton basÄ±lmadÄ±ÄŸÄ±nda boÅŸta ise.
+    DEBOUNCE,           //buton basÄ±lma anÄ±ndaki kontak sÄ±cramasÄ±(debounce) testi iÃ§in
+    BASILDI,            //1 kez Ã§alÄ±ÅŸÄ±r
+    BASILI_TUTULUYOR,   //butona basÄ±lÄ±yor
+    UZUN_BASILDI,       //buton belirtilen sÃ¼re boyunca basÄ±lÄ±rsa 1 kez Ã§alÄ±ÅŸÄ±r.
+    DEBOUNCE2,          //buton bÄ±rakÄ±lma anÄ±ndaki kontak sÄ±cramasÄ±(debounce) testi iÃ§in
+    BIRAKILDI           //1 kez Ã§alÄ±ÅŸÄ±r.
 }buton_durum_e;
 
-//Değişken Tanımlamaları
+//DeÄŸiÅŸken TanÄ±mlamalarÄ±
 buton_durum_e butonDurumu=SERBEST;
 
 //fonksiyon prototipleri
