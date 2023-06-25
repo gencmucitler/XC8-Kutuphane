@@ -1,20 +1,19 @@
 /*******************************************************************************
- * Kütüphane     : PCF8574 I2C I/O Expander                                    *
+ * KÃ¼tÃ¼phane     : PCF8574 I2C I/O Expander                                    *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 4 Temmuz 2017                                               *
- * Düzenleme     : 9 Temmuz 2017
+  * BaÅŸlangÄ±Ã§     : 4 Temmuz 2017                                               *
+ * DÃ¼zenleme     : 9 Temmuz 2017
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * PCF8574 giriş/çıkış port çoğullayıcı                                        *
+ * PCF8574 giriÅŸ/Ã§Ä±kÄ±ÅŸ port Ã§oÄŸullayÄ±cÄ±                                        *
  ******************************************************************************/
 
-//pcf_adres değeri ile chip in adres kodu girilmelidir. Adres bilgisi datasheetten 
-//öğrenebilirsiniz. PCF8574 ile PCF8574A nın adres kodları farklıdır. Bu sayede 
-//aynı hatta 8 adet PCF8574 ve 8 adet PCF8574A bağlanabilir. Böylece toplamda
-//16 adet port çoğaltıcı bağlanılabilinir.
+//pcf_adres deÄŸeri ile chip in adres kodu girilmelidir. Adres bilgisi datasheetten 
+//Ã¶ÄŸrenebilirsiniz. PCF8574 ile PCF8574A nÄ±n adres kodlarÄ± farklÄ±dÄ±r. Bu sayede 
+//aynÄ± hatta 8 adet PCF8574 ve 8 adet PCF8574A baÄŸlanabilir. BÃ¶ylece toplamda
+//16 adet port Ã§oÄŸaltÄ±cÄ± baÄŸlanÄ±labilinir.
 
-//v0.2 softI2C ilede çalışabilecek şekilde düzenleme yapıldı.
+//v0.2 softI2C ilede Ã§alÄ±ÅŸabilecek ÅŸekilde dÃ¼zenleme yapÄ±ldÄ±.
 
 #include "mcc_generated_files/mcc.h"
 #include "pcf8574.h"
@@ -41,21 +40,21 @@ void pcf8574_yaz(char veri) {
     timeOut = 0;
     while (status != I2C1_MESSAGE_FAIL) {
         
-        //1 byte gönder
+        //1 byte gÃ¶nder
         I2C1_MasterWrite(writeBuffer,
                 1,
                 pcf_adres,
                 &status);
 
-        // veri gönderilene kadar bekle.
+        // veri gÃ¶nderilene kadar bekle.
         while (status == I2C1_MESSAGE_PENDING);
 
-        //başarılı olarak gönderildi isi çık
+        //baÅŸarÄ±lÄ± olarak gÃ¶nderildi isi Ã§Ä±k
         if (status == I2C1_MESSAGE_COMPLETE)
             break;
 
-        //Veri gönderilmediyse tekrar gönder.
-        //Başarısız tekrar sayısına ulaşıldıysa da çık.
+        //Veri gÃ¶nderilmediyse tekrar gÃ¶nder.
+        //BaÅŸarÄ±sÄ±z tekrar sayÄ±sÄ±na ulaÅŸÄ±ldÄ±ysa da Ã§Ä±k.
         if (timeOut == pcf_tekrar)
             break;
         else
