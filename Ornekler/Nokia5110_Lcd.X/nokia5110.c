@@ -1,17 +1,16 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  Ýlk		: Ekim 2017
-*  Düzenleme: Yok 
+*  Ä°lk		: Ekim 2017
+*  DÃ¼zenleme: Yok 
 *  Versiyon : 0.1
-*  Açýklama : Nokia 5110 Kütüphanesi (pcd8544)
+*  AÃ§Ä±klama : Nokia 5110 KÃ¼tÃ¼phanesi (pcd8544)
 ***********************************************************/
 
 #include "nokia5110.h"
-char lcd_kontrast=0xB1; //lcd kontrastý B1 ile BF arasýnda ayarlayýnýzç
+char lcd_kontrast=0xB1; //lcd kontrastÄ± B1 ile BF arasÄ±nda ayarlayÄ±nÄ±zÃ§
 
 /*******************************************************************************
- *  LCD ekran için karakter tanýmlamalarý. Standart Font                       *
+ *  LCD ekran iÃ§in karakter tanÄ±mlamalarÄ±. Standart Font                       *
  *******************************************************************************/
 const char harftablo[] ={0x00, 0x00, 0x00, 0x00, 0x00, // SPACE  0
                          0x00, 0x00, 0x5F, 0x00, 0x00, // !	1
@@ -108,24 +107,24 @@ const char harftablo[] ={0x00, 0x00, 0x00, 0x00, 0x00, // SPACE  0
                          0x00, 0x00, 0x7F, 0x00, 0x00, // |	92
                          0x41, 0x41, 0x36, 0x08, 0x00, // }	93
                          0x02, 0x01, 0x02, 0x04, 0x02, // ~	94
-		     0x1E, 0x21, 0x61, 0x21, 0x12, // Ç 199	95      //türkçe karakterler
-			 0x3D, 0x42, 0x52, 0x52, 0x75, // Ð 208	96
-			 0x3C, 0x43, 0x42, 0x43, 0x3C, // Ö 214	97
-			 0x3C, 0x41, 0x40, 0x41, 0x3C, // Ü 220	98
-			 0x00, 0x42, 0x7F, 0x42, 0x00, // Ý 221	99
-			 0x46, 0x49, 0x69, 0x49, 0x31, // Þ 222	100
-			 0x1C, 0x22, 0x62, 0x22, 0x10, // ç 231	101
-			 0x0D, 0x52, 0x52, 0x52, 0x3D, // ð 240	102
-			 0x38, 0x46, 0x44, 0x46, 0x38, // ö 246	103
-			 0x3C, 0x41, 0x40, 0x21, 0x7C, // ü 252	104
-			 0x00, 0x44, 0x7C, 0x40, 0x00, // ý 253	105
-			 0x24, 0x2A, 0x6A, 0x2A, 0x10};// þ 254	106
+		     0x1E, 0x21, 0x61, 0x21, 0x12, // Ã‡ 199	95      //tÃ¼rkÃ§e karakterler
+			 0x3D, 0x42, 0x52, 0x52, 0x75, // Äž 208	96
+			 0x3C, 0x43, 0x42, 0x43, 0x3C, // Ã– 214	97
+			 0x3C, 0x41, 0x40, 0x41, 0x3C, // Ãœ 220	98
+			 0x00, 0x42, 0x7F, 0x42, 0x00, // Ä° 221	99
+			 0x46, 0x49, 0x69, 0x49, 0x31, // Åž 222	100
+			 0x1C, 0x22, 0x62, 0x22, 0x10, // Ã§ 231	101
+			 0x0D, 0x52, 0x52, 0x52, 0x3D, // ÄŸ 240	102
+			 0x38, 0x46, 0x44, 0x46, 0x38, // Ã¶ 246	103
+			 0x3C, 0x41, 0x40, 0x21, 0x7C, // Ã¼ 252	104
+			 0x00, 0x44, 0x7C, 0x40, 0x00, // Ä± 253	105
+			 0x24, 0x2A, 0x6A, 0x2A, 0x10};// ÅŸ 254	106
 
 /*******************************************************************************
- *  LCD ekraný çalýþtýrýr. Ýlk önce bu fonksiyon çalýþtýrýlmalýdýr.             *
+ *  LCD ekranÄ± Ã§alÄ±ÅŸtÄ±rÄ±r. Ä°lk Ã¶nce bu fonksiyon Ã§alÄ±ÅŸtÄ±rÄ±lmalÄ±dÄ±r.             *
  *******************************************************************************/
 void lcd_baslat(void) {    
-    LCD_CE_TRIS = 0;    //çýkýþ olarak tanýmla
+    LCD_CE_TRIS = 0;    //Ã§Ä±kÄ±ÅŸ olarak tanÄ±mla
     LCD_CLK_TRIS = 0;
     LCD_DATA_TRIS = 0;
     LCD_DC_TRIS = 0;
@@ -135,22 +134,22 @@ void lcd_baslat(void) {
     LCD_CLK=0;
     LCD_DC=0;
     
-    //Lcd ekraný resetle
+    //Lcd ekranÄ± resetle
     LCD_RST=0;    
     LCD_RST=1;
     
-    LCD_DC=0;   //KOMUT setini seç
-    lcd_veriyaz(0x21);              //chip aktif, yatay adresleme, uzatýlmýþ komut seti
-    lcd_veriyaz(lcd_kontrast);      //LCD kontrastý düþük olarak ayarla.
-    lcd_veriyaz(0x04);              //Temp coefficent ayarý
+    LCD_DC=0;   //KOMUT setini seÃ§
+    lcd_veriyaz(0x21);              //chip aktif, yatay adresleme, uzatÄ±lmÄ±ÅŸ komut seti
+    lcd_veriyaz(lcd_kontrast);      //LCD kontrastÄ± dÃ¼ÅŸÃ¼k olarak ayarla.
+    lcd_veriyaz(0x04);              //Temp coefficent ayarÄ±
     lcd_veriyaz(0x14);              //LCD bias mode 1:48: Try 0x13 or 0x14
     lcd_veriyaz(0x20);              //temel komut seti
     lcd_veriyaz(0x0C);              //normal mode aktif     
 }
 
 /*******************************************************************************
- * Ýstenilen pozisyona gider.                                                   *
- * Örnek: lcd_git(2,5);                                                         *
+ * Ä°stenilen pozisyona gider.                                                   *
+ * Ã–rnek: lcd_git(2,5);                                                         *
  *******************************************************************************/
 void lcd_git(char satir, char sutun)
 {
@@ -160,8 +159,8 @@ void lcd_git(char satir, char sutun)
 }
 
 /*******************************************************************************
- * Ýstenilen poziyonda ekrana yazý yazar.                                       *
- * Örnek : lcd_mesajyaz(1,4,"Deneme");                                          *
+ * Ä°stenilen poziyonda ekrana yazÄ± yazar.                                       *
+ * Ã–rnek : lcd_mesajyaz(1,4,"Deneme");                                          *
  *******************************************************************************/
 void lcd_mesajyaz(char satir, char sutun, const char *mesaj)
 {
@@ -172,8 +171,8 @@ void lcd_mesajyaz(char satir, char sutun, const char *mesaj)
 }
 
 /*******************************************************************************
- * Lcd ekrana en son kaldýðý pozisyondan itibaren yazý yazar.                   *
- * Örnek : lcd_mesajyaz_cp("deneme");                                           *
+ * Lcd ekrana en son kaldÄ±ÄŸÄ± pozisyondan itibaren yazÄ± yazar.                   *
+ * Ã–rnek : lcd_mesajyaz_cp("deneme");                                           *
  *******************************************************************************/
 void lcd_mesajyaz_cp(const char *mesaj) {
     do {
@@ -183,7 +182,7 @@ void lcd_mesajyaz_cp(const char *mesaj) {
 
 /*******************************************************************************
  * Lcd ekrana tek bir harf yazar.                                               *
- * Örnek : lcd_harfyaz('A');                                                    *
+ * Ã–rnek : lcd_harfyaz('A');                                                    *
  *******************************************************************************/
 void lcd_harfyaz(char harf) 
 {
@@ -192,44 +191,44 @@ void lcd_harfyaz(char harf)
    
     switch(harf)
 	{
-		case 'Ç':   //türkçe karakterler için adres bilgisini yeniden tanýmla
+		case 'Ã‡':   //tÃ¼rkÃ§e karakterler iÃ§in adres bilgisini yeniden tanÄ±mla
 			adres=475;
 			break;
-		case 'Ð':
+		case 'Äž':
 			adres=480;
 			break;
-		case 'Ö':
+		case 'Ã–':
 			adres=485;
 			break;
-		case 'Ü':
+		case 'Ãœ':
 			adres=490;
 			break;
-		case 'Ý':
+		case 'Ä°':
 			adres=495;
 			break;			
-		case 'Þ':
+		case 'Åž':
 			adres=500;
 			break;
-		case 'ç':
+		case 'Ã§':
 			adres=505;
 			break;
-		case 'ð':
+		case 'ÄŸ':
 			adres=510;
 			break;
-		case 'ö':
+		case 'Ã¶':
 			adres=515;
 			break;
-		case 'ü':
+		case 'Ã¼':
 			adres=520;		
 			break;	
-		case 'ý':
+		case 'Ä±':
 			adres=525;
 			break;					
-		case 'þ':
+		case 'ÅŸ':
 			adres=530;
 			break;
 		default:
-			adres=(harf-' ')*5;   //ASCII Tablosuna göre space karakteri 
+			adres=(harf-' ')*5;   //ASCII Tablosuna gÃ¶re space karakteri 
                                   //tablonun ilk karakteri
 			break;			
 	}	
@@ -239,11 +238,11 @@ void lcd_harfyaz(char harf)
 	lcd_veriyaz(harftablo[adres++]);
 	lcd_veriyaz(harftablo[adres++]);
 	lcd_veriyaz(harftablo[adres++]);
-    lcd_veriyaz( 0x00); //boþluk ekle
+    lcd_veriyaz( 0x00); //boÅŸluk ekle
 }
 
 /*******************************************************************************
- * Lcd ekraný tamamen siler                                                    *
+ * Lcd ekranÄ± tamamen siler                                                    *
  *******************************************************************************/
 void lcd_sil()
 {
@@ -253,14 +252,14 @@ void lcd_sil()
     LCD_DC=1;
     for(i=0;i<504;i++)
     {
-        lcd_veriyaz(0x00);  //tüm ekraný boþlukla doldur.
+        lcd_veriyaz(0x00);  //tÃ¼m ekranÄ± boÅŸlukla doldur.
     }
    
     lcd_git(0,0);
 }
 
 /*******************************************************************************
- * Lcd ekranda istenilen satýrý siler.                                         *
+ * Lcd ekranda istenilen satÄ±rÄ± siler.                                         *
  *******************************************************************************/
 void lcd_satirsil(char satir)
 {
@@ -270,37 +269,37 @@ void lcd_satirsil(char satir)
     LCD_DC=1;
     for(i=0;i<84;i++)
     {
-        lcd_veriyaz(0x00);  //tüm ekraný boþlukla doldur.
+        lcd_veriyaz(0x00);  //tÃ¼m ekranÄ± boÅŸlukla doldur.
     }
    
     lcd_git(satir,0);   
 }
 
 /*******************************************************************************
- * Lcd ekran kontrastýný artýrýr     .                                         *
+ * Lcd ekran kontrastÄ±nÄ± artÄ±rÄ±r     .                                         *
  *******************************************************************************/
 void lcd_kontrast_artir(void)
 {
-//  b1 ile bf arasýnda deðiþsin.
-//    LCD_DC=0;   //KOMUT setini seç
-//    lcd_veriyaz(0x21);              //chip aktif, yatay adresleme, uzatýlmýþ komut seti
+//  b1 ile bf arasÄ±nda deÄŸiÅŸsin.
+//    LCD_DC=0;   //KOMUT setini seÃ§
+//    lcd_veriyaz(0x21);              //chip aktif, yatay adresleme, uzatÄ±lmÄ±ÅŸ komut seti
 //    lcd_veriyaz(lcd_kontrast++);
     lcd_veriyaz(0x20);              //temel komut seti
 }
 
 /*******************************************************************************
- * Lcd ekran kontrastýný azaltýr                                               *
+ * Lcd ekran kontrastÄ±nÄ± azaltÄ±r                                               *
  *******************************************************************************/
 void lcd_kontrast_azalt(void)
 {
-//    LCD_DC=0;   //KOMUT setini seç
-//    lcd_veriyaz(0x21);              //chip aktif, yatay adresleme, uzatýlmýþ komut seti
+//    LCD_DC=0;   //KOMUT setini seÃ§
+//    lcd_veriyaz(0x21);              //chip aktif, yatay adresleme, uzatÄ±lmÄ±ÅŸ komut seti
 //    lcd_veriyaz(lcd_kontrast--);
  //   lcd_veriyaz(0x20);              //temel komut seti
 }
 
 /*******************************************************************************
- * Lcd ekrandaki grafikleri ters gösterir.                                     *
+ * Lcd ekrandaki grafikleri ters gÃ¶sterir.                                     *
  *******************************************************************************/
 void lcd_ekrani_tersle(void)
 {
@@ -310,7 +309,7 @@ void lcd_ekrani_tersle(void)
 }
 
 /*******************************************************************************
- * Lcd ekran normal mode çalýþtýr                                              *
+ * Lcd ekran normal mode Ã§alÄ±ÅŸtÄ±r                                              *
  *******************************************************************************/
 void lcd_normalmode(void)
 {
@@ -321,17 +320,17 @@ void lcd_normalmode(void)
 
 
 /*******************************************************************************
- * Lcd ekrana 1 bytelýk veriyi göderir.                                        *
+ * Lcd ekrana 1 bytelÄ±k veriyi gÃ¶derir.                                        *
  *******************************************************************************/
 void lcd_veriyaz(char veri)
 {
     char i;
     
-    LCD_CE=0;   //lcd yi seç
+    LCD_CE=0;   //lcd yi seÃ§
     
     for(i=0;i<8;i++)
     {
-        veri=veri<<1;   //ilk önce MSB gönderilir.
+        veri=veri<<1;   //ilk Ã¶nce MSB gÃ¶nderilir.
         LCD_DATA=CARRY;
         LCD_CLK=1;
         __delay_us(1);
@@ -342,7 +341,7 @@ void lcd_veriyaz(char veri)
 }
 
 /*******************************************************************************
- * printf fonksiyonu için                                                      *
+ * printf fonksiyonu iÃ§in                                                      *
  *******************************************************************************/
 #ifdef lcdprintf_aktif
 void putch(unsigned char byte) {
