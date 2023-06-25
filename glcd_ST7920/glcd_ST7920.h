@@ -1,19 +1,18 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  İlk		: Ocak 2018
-*  Düzenleme: Şubat 2018  
+*  Ãlk		: Ocak 2018
+*  DÃ¼zenleme: Ãubat 2018  
 *  Versiyon : 0.11
-*  Açıklama : ST7920 chipli 128x64 grafik lcd için seri haberleşme 
-*  kütüphanesi
+*  AÃ§Ã½klama : ST7920 chipli 128x64 grafik lcd iÃ§in seri haberleÃ¾me 
+*  kÃ¼tÃ¼phanesi
 ***********************************************************/
-// v0.11 ufak hata düzeltme
+// v0.11 ufak hata dÃ¼zeltme
 
 #define     LCD_CS      LATA3
 #define     LCD_DI      LATD0
 #define     LCD_CLK     LATC3
 
-//printf fonksiyonu lcd'ye yazacak mı?
+//printf fonksiyonu lcd'ye yazacak mÃ½?
 #define lcdprintf_aktif
 
 void LCD_TEXT(unsigned char x,unsigned char y,const char *DATEN);
