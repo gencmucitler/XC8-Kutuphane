@@ -1,13 +1,12 @@
 /*******************************************************************************
- * Kütüphane     : Geliþmiþ Buton Okuma Fonksiyonu                             *
+ * KÃ¼tÃ¼phane     : GeliÅŸmiÅŸ Buton Okuma Fonksiyonu                             *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Baþlangýç     : 18 Haziran 2017                                             *
+ * BaÅŸlangÄ±Ã§     : 18 Haziran 2017                                             *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * Butonlarýn kontak sýçrama durumlarýnýda dikkate alarak buton durumunu okur. *
- * Bu fonksiyon ile butona basýlma, býrakýlma, uzun basýlma,basýlý tutulma     *
- * durumlarý kolayca okunabilmektedir.                                         * 
+ * ButonlarÄ±n kontak sÄ±Ã§rama durumlarÄ±nÄ±da dikkate alarak buton durumunu okur. *
+ * Bu fonksiyon ile butona basÄ±lma, bÄ±rakÄ±lma, uzun basÄ±lma,basÄ±lÄ± tutulma     *
+ * durumlarÄ± kolayca okunabilmektedir.                                         * 
  ******************************************************************************/
 
 #include "mcc_generated_files/mcc.h"
@@ -18,12 +17,12 @@ unsigned long butonSure;
 char butonNo,oncekiButon;
 bit uzunBasildi;
 
-//Basýlan butonun numarasýný döndürür. Hiç bir butona basýlmadý ise 0x00 döner.
+//BasÄ±lan butonun numarasÄ±nÄ± dÃ¶ndÃ¼rÃ¼r. HiÃ§ bir butona basÄ±lmadÄ± ise 0x00 dÃ¶ner.
 char buton_oku(void)
 {
     butonNo=0;
     
-    //basýlý olan butonu bul.
+    //basÄ±lÄ± olan butonu bul.
     if(!buton1)
         butonNo=1;
     else if(!buton2)
@@ -35,12 +34,12 @@ char buton_oku(void)
 }
 
 
-//Buton durumunu ve kontak sýçramasýný test eder.
+//Buton durumunu ve kontak sÄ±Ã§ramasÄ±nÄ± test eder.
 char buton_kontrol(void)
 {
     switch(butonDurumu)
     {
-        case SERBEST:   //ilk defa basýldýðýnda 
+        case SERBEST:   //ilk defa basÄ±ldÄ±ÄŸÄ±nda 
             if(butonNo>0) 
             {
                 butonSure = miliSaniye();
@@ -56,29 +55,29 @@ char buton_kontrol(void)
             break;
             //------------------------------------------------------------------
         case DEBOUNCE:
-            //ayný butona basýlmaya devam mý ediliyor?
-            //kontak sýçramasýný atla
+            //aynÄ± butona basÄ±lmaya devam mÄ± ediliyor?
+            //kontak sÄ±Ã§ramasÄ±nÄ± atla
             if(butonNo>0) 
             {
                 if (butonNo == oncekiButon) 
                 {
                     if (miliSaniye() - butonSure > debounce_suresi) 
                     {
-                        butonDurumu = BASILDI;      //bir defalýk pals üret.
+                        butonDurumu = BASILDI;      //bir defalÄ±k pals Ã¼ret.
                         butonSure = miliSaniye();
                         return butonNo;
                     }
                 } 
                 else
                 {
-                    //farklý butona basýlmýþ.
+                    //farklÄ± butona basÄ±lmÄ±ÅŸ.
                     oncekiButon=butonNo;
                     butonSure=miliSaniye();
                 }
             }
             else
             {
-                //kontak anlýk 0'a düþtüyse veya býrakýldýysa
+                //kontak anlÄ±k 0'a dÃ¼ÅŸtÃ¼yse veya bÄ±rakÄ±ldÄ±ysa
                 butonDurumu=SERBEST;
             }
             break; 
@@ -102,7 +101,7 @@ char buton_kontrol(void)
                         if(miliSaniye()-butonSure > uzun_basma_suresi)
                         {
                             uzunBasildi=1;
-                            butonDurumu=UZUN_BASILDI;   //bir defalýk pals üret.
+                            butonDurumu=UZUN_BASILDI;   //bir defalÄ±k pals Ã¼ret.
                             return butonNo;
                         }
                     }
@@ -124,13 +123,13 @@ char buton_kontrol(void)
             break;
             //------------------------------------------------------------------
         case DEBOUNCE2:
-            //ayný butona basýlmaya devam mý ediliyor?
-            //kontak sýçramasýný atla
+            //aynÄ± butona basÄ±lmaya devam mÄ± ediliyor?
+            //kontak sÄ±Ã§ramasÄ±nÄ± atla
             if(butonNo==0) 
             { 
                 if (miliSaniye() - butonSure > debounce_suresi) 
                 {
-                    butonDurumu = BIRAKILDI;        //bir defalýk pals üret.            
+                    butonDurumu = BIRAKILDI;        //bir defalÄ±k pals Ã¼ret.            
                     return oncekiButon;
                 }                
             }
