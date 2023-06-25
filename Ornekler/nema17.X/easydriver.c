@@ -1,8 +1,7 @@
 /*******************************************************************************
- * Kütüphane     : Easydriver Adım motor kütüphanesi                           *
+ * KÃ¼tÃ¼phane     : Easydriver AdÃ½m motor kÃ¼tÃ¼phanesi                           *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 4 Ocak 2018                                                 *
+ * BaÃ¾langÃ½Ã§     : 4 Ocak 2018                                                 *
  * Versiyon      : 0.2                                                         *
  *                                                                             *
  ******************************************************************************/
@@ -16,17 +15,17 @@ void adimMotor(unsigned int adimSayisi, char adimYonu) {
     unsigned int maxAdimAdeti, hizlanmaAdimAdeti, yavaslamaAdimAdeti, yavaslamaadim;
     unsigned int minbekleme,maxbekleme,farkbekleme,bekleme;
     
-    //hızlanma yavaşlama ve maksimum hızda gidecek adım sayılarını hesapla.
-    minbekleme=_sure/_minumum_hiz;      //minumum hız için bekleme süresini hesapla
-    maxbekleme=_sure/_maksimum_hiz;     //maksimum hız için bekleme süresini hesapla
+    //hÃ½zlanma yavaÃ¾lama ve maksimum hÃ½zda gidecek adÃ½m sayÃ½larÃ½nÃ½ hesapla.
+    minbekleme=_sure/_minumum_hiz;      //minumum hÃ½z iÃ§in bekleme sÃ¼resini hesapla
+    maxbekleme=_sure/_maksimum_hiz;     //maksimum hÃ½z iÃ§in bekleme sÃ¼resini hesapla
  
-    //çıkış ve iniş rampalarındaki adım sayısını hesapla
+    //Ã§Ã½kÃ½Ã¾ ve iniÃ¾ rampalarÃ½ndaki adÃ½m sayÃ½sÃ½nÃ½ hesapla
     farkbekleme=minbekleme-maxbekleme;   
     
     hizlanmaAdimAdeti=farkbekleme*_hizlanmaadimi;
     yavaslamaAdimAdeti=farkbekleme*_yavaslamaadimi;
 
-    //atılacak adım sayısı maksimum hıza ulaşmak için yeterli mi?
+    //atÃ½lacak adÃ½m sayÃ½sÃ½ maksimum hÃ½za ulaÃ¾mak iÃ§in yeterli mi?
     if(adimSayisi<(hizlanmaAdimAdeti+yavaslamaAdimAdeti))
     {
         hizlanmaAdimAdeti=(unsigned int)(((unsigned long)adimSayisi*_hizlanmaadimi)/(_hizlanmaadimi+_yavaslamaadimi));
@@ -41,13 +40,13 @@ void adimMotor(unsigned int adimSayisi, char adimYonu) {
     
     
 
-    //adım yönünü ayarla.
+    //adÃ½m yÃ¶nÃ¼nÃ¼ ayarla.
     step_DIR = adimYonu;
 
     adim = 0;
     bekleme=minbekleme;
 
-    //hizlanma bölümü
+    //hizlanma bÃ¶lÃ¼mÃ¼
     while (adim <hizlanmaAdimAdeti) {
         for (i = 0; i < _hizlanmaadimi; i++) {
             step_PULSE = 1;
@@ -57,16 +56,16 @@ void adimMotor(unsigned int adimSayisi, char adimYonu) {
             
             adim++;            
             if(adim>=hizlanmaAdimAdeti)
-                break;   //döngüden çık
+                break;   //dÃ¶ngÃ¼den Ã§Ã½k
         }
         
-        bekleme--;  //bir kademe hızlan.
+        bekleme--;  //bir kademe hÃ½zlan.
         if(bekleme==maxbekleme)
             break;
 
     }
 
-    //maksimum hızda gideceği bölüm
+    //maksimum hÃ½zda gideceÃ°i bÃ¶lÃ¼m
     if (maxAdimAdeti > 0) {
         bekleme=maxbekleme;
         for (i = 0; i < maxAdimAdeti; i++) {
@@ -78,7 +77,7 @@ void adimMotor(unsigned int adimSayisi, char adimYonu) {
         adim = adim + maxAdimAdeti;
     }
 
-    //yavaşlama bölümü
+    //yavaÃ¾lama bÃ¶lÃ¼mÃ¼
     yavaslamaadim=0;
     while (yavaslamaadim < yavaslamaAdimAdeti) {
         for (i = 0; i < _yavaslamaadimi; i++) {
@@ -88,7 +87,7 @@ void adimMotor(unsigned int adimSayisi, char adimYonu) {
             step_bekle(bekleme);
             adim++;
 
-            if (adim>=adimSayisi) //atılacak adım adeti dolunca fonksiyondan çık.
+            if (adim>=adimSayisi) //atÃ½lacak adÃ½m adeti dolunca fonksiyondan Ã§Ã½k.
                 return;
         }
         yavaslamaadim = yavaslamaadim + _yavaslamaadimi;
