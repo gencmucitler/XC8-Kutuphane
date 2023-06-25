@@ -1,15 +1,14 @@
 /*******************************************************************************
- * Kütüphane     : I2C LCD                                                     *
+ * KÃ¼tÃ¼phane     : I2C LCD                                                     *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Baþlangýç     : 05 Temmuz 2017                                              *
- * Düzenleme     : 9 Temmuz 2017
+ * BaÅŸlangÄ±Ã§     : 05 Temmuz 2017                                              *
+ * DÃ¼zenleme     : 9 Temmuz 2017
  * Versiyon      : 0.3                                                         *
  *                                                                             *
- * PCF8574 modülü ile I2C Lcd kullaným kütüphanesi                             *
+ * PCF8574 modÃ¼lÃ¼ ile I2C Lcd kullanÄ±m kÃ¼tÃ¼phanesi                             *
  ******************************************************************************/
 
-//v0.3 softI2C ile de çalýþabilecek þekilde düzenleme yapýldý.
+//v0.3 softI2C ile de Ã§alÄ±ÅŸabilecek ÅŸekilde dÃ¼zenleme yapÄ±ldÄ±.
 
 #include "mcc_generated_files/mcc.h"
 #include "seri_lcd.h"
@@ -19,29 +18,29 @@
 #include "softi2c.h"
 #endif
 
-//Deðiþkenler
-char display_kursor_blink; //display,kursor ve blink aç kapat komutlarý için.
+//DeÄŸiÅŸkenler
+char display_kursor_blink; //display,kursor ve blink aÃ§ kapat komutlarÄ± iÃ§in.
 
 //PORT bilgisi
 typedef union
 {
-    //bit düzeyi
+    //bit dÃ¼zeyi
     struct{
         char P0:1;      //RS
         char P1:1;      //RW
         char P2:1;      //E
-        char P3:1;      //arka aydýnlatma
+        char P3:1;      //arka aydÄ±nlatma
         char P4:1;      //D4
         char P5:1;      //D5
         char P6:1;      //D6
         char P7:1;      //D7
     }pin;
-    //bit düzeyi
+    //bit dÃ¼zeyi
     struct{
         char RS:1;      //RS
         char RW:1;      //RW
         char E:1;      //E
-        char LED:1;      //arka aydýnlatma
+        char LED:1;      //arka aydÄ±nlatma
         char D4:1;      //D4
         char D5:1;      //D5
         char D6:1;      //D6
@@ -55,7 +54,7 @@ typedef union
 _PCF_PORT pcf_port;
 
 /*******************************************************************************
- *  PCF8574 üzerinden veriyi gönderdikten sonra enable pinini high-low yapar.  *
+ *  PCF8574 Ã¼zerinden veriyi gÃ¶nderdikten sonra enable pinini high-low yapar.  *
  *******************************************************************************/
 void pcf8574_yaz_wEnable() {
 
@@ -85,21 +84,21 @@ void pcf8574_yaz_wEnable() {
     timeOut = 0;
     while (status != I2C1_MESSAGE_FAIL) {
         
-        //3 byte gönder
+        //3 byte gÃ¶nder
         I2C1_MasterWrite(writeBuffer,
                 3,
                 pcf_adres,
                 &status);
 
-        // veri gönderilene kadar bekle.
+        // veri gÃ¶nderilene kadar bekle.
         while (status == I2C1_MESSAGE_PENDING);
 
-        //baþarýlý olarak gönderildi isi çýk
+        //baÅŸarÄ±lÄ± olarak gÃ¶nderildi isi Ã§Ä±k
         if (status == I2C1_MESSAGE_COMPLETE)
             break;
 
-        //Veri gönderilmediyse tekrar gönder.
-        //Baþarýsýz tekrar sayýsýna ulaþýldýysa da çýk.
+        //Veri gÃ¶nderilmediyse tekrar gÃ¶nder.
+        //BaÅŸarÄ±sÄ±z tekrar sayÄ±sÄ±na ulaÅŸÄ±ldÄ±ysa da Ã§Ä±k.
         if (timeOut == pcf_tekrar)
             break;
         else
@@ -110,7 +109,7 @@ void pcf8574_yaz_wEnable() {
 }
 
 /*******************************************************************************
- *  LCD ekraný çalýþtýrýr. Ýlk önce bu fonksiyon çalýþtýrýlmalýdýr.             *
+ *  LCD ekranÄ± Ã§alÄ±ÅŸtÄ±rÄ±r. Ä°lk Ã¶nce bu fonksiyon Ã§alÄ±ÅŸtÄ±rÄ±lmalÄ±dÄ±r.             *
  *******************************************************************************/
 void lcd_baslat(void) {
 
@@ -135,8 +134,8 @@ void lcd_baslat(void) {
 
 
 /*******************************************************************************
- * Ýstenilen pozisyona gider.                                                   *
- * Örnek: lcd_git(2,5);                                                         *
+ * Ä°stenilen pozisyona gider.                                                   *
+ * Ã–rnek: lcd_git(2,5);                                                         *
  *******************************************************************************/
 void lcd_git(char satir, char sutun) {
     char temp;
@@ -159,8 +158,8 @@ void lcd_git(char satir, char sutun) {
 }
 
 /*******************************************************************************
- * Ýstenilen poziyonda ekrana yazý yazar.                                       *
- * Örnek : lcd_mesajyaz(1,4,"Deneme");                                          *
+ * Ä°stenilen poziyonda ekrana yazÄ± yazar.                                       *
+ * Ã–rnek : lcd_mesajyaz(1,4,"Deneme");                                          *
  *******************************************************************************/
 void lcd_mesajyaz(char satir, char sutun, const char *mesaj) {
     lcd_git(satir, sutun);
@@ -170,8 +169,8 @@ void lcd_mesajyaz(char satir, char sutun, const char *mesaj) {
 }
 
 /*******************************************************************************
- * Lcd ekrana en son kaldýðý pozisyondan itibaren yazý yazar.                   *
- * Örnek : lcd_mesajyaz_cp("deneme");                                           *
+ * Lcd ekrana en son kaldÄ±ÄŸÄ± pozisyondan itibaren yazÄ± yazar.                   *
+ * Ã–rnek : lcd_mesajyaz_cp("deneme");                                           *
  *******************************************************************************/
 void lcd_mesajyaz_cp(const char *mesaj) {
     do {
@@ -180,8 +179,8 @@ void lcd_mesajyaz_cp(const char *mesaj) {
 }
 
 /*******************************************************************************
- * Lcd meþgul olduðu sürece bu fonksiyon içinde bekler..                        *
- * Lcd_komut ve lcd_harfyaz fonksiyonlarý bu fonksiyonu kullanýr.               *
+ * Lcd meÅŸgul olduÄŸu sÃ¼rece bu fonksiyon iÃ§inde bekler..                        *
+ * Lcd_komut ve lcd_harfyaz fonksiyonlarÄ± bu fonksiyonu kullanÄ±r.               *
  *******************************************************************************/
 void lcd_mesgulmu(void) {
     __delay_us(100); //bekle.
@@ -189,41 +188,41 @@ void lcd_mesgulmu(void) {
 
 /*******************************************************************************
  * Lcd ekrana tek bir harf yazar.                                               *
- * Örnek : lcd_harfyaz('A');                                                    *
+ * Ã–rnek : lcd_harfyaz('A');                                                    *
  *******************************************************************************/
 void lcd_harfyaz(char harf) {
     lcd_mesgulmu();
     lcd_rs = 1;     //harf
 
-    lcd_data = (lcd_data & 0x0f) | (harf & 0xf0); //high verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (harf & 0xf0); //high verisini gÃ¶nder.
     pcf8574_yaz_wEnable();
     __delay_us(200);
 
-    lcd_data = (lcd_data & 0x0f) | (harf << 4); //low verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (harf << 4); //low verisini gÃ¶nder.
     pcf8574_yaz_wEnable();
     __delay_us(200);
 }
 
 
 /*******************************************************************************
- * Lcd komutlarýný gönderir.                                                    *
+ * Lcd komutlarÄ±nÄ± gÃ¶nderir.                                                    *
  *******************************************************************************/
 void lcd_komut(char komut) {
     lcd_mesgulmu();
     lcd_rs = 0;     //komut
 
-    lcd_data = (lcd_data & 0x0f) | (komut & 0xf0); //high verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (komut & 0xf0); //high verisini gÃ¶nder.
     pcf8574_yaz_wEnable();
     __delay_ms(5);
     
-    lcd_data = (lcd_data & 0x0f) | (komut << 4); //low verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (komut << 4); //low verisini gÃ¶nder.
     pcf8574_yaz_wEnable();
     __delay_ms(5);
 }
 
 /*******************************************************************************
- * Lcd ekranda özel karakter oluþturur.                                         *
- * Örnek:
+ * Lcd ekranda Ã¶zel karakter oluÅŸturur.                                         *
+ * Ã–rnek:
  * char kalp[8]={
  * 0b00000,
  * 0b01010,
@@ -234,8 +233,8 @@ void lcd_komut(char komut) {
  * 0b00000,
  * 0b00000};
  * 
- * lcd_ozelkarakter(0,kalp);   //kalp sembolü lcd ekrana tanýmlar
- * lcd_harfyaz(0); // kalp sembölünü çiz..
+ * lcd_ozelkarakter(0,kalp);   //kalp sembolÃ¼ lcd ekrana tanÄ±mlar
+ * lcd_harfyaz(0); // kalp sembÃ¶lÃ¼nÃ¼ Ã§iz..
  *******************************************************************************/
 void lcd_ozelkarakter(char karakterno, char patern[8]) {
     char temp, i;
@@ -250,7 +249,7 @@ void lcd_ozelkarakter(char karakterno, char patern[8]) {
 
 /*******************************************************************************
  * Lcdyi siler.                                                                 *
- * Örnek : lcd_sil();                                                           *
+ * Ã–rnek : lcd_sil();                                                           *
  *******************************************************************************/
 void lcd_sil(void) {
     lcd_komut(0x01);
@@ -264,7 +263,7 @@ void lcd_satirbasi(void) {
 }
 
 /*******************************************************************************
- * Kursörü aktif yapar                                                          *
+ * KursÃ¶rÃ¼ aktif yapar                                                          *
  *******************************************************************************/
 void lcd_kursor_ac(void) {
     display_kursor_blink |= 0x02;
@@ -272,7 +271,7 @@ void lcd_kursor_ac(void) {
 }
 
 /*******************************************************************************
- * Kürsörü kapatýr.                                                             *
+ * KÃ¼rsÃ¶rÃ¼ kapatÄ±r.                                                             *
  *******************************************************************************/
 void lcd_kursor_kapat(void) {
     display_kursor_blink &= 0xfd;
@@ -280,7 +279,7 @@ void lcd_kursor_kapat(void) {
 }
 
 /*******************************************************************************
- * LCD Displayi açar.                                                           *
+ * LCD Displayi aÃ§ar.                                                           *
  *******************************************************************************/
 void lcd_display_ac(void) {
     display_kursor_blink |= 0x04;
@@ -289,7 +288,7 @@ void lcd_display_ac(void) {
 }
 
 /*******************************************************************************
- * LCD Displayi kapatýr.                                                        *
+ * LCD Displayi kapatÄ±r.                                                        *
  *******************************************************************************/
 void lcd_display_kapat(void) {
     display_kursor_blink &= 0xfb;
@@ -297,7 +296,7 @@ void lcd_display_kapat(void) {
 }
 
 /*******************************************************************************
- * Kürsör ekranda yanýp söner                                                   *
+ * KÃ¼rsÃ¶r ekranda yanÄ±p sÃ¶ner                                                   *
  *******************************************************************************/
 void lcd_blink_ac(void) {
     display_kursor_blink |= 0x01;
@@ -305,7 +304,7 @@ void lcd_blink_ac(void) {
 }
 
 /*******************************************************************************
- * Kürsörün ekranda yanýp sönme özelliðini kapatýr.                             *
+ * KÃ¼rsÃ¶rÃ¼n ekranda yanÄ±p sÃ¶nme Ã¶zelliÄŸini kapatÄ±r.                             *
  *******************************************************************************/
 void lcd_blink_kapat(void) {
     display_kursor_blink &= 0xfe;
@@ -313,49 +312,49 @@ void lcd_blink_kapat(void) {
 }
 
 /*******************************************************************************
- * LCD ekraný sola kaydýrýr.                                                    *
+ * LCD ekranÄ± sola kaydÄ±rÄ±r.                                                    *
  *******************************************************************************/
 void lcd_sola_kaydir(void) {
     lcd_komut(0x18);
 }
 
 /*******************************************************************************
- * LCD ekraný saða kaydýrýr.                                                    *
+ * LCD ekranÄ± saÄŸa kaydÄ±rÄ±r.                                                    *
  *******************************************************************************/
 void lcd_saga_kaydir(void) {
     lcd_komut(0x1C);
 }
 
 /*******************************************************************************
- * 1. satýr 1. sutuna gider                                                     *
+ * 1. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir1(void) {
     lcd_komut(0x80);
 }
 
 /*******************************************************************************
- * 2. satýr 1. sutuna gider                                                     *
+ * 2. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir2(void) {
     lcd_komut(0xc0);
 }
 
 /*******************************************************************************
- * 3. satýr 1. sutuna gider                                                     *
+ * 3. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir3(void) {
     lcd_komut(0x94);
 }
 
 /*******************************************************************************
- * 4. satýr 1. sutuna gider                                                     *
+ * 4. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir4(void) {
     lcd_komut(0xd4);
 }
 
 /*******************************************************************************
- * printf fonksiyonu için                                                       *
+ * printf fonksiyonu iÃ§in                                                       *
  *******************************************************************************/
 #ifdef lcdprintf_aktif
 
@@ -365,7 +364,7 @@ void putch(unsigned char byte) {
 #endif
 
 /*******************************************************************************
- * LCD arkaplan aydýnlatmayý aç                                                *
+ * LCD arkaplan aydÄ±nlatmayÄ± aÃ§                                                *
  *******************************************************************************/
 void lcd_aydinlatma_ac(void)
 {
@@ -374,7 +373,7 @@ void lcd_aydinlatma_ac(void)
 }
 
 /*******************************************************************************
- * LCD arkaplan aydýnlatmayý kapat                                             *
+ * LCD arkaplan aydÄ±nlatmayÄ± kapat                                             *
  *******************************************************************************/
 void lcd_aydinlatma_kapat(void)
 {
