@@ -1,17 +1,16 @@
 /*******************************************************************************
- * Kütüphane     : PCF8574 I2C I/O Expander                                    *
+ * KÃ¼tÃ¼phane     : PCF8574 I2C I/O Expander                                    *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 4 Temmuz 2017                                               *
+ * BaÅŸlangÄ±Ã§     : 4 Temmuz 2017                                               *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * PCF8574 giriş/çıkış port çoğullayıcı                                        *
+ * PCF8574 giriÅŸ/Ã§Ä±kÄ±ÅŸ port Ã§oÄŸullayÄ±cÄ±                                        *
  ******************************************************************************/
 
-//pcf_adres değeri ile chip in adres kodu girilmelidir. Adres bilgisi datasheetten 
-//öğrenebilirsiniz. PCF8574 ile PCF8574A nın adres kodları farklıdır. Bu sayede 
-//aynı hatta 8 adet PCF8574 ve 8 adet PCF8574A bağlanabilir. Böylece toplamda
-//16 adet port çoğaltıcı bağlanılabilinir.
+//pcf_adres deÄŸeri ile chip in adres kodu girilmelidir. Adres bilgisi datasheetten 
+//Ã¶ÄŸrenebilirsiniz. PCF8574 ile PCF8574A nÄ±n adres kodlarÄ± farklÄ±dÄ±r. Bu sayede 
+//aynÄ± hatta 8 adet PCF8574 ve 8 adet PCF8574A baÄŸlanabilir. BÃ¶ylece toplamda
+//16 adet port Ã§oÄŸaltÄ±cÄ± baÄŸlanÄ±labilinir.
 
 
 #ifndef PCF8574_H
@@ -32,7 +31,7 @@ extern "C" {
 #define pcf_adres   0x3F    //entegrenin adresi
 #endif
 
-#define pcf_tekrar   10     //hatalı gönderimde tekrar deneme sayısı
+#define pcf_tekrar   10     //hatalÄ± gÃ¶nderimde tekrar deneme sayÄ±sÄ±
 
 //fonksiyon prototipleri
 
