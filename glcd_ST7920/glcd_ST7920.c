@@ -1,13 +1,12 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  Ýlk		: Ocak 2018
-*  Düzenleme: Þubat 2018  
+*  Ä°lk		: Ocak 2018
+*  DÃ¼zenleme: Åžubat 2018  
 *  Versiyon : 0.11
-*  Açýklama : ST7920 chipli 128x64 grafik lcd için seri haberleþme 
-*  kütüphanesi
+*  AÃ§Ä±klama : ST7920 chipli 128x64 grafik lcd iÃ§in seri haberleÅŸme 
+*  kÃ¼tÃ¼phanesi
 ***********************************************************/
-// v0.11 ufak hata düzeltme
+// v0.11 ufak hata dÃ¼zeltme
 
 #include "mcc_generated_files/mcc.h"
 #include "glcd_ST7920.h"
@@ -18,7 +17,7 @@ char display_kursor_blink;
 
 
 /******************************************************************************
- * 8 bitlik veriyi seri olarak lcd'ye gönderir.
+ * 8 bitlik veriyi seri olarak lcd'ye gÃ¶nderir.
  *****************************************************************************/
 void lcd_seriverigonder(char veri)
 {
@@ -28,7 +27,7 @@ void lcd_seriverigonder(char veri)
 //        LCD_CLK=1;
 //        __delay_us(5);
 //		veri=veri<<1;
-//		LCD_DI=CARRY;   //PRO mode da bu kod çalýþmýyor..!!!
+//		LCD_DI=CARRY;   //PRO mode da bu kod Ã§alÄ±ÅŸmÄ±yor..!!!
 //        LCD_CLK=0;
 //        __delay_us(5);
 //
@@ -65,7 +64,7 @@ void lcd_seriverigonder(char veri)
 }
 
 /******************************************************************************
- * LCD ekran kullanýlmadan önce bu fonksiyon ile çalýþtýrýlmalýdýr.
+ * LCD ekran kullanÄ±lmadan Ã¶nce bu fonksiyon ile Ã§alÄ±ÅŸtÄ±rÄ±lmalÄ±dÄ±r.
  *****************************************************************************/
 void lcd_baslat()
 {
@@ -78,39 +77,39 @@ void lcd_baslat()
     __delay_us(50);
     lcd_komut(0x30);
     __delay_us(50);   
-    lcd_komut(0x0C);    //display açýk, kürsör ve blink kapalý.
+    lcd_komut(0x0C);    //display aÃ§Ä±k, kÃ¼rsÃ¶r ve blink kapalÄ±.
     __delay_us(50);
-    lcd_komut(0x01);    //ekraný sil
+    lcd_komut(0x01);    //ekranÄ± sil
     __delay_ms(10);
-    lcd_komut(0x06);    //entry mode, saða doðru yazýlacak.
+    lcd_komut(0x06);    //entry mode, saÄŸa doÄŸru yazÄ±lacak.
 
 
     display_kursor_blink=0x0C;
 }
 
 /******************************************************************************
- * LCD ekrana 1 bytelýk veri göndermek için 3 bytelýk paketler kullanýlýr.
- * datasheet içinde nasýl olduðu açýklanýyor.
- * RS=1; ekrana yazýlacak veri gönderir.
+ * LCD ekrana 1 bytelÄ±k veri gÃ¶ndermek iÃ§in 3 bytelÄ±k paketler kullanÄ±lÄ±r.
+ * datasheet iÃ§inde nasÄ±l olduÄŸu aÃ§Ä±klanÄ±yor.
+ * RS=1; ekrana yazÄ±lacak veri gÃ¶nderir.
  *****************************************************************************/
 void lcd_harf(char harf)
 {
     LCD_CS=1;
-    lcd_seriverigonder(0b11111010);     //rs=1 harf gönder.
+    lcd_seriverigonder(0b11111010);     //rs=1 harf gÃ¶nder.
     lcd_seriverigonder(harf & 0xF0);
     lcd_seriverigonder((harf<<4)&0xf0); 
     LCD_CS=0;
 }
 
 /******************************************************************************
- * LCD ekrana 1 bytelýk veri göndermek için 3 bytelýk paketler kullanýlýr.
- * datasheet içinde nasýl olduðu açýklanýyor.
- * RS=0; lcd ekran komutu gönderir.
+ * LCD ekrana 1 bytelÄ±k veri gÃ¶ndermek iÃ§in 3 bytelÄ±k paketler kullanÄ±lÄ±r.
+ * datasheet iÃ§inde nasÄ±l olduÄŸu aÃ§Ä±klanÄ±yor.
+ * RS=0; lcd ekran komutu gÃ¶nderir.
  *****************************************************************************/
 void lcd_komut(char komut)
 {
     LCD_CS=1;
-    lcd_seriverigonder(0b11111000);     //rs=0 harf gönder.
+    lcd_seriverigonder(0b11111000);     //rs=0 harf gÃ¶nder.
     lcd_seriverigonder(komut & 0xF0);
     lcd_seriverigonder((komut<<4)&0xf0); 
     LCD_CS=0;
@@ -120,7 +119,7 @@ void lcd_komut(char komut)
 
 /********************************************************************************
  * Lcdyi siler.                                                                 *
- * Örnek : lcd_sil();                                                           *
+ * Ã–rnek : lcd_sil();                                                           *
  *******************************************************************************/
 void lcd_sil()
 {
@@ -130,7 +129,7 @@ void lcd_sil()
 }
 
 /********************************************************************************
- * 1. satýr 1. sutuna gider                                                     *
+ * 1. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satirbasi()
 {
@@ -138,8 +137,8 @@ void lcd_satirbasi()
 }
 
 /*******************************************************************************
- * Ýstenilen pozisyona gider.                                                   *
- * Örnek: lcd_git(2,5);                                                         *
+ * Ä°stenilen pozisyona gider.                                                   *
+ * Ã–rnek: lcd_git(2,5);                                                         *
  *******************************************************************************/
 void lcd_git(char satir, char sutun) {
     char temp;          
@@ -162,8 +161,8 @@ void lcd_git(char satir, char sutun) {
 }
 
 /*******************************************************************************
- * Ýstenilen poziyonda ekrana yazý yazar.                                       *
- * Örnek : lcd_mesajyaz(1,4,"Deneme");                                          *
+ * Ä°stenilen poziyonda ekrana yazÄ± yazar.                                       *
+ * Ã–rnek : lcd_mesajyaz(1,4,"Deneme");                                          *
  *******************************************************************************/
 void lcd_mesajyaz(char satir, char sutun, const char *mesaj) {
     lcd_git(satir, sutun);
@@ -175,8 +174,8 @@ void lcd_mesajyaz(char satir, char sutun, const char *mesaj) {
 
 
 /*******************************************************************************
- * Lcd ekrana en son kaldýðý pozisyondan itibaren yazý yazar.                   *
- * Örnek : lcd_mesajyaz_cp("deneme");                                           *
+ * Lcd ekrana en son kaldÄ±ÄŸÄ± pozisyondan itibaren yazÄ± yazar.                   *
+ * Ã–rnek : lcd_mesajyaz_cp("deneme");                                           *
  *******************************************************************************/
 void lcd_mesajyaz_cp(const char *mesaj) {
     do {
@@ -187,7 +186,7 @@ void lcd_mesajyaz_cp(const char *mesaj) {
 
 
 /*******************************************************************************
- * LCD ekraný saða kaydýrýr.                                                    *
+ * LCD ekranÄ± saÄŸa kaydÄ±rÄ±r.                                                    *
  *******************************************************************************/
 void lcd_ekransagakaydir()
 {
@@ -195,7 +194,7 @@ void lcd_ekransagakaydir()
 }
 
 /*******************************************************************************
- * LCD ekraný sola kaydýrýr.                                                    *
+ * LCD ekranÄ± sola kaydÄ±rÄ±r.                                                    *
  *******************************************************************************/
 void lcd_ekransolakaydir()
 {
@@ -203,7 +202,7 @@ void lcd_ekransolakaydir()
 }
 
 /*******************************************************************************
- * Kürsörü saða   kaydýrýr.                                                    *
+ * KÃ¼rsÃ¶rÃ¼ saÄŸa   kaydÄ±rÄ±r.                                                    *
  *******************************************************************************/
 void lcd_kursorsagakaydir()
 {
@@ -211,7 +210,7 @@ void lcd_kursorsagakaydir()
 }
 
 /*******************************************************************************
- * Kürsörü sola   kaydýrýr.                                                    *
+ * KÃ¼rsÃ¶rÃ¼ sola   kaydÄ±rÄ±r.                                                    *
  *******************************************************************************/
 void lcd_kursorsolakaydir()
 {    
@@ -220,7 +219,7 @@ void lcd_kursorsolakaydir()
 
 
 /*******************************************************************************
- * Kursörü aktif yapar                                                          *
+ * KursÃ¶rÃ¼ aktif yapar                                                          *
  *******************************************************************************/
 void lcd_kursor_ac(void) {
     display_kursor_blink |= 0x02;
@@ -228,7 +227,7 @@ void lcd_kursor_ac(void) {
 }
 
 /*******************************************************************************
- * Kürsörü kapatýr.                                                             *
+ * KÃ¼rsÃ¶rÃ¼ kapatÄ±r.                                                             *
  *******************************************************************************/
 void lcd_kursor_kapat(void) {
     display_kursor_blink &= 0xfd;
@@ -236,7 +235,7 @@ void lcd_kursor_kapat(void) {
 }
 
 /*******************************************************************************
- * LCD Displayi açar.                                                           *
+ * LCD Displayi aÃ§ar.                                                           *
  *******************************************************************************/
 void lcd_display_ac(void) {
     display_kursor_blink |= 0x04;
@@ -245,8 +244,8 @@ void lcd_display_ac(void) {
 }
 
 /*******************************************************************************
- * LCD Displayi kapatýr.                                                        *
- * nasýl çalýþtýðýný çözmedim.
+ * LCD Displayi kapatÄ±r.                                                        *
+ * nasÄ±l Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± Ã§Ã¶zmedim.
  *******************************************************************************/
 void lcd_display_kapat(void) {
     display_kursor_blink &= 0xfb;
@@ -254,7 +253,7 @@ void lcd_display_kapat(void) {
 }
 
 /*******************************************************************************
- * Kürsör ekranda yanýp söner                                                   *
+ * KÃ¼rsÃ¶r ekranda yanÄ±p sÃ¶ner                                                   *
  *******************************************************************************/
 void lcd_blink_ac(void) {
     display_kursor_blink |= 0x01;
@@ -262,7 +261,7 @@ void lcd_blink_ac(void) {
 }
 
 /*******************************************************************************
- * Kürsörün ekranda yanýp sönme özelliðini kapatýr.                             *
+ * KÃ¼rsÃ¶rÃ¼n ekranda yanÄ±p sÃ¶nme Ã¶zelliÄŸini kapatÄ±r.                             *
  *******************************************************************************/
 void lcd_blink_kapat(void) {
     display_kursor_blink &= 0xfe;
@@ -270,28 +269,28 @@ void lcd_blink_kapat(void) {
 }
 
 /*******************************************************************************
- * 1. satýr 1. sutuna gider                                                     *
+ * 1. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir1(void) {
     lcd_komut(0x80);
 }
 
 /*******************************************************************************
- * 2. satýr 1. sutuna gider                                                     *
+ * 2. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir2(void) {
     lcd_komut(0x90);
 }
 
 /*******************************************************************************
- * 3. satýr 1. sutuna gider                                                     *
+ * 3. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir3(void) {
     lcd_komut(0x88);
 }
 
 /*******************************************************************************
- * 4. satýr 1. sutuna gider                                                     *
+ * 4. satÄ±r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir4(void) {
     lcd_komut(0x98);
@@ -315,7 +314,7 @@ void lcd_satir_tersle(char satirno)
    // lcd_temel_komutseti();
 }
 /*******************************************************************************
- * printf fonksiyonu için                                                       *
+ * printf fonksiyonu iÃ§in                                                       *
  *******************************************************************************/
 #ifdef lcdprintf_aktif
 
