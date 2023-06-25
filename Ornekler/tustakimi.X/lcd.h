@@ -1,35 +1,34 @@
 /*******************************************************************************
  * Yazar     : sigmoid                                                         *
- * Web       : http://www.gencmucitler.com                                     *
- * Tarih     : 01 Mayýs 2014                                                   *
- * Düzenleme : 20 Mayýs 2017                                                   *
+ * Tarih     : 01 MayÄ±s 2014                                                   *
+ * DÃ¼zenleme : 20 MayÄ±s 2017                                                   *
  * Versiyon  : 0.2                                                             *
  *                                                                             *
- * HD44780 karakter LCD  kütüphanesi                                           *
+ * HD44780 karakter LCD  kÃ¼tÃ¼phanesi                                           *
  ******************************************************************************/
 
-/*      Standart LCD ayak baðlantýlarý
-1: Gnd  2: Vcc  3: Vee - Kontras ayaðý
+/*      Standart LCD ayak baÄŸlantÄ±larÄ±
+1: Gnd  2: Vcc  3: Vee - Kontras ayaÄŸÄ±
 4: RS   5: RW   6: E
 7: D0   8: D1   9: D2   10: D3  11: D4  12: D5  13: D6  14: D7
 15: Backlight Vcc       16: Backlight Gnd                                     */
 
 
-//#define LCDBIT8    //lcd ekrana 8bit mi eriþilecek
+//#define LCDBIT8    //lcd ekrana 8bit mi eriÅŸilecek
 #define LCDBIT4    //yoksa 4 bit mi?
 
 #ifdef LCDBIT4
-//#define LCDustpin     //4bit eriþilecekse hangi pinler kullanýlacak
+//#define LCDustpin     //4bit eriÅŸilecekse hangi pinler kullanÄ±lacak
 #define LCDaltpin
 #endif
 
-//RW pini PIC'e mi yoksa Topraða mý baðlý
+//RW pini PIC'e mi yoksa TopraÄŸa mÄ± baÄŸlÄ±
 //#define lcd_rw_aktif
 
-//printf fonksiyonu lcd'ye yazacak mý?
+//printf fonksiyonu lcd'ye yazacak mÄ±?
 #define lcdprintf_aktif
 
-// kullanýlacak lcd ayaklar?
+// kullanÄ±lacak lcd ayaklar?
 #define lcd_data	LATB
 #define lcd_read    PORTB
 #define lcd_tris	TRISB
