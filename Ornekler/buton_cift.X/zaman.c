@@ -1,24 +1,23 @@
 /*******************************************************************************
- * Kütüphane     : miliSaniye                                                  *
+ * KÃ¼tÃ¼phane     : miliSaniye                                                  *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 18 Haziran 2017                                             *
+ * BaÅŸlangÄ±Ã§     : 18 Haziran 2017                                             *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * PIC kaç miliSaniyedir enerjili olduğunu sayar. Yaklaşık 50 gün sonra sayaç  * 
- * sıfırlanır.                                                                 * 
+ * PIC kaÃ§ miliSaniyedir enerjili olduÄŸunu sayar. YaklaÅŸÄ±k 50 gÃ¼n sonra sayaÃ§  * 
+ * sÄ±fÄ±rlanÄ±r.                                                                 * 
  ******************************************************************************/
 
 static unsigned long _msaniye=0;
 
-//her milisaniyede bir artacak. maksimum 50 güne kadar sayabiliyor.
-//2^32 /1000 = x saniye  x/60/60/24 =49,71 gün
-void _miliSaat(void)        //Timer2/4/6 kesmesi tarafından tetiklenmelidir.
+//her milisaniyede bir artacak. maksimum 50 gÃ¼ne kadar sayabiliyor.
+//2^32 /1000 = x saniye  x/60/60/24 =49,71 gÃ¼n
+void _miliSaat(void)        //Timer2/4/6 kesmesi tarafÄ±ndan tetiklenmelidir.
 {
     _msaniye++;
 }
 
-//mili saniye cinsinden mikrodenetleyicinin ne kadar süre çalıştığı bilgisini döndürür.
+//mili saniye cinsinden mikrodenetleyicinin ne kadar sÃ¼re Ã§alÄ±ÅŸtÄ±ÄŸÄ± bilgisini dÃ¶ndÃ¼rÃ¼r.
 unsigned long miliSaniye(void)
 {    
     return _msaniye;
