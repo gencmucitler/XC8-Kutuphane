@@ -1,12 +1,11 @@
 /*******************************************************************************
- * Kütüphane     : miliSaniye                                                  *
+ * KÃ¼tÃ¼phane     : miliSaniye                                                  *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 18 Haziran 2017                                             *
+ * BaÅŸlangÄ±Ã§     : 18 Haziran 2017                                             *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * PIC kaç miliSaniyedir enerjili olduğunu sayar. Yaklaşık 50 gün sonra sayaç  * 
- * sıfırlanır.                                                                 * 
+ * PIC kaÃ§ miliSaniyedir enerjili olduÄŸunu sayar. YaklaÅŸÄ±k 50 gÃ¼n sonra sayaÃ§  * 
+ * sÄ±fÄ±rlanÄ±r.                                                                 * 
  ******************************************************************************/
 
 #ifndef ZAMAN_H
