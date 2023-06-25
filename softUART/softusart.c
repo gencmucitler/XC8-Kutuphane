@@ -1,10 +1,9 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  ?lk		: Eylül 2017
-*  Düzenleme: Yok 
+*  ?lk		: EylÃ¼l 2017
+*  DÃ¼zenleme: Yok 
 *  Versiyon : 0.1
-*  Açýklama : Yazýlýmsal olarak gerçekleþtirilmiþ RS232
+*  AÃ§Ã½klama : YazÃ½lÃ½msal olarak gerÃ§ekleÃ¾tirilmiÃ¾ RS232
 *    8 bit data no parity
 ***********************************************************/
 
@@ -13,7 +12,7 @@
 
 void softusart_baslat(void)
 {
-	softtxpin=1;	//boþtayken 1.
+	softtxpin=1;	//boÃ¾tayken 1.
 	softrxpintris=1;
 	softtxpintris=0;
 }
@@ -58,7 +57,7 @@ char softusart_oku(void)
 }
 
 
-//printf fonksiyonu için
+//printf fonksiyonu iÃ§in
 void putch(unsigned char byte)
 {
 	softusart_yaz(byte);
