@@ -1,8 +1,7 @@
 /*******************************************************************************
- * Kütüphane     : 28BYJ-48 Adým motor kütüphanesi                             *
+ * KÃ¼tÃ¼phane     : 28BYJ-48 AdÃ½m motor kÃ¼tÃ¼phanesi                             *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Baþlangýç     : 17 Aralýk  2017                                             *
+ * BaÃ¾langÃ½Ã§     : 17 AralÃ½k  2017                                             *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
  ******************************************************************************/
@@ -12,14 +11,14 @@
 
 char adim=0;
     
-//adým motoru kaç adýmla gideceðini belirtir.
+//adÃ½m motoru kaÃ§ adÃ½mla gideceÃ°ini belirtir.
 void adimMotor(unsigned int adimSayisi,char adimYonu,unsigned int adimHizi)
 {
     unsigned int i,j;
 
     for (i = 0; i < adimSayisi; i++) {
 
-        //1 adým at
+        //1 adÃ½m at
         if (adimYonu == saatYonunde) {
             adim++;
             if (adim == 8)
@@ -87,7 +86,7 @@ void adimMotor(unsigned int adimSayisi,char adimYonu,unsigned int adimHizi)
     }
 }
 
-//derece vererek kontrol saðlanýr.  
+//derece vererek kontrol saÃ°lanÃ½r.  
 void adimMotorDerece(unsigned int adimDerece,char adimYonu,unsigned int adimHizi)
 {
     unsigned int adimSayisiSonuc;
