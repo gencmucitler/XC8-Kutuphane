@@ -1,15 +1,14 @@
 /*******************************************************************************
- * Kütüphane     : 4x4 Tuş Takımı Okuma Kütüphanesi                            *
+ * KÃ¼tÃ¼phane     : 4x4 TuÅŸ TakÄ±mÄ± Okuma KÃ¼tÃ¼phanesi                            *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Başlangıç     : 18 Haziran 2017                                             *
+ * BaÅŸlangÄ±Ã§     : 18 Haziran 2017                                             *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * 4x4 matriks tuş takımı kütüphanesi                                          *
+ * 4x4 matriks tuÅŸ takÄ±mÄ± kÃ¼tÃ¼phanesi                                          *
  ******************************************************************************/
 
-//Portun 0..3 çıkış 4..7 giriş yapılmalı. Kısaca Satırlar çıkış, sutünlar giriş 
-//yapılmalı. Giriş portları pull-up direnci takılmalı veya internal pull-up 
+//Portun 0..3 Ã§Ä±kÄ±ÅŸ 4..7 giriÅŸ yapÄ±lmalÄ±. KÄ±saca SatÄ±rlar Ã§Ä±kÄ±ÅŸ, sutÃ¼nlar giriÅŸ 
+//yapÄ±lmalÄ±. GiriÅŸ portlarÄ± pull-up direnci takÄ±lmalÄ± veya internal pull-up 
 //aktif edilmelidir.
 
 #include "mcc_generated_files/mcc.h"
@@ -21,10 +20,10 @@ char butonNo, butonNo_kayit, oncekiButonNo;
 bit uzunBasildi, kisaBasildi;
 char satirno, sutunno;
 
-//basılan tuşu oku
+//basÄ±lan tuÅŸu oku
 
 char tustakimi_oku(void) {
-    //tüm satılar çıkış olmalı
+    //tÃ¼m satÄ±lar Ã§Ä±kÄ±ÅŸ olmalÄ±
     SATIR1 = 0;
     SATIR2 = 0;
     SATIR3 = 0;
@@ -42,7 +41,7 @@ char tustakimi_oku(void) {
     else if (!SUTUN4)
         sutunno = 4;
 
-    //bir butona basıldıysa basılan satırıda bul.
+    //bir butona basÄ±ldÄ±ysa basÄ±lan satÄ±rÄ±da bul.
     if (sutunno) {
         for (satirno = 1; satirno <= 4; satirno++) {
             switch (satirno) {
@@ -72,7 +71,7 @@ char tustakimi_oku(void) {
                     break;
             }
 
-            //bu satırda ki tuş mu basılı ?
+            //bu satÄ±rda ki tuÅŸ mu basÄ±lÄ± ?
             if (!SUTUN1)
                 break;
             else if (!SUTUN2)
@@ -85,7 +84,7 @@ char tustakimi_oku(void) {
     }
 
     
-    //satır ve sütün bulundu mu?
+    //satÄ±r ve sÃ¼tÃ¼n bulundu mu?
     
     if(satirno && sutunno)
     {
@@ -99,15 +98,15 @@ char tustakimi_oku(void) {
 }
 
 
-//Buton durumunu ve kontak sıçramasını test eder.
+//Buton durumunu ve kontak sÄ±Ã§ramasÄ±nÄ± test eder.
 char buton_kontrol(void) {
     switch (butonDurumu) {
-        case SERBEST: //ilk defa basıldığında 
+        case SERBEST: //ilk defa basÄ±ldÄ±ÄŸÄ±nda 
             if (butonNo) {
                 butonSure = miliSaniye();
                 butonDurumu = DEBOUNCE;
-                butonNo_kayit = butonNo; //ButonNo yu kaydet, sürekli butona 
-                //basılıyor mu diye kontrol edilecek
+                butonNo_kayit = butonNo; //ButonNo yu kaydet, sÃ¼rekli butona 
+                //basÄ±lÄ±yor mu diye kontrol edilecek
                 uzunBasildi = 0;
                 kisaBasildi = 0;
             } else {
@@ -117,23 +116,23 @@ char buton_kontrol(void) {
             break;
             //------------------------------------------------------------------
         case DEBOUNCE:
-            //aynı butona basılmaya devam mı ediliyor?
-            //kontak sıçramasını atla
+            //aynÄ± butona basÄ±lmaya devam mÄ± ediliyor?
+            //kontak sÄ±Ã§ramasÄ±nÄ± atla
             if (butonNo) {
                 if (butonNo == butonNo_kayit) {
                     if (miliSaniye() - butonSure > debounce_suresi) {
-                        butonDurumu = BASILDI; //bir defalık pals üret.
+                        butonDurumu = BASILDI; //bir defalÄ±k pals Ã¼ret.
                         butonSure = miliSaniye();
                         return butonNo;
                     }
                 }
                 else {
-                    //farklı butona basılmış.
+                    //farklÄ± butona basÄ±lmÄ±ÅŸ.
                     butonNo_kayit = butonNo;
                     butonSure = miliSaniye();
                 }
             } else {
-                //kontak anlık 0'a düştüyse veya bırakıldıysa
+                //kontak anlÄ±k 0'a dÃ¼ÅŸtÃ¼yse veya bÄ±rakÄ±ldÄ±ysa
                 butonDurumu = SERBEST;
             }
             break;
@@ -159,7 +158,7 @@ char buton_kontrol(void) {
                     if (uzunBasildi == 0) {
                         if (miliSaniye() - butonSure > uzun_basma_suresi) {
                             uzunBasildi = 1;
-                            butonDurumu = UZUN_BASILDI; //bir defalık pals üret.
+                            butonDurumu = UZUN_BASILDI; //bir defalÄ±k pals Ã¼ret.
                             return butonNo;
                         }
                     }
@@ -181,11 +180,11 @@ char buton_kontrol(void) {
             break;
             //------------------------------------------------------------------
         case DEBOUNCE2:
-            //aynı butona basılmaya devam mı ediliyor?
-            //kontak sıçramasını atla
+            //aynÄ± butona basÄ±lmaya devam mÄ± ediliyor?
+            //kontak sÄ±Ã§ramasÄ±nÄ± atla
             if (butonNo == 0) {
                 if (miliSaniye() - butonSure > debounce_suresi) {
-                    butonDurumu = BIRAKILDI; //bir defalık pals üret.            
+                    butonDurumu = BIRAKILDI; //bir defalÄ±k pals Ã¼ret.            
                     return butonNo_kayit;
                 }
             } else {
@@ -200,14 +199,14 @@ char buton_kontrol(void) {
             //------------------------------------------------------------------
         case BIRAKILDI:
 
-            //çift tıklamada kullanılacak kodlar
-            //önceden de aynı butona mı basıldı? İki kere butona basma süresi 
-            //istenildiği süre kadar kısa mı?
+            //Ã§ift tÄ±klamada kullanÄ±lacak kodlar
+            //Ã¶nceden de aynÄ± butona mÄ± basÄ±ldÄ±? Ä°ki kere butona basma sÃ¼resi 
+            //istenildiÄŸi sÃ¼re kadar kÄ±sa mÄ±?
             if (butonNo_kayit == oncekiButonNo && miliSaniye() - ciftTiklamaSure < cift_tiklama_suresi) {
                 butonDurumu = CIFT_TIKLAMA;
                 return butonNo_kayit;
             }
-            //bir sonraki tıklama için kaydet
+            //bir sonraki tÄ±klama iÃ§in kaydet
             oncekiButonNo = butonNo_kayit;
             ciftTiklamaSure = miliSaniye();
 
