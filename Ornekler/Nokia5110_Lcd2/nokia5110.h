@@ -1,17 +1,16 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
 *  ?lk		: Ekim 2017
-*  Düzenleme: Yok 
+*  DÃ¼zenleme: Yok 
 *  Versiyon : 0.1
-*  Açýklama : Nokia 5110 Kütüphanesi  (pcd8544)
+*  AÃ§Ä±klama : Nokia 5110 KÃ¼tÃ¼phanesi  (pcd8544)
 ***********************************************************/
 
 #include "mcc_generated_files/mcc.h"
-//printf kullanmak için
+//printf kullanmak iÃ§in
 #define lcdprintf_aktif
 
-//Nokia LCD Ekran PIN Tanýmlamalarý
+//Nokia LCD Ekran PIN TanÄ±mlamalarÄ±
 #define LCD_RST         LATB7
 #define LCD_RST_TRIS    TRISB7
 #define LCD_CE          LATB6
@@ -23,7 +22,7 @@
 #define LCD_CLK         LATB5
 #define LCD_CLK_TRIS    TRISB5
 
-//rakam font büyüklüðü
+//rakam font bÃ¼yÃ¼klÃ¼ÄŸÃ¼
 #define BUYUK   1
 #define NORMAL  0
 
