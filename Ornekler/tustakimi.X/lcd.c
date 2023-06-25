@@ -1,27 +1,26 @@
 /*******************************************************************************
- * Kütüphane     : xsLCD                                                       *
+ * KÃ¼tÃ¼phane     : xsLCD                                                       *
  * Yazar         : sigmoid                                                     *
- * Web           : http://www.gencmucitler.com                                 *
- * Baþlangýç     : 01 Mayýs 2014                                               *
- * Son Düzenleme : 04 Mayýs 2014                                               *
+ * BaÃ¾langÃ½Ã§     : 01 MayÃ½s 2014                                               *
+ * Son DÃ¼zenleme : 04 MayÃ½s 2014                                               *
  * Versiyon      : 0.1                                                         *
  *                                                                             *
- * HD44780 karakter LCD kütüphanesi (4bit ve 8 bit modlu)                      *
+ * HD44780 karakter LCD kÃ¼tÃ¼phanesi (4bit ve 8 bit modlu)                      *
  ******************************************************************************/
 #include "mcc_generated_files/mcc.h"
 #include "lcd.h"
 
-//Deðiþkenler
-char display_kursor_blink; //display,kursor ve blink aç kapat komutlarý için.
+//DeÃ°iÃ¾kenler
+char display_kursor_blink; //display,kursor ve blink aÃ§ kapat komutlarÃ½ iÃ§in.
 
 /*******************************************************************************
- *  LCD ekraný çalýþtýrýr. Ýlk önce bu fonksiyon çalýþtýrýlmalýdýr.             *
+ *  LCD ekranÃ½ Ã§alÃ½Ã¾tÃ½rÃ½r. Ãlk Ã¶nce bu fonksiyon Ã§alÃ½Ã¾tÃ½rÃ½lmalÃ½dÃ½r.             *
  *******************************************************************************/
 #ifdef LCDBIT8
 
 void lcd_baslat(void) {
     char _i;
-    lcd_tris = 0x00; //lcd'nin baðlandýðý pinler çýkýþ
+    lcd_tris = 0x00; //lcd'nin baÃ°landÃ½Ã°Ã½ pinler Ã§Ã½kÃ½Ã¾
     lcd_tris_rs = 0;
     lcd_tris_e = 0;
 #ifdef lcd_rw_aktif
@@ -90,8 +89,8 @@ void lcd_baslat(void) {
 #endif
 
 /*******************************************************************************
- * Ýstenilen pozisyona gider.                                                   *
- * Örnek: lcd_git(2,5);                                                         *
+ * Ãstenilen pozisyona gider.                                                   *
+ * Ã–rnek: lcd_git(2,5);                                                         *
  *******************************************************************************/
 void lcd_git(char satir, char sutun) {
     char temp;
@@ -114,8 +113,8 @@ void lcd_git(char satir, char sutun) {
 }
 
 /*******************************************************************************
- * Ýstenilen poziyonda ekrana yazý yazar.                                       *
- * Örnek : lcd_mesajyaz(1,4,"Deneme");                                          *
+ * Ãstenilen poziyonda ekrana yazÃ½ yazar.                                       *
+ * Ã–rnek : lcd_mesajyaz(1,4,"Deneme");                                          *
  *******************************************************************************/
 void lcd_mesajyaz(char satir, char sutun, const char *mesaj) {
     lcd_git(satir, sutun);
@@ -125,8 +124,8 @@ void lcd_mesajyaz(char satir, char sutun, const char *mesaj) {
 }
 
 /*******************************************************************************
- * Lcd ekrana en son kaldýðý pozisyondan itibaren yazý yazar.                   *
- * Örnek : lcd_mesajyaz_cp("deneme");                                           *
+ * Lcd ekrana en son kaldÃ½Ã°Ã½ pozisyondan itibaren yazÃ½ yazar.                   *
+ * Ã–rnek : lcd_mesajyaz_cp("deneme");                                           *
  *******************************************************************************/
 void lcd_mesajyaz_cp(const char *mesaj) {
     do {
@@ -135,8 +134,8 @@ void lcd_mesajyaz_cp(const char *mesaj) {
 }
 
 /*******************************************************************************
- * Lcd meþgul olduðu sürece bu fonksiyon içinde bekler..                        *
- * Lcd_komut ve lcd_harfyaz fonksiyonlarý bu fonksiyonu kullanýr.               *
+ * Lcd meÃ¾gul olduÃ°u sÃ¼rece bu fonksiyon iÃ§inde bekler..                        *
+ * Lcd_komut ve lcd_harfyaz fonksiyonlarÃ½ bu fonksiyonu kullanÃ½r.               *
  *******************************************************************************/
 #ifdef lcd_rw_aktif
 
@@ -184,7 +183,7 @@ void lcd_mesgulmu(void) {
         __delay_us(1);
         lcd_e = 1;
         __delay_us(1);
-        lcd_e = 0; //low byte oku, ama herhangi bir deðiþkene kaydetmeye gerek yok.
+        lcd_e = 0; //low byte oku, ama herhangi bir deÃ°iÃ¾kene kaydetmeye gerek yok.
     } while (temp);
 #ifdef LCDustpin
     lcd_tris = lcd_tris & 0x0f;
@@ -204,7 +203,7 @@ void lcd_mesgulmu(void) {
 
 /*******************************************************************************
  * Lcd ekrana tek bir harf yazar.                                               *
- * Örnek : lcd_harfyaz('A');                                                    *
+ * Ã–rnek : lcd_harfyaz('A');                                                    *
  *******************************************************************************/
 #ifdef LCDBIT8
 
@@ -231,7 +230,7 @@ void lcd_harfyaz(char harf) {
     lcd_rw = 0;
 #endif
 #ifdef LCDustpin
-    lcd_data = (lcd_data & 0x0f) | (harf & 0xf0); //high verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (harf & 0xf0); //high verisini gÃ¶nder.
 #endif
 #ifdef LCDaltpin
     lcd_data = (lcd_data & 0xf0) | (harf >> 4);
@@ -241,7 +240,7 @@ void lcd_harfyaz(char harf) {
     lcd_e = 0;
     __delay_us(200);
 #ifdef LCDustpin
-    lcd_data = (lcd_data & 0x0f) | (harf << 4); //low verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (harf << 4); //low verisini gÃ¶nder.
 #endif
 #ifdef LCDaltpin
     lcd_data = (lcd_data & 0xf0) | (harf & 0x0f);
@@ -278,7 +277,7 @@ char lcd_harfoku(void) {
 #endif
 
 #ifdef LCDBIT4
-//task: yazýlacak
+//task: yazÃ½lacak
 
 char lcd_harfoku(void) {
     char temp, harf1, harf2;
@@ -316,7 +315,7 @@ char lcd_harfoku(void) {
     lcd_e = 0;
     __delay_us(1);
 
-    temp = harf1 | harf2; //üst ve alt veriyi birleþtir.
+    temp = harf1 | harf2; //Ã¼st ve alt veriyi birleÃ¾tir.
 
 #ifdef LCDustpin
     lcd_tris = lcd_tris & 0x0f;
@@ -331,7 +330,7 @@ char lcd_harfoku(void) {
 #endif
 
 /*******************************************************************************
- * Lcd komutlarýný gönderir.                                                    *
+ * Lcd komutlarÃ½nÃ½ gÃ¶nderir.                                                    *
  *******************************************************************************/
 #ifdef LCDBIT8
 
@@ -358,7 +357,7 @@ void lcd_komut(char komut) {
     lcd_rw = 0;
 #endif
 #ifdef LCDustpin
-    lcd_data = (lcd_data & 0x0f) | (komut & 0xf0); //high verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (komut & 0xf0); //high verisini gÃ¶nder.
 #endif
 #ifdef LCDaltpin
     lcd_data = (lcd_data & 0xf0) | (komut >> 4);
@@ -368,7 +367,7 @@ void lcd_komut(char komut) {
     lcd_e = 0;
     __delay_ms(5);
 #ifdef LCDustpin
-    lcd_data = (lcd_data & 0x0f) | (komut << 4); //low verisini gönder.
+    lcd_data = (lcd_data & 0x0f) | (komut << 4); //low verisini gÃ¶nder.
 #endif
 #ifdef LCDaltpin
     lcd_data = (lcd_data & 0xf0) | (komut & 0x0f);
@@ -381,8 +380,8 @@ void lcd_komut(char komut) {
 #endif
 
 /*******************************************************************************
- * Lcd ekranda özel karakter oluþturur.                                         *
- * Örnek:
+ * Lcd ekranda Ã¶zel karakter oluÃ¾turur.                                         *
+ * Ã–rnek:
  * char kalp[8]={
  * 0b00000,
  * 0b01010,
@@ -393,8 +392,8 @@ void lcd_komut(char komut) {
  * 0b00000,
  * 0b00000};
  * 
- * lcd_ozelkarakter(0,kalp);   //kalp sembolü lcd ekrana tanýmlar
- * lcd_harfyaz(0); // kalp sembölünü çiz..
+ * lcd_ozelkarakter(0,kalp);   //kalp sembolÃ¼ lcd ekrana tanÃ½mlar
+ * lcd_harfyaz(0); // kalp sembÃ¶lÃ¼nÃ¼ Ã§iz..
  *******************************************************************************/
 void lcd_ozelkarakter(char karakterno, char patern[8]) {
     char temp, i;
@@ -409,7 +408,7 @@ void lcd_ozelkarakter(char karakterno, char patern[8]) {
 
 /*******************************************************************************
  * Lcdyi siler.                                                                 *
- * Örnek : lcd_sil();                                                           *
+ * Ã–rnek : lcd_sil();                                                           *
  *******************************************************************************/
 void lcd_sil(void) {
     lcd_komut(0x01);
@@ -423,7 +422,7 @@ void lcd_satirbasi(void) {
 }
 
 /*******************************************************************************
- * Kursörü aktif yapar                                                          *
+ * KursÃ¶rÃ¼ aktif yapar                                                          *
  *******************************************************************************/
 void lcd_kursor_ac(void) {
     display_kursor_blink |= 0x02;
@@ -431,7 +430,7 @@ void lcd_kursor_ac(void) {
 }
 
 /*******************************************************************************
- * Kürsörü kapatýr.                                                             *
+ * KÃ¼rsÃ¶rÃ¼ kapatÃ½r.                                                             *
  *******************************************************************************/
 void lcd_kursor_kapat(void) {
     display_kursor_blink &= 0xfd;
@@ -439,7 +438,7 @@ void lcd_kursor_kapat(void) {
 }
 
 /*******************************************************************************
- * LCD Displayi açar.                                                           *
+ * LCD Displayi aÃ§ar.                                                           *
  *******************************************************************************/
 void lcd_display_ac(void) {
     display_kursor_blink |= 0x04;
@@ -448,7 +447,7 @@ void lcd_display_ac(void) {
 }
 
 /*******************************************************************************
- * LCD Displayi kapatýr.                                                        *
+ * LCD Displayi kapatÃ½r.                                                        *
  *******************************************************************************/
 void lcd_display_kapat(void) {
     display_kursor_blink &= 0xfb;
@@ -456,7 +455,7 @@ void lcd_display_kapat(void) {
 }
 
 /*******************************************************************************
- * Kürsör ekranda yanýp söner                                                   *
+ * KÃ¼rsÃ¶r ekranda yanÃ½p sÃ¶ner                                                   *
  *******************************************************************************/
 void lcd_blink_ac(void) {
     display_kursor_blink |= 0x01;
@@ -464,7 +463,7 @@ void lcd_blink_ac(void) {
 }
 
 /*******************************************************************************
- * Kürsörün ekranda yanýp sönme özelliðini kapatýr.                             *
+ * KÃ¼rsÃ¶rÃ¼n ekranda yanÃ½p sÃ¶nme Ã¶zelliÃ°ini kapatÃ½r.                             *
  *******************************************************************************/
 void lcd_blink_kapat(void) {
     display_kursor_blink &= 0xfe;
@@ -472,49 +471,49 @@ void lcd_blink_kapat(void) {
 }
 
 /*******************************************************************************
- * LCD ekraný sola kaydýrýr.                                                    *
+ * LCD ekranÃ½ sola kaydÃ½rÃ½r.                                                    *
  *******************************************************************************/
 void lcd_sola_kaydir(void) {
     lcd_komut(0x18);
 }
 
 /*******************************************************************************
- * LCD ekraný saða kaydýrýr.                                                    *
+ * LCD ekranÃ½ saÃ°a kaydÃ½rÃ½r.                                                    *
  *******************************************************************************/
 void lcd_saga_kaydir(void) {
     lcd_komut(0x1C);
 }
 
 /*******************************************************************************
- * 1. satýr 1. sutuna gider                                                     *
+ * 1. satÃ½r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir1(void) {
     lcd_komut(0x80);
 }
 
 /*******************************************************************************
- * 2. satýr 1. sutuna gider                                                     *
+ * 2. satÃ½r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir2(void) {
     lcd_komut(0xc0);
 }
 
 /*******************************************************************************
- * 3. satýr 1. sutuna gider                                                     *
+ * 3. satÃ½r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir3(void) {
     lcd_komut(0x94);
 }
 
 /*******************************************************************************
- * 4. satýr 1. sutuna gider                                                     *
+ * 4. satÃ½r 1. sutuna gider                                                     *
  *******************************************************************************/
 void lcd_satir4(void) {
     lcd_komut(0xd4);
 }
 
 /*******************************************************************************
- * printf fonksiyonu için                                                       *
+ * printf fonksiyonu iÃ§in                                                       *
  *******************************************************************************/
 #ifdef lcdprintf_aktif
 
