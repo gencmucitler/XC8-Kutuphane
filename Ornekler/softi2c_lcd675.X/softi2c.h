@@ -1,11 +1,10 @@
 /**********************************************************
 *  Yazar 	: sigmoid
-*  Web 		: http://www.gencmucitler.com
-*  İlk		: 9 Temmuz 2017
-*  Düzenleme: Yok 
+*  Ãlk		: 9 Temmuz 2017
+*  DÃ¼zenleme: Yok 
 *  Versiyon : 0.1
-*  Açıklama :  software i2c master mode
-*  100KHz bağlantı hızı..
+*  AÃ§Ã½klama :  software i2c master mode
+*  100KHz baÃ°lantÃ½ hÃ½zÃ½..
 ***********************************************************/
 
 #ifndef softI2C
@@ -21,7 +20,7 @@
 #endif
 
 
-//kullanılacak pinler tanımlanır
+//kullanÃ½lacak pinler tanÃ½mlanÃ½r
 #define SOFT_SCL	GPIO5
 #define SOFT_SDA	GPIO4
 
